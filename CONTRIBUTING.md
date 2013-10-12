@@ -29,7 +29,7 @@ We only accept issues that are bug reports or feature requests. Bugs must be iso
 
 ### HTML
 
-- Two spaces for indentation, never tabs
+- ALWAYS tabs for indentation
 - Double quotes only, never single quotes
 - Always use proper indentation
 - Use tags and elements appropriate for an HTML5 doctype (e.g., self-closing tags)

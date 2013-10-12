@@ -1,3 +1,19 @@
+/**
+ * Bootstrap 3 with Compass SCSS instead of LESS
+ *
+ * Naming convention & code-style: https://github.com/suitcss/suit/blob/master/doc/README.md
+ * Inspiration:
+ *	- SMACSS
+ *  - BEM methodology
+ *	- inuitcss.com
+ *  - SUIT framework
+ *
+ * TODO
+ *	- Import paths
+ *	- Apply naming conventions
+ * 	- Seperate type.
+*/
+
 // Core variables and mixins
 @import "variables.less";
 @import "mixins.less";
