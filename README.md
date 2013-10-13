@@ -1,12 +1,19 @@
-# [Bootstrap](http://getbootstrap.com) [![Build Status](https://secure.travis-ci.org/twbs/bootstrap.png)](http://travis-ci.org/twbs/bootstrap) [![devDependency Status](https://david-dm.org/twbs/bootstrap/dev-status.png)](https://david-dm.org/twbs/bootstrap#info=devDependencies)
+# Bootstrap with SASS/Compass
 
-Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development, created and maintained by [Mark Otto](http://twitter.com/mdo) and [Jacob Thornton](http://twitter.com/fat).
+Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development. This is a forked version with all the LESS replaced by SASS and the Compass framework and a methodology combination of [SUIT](https://github.com/suitcss/suit/blob/master/doc/README.md) & [SMACCS](http://smacss.com/).
+
+## In full development
+This thang is in full development, so documentation will follow when appropriate.
+
+## PEACE
+
+<!-- Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development, created and maintained by [Mark Otto](http://twitter.com/mdo) and [Jacob Thornton](http://twitter.com/fat).
 
 To get started, check out [http://getbootstrap.com](http://getbootstrap.com)!
 
 
 
-## Quick start
+ ## Quick start
 
 Three quick start options are available:
 
@@ -162,3 +169,4 @@ For more information on SemVer, please visit [http://semver.org/](http://semver.
 ## Copyright and license
 
 Copyright 2013 Twitter, Inc under [the Apache 2.0 license](LICENSE).
+ -->

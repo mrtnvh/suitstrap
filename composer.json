@@ -1,12 +1,12 @@
 {
-    "name": "bootstrap-compass"
-  , "description": "Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development."
-  , "keywords": ["bootstrap", "css"]
-  , "homepage": "http://getbootstrap.com"
-  , "authors": [
-    ]
-  , "support": {
-      "issues": "https://github.com/vanhoofmaarten/bootstrap-compass/issues"
-    }
-  , "license": "Apache-2.0"
+		"name": "bootstrap-compass"
+	, "description": "Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development."
+	, "keywords": ["bootstrap", "css"]
+	, "homepage": "http://getbootstrap.com"
+	, "authors": [
+		]
+	, "support": {
+			"issues": "https://github.com/vanhoofmaarten/bootstrap-compass/issues"
+		}
+	, "license": "Apache-2.0"
 }
