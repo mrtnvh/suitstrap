@@ -1,10 +1,8 @@
-/*
-/* Badges
-/* --------------------------------------------------
+/* ==========================================================================
+   Badges
+   ========================================================================== */
 
-
-/* Base classes
-.badge {
+.Badge {
     display: inline-block;
     min-width: 10px;
     padding: 3px 7px;
@@ -18,14 +16,14 @@
     background-color: $badge-bg;
     border-radius: $badge-border-radius;
 
-    /* Empty badges collapse automatically (not available in IE8)
+    /* Empty badges collapse automatically (not available in IE8) */
     &:empty {
         display: none;
     }
 }
 
-/* Hover state, but only for links
-a.badge {
+/* Hover state, but only for links */
+a.Badge {
     &:hover,
     &:focus {
         color: $badge-link-hover-color;
@@ -34,18 +32,19 @@ a.badge {
     }
 }
 
-/* Quick fix for labels/badges in buttons
-.btn .badge {
+/* Quick fix for labels/badges in buttons */
+.Btn .Badge {
     position: relative;
     top: -1px;
 }
 
-/* Account for counters in navs
-a.list-group-item.active > .badge,
-.nav-pills > .active > a > .badge {
+/* Account for counters in navs */
+a.ListGroup-item.isActive > .Badge,
+.NavPills > .isActive > a > .Badge {
     color: $badge-active-color;
     background-color: $badge-active-bg;
 }
-.nav-pills > li > a > .badge {
+
+.NavPills > li > a > .Badge {
     margin-left: 3px;
 }

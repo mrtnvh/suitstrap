@@ -1,0 +1,50 @@
+/* ==========================================================================
+   Blockquote
+   ========================================================================== */
+blockquote {
+	padding: ($line-height-computed / 2) $line-height-computed;
+	margin: 0 0 $line-height-computed;
+	border-left: 5px solid $blockquote-border-color;
+	p {
+		font-size: ($font-size-base * 1.25);
+		font-weight: 300;
+		line-height: 1.25;
+	}
+	p:last-child {
+		margin-bottom: 0;
+	}
+	small {
+		display: block;
+		line-height: $line-height-base;
+		color: $blockquote-small-color;
+		&:before {
+			content: '\2014 \00A0';/* EM DASH, NBSP
+		}
+	}
+
+	/* Float right with text-align: right */
+	&.u-pullRight {
+		padding-right: 15px;
+		padding-left: 0;
+		border-right: 5px solid $blockquote-border-color;
+		border-left: 0;
+		p,
+		small {
+			text-align: right;
+		}
+		small {
+			&:before {
+				content: '';
+			}
+			&:after {
+				content: '\00A0 \2014';/* NBSP, EM DASH
+			}
+		}
+	}
+}
+
+/* Quotes */
+blockquote:before,
+blockquote:after {
+	content: "";
+}

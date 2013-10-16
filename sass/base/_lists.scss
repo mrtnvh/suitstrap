@@ -8,6 +8,7 @@ ul,
 ol {
 	margin-top: 0;
 	margin-bottom: ($line-height-computed / 2);
+
 	ul,
 	ol{
 		margin-bottom: 0;
@@ -18,13 +19,13 @@ ol {
    ========================================================================== */
 
 /* Unstyled keeps list items block level, just removes default browser padding and list-style */
-.u-list-unstyled {
+.u-list--unstyled {
 	padding-left: 0;
 	list-style: none;
 }
 /* Inline turns list items into inline-block */
-.u-list-inline {
-	@extend .u-list-unstyled;
+.u-list--inline {
+	@extend .u-list--unstyled;
 	> li {
 		display: inline-block;
 		padding-left: 5px;
@@ -56,88 +57,17 @@ dd {
    grid breakpoint is reached (default of ~768px). */
 
 @media (min-width: $grid-float-breakpoint) {
-	.dl-horizontal {
+	.u-dl-horizontal {
 		dt {
 			float: left;
 			width: ($component-offset-horizontal - 20);
 			clear: left;
 			text-align: right;
-			.TextOverflow();
+			@include TextOverflow();
 		}
 		dd {
 			margin-left: $component-offset-horizontal;
 			@include MicroClearfix(); /* Clear the floated `dt` if an empty `dd` is present */
 		}
 	}
-}
-
-/* MISC
-   ========================================================================== */
-
-/* Abbreviations and acronyms */
-abbr[title],
-/* Added data-* attribute to help out our tooltip plugin, per https://github.com/twbs/bootstrap/issues/5257
-abbr[data-original-title] {
-	cursor: help;
-	border-bottom: 1px dotted $abbr-border-color;
-}
-abbr.initialism {
-	font-size: 90%;
-	text-transform: uppercase;
-}
-
-/* Blockquotes
-blockquote {
-	padding: ($line-height-computed / 2) $line-height-computed;
-	margin: 0 0 $line-height-computed;
-	border-left: 5px solid $blockquote-border-color;
-	p {
-		font-size: ($font-size-base * 1.25);
-		font-weight: 300;
-		line-height: 1.25;
-	}
-	p:last-child {
-		margin-bottom: 0;
-	}
-	small {
-		display: block;
-		line-height: $line-height-base;
-		color: $blockquote-small-color;
-		&:before {
-			content: '\2014 \00A0';/* EM DASH, NBSP
-		}
-	}
-
-	/* Float right with text-align: right
-	&.pull-right {
-		padding-right: 15px;
-		padding-left: 0;
-		border-right: 5px solid $blockquote-border-color;
-		border-left: 0;
-		p,
-		small {
-			text-align: right;
-		}
-		small {
-			&:before {
-				content: '';
-			}
-			&:after {
-				content: '\00A0 \2014';/* NBSP, EM DASH
-			}
-		}
-	}
-}
-
-/* Quotes
-blockquote:before,
-blockquote:after {
-	content: "";
-}
-
-/* Addresses
-address {
-	margin-bottom: $line-height-computed;
-	font-style: normal;
-	line-height: $line-height-base;
 }

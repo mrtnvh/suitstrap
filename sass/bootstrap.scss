@@ -15,65 +15,73 @@
 */
 
 /* Core variables and mixins
-     ========================================================================== */
-@import "_variables.scss";
-@import "_mixins.scss";
+   ========================================================================== */
+@import "_variables.scss"; 					/* Done */
+@import "_mixins.scss"; 					/* Done */
 
 /* Reset
-     ========================================================================== */
-@import "_normalize.scss";
+   ========================================================================== */
+@import "_normalize.scss"; 					/* Done */
 @import "_print.scss";
 
 /* Base styles
-     ========================================================================== */
-@import "base/_scaffolding.scss";
-@import "base/_type.scss"; /* Seperate styles */
-@import "base/_code.scss";
-@import "base/_tables.scss";
-@import "base/_forms.scss";
-@import "base/_buttons.scss";
+   ========================================================================== */
+@import "base/scaffolding.scss";			/* Done */
+@import "base/links.scss";					/* Done */
+@import "base/images.scss";					/* Done */
+@import "base/horizontalrules.scss"; 		/* Done */
+@import "base/abbreviations.scss"; 			/* Done */
+@import "base/address.scss"; 				/* Done */
+@import "base/blockquote.scss"; 			/* Done */
+@import "base/code.scss"; 					/* Done */
+@import "base/emphasis.scss"; 				/* Done */
+@import "base/forms.scss";					/* Done */
+@import "base/headings.scss";
+@import "base/lists.scss";
+@import "base/paragraphs.scss";
+@import "base/tables.scss";
 
 /* Layout
-     ========================================================================== */
-@import "layout/_grid.scss";
-@import "layout/_layout.scss";
+   ========================================================================== */
+@import "layout/_grid.scss"; 				/* Done */
+@import "layout/_layout.scss";				/* Done */
 
 /* Components
-     ========================================================================== */
-@import "components/_component-animations.scss";
-@import "components/_glyphicons.scss";
-@import "components/_dropdowns.scss";
-@import "components/_button-groups.scss";
-@import "components/_input-groups.scss";
-@import "components/_navs.scss";
-@import "components/_navbar.scss";
-@import "components/_breadcrumbs.scss";
-@import "components/_pagination.scss";
-@import "components/_pager.scss";
-@import "components/_labels.scss";
-@import "components/_badges.scss";
-@import "components/_jumbotron.scss";
-@import "components/_thumbnails.scss";
-@import "components/_alerts.scss";
-@import "components/_progress-bars.scss";
-@import "components/_media.scss";
-@import "components/_list-group.scss";
-@import "components/_panels.scss";
-@import "components/_wells.scss";
-@import "components/_close.scss";
+   ========================================================================== */
+@import "components/ComponentAnimations.scss";
+@import "components/Glyphicons.scss";
+@import "components/Dropdowns.scss";
+@import "components/Buttons.scss";
+@import "components/ButtonGroups.scss"; 	/* Done */
+@import "components/InputGroups.scss";
+@import "components/Navs.scss";
+@import "components/Navbar.scss";
+@import "components/Breadcrumbs.scss";		/* Done */
+@import "components/Pagination.scss";
+@import "components/Pager.scss";
+@import "components/Labels.scss";
+@import "components/Badges.scss";			/* Done */
+@import "components/Jumbotron.scss";
+@import "components/Thumbnails.scss";
+@import "components/Alerts.scss"; 			/* Done */
+@import "components/ProgressBars.scss";
+@import "components/Media.scss";
+@import "components/ListGroup.scss";
+@import "components/Panels.scss";
+@import "components/Wells.scss";
+@import "components/Close.scss";
 
-@import "components/_PageHeader.scss";
-@import "components/_Lead.scss";
-
+@import "components/PageHeader.scss";
+@import "components/Lead.scss";
 
 /* Components w/ JavaScript
-     ========================================================================== */
-@import "components/_modals.scss";
-@import "components/_tooltip.scss";
-@import "components/_popovers.scss";
-@import "components/_carousel.scss";
+   ========================================================================== */
+@import "components/Modals.scss";
+@import "components/Tooltip.scss";
+@import "components/Popovers.scss";
+@import "components/Carousel.scss";
 
 /* Utilities
-     ========================================================================== */
-@import "_utilities.scss";
-@import "_responsive-utilities.scss";
+   ========================================================================== */
+@import "utilities/Utilities.scss";
+@import "utilities/ResponsiveUtilities.scss";

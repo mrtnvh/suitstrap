@@ -1,0 +1,40 @@
+/* ==========================================================================
+   Images
+   ========================================================================== */
+
+img {
+	vertical-align: middle;
+}
+
+/* Responsive images (ensure images don't scale beyond their parents)
+   ========================================================================== */
+.ImgResponsive {
+	@include ImgResponsive();
+}
+
+/* Rounded corners
+   ========================================================================== */
+.ImgRounded {
+	border-radius: $border-radius-large;
+}
+
+/* Image thumbnails
+   ========================================================================== */
+/* Heads up! This is mixin-ed into thumbnails.less for `.thumbnail`. */
+.ImgThumbnail {
+	padding: $thumbnail-padding;
+	line-height: $line-height-base;
+	background-color: $thumbnail-bg;
+	border: 1px solid $thumbnail-border;
+	border-radius: $thumbnail-border-radius;
+	@include transition(all .2s ease-in-out);
+
+	/* Keep them at most 100% wide */
+	@include ImgResponsive(inline-block);
+}
+
+/* Perfect circle
+   ========================================================================== */
+.ImgCircle {
+	border-radius: 50%; /* set radius in percents */
+}

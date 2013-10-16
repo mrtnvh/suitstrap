@@ -1,0 +1,249 @@
+/* ==========================================================================
+   Button groups
+   ========================================================================== */
+
+/**
+ * Button carets
+ * Match the button text color to the arrow/caret for indicating dropdown-ness.
+ */
+
+.Caret {
+    .Btn--default & {
+        border-top-color: $btn-default-color;
+    }
+    .Btn--primary &,
+    .Btn--success &,
+    .Btn--warning &,
+    .Btn--danger &,
+    .Btn--info & {
+        border-top-color: #fff;
+    }
+}
+.Dropup {
+    & .Btn-default .Caret {
+        border-bottom-color: $btn-default-color;
+    }
+    .Btn--primary,
+    .Btn--success,
+    .Btn--warning,
+    .Btn--danger,
+    .Btn--info {
+     .Caret {
+            border-bottom-color: #fff;
+        }
+    }
+}
+
+/* Make the div behave like a button */
+.BtnGroup,
+.BtnGroup--vertical {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle; /* match .Btn alignment given font-size hack above */
+    > .Btn {
+        position: relative;
+        float: left;
+        /* Bring the "active" button to the front */
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            z-index: 2;
+        }
+        &:focus {
+            /* Remove focus outline when dropdown JS adds it after closing the menu */
+            outline: none;
+        }
+    }
+}
+
+/* Prevent double borders when buttons are next to each other */
+.BtnGroup {
+    .Btn + .Btn,
+    .Btn + .BtnGroup,
+    .BtnGroup + .Btn,
+    .BtnGroup + .BtnGroup {
+        margin-left: -1px;
+    }
+}
+
+/* Optional: Group multiple button groups together for a toolbar */
+.BtnToolbar {
+    @include MicroClearfix();
+
+    .BtnGroup {
+        float: left;
+    }
+    /* Space out series of button groups */
+    > .Btn,
+    > .BtnGroup {
+        + .Btn,
+        + .BtnGroup {
+            margin-left: 5px;
+        }
+    }
+}
+
+.BtnGroup > .Btn:not(:first-child):not(:last-child):not(.DropdownToggle) {
+    border-radius: 0;
+}
+
+/* Set corners individual because sometimes a single button can be in a .BtnGroup and we need :first-child and :last-child to both match */
+.BtnGroup > .Btn:first-child {
+    margin-left: 0;
+    &:not(:last-child):not(.DropdownToggle) {
+        @include border-right-radius(0);
+    }
+}
+/* Need .DropdownToggle since :last-child doesn't apply given a .dropdown-menu immediately after it */
+.BtnGroup > .Btn:last-child:not(:first-child),
+.BtnGroup > .DropdownToggle:not(:first-child) {
+    @include border-left-radius(0);
+}
+
+/* Custom edits for including BtnGroups within BtnGroups (useful for including dropdown buttons within a BtnGroup) */
+.BtnGroup > .BtnGroup {
+    float: left;
+}
+.BtnGroup > .BtnGroup:not(:first-child):not(:last-child) > .Btn {
+    border-radius: 0;
+}
+.BtnGroup > .BtnGroup:first-child {
+    > .Btn:last-child,
+    > .DropdownToggle {
+        @include border-right-radius(0);
+    }
+}
+.BtnGroup > .BtnGroup:last-child > .Btn:first-child {
+    @include border-left-radius(0);
+}
+
+/* On active and open, don't show outline */
+.BtnGroup .DropdownToggle:active,
+.BtnGroup.open .DropdownToggle {
+    outline: 0;
+}
+
+/**
+/* Sizing
+/* Remix the default button sizing classes into new ones for easier manipulation.
+ */
+
+.BtnGroup--XS > .Btn { @extend .Btn--XS(); }
+.BtnGroup--SM > .Btn { @extend .Btn--SM(); }
+.BtnGroup--LG > .Btn { @extend .Btn--LG(); }
+
+
+/* Split button dropdowns
+/* ----------------------
+
+/* Give the line between buttons some depth
+.BtnGroup > .Btn + .DropdownToggle {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.BtnGroup > .Btn-lg + .DropdownToggle {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+/* The clickable button for toggling the menu
+/* Remove the gradient and set the same inset shadow as the :active state
+.BtnGroup.open .DropdownToggle {
+    .box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+}
+
+
+/* Reposition the caret
+.Btn .caret {
+    margin-left: 0;
+}
+/* Carets in other button sizes
+.Btn-lg .caret {
+    border-width: $caret-width-large $caret-width-large 0;
+    border-bottom-width: 0;
+}
+/* Upside down carets for .dropup
+.dropup .Btn-lg .caret {
+    border-width: 0 $caret-width-large $caret-width-large;
+}
+
+
+/* Vertical button groups
+/* ----------------------
+
+.BtnGroup-vertical {
+    > .Btn,
+    > .BtnGroup {
+        display: block;
+        float: none;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Clear floats so dropdown menus can be properly placed
+    > .BtnGroup {
+        @include MicroClearfix();
+        > .Btn {
+            float: none;
+        }
+    }
+
+    > .Btn + .Btn,
+    > .Btn + .BtnGroup,
+    > .BtnGroup + .Btn,
+    > .BtnGroup + .BtnGroup {
+        margin-top: -1px;
+        margin-left: 0;
+    }
+}
+
+.BtnGroup-vertical > .Btn {
+    &:not(:first-child):not(:last-child) {
+        border-radius: 0;
+    }
+    &:first-child:not(:last-child) {
+        border-top-right-radius: $border-radius-base;
+        .border-bottom-radius(0);
+    }
+    &:last-child:not(:first-child) {
+        border-bottom-left-radius: $border-radius-base;
+        .border-top-radius(0);
+    }
+}
+.BtnGroup-vertical > .BtnGroup:not(:first-child):not(:last-child) > .Btn {
+    border-radius: 0;
+}
+.BtnGroup-vertical > .BtnGroup:first-child {
+    > .Btn:last-child,
+    > .DropdownToggle {
+        .border-bottom-radius(0);
+    }
+}
+.BtnGroup-vertical > .BtnGroup:last-child > .Btn:first-child {
+    .border-top-radius(0);
+}
+
+
+
+/* Justified button groups
+/* ----------------------
+
+.BtnGroup-justified {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    .Btn {
+        float: none;
+        display: table-cell;
+        width: 1%;
+    }
+}
+
+
+/* Checkbox and radio options
+[data-toggle="buttons"] > .Btn > input[type="radio"],
+[data-toggle="buttons"] > .Btn > input[type="checkbox"] {
+    display: none;
+}
