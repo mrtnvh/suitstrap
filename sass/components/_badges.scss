@@ -33,18 +33,18 @@ a.Badge {
 }
 
 /* Quick fix for labels/badges in buttons */
-.Btn .Badge {
+.Button .Badge {
     position: relative;
     top: -1px;
 }
 
 /* Account for counters in navs */
 a.ListGroup-item.isActive > .Badge,
-.NavPills > .isActive > a > .Badge {
+.Nav--pills > .isActive > a > .Badge {
     color: $badge-active-color;
     background-color: $badge-active-bg;
 }
 
-.NavPills > li > a > .Badge {
+.Nav--pills > li > a > .Badge {
     margin-left: 3px;
 }

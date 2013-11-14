@@ -36,7 +36,7 @@ label {
 
 /* Override content-box in Normalize (* isn't specific enough) */
 input[type="search"] {
-	.box-sizing(border-box);
+	@include box-sizing(border-box);
 }
 
 /* Position radios and checkboxes better */
@@ -69,7 +69,7 @@ select optgroup {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-	.TabFocus();
+	@include TabFocus();
 }
 
 /**
@@ -99,14 +99,14 @@ output {
  *
  * Placeholder text gets special styles because when browsers invalidate entire lines if it doesn't understand a selector
  */
-.FormControl {
+.Form-control {
 	@include Placeholder();
 }
 
 /**
  * Common form controls
  *
- * Shared size and type resets for form controls. Apply `.FormControl` to any
+ * Shared size and type resets for form controls. Apply `.Form-control` to any
  * of the following form controls:
  *
  * select
@@ -127,7 +127,7 @@ output {
  * input[type="color"]
  */
 
-.FormControl {
+.Form-control {
 	display: block;
 	width: 100%;
 	height: $input-height-base; /* Make inputs at least the height of their button counterpart (base line-height + padding + border) */
@@ -144,7 +144,7 @@ output {
 	@include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
 
 	/* Customize the `:focus` state to imitate native WebKit styles. */
-	.FormControlFocus();
+	@include FormControlFocus();
 
 	/**
 	 * Disabled and read-only inputs
@@ -171,7 +171,7 @@ output {
  * Designed to help with the organization and spacing of vertical forms. For
  * horizontal forms, use the predefined grid classes.
  */
-.FormGroup {
+.Form-group {
 	margin-bottom: 15px;
 }
 
@@ -256,15 +256,15 @@ input[type="checkbox"],
 
 /* Warning */
 .is-Warning {
-	.FormControlValidation($state-warning-text; $state-warning-text; $state-warning-bg);
+	.Form-controlValidation($state-warning-text; $state-warning-text; $state-warning-bg);
 }
 /* Error */
 .is-Error {
-	.FormControlValidation($state-danger-text; $state-danger-text; $state-danger-bg);
+	.Form-controlValidation($state-danger-text; $state-danger-text; $state-danger-bg);
 }
 /* Success */
 .is-Success {
-	.FormControlValidation($state-success-text; $state-success-text; $state-success-bg);
+	.Form-controlValidation($state-success-text; $state-success-text; $state-success-bg);
 }
 
 /**
@@ -274,7 +274,7 @@ input[type="checkbox"],
  * a horizontal form layout.
  */
 
-.FormControlStatic {
+.Form-controlStatic {
 	margin-bottom: 0; /* Remove default margin from `p` */
 	padding-top: ($padding-base-vertical + 1);
 }
@@ -300,24 +300,24 @@ input[type="checkbox"],
  * forms begin stacked on extra small (mobile) devices and then go inline when
  * viewports reach <768px.
  *
- * Requires wrapping inputs and labels with `.FormGroup` for proper display of
+ * Requires wrapping inputs and labels with `.Form-group` for proper display of
  * default HTML form controls and our custom form controls (e.g., input groups).
  *
- * Heads up! This is mixin-ed into `.navbar-form` in navbars.less.
+ * Heads up! This is mixin-ed into `.Navbar-form` in navbars.less.
  */
-.FormInline {
+.Form--inline {
 
 	/* Kick in the inline */
 	@media (min-width: $screen-sm) {
 		/* Inline-block all the things for "inline" */
-		.FormGroup    {
+		.Form-group    {
 			display: inline-block;
 			margin-bottom: 0;
 			vertical-align: middle;
 		}
 
-		/* In navbar-form, allow folks to *not* use `.FormGroup` */
-		.FormControl {
+		/* In navbar-form, allow folks to *not* use `.Form-group` */
+		.Form-control {
 			display: inline-block;
 		}
 
@@ -347,7 +347,7 @@ input[type="checkbox"],
  * Horizontal forms are built on grid classes and allow you to create forms with
  * labels on the left and inputs on the right.
  */
-.FormHorizontal {
+.Form--horizontal {
 
 	/* Consistent vertical alignment of labels, radios, and checkboxes */
 	.ControlLabel,
@@ -361,7 +361,7 @@ input[type="checkbox"],
 	}
 
 	/* Make form groups behave like rows */
-	.FormGroup {
+	.Form-group {
 		@include MakeRow();
 	}
 

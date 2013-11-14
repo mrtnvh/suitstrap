@@ -1,8 +1,8 @@
-/*
-/* Labels
-/* --------------------------------------------------
+/* ==========================================================================
+   Labels
+   ========================================================================== */
 
-.label {
+.Label {
     display: inline;
     padding: .2em .6em .3em;
     font-size: 75%;
@@ -14,7 +14,7 @@
     vertical-align: baseline;
     border-radius: .25em;
 
-    /* Add hover effects, but only for links
+    /* Add hover effects, but only for links */
     &[href] {
         &:hover,
         &:focus {
@@ -24,35 +24,36 @@
         }
     }
 
-    /* Empty labels collapse automatically (not available in IE8)
+    /* Empty labels collapse automatically (not available in IE8) */
     &:empty {
         display: none;
     }
 }
 
 /* Colors
-/* Contextual variations (linked labels get darker on :hover)
+   ========================================================================== */
+/* Contextual variations (linked labels get darker on :hover) */
 
-.label-default {
+.Label--default {
     @include LabelVariant($label-default-bg);
 }
 
-.label-primary {
+.Label--primary {
     @include LabelVariant($label-primary-bg);
 }
 
-.label-success {
+.Label--success {
     @include LabelVariant($label-success-bg);
 }
 
-.label-info {
+.Label--info {
     @include LabelVariant($label-info-bg);
 }
 
-.label-warning {
+.Label--warning {
     @include LabelVariant($label-warning-bg);
 }
 
-.label-danger {
+.Label--danger {
     @include LabelVariant($label-danger-bg);
 }

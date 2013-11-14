@@ -1,54 +1,57 @@
-/*
-/* List groups
-/* --------------------------------------------------
+/* ==========================================================================
+   List groups
+   ========================================================================== */
 
 /* Base class
-/*
-/* Easily usable on <ul>, <ol>, or <div>.
-.list-group {
-    /* No need to set list-style: none; since .list-group-item is block level
+   ========================================================================== */
+
+/* Easily usable on <ul>, <ol>, or <div>. */
+.ListGroup {
+    /* No need to set list-style: none; since .ListGroup-item is block level */
     margin-bottom: 20px;
-    padding-left: 0; /* reset padding because ul and ol
+    padding-left: 0; /* reset padding because ul and ol */
 }
 
-/* Individual list items
-/* -------------------------
 
-.list-group-item {
+
+/* Individual list items
+   ========================================================================== */
+
+.ListGroup-item {
     position: relative;
     display: block;
     padding: 10px 15px;
-    /* Place the border on the list items and negative margin up for better styling
+    /* Place the border on the list items and negative margin up for better styling */
     margin-bottom: -1px;
     background-color: $list-group-bg;
     border: 1px solid $list-group-border;
 
-    /* Round the first and last items
+    /* Round the first and last items */
     &:first-child {
-        .border-top-radius($list-group-border-radius);
+        @include border-top-radius($list-group-border-radius);
     }
     &:last-child {
         margin-bottom: 0;
-        .border-bottom-radius($list-group-border-radius);
+        @include border-bottom-radius($list-group-border-radius);
     }
 
-    /* Align badges within list items
-    > .badge {
+    /* Align badges within list items */
+    > .Badge {
         float: right;
     }
-    > .badge + .badge {
+    > .Badge + .Badge {
         margin-right: 5px;
     }
 
-    /* Linked list items
-    a& {
+    /* Linked list items */
+    a & {
         color: $list-group-link-color;
 
-        .list-group-item-heading {
+        .ListGroup-item-heading {
             color: $list-group-link-heading-color;
         }
 
-        /* Hover state
+        /* Hover state */
         &:hover,
         &:focus {
             text-decoration: none;
@@ -56,33 +59,37 @@
         }
     }
 
-    /* Active class on item itself, not parent
-    &.active,
-    &.active:hover,
-    &.active:focus {
-        z-index: 2; /* Place active items above their siblings for proper border styling
+    /* Active class on item itself, not parent */
+    &.isActive,
+    &.isActive:hover,
+    &.isActive:focus {
+        z-index: 2; /* Place active items above their siblings for proper border styling */
         color: $list-group-active-color;
         background-color: $list-group-active-bg;
         border-color: $list-group-active-border;
 
-        /* Force color to inherit for custom content
-        .list-group-item-heading {
+        /* Force color to inherit for custom content */
+        .ListGroup-item-heading {
             color: inherit;
         }
-        .list-group-item-text {
+
+        .ListGroup-item-text {
             color: lighten($list-group-active-bg, 40%);
         }
     }
 }
 
-/* Custom content options
-/* -------------------------
 
-.list-group-item-heading {
+
+/* Custom content options
+   ========================================================================== */
+
+.ListGroup-item-heading {
     margin-top: 0;
     margin-bottom: 5px;
 }
-.list-group-item-text {
+
+.ListGroup-item-text {
     margin-bottom: 0;
     line-height: 1.3;
 }

@@ -6,11 +6,16 @@ img {
 	vertical-align: middle;
 }
 
+
+
 /* Responsive images (ensure images don't scale beyond their parents)
    ========================================================================== */
+
 .ImgResponsive {
 	@include ImgResponsive();
 }
+
+
 
 /* Rounded corners
    ========================================================================== */
@@ -18,9 +23,12 @@ img {
 	border-radius: $border-radius-large;
 }
 
+
+
 /* Image thumbnails
+   Heads up! This is mixin-ed into _Thumbnails.scss for `.Thumbnail`.
    ========================================================================== */
-/* Heads up! This is mixin-ed into thumbnails.less for `.thumbnail`. */
+
 .ImgThumbnail {
 	padding: $thumbnail-padding;
 	line-height: $line-height-base;
@@ -33,8 +41,11 @@ img {
 	@include ImgResponsive(inline-block);
 }
 
+
+
 /* Perfect circle
    ========================================================================== */
+
 .ImgCircle {
 	border-radius: 50%; /* set radius in percents */
 }

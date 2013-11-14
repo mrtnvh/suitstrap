@@ -16,7 +16,7 @@
     > .item {
         display: none;
         position: relative;
-        .transition(.6s ease-in-out left);
+        @include transition(.6s ease-in-out left);
 
         /* Account for jankitude on images
         > img,
@@ -26,11 +26,11 @@
         }
     }
 
-    > .active,
+    > .isActive,
     > .next,
     > .prev { display: block; }
 
-    > .active {
+    > .isActive {
         left: 0;
     }
 
@@ -52,10 +52,10 @@
         left: 0;
     }
 
-    > .active.left {
+    > .isActive.left {
         left: -100%;
     }
-    > .active.right {
+    > .isActive.right {
         left: 100%;
     }
 
@@ -99,19 +99,19 @@
     /* Toggles
     .icon-prev,
     .icon-next,
-    .glyphicon-chevron-left,
-    .glyphicon-chevron-right {
+    .Glyphicon--chevron-left,
+    .Glyphicon--chevron-right {
         position: absolute;
         top: 50%;
         z-index: 5;
         display: inline-block;
     }
     .icon-prev,
-    .glyphicon-chevron-left {
+    .Glyphicon--chevron-left {
         left: 50%;
     }
     .icon-next,
-    .glyphicon-chevron-right {
+    .Glyphicon--chevron-right {
         right: 50%;
     }
     .icon-prev,
@@ -161,7 +161,7 @@
         border-radius: 10px;
         cursor: pointer;
     }
-    .active {
+    .isActive {
         margin: 0;
         width:    12px;
         height: 12px;
@@ -183,7 +183,7 @@
     color: $carousel-caption-color;
     text-align: center;
     text-shadow: $carousel-text-shadow;
-    & .btn {
+    & .Button {
         text-shadow: none; /* No shadow for button elements in carousel-caption
     }
 }
@@ -194,8 +194,8 @@
 
     /* Scale up the controls a smidge
     .carousel-control {
-        .glyphicons-chevron-left,
-        .glyphicons-chevron-right,
+        .Glyphicons-chevron-left,
+        .Glyphicons-chevron-right,
         .icon-prev,
         .icon-next {
             width: 30px;

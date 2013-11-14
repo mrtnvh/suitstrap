@@ -68,29 +68,29 @@
     }
 
     /* Bootstrap components
-    .navbar {
+    .Navbar {
         display: none;
     }
-    .table {
+    .Table {
         td,
         th {
             background-color: #fff !important;
         }
     }
-    .btn,
-    .dropup > .btn {
-        > .caret {
+    .Button,
+    .DropUp > .Button {
+        > .Caret {
             border-top-color: #000 !important;
         }
     }
-    .label {
+    .Label {
         border: 1px solid #000;
     }
 
-    .table {
+    .Table {
         border-collapse: collapse !important;
     }
-    .table-bordered {
+    .Table--bordered {
         th,
         td {
             border: 1px solid #ddd !important;

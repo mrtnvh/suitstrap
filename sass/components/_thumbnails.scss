@@ -1,12 +1,12 @@
-/*
-/* Thumbnails
-/* --------------------------------------------------
+/* ==========================================================================
+   Thumbnails
+   ========================================================================== */
 
 
-/* Mixin and adjust the regular image class
-.thumbnail {
+/* Mixin and adjust the regular image class */
+.Thumbnail {
     .img-thumbnail();
-    display: block; /* Override the inline-block from `.img-thumbnail`
+    display: block; /* Override the inline-block from `.img-thumbnail` */
     margin-bottom: $line-height-computed;
 
     > img {
@@ -15,18 +15,18 @@
 }
 
 
-/* Add a hover state for linked versions only
-a.thumbnail:hover,
-a.thumbnail:focus {
+/* Add a hover state for linked versions only */
+a.Thumbnail:hover,
+a.Thumbnail:focus {
     border-color: $link-color;
 }
 
-/* Images and captions
-.thumbnail > img {
+/* Images and captions */
+.Thumbnail > img {
     margin-left: auto;
     margin-right: auto;
 }
-.thumbnail .caption {
+.Thumbnail .Caption {
     padding: $thumbnail-caption-padding;
     color: $thumbnail-caption-color;
 }

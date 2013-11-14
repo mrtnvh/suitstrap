@@ -1,72 +1,72 @@
-/*
-/* Panels
-/* --------------------------------------------------
+/* ==========================================================================
+   Panels
+   ========================================================================== */
 
-
-/* Base class
-.panel {
+/* Base class */
+.Panel {
     margin-bottom: $line-height-computed;
     background-color: $panel-bg;
     border: 1px solid transparent;
     border-radius: $panel-border-radius;
-    .box-shadow(0 1px 1px rgba(0,0,0,.05));
+    @include box-shadow(0 1px 1px rgba(0,0,0,.05));
 }
 
-/* Panel contents
-.panel-body {
+/* Panel contents */
+.Panel-body {
     padding: 15px;
     @include MicroClearfix();
 }
 
 
 /* List groups in panels
-/*
-/* By default, space out list group content from panel headings to account for
-/* any kind of custom content between the two.
+   ========================================================================== */
+/* By default, space out list group content from panel headings to account for any kind of custom content between the two. */
 
-.panel {
-    > .list-group {
+.Panel {
+    > .ListGroup {
         margin-bottom: 0;
 
-        .list-group-item {
+        .ListGroup-item {
             border-width: 1px 0;
 
-            /* Remove border radius for top one
+            /* Remove border radius for top one */
             &:first-child {
-                .border-top-radius(0);
+                @include border-top-radius(0);
             }
-            /* But keep it for the last one
+            /* But keep it for the last one */
             &:last-child {
                 border-bottom: 0;
             }
         }
     }
 }
-/* Collapse space between when there's no additional content.
-.panel-heading + .list-group {
-    .list-group-item:first-child {
+/* Collapse space between when there's no additional content. */
+.Panel-heading + .ListGroup {
+    .ListGroup-item:first-child {
         border-top-width: 0;
     }
 }
 
 
 /* Tables in panels
-/*
-/* Place a non-bordered `.table` within a panel (not within a `.panel-body`) and
-/* watch it go full width.
+   ========================================================================== */
+/* Place a non-bordered `.Table` within a panel (not within a `.Panel-body`) and watch it go full width. */
 
-.panel {
-    > .table,
-    > .table-responsive {
+.Panel {
+    > .Table,
+    > .Table--responsive {
         margin-bottom: 0;
     }
-    > .panel-body + .table,
-    > .panel-body + .table-responsive {
+
+    > .Panel-body + .Table,
+    > .Panel-body + .Table--responsive {
         border-top: 1px solid $table-border-color;
     }
-    > .table-bordered,
-    > .table-responsive > .table-bordered {
+
+    > .Table--bordered,
+    > .Table--responsive > .Table--bordered {
         border: 0;
+
         > thead,
         > tbody,
         > tfoot {
@@ -90,15 +90,15 @@
 }
 
 
-/* Optional heading
-.panel-heading {
+/* Optional heading */
+.Panel-heading {
     padding: 10px 15px;
     border-bottom: 1px solid transparent;
-    .border-top-radius($panel-border-radius - 1);
+    @include border-top-radius($panel-border-radius - 1);
 }
 
-/* Within heading, strip any `h*` tag of it's default margins for spacing.
-.panel-title {
+/* Within heading, strip any `h*` tag of it's default margins for spacing. */
+.Panel-title {
     margin-top: 0;
     margin-bottom: 0;
     font-size: ceil(($font-size-base * 1.125));
@@ -107,62 +107,67 @@
     }
 }
 
-/* Optional footer (stays gray in every modifier class)
-.panel-footer {
+/* Optional footer (stays gray in every modifier class) */
+.Panel-footer {
     padding: 10px 15px;
     background-color: $panel-footer-bg;
     border-top: 1px solid $panel-inner-border;
-    .border-bottom-radius($panel-border-radius - 1);
+    @include border-bottom-radius($panel-border-radius - 1);
 }
 
 
 /* Collapsable panels (aka, accordion)
-/*
-/* Wrap a series of panels in `.panel-group` to turn them into an accordion with
-/* the help of our collapse JavaScript plugin.
+   ========================================================================== */
+/* Wrap a series of panels in `.Panel-group` to turn them into an accordion with the help of our collapse JavaScript plugin. */
 
-.panel-group {
-    /* Tighten up margin so it's only between panels
-    .panel {
+.Panel-group {
+    /* Tighten up margin so it's only between panels */
+    .Panel {
         margin-bottom: 0;
         border-radius: $panel-border-radius;
-        overflow: hidden; /* crop contents when collapsed
-        + .panel {
+        overflow: hidden; /* crop contents when collapsed */
+        + .Panel {
             margin-top: 5px;
         }
     }
 
-    .panel-heading {
+    .Panel-heading {
         border-bottom: 0;
-        + .panel-collapse .panel-body {
+        + .Panel-collapse .Panel-body {
             border-top: 1px solid $panel-inner-border;
         }
     }
-    .panel-footer {
+
+    .Panel-footer {
         border-top: 0;
-        + .panel-collapse .panel-body {
+        + .Panel-collapse .Panel-body {
             border-bottom: 1px solid $panel-inner-border;
         }
     }
 }
 
 
-/* Contextual variations
-.panel-default {
-    @include PanelVariant($panel-default-border; $panel-default-text; $panel-default-heading-bg; $panel-default-border);
+/* Contextual variations */
+.Panel-default {
+    @include PanelVariant($panel-default-border, $panel-default-text, $panel-default-heading-bg, $panel-default-border);
 }
-.panel-primary {
-    @include PanelVariant($panel-primary-border; $panel-primary-text; $panel-primary-heading-bg; $panel-primary-border);
+
+.Panel-primary {
+    @include PanelVariant($panel-primary-border, $panel-primary-text, $panel-primary-heading-bg, $panel-primary-border);
 }
-.panel-success {
-    @include PanelVariant($panel-success-border; $panel-success-text; $panel-success-heading-bg; $panel-success-border);
+
+.Panel-success {
+    @include PanelVariant($panel-success-border, $panel-success-text, $panel-success-heading-bg, $panel-success-border);
 }
-.panel-warning {
-    @include PanelVariant($panel-warning-border; $panel-warning-text; $panel-warning-heading-bg; $panel-warning-border);
+
+.Panel-warning {
+    @include PanelVariant($panel-warning-border, $panel-warning-text, $panel-warning-heading-bg, $panel-warning-border);
 }
-.panel-danger {
-    @include PanelVariant($panel-danger-border; $panel-danger-text; $panel-danger-heading-bg; $panel-danger-border);
+
+.Panel-danger {
+    @include PanelVariant($panel-danger-border, $panel-danger-text, $panel-danger-heading-bg, $panel-danger-border);
 }
-.panel-info {
-    @include PanelVariant($panel-info-border; $panel-info-text; $panel-info-heading-bg; $panel-info-border);
+
+.Panel-info {
+    @include PanelVariant($panel-info-border, $panel-info-text, $panel-info-heading-bg, $panel-info-border);
 }
