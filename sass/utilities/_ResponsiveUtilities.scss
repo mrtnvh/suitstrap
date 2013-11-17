@@ -1,219 +1,220 @@
-/*
-/* Responsive: Utility classes
-/* --------------------------------------------------
+/* ==========================================================================
+   Responsive: Utility classes
+   ========================================================================== */
 
-
-/* IE10 in Windows (Phone) 8
-/*
-/* Support for responsive views via media queries is kind of borked in IE10, for
-/* Surface/desktop in split view and for Windows Phone 8. This particular fix
-/* must be accompanied by a snippet of JavaScript to sniff the user agent and
-/* apply some conditional CSS to *only* the Surface/desktop Windows 8. Look at
-/* our Getting Started page for more information on this bug.
-/*
-/* For more information, see the following:
-/*
-/* Issue: https://github.com/twbs/bootstrap/issues/10497
-/* Docs: http://getbootstrap.com/getting-started/#browsers
-/* Source: http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+/**
+ * IE10 in Windows (Phone) 8
+ *
+ * Support for responsive views via media queries is kind of borked in IE10, for
+ * Surface/desktop in split view and for Windows Phone 8. This particular fix
+ * must be accompanied by a snippet of JavaScript to sniff the user agent and
+ * apply some conditional CSS to *only* the Surface/desktop Windows 8. Look at
+ * our Getting Started page for more information on this bug.
+ *
+ * For more information, see the following:
+ *
+ * Issue: https://github.com/twbs/bootstrap/issues/10497
+ * Docs: http://getbootstrap.com/getting-started/#browsers
+ * Source: http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+ */
 
 $-ms-viewport {
     width: device-width;
 }
 
+/**
+ * Hide from screenreaders and browsers
+ * Credit: HTML5 Boilerplate
+ */
 
-/* Hide from screenreaders and browsers
-/*
-/* Credit: HTML5 Boilerplate
-
-.hidden {
+.u-hidden {
     display: none !important;
     visibility: hidden !important;
 }
 
 
-/* Visibility utilities
+/* Visibility utilities */
 
-.visible-xs {
+.u-visible--extraSmall {
     @include ResponsiveInvisibility();
-    @media (max-width: $screen-xs-max) {
+    @media (max-width: $screen--extraSmall-max) {
         @include ResponsiveVisibility();
     }
-    &.visible-sm {
-        @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    &.u-visible--small {
+        @media (min-width: $screen--small-min) and (max-width: $screen--small-max) {
             @include ResponsiveVisibility();
         }
     }
-    &.visible-md {
-        @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    &.u-visible--medium {
+        @media (min-width: $screen--medium-min) and (max-width: $screen--medium-max) {
             @include ResponsiveVisibility();
         }
     }
-    &.visible-lg {
-        @media (min-width: $screen-lg-min) {
+    &.u-visible--large {
+        @media (min-width: $screen--large-min) {
             @include ResponsiveVisibility();
         }
     }
 }
-.visible-sm {
+.u-visible--small {
     @include ResponsiveInvisibility();
-    &.visible-xs {
-        @media (max-width: $screen-xs-max) {
+    &.u-visible--extraSmall {
+        @media (max-width: $screen--extraSmall-max) {
             @include ResponsiveVisibility();
         }
     }
-    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    @media (min-width: $screen--small-min) and (max-width: $screen--small-max) {
         @include ResponsiveVisibility();
     }
-    &.visible-md {
-        @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    &.u-visible--medium {
+        @media (min-width: $screen--medium-min) and (max-width: $screen--medium-max) {
             @include ResponsiveVisibility();
         }
     }
-    &.visible-lg {
-        @media (min-width: $screen-lg-min) {
+    &.u-visible--large {
+        @media (min-width: $screen--large-min) {
             @include ResponsiveVisibility();
         }
     }
 }
-.visible-md {
+.u-visible--medium {
     @include ResponsiveInvisibility();
-    &.visible-xs {
-        @media (max-width: $screen-xs-max) {
+    &.u-visible--extraSmall {
+        @media (max-width: $screen--extraSmall-max) {
             @include ResponsiveVisibility();
         }
     }
-    &.visible-sm {
-        @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    &.u-visible--small {
+        @media (min-width: $screen--small-min) and (max-width: $screen--small-max) {
             @include ResponsiveVisibility();
         }
     }
-    @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    @media (min-width: $screen--medium-min) and (max-width: $screen--medium-max) {
         @include ResponsiveVisibility();
     }
-    &.visible-lg {
-        @media (min-width: $screen-lg-min) {
+    &.u-visible--large {
+        @media (min-width: $screen--large-min) {
             @include ResponsiveVisibility();
         }
     }
 }
-.visible-lg {
+.u-visible--large {
     @include ResponsiveInvisibility();
-    &.visible-xs {
-        @media (max-width: $screen-xs-max) {
+    &.u-visible--extraSmall {
+        @media (max-width: $screen--extraSmall-max) {
             @include ResponsiveVisibility();
         }
     }
-    &.visible-sm {
-        @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    &.u-visible--small {
+        @media (min-width: $screen--small-min) and (max-width: $screen--small-max) {
             @include ResponsiveVisibility();
         }
     }
-    &.visible-md {
-        @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    &.u-visible--medium {
+        @media (min-width: $screen--medium-min) and (max-width: $screen--medium-max) {
             @include ResponsiveVisibility();
         }
     }
-    @media (min-width: $screen-lg-min) {
+    @media (min-width: $screen--large-min) {
         @include ResponsiveVisibility();
-    }
-}
-
-.hidden-xs {
-    @include ResponsiveVisibility();
-    @media (max-width: $screen-xs-max) {
-        @include ResponsiveInvisibility();
-    }
-    &.hidden-sm {
-        @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-            @include ResponsiveInvisibility();
-        }
-    }
-    &.hidden-md {
-        @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-            @include ResponsiveInvisibility();
-        }
-    }
-    &.hidden-lg {
-        @media (min-width: $screen-lg-min) {
-            @include ResponsiveInvisibility();
-        }
-    }
-}
-.hidden-sm {
-    @include ResponsiveVisibility();
-    &.hidden-xs {
-        @media (max-width: $screen-xs-max) {
-            @include ResponsiveInvisibility();
-        }
-    }
-    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-        @include ResponsiveInvisibility();
-    }
-    &.hidden-md {
-        @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-            @include ResponsiveInvisibility();
-        }
-    }
-    &.hidden-lg {
-        @media (min-width: $screen-lg-min) {
-            @include ResponsiveInvisibility();
-        }
-    }
-}
-.hidden-md {
-    @include ResponsiveVisibility();
-    &.hidden-xs {
-        @media (max-width: $screen-xs-max) {
-            @include ResponsiveInvisibility();
-        }
-    }
-    &.hidden-sm {
-        @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-            @include ResponsiveInvisibility();
-        }
-    }
-    @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-        @include ResponsiveInvisibility();
-    }
-    &.hidden-lg {
-        @media (min-width: $screen-lg-min) {
-            @include ResponsiveInvisibility();
-        }
-    }
-}
-.hidden-lg {
-    @include ResponsiveVisibility();
-    &.hidden-xs {
-        @media (max-width: $screen-xs-max) {
-            @include ResponsiveInvisibility();
-        }
-    }
-    &.hidden-sm {
-        @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-            @include ResponsiveInvisibility();
-        }
-    }
-    &.hidden-md {
-        @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-            @include ResponsiveInvisibility();
-        }
-    }
-    @media (min-width: $screen-lg-min) {
-        @include ResponsiveInvisibility();
     }
 }
 
-/* Print utilities
-.visible-print {
+.u-hidden--extraSmall {
+    @include ResponsiveVisibility();
+    @media (max-width: $screen--extraSmall-max) {
+        @include ResponsiveInvisibility();
+    }
+    &.u-hidden--small {
+        @media (min-width: $screen--small-min) and (max-width: $screen--small-max) {
+            @include ResponsiveInvisibility();
+        }
+    }
+    &.u-hidden--medium {
+        @media (min-width: $screen--medium-min) and (max-width: $screen--medium-max) {
+            @include ResponsiveInvisibility();
+        }
+    }
+    &.u-hidden--large {
+        @media (min-width: $screen--large-min) {
+            @include ResponsiveInvisibility();
+        }
+    }
+}
+.u-hidden--small {
+    @include ResponsiveVisibility();
+    &.u-hidden--extraSmall {
+        @media (max-width: $screen--extraSmall-max) {
+            @include ResponsiveInvisibility();
+        }
+    }
+    @media (min-width: $screen--small-min) and (max-width: $screen--small-max) {
+        @include ResponsiveInvisibility();
+    }
+    &.u-hidden--medium {
+        @media (min-width: $screen--medium-min) and (max-width: $screen--medium-max) {
+            @include ResponsiveInvisibility();
+        }
+    }
+    &.u-hidden--large {
+        @media (min-width: $screen--large-min) {
+            @include ResponsiveInvisibility();
+        }
+    }
+}
+.u-hidden--medium {
+    @include ResponsiveVisibility();
+    &.u-hidden--extraSmall {
+        @media (max-width: $screen--extraSmall-max) {
+            @include ResponsiveInvisibility();
+        }
+    }
+    &.u-hidden--small {
+        @media (min-width: $screen--small-min) and (max-width: $screen--small-max) {
+            @include ResponsiveInvisibility();
+        }
+    }
+    @media (min-width: $screen--medium-min) and (max-width: $screen--medium-max) {
+        @include ResponsiveInvisibility();
+    }
+    &.u-hidden--large {
+        @media (min-width: $screen--large-min) {
+            @include ResponsiveInvisibility();
+        }
+    }
+}
+.u-hidden--large {
+    @include ResponsiveVisibility();
+    &.u-hidden--extraSmall {
+        @media (max-width: $screen--extraSmall-max) {
+            @include ResponsiveInvisibility();
+        }
+    }
+    &.u-hidden--small {
+        @media (min-width: $screen--small-min) and (max-width: $screen--small-max) {
+            @include ResponsiveInvisibility();
+        }
+    }
+    &.u-hidden--medium {
+        @media (min-width: $screen--medium-min) and (max-width: $screen--medium-max) {
+            @include ResponsiveInvisibility();
+        }
+    }
+    @media (min-width: $screen--large-min) {
+        @include ResponsiveInvisibility();
+    }
+}
+
+/* Print utilities */
+.u-visible--print {
     @include ResponsiveInvisibility();
 }
 
 @media print {
-    .visible-print {
+    .u-visible--print {
         @include ResponsiveVisibility();
     }
-    .hidden-print {
+    .u-hidden--print {
         @include ResponsiveInvisibility();
     }
 }

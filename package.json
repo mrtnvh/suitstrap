@@ -1,30 +1,30 @@
 {
-		"name": "bootstrap compass"
+	"name": "Suitstrap"
 	, "description": "Sleek, intuitive, and powerful front-end framework for faster and easier web development. Now with SASS instead of LESS"
-	, "version": "3.0.0"
+	, "version": "0.1.0"
 	, "keywords": ["bootstrap", "css", "sass"]
 	, "homepage": ""
-	, "author": ""
+	, "author": "@vanhoofmaarten"
 	, "scripts": { "test": "grunt test" }
 	, "repository": {
-			"type": "git"
-		, "url": "https://github.com/vanhoofmaarten/bootstrap-compass.git"
+		"type": "git"
+		, "url": "https://github.com/vanhoofmaarten/suitstrap.git"
 	}
 	, "bugs": {
-			"url": "https://github.com/vanhoofmaarten/bootstrap-compass/issues"
+			"url": "https://github.com/vanhoofmaarten/suitstrap/issues"
 	}
 	, "licenses": [
 		{
-				"type": "Apache-2.0"
+			"type": "Apache-2.0"
 			, "url": "http://www.apache.org/licenses/LICENSE-2.0"
 		}
 	]
 	, "devDependencies": {
-			"btoa": "~1.1.1"
+		"btoa": "~1.1.1"
 		, "grunt": "~0.4.1"
 		, "grunt-contrib-clean": "~0.5.0"
-	    , "grunt-contrib-compass": "~0.6.0"
-   		, "grunt-contrib-concat": "~0.3.0"
+		, "grunt-contrib-compass": "~0.6.0"
+		, "grunt-contrib-concat": "~0.3.0"
 		, "grunt-contrib-connect": "~0.5.0"
 		, "grunt-contrib-copy": "~0.4.1"
 		, "grunt-contrib-imagemin": "~0.1.4"

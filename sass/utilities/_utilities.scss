@@ -1,16 +1,15 @@
-/*
-/* Utility classes
-/* --------------------------------------------------
-
+/* ==========================================================================
+   Utility classes
+   ========================================================================== */
 
 /* Floats
-/* -------------------------
+   ========================================================================== */
 
-.clearfix {
+.u-clearfix {
     @include MicroClearfix();
 }
-.center-block {
-    .CenterBlock();
+.u-centerBlock {
+    @include CenterBlock();
 }
 .u-pull--right {
     float: right !important;
@@ -20,27 +19,29 @@
 }
 
 
-/* Toggling content
-/* -------------------------
 
-/* Note: Deprecated .hide in favor of .hidden or .sr-only (as appropriate) in v3.0.1
-.hide {
+/* Toggling content
+   ========================================================================== */
+
+/* Note: Deprecated .hide in favor of .hidden or .sr-only (as appropriate) in v3.0.1 */
+.u-hide {
     display: none !important;
 }
-.show {
+.u-show {
     display: block !important;
 }
-.invisible {
+.u-invisible {
     visibility: hidden;
 }
-.text-hide {
-    .TextHide();
+.u-textHide {
+    @include TextHide();
 }
+
 
 
 /* For Affix plugin
-/* -------------------------
+   ========================================================================== */
 
-.affix {
+.u-affix {
     position: fixed;
 }

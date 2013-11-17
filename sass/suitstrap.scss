@@ -1,12 +1,13 @@
 /**
  * Bootstrap 3 with Compass SASS instead of LESS
+ * and using the SUIT naming convention & code-style.
  *
- * Naming convention & code-style: https://github.com/suitcss/suit/blob/master/doc/README.md
+ *
  * Inspiration:
  *	- SMACSS
  *  - BEM methodology
  *	- inuitcss.com
- *  - SUIT framework
+ *  - SUIT framework - https://github.com/suitcss/suit/blob/master/doc/README.md
  *
  * TODO
  *	- Import paths
@@ -14,12 +15,14 @@
  * 	- Seperate type.
  *  - Add @extend(s) in modules
  *  - Add extra variables to make customizabeler from out variables.scss
-*/
+ *  - Check @at-root
+ *  - Excerpt components? Eg: https://github.com/suitcss/suit#example
+ */
 
 /* Core variables and mixins
    ========================================================================== */
-@import "_variables.scss";                        /* Done */
-@import "_mixins.scss";                           /* Done */
+@import "_variables.scss";                        /* Compiled */
+@import "mixins/_mixins.scss";                    /* Done */
 
 /* Reset
    ========================================================================== */
@@ -77,12 +80,12 @@
 
 /* Components w/ JavaScript
    ========================================================================== */
-@import "components/Modals.scss";    /* Done */
-@import "components/Tooltip.scss";
-@import "components/Popovers.scss";
-@import "components/Carousel.scss";
+@import "components/Modals.scss";                 /* Done */
+@import "components/Tooltip.scss";                /* Include @at-root #{&} */
+@import "components/Popovers.scss";               /* Include @at-root #{&} */
+@import "components/Carousel.scss";               /* Include @at-root #{&} */
 
 /* Utilities
    ========================================================================== */
-@import "utilities/Utilities.scss";
-@import "utilities/ResponsiveUtilities.scss";
+@import "utilities/Utilities.scss";               /* Done */
+@import "utilities/ResponsiveUtilities.scss";     /* Done */
