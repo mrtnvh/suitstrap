@@ -33,6 +33,15 @@
 		}
 	}
 
+	/* Float utilities */
+	@mixin PullRight() {
+		float: right !important;
+	}
+
+	@mixin PullLeft() {
+		float: left !important;
+	}
+
 	/* Webkit-style focus */
 	@mixin TabFocus() {
 		/* Default */
@@ -115,7 +124,7 @@
 		background-image: -moz-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); /* FF 3.6+ */
 		background-image:linear-gradient(to right, $start-color $start-percent, $end-color $end-percent); /* Standard, IE10 */
 		background-repeat: repeat-x;
-		filter: e("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb($start-color),argb($end-color)); /* IE9 and down */
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1),argb($start-color),argb($end-color); /* IE9 and down */
 	}
 
 	/* Vertical gradient, from top to bottom */
@@ -128,7 +137,7 @@
 		background-image:-moz-linear-gradient(top, $start-color $start-percent, $end-color $end-percent); /* FF 3.6+ */
 		background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent); /* Standard, IE10 */
 		background-repeat: repeat-x;
-		filter: e("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb($start-color),argb($end-color)); /* IE9 and down */
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0) ,argb($start-color),argb($end-color); /* IE9 and down */
 	}
 
 	@mixin Gradient--directional($start-color: #555, $end-color: #333, $deg: 45deg) {
@@ -144,7 +153,7 @@
 		background-image: -moz-linear-gradient(left, $start-color, $mid-color $color-stop, $end-color);
 		background-image: linear-gradient(to right, $start-color, $mid-color $color-stop, $end-color);
 		background-repeat: no-repeat;
-		filter: e("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb($start-color),argb($end-color)); /* IE9 and down, gets no color-stop at all for proper fallback */
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1),argb($start-color),argb($end-color); /* IE9 and down, gets no color-stop at all for proper fallback */
 	}
 
 	@mixin Gradient--vertical-three-colors($start-color: #00b3ee, $mid-color: #7a43b6, $color-stop: 50%, $end-color: #c3325f) {
@@ -153,7 +162,7 @@
 		background-image: -moz-linear-gradient(top, $start-color, $mid-color $color-stop, $end-color);
 		background-image: linear-gradient($start-color, $mid-color $color-stop, $end-color);
 		background-repeat: no-repeat;
-		filter: e("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb($start-color),argb($end-color)); /* IE9 and down, gets no color-stop at all for proper fallback */
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0),argb($start-color),argb($end-color); /* IE9 and down, gets no color-stop at all for proper fallback */
 	}
 
 	@mixin Gradient--radial($inner-color: #555, $outer-color: #333) {
@@ -174,7 +183,7 @@
 	/* Reset filters for IE */
 	/* When you need to remove a gradient background, do not forget to use this to reset the IE filter for IE9 and below. */
 	@mixin ResetFilter() {
-		filter: e("progid:DXImageTransform.Microsoft.gradient(enabled = false)");
+		filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 	}
 
 /* IMAGES
@@ -198,7 +207,7 @@
 
 	/* Responsive image */
 	/* Keep images from scaling beyond the width of their parents. */
-	@mixin ImgResponsive($display: block) {
+	@mixin ImageResponsive($display: block) {
 		display: $display;
 		max-width: 100%; /* Part 1: Set a maximum relative to the parent */
 		height: auto; /* Part 2: Scale the height according to the width, otherwise you get stretching */
@@ -430,7 +439,7 @@
 		padding-right: ($gutter / 2);
 
 		/* Calculate width based on number of columns available */
-		@media (min-width: $screen-sm-min) {
+		@media (min-width: $screen--small-min) {
 			float: left;
 			width: percentage(($columns / $grid-columns));
 		}
@@ -438,17 +447,17 @@
 
 	/* Generate the small column offsets */
 	@mixin MakeSMColumnOffset($columns) {
-		@media (min-width: $screen-sm-min) {
+		@media (min-width: $screen--small-min) {
 			margin-left: percentage(($columns / $grid-columns));
 		}
 	}
 	@mixin MakeSMColumnPush($columns) {
-		@media (min-width: $screen-sm-min) {
+		@media (min-width: $screen--small-min) {
 			left: percentage(($columns / $grid-columns));
 		}
 	}
 	@mixin MakeSMColumnPull($columns) {
-		@media (min-width: $screen-sm-min) {
+		@media (min-width: $screen--small-min) {
 			right: percentage(($columns / $grid-columns));
 		}
 	}
@@ -463,7 +472,7 @@
 		padding-right: ($gutter / 2);
 
 		/* Calculate width based on number of columns available */
-		@media (min-width: $screen-md-min) {
+		@media (min-width: $screen--medium-min) {
 			float: left;
 			width: percentage(($columns / $grid-columns));
 		}
@@ -471,17 +480,17 @@
 
 	/* Generate the medium column offsets */
 	@mixin MakeMDColumnOffset($columns) {
-		@media (min-width: $screen-md-min) {
+		@media (min-width: $screen--medium-min) {
 			margin-left: percentage(($columns / $grid-columns));
 		}
 	}
 	@mixin MakeMDColumnPush($columns) {
-		@media (min-width: $screen-md) {
+		@media (min-width: $screen--medium) {
 			left: percentage(($columns / $grid-columns));
 		}
 	}
 	@mixin MakeMDColumnPull($columns) {
-		@media (min-width: $screen-md-min) {
+		@media (min-width: $screen--medium-min) {
 			right: percentage(($columns / $grid-columns));
 		}
 	}
@@ -496,7 +505,7 @@
 		padding-right: ($gutter / 2);
 
 		/* Calculate width based on number of columns available */
-		@media (min-width: $screen-lg-min) {
+		@media (min-width: $screen--large-min) {
 			float: left;
 			width: percentage(($columns / $grid-columns));
 		}
@@ -504,17 +513,17 @@
 
 	/* Generate the large column offsets */
 	@mixin MakeLGColumnOffset($columns) {
-		@media (min-width: $screen-lg-min) {
+		@media (min-width: $screen--large-min) {
 			margin-left: percentage(($columns / $grid-columns));
 		}
 	}
 	@mixin MakeLGColumnPush($columns) {
-		@media (min-width: $screen-lg-min) {
+		@media (min-width: $screen--large-min) {
 			left: percentage(($columns / $grid-columns));
 		}
 	}
 	@mixin MakeLGColumnPull($columns) {
-		@media (min-width: $screen-lg-min) {
+		@media (min-width: $screen--large-min) {
 			right: percentage(($columns / $grid-columns));
 		}
 	}

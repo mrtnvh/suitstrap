@@ -1,13 +1,13 @@
-/*
-/* Basic print styles
-/* --------------------------------------------------
-/* Source: https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css
+/* ==========================================================================
+   Basic print styles
+   Source: https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css
+   ========================================================================== */
 
 @media print {
 
     * {
         text-shadow: none !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
         background: transparent !important;
         box-shadow: none !important;
     }
@@ -25,7 +25,7 @@
         content: " (" attr(title) ")";
     }
 
-    /* Don't show links for images, or javascript/internal links
+    /* Don't show links for images, or javascript/internal links */
     .ir a:after,
     a[href^="javascript:"]:after,
     a[href^="#"]:after {
@@ -39,7 +39,7 @@
     }
 
     thead {
-        display: table-header-group; /* h5bp.com/t
+        display: table-header-group; /* h5bp.com/t */
     }
 
     tr,
@@ -51,7 +51,7 @@
         max-width: 100% !important;
     }
 
-    $page {
+    @page {
         margin: 2cm .5cm;
     }
 
@@ -67,7 +67,7 @@
         page-break-after: avoid;
     }
 
-    /* Bootstrap components
+    /* Bootstrap components */
     .Navbar {
         display: none;
     }

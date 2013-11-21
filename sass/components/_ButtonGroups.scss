@@ -129,9 +129,18 @@
 /* Remix the default button sizing classes into new ones for easier manipulation.
  */
 
-.ButtonGroup--extraSmall > .Button { @extend .Button--extraSmall(); }
-.ButtonGroup--small > .Button { @extend .Button--small(); }
-.ButtonGroup--large > .Button { @extend .Button--large(); }
+.ButtonGroup--extraSmall > .Button {
+	@extend .Button--extraSmall;
+}
+
+.ButtonGroup--small > .Button {
+	@extend .Button--small;
+}
+
+.ButtonGroup--large > .Button {
+	@extend .Button--large;
+}
+
 
 
 /* Split button dropdowns

@@ -165,9 +165,9 @@ table {
 
 /* Generate the contextual variants
    ========================================================================== */
-@include TableRowVariant(success; $state-success-bg; $state-success-border);
-@include TableRowVariant(danger; $state-danger-bg; $state-danger-border);
-@include TableRowVariant(warning; $state-warning-bg; $state-warning-border);
+@include TableRowVariant(success, $state-success-bg, $state-success-border);
+@include TableRowVariant(danger, $state-danger-bg, $state-danger-border);
+@include TableRowVariant(warning, $state-warning-bg, $state-warning-border);
 
 
 /* Responsive tables
@@ -176,7 +176,7 @@ table {
    by enabling horizontal scrolling. Only applies <768px.
    Everything above that will display normally. */
 
-@media (max-width: $screen-sm-min) {
+@media (max-width: $screen--small-min) {
 	.Table--responsive {
 		width: 100%;
 		margin-bottom: 15px;

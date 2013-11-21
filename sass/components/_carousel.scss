@@ -21,7 +21,7 @@
 		/* Account for jankitude on images */
 		> img,
 		> a > img {
-			@include ImgResponsive();
+			@include ImageResponsive();
 			line-height: 1;
 		}
 	}
@@ -58,8 +58,9 @@
 	> .isActive.right {
 		left: 100%;
 	}
-
 }
+
+
 
 /* Left/right controls for nav
    ========================================================================== */
@@ -70,7 +71,7 @@
 	left: 0;
 	bottom: 0;
 	width: $carousel-control-width;
-	.opacity($carousel-control-opacity);
+	@include opacity($carousel-control-opacity);
 	font-size: $carousel-control-font-size;
 	color: $carousel-control-color;
 	text-align: center;
@@ -82,6 +83,7 @@
 	&.left {
 		// #gradient > .horizontal($start-color: rgba(0,0,0,.5); $end-color: rgba(0,0,0,.0001));
 	}
+
 	&.right {
 		left: auto;
 		right: 0;
@@ -93,7 +95,7 @@
 	&:focus {
 		color: $carousel-control-color;
 		text-decoration: none;
-		.opacity(.9);
+		@include opacity(.9);
 	}
 
 	/* Toggles */
@@ -106,14 +108,17 @@
 		z-index: 5;
 		display: inline-block;
 	}
+
 	.Icon--previous,
 	.Glyphicon--chevron-left {
 		left: 50%;
 	}
+
 	.Icon--next,
 	.Glyphicon--chevron-right {
 		right: 50%;
 	}
+
 	.Icon--previous,
 	.Icon--next {
 		width:    20px;
@@ -194,7 +199,7 @@
 
 
 /* Scale up controls for tablets and up */
-@media screen and (min-width: $screen-sm-min) {
+@media screen and (min-width: $screen--small-min) {
 
 	/* Scale up the controls a smidge */
 	.Carousel-control {

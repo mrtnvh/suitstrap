@@ -11,15 +11,15 @@ img {
 /* Responsive images (ensure images don't scale beyond their parents)
    ========================================================================== */
 
-.ImgResponsive {
-	@include ImgResponsive();
+.Image--responsive {
+	@include ImageResponsive();
 }
 
 
 
 /* Rounded corners
    ========================================================================== */
-.ImgRounded {
+.Image--rounded {
 	border-radius: $border-radius-large;
 }
 
@@ -29,7 +29,7 @@ img {
    Heads up! This is mixin-ed into _Thumbnails.scss for `.Thumbnail`.
    ========================================================================== */
 
-.ImgThumbnail {
+.Image--thumbnail {
 	padding: $thumbnail-padding;
 	line-height: $line-height-base;
 	background-color: $thumbnail-bg;
@@ -38,7 +38,7 @@ img {
 	@include transition(all .2s ease-in-out);
 
 	/* Keep them at most 100% wide */
-	@include ImgResponsive(inline-block);
+	@include ImageResponsive(inline-block);
 }
 
 
@@ -46,6 +46,6 @@ img {
 /* Perfect circle
    ========================================================================== */
 
-.ImgCircle {
+.Image--circle {
 	border-radius: 50%; /* set radius in percents */
 }

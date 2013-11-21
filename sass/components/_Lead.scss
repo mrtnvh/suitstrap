@@ -8,7 +8,7 @@
 	font-weight: 200;
 	line-height: 1.4;
 
-	@media (min-width: @screen-sm-min) {
+	@media (min-width: $screen--small-min) {
 		font-size: ($font-size-base * 1.5);
 	}
 }

@@ -1,6 +1,6 @@
 /* ==========================================================================
    Navbar
-
+   ========================================================================== */
 
 
 /* Wrapper and base class
@@ -149,11 +149,12 @@
 
 .Navbar--fixedBottom {
 	bottom: 0;
-	margin-bottom: 0; /* override .Navbar defaults
+	margin-bottom: 0; /* override .Navbar defaults */
 }
 
 
-/* Brand/project name */
+/* Brand/project name
+   ========================================================================== */
 
 .Navbar-brand {
 	float: left;
@@ -220,7 +221,7 @@
 		line-height: $line-height-computed;
 	}
 
-	@media (max-width: $screen-xs-max) {
+	@media (max-width: $screen--extraSmall-max) {
 		/* Dropdowns get custom display when collapsed */
 		.isOpen .Dropdown-menu {
 			position: static;
@@ -273,8 +274,13 @@
  */
 
 @media (min-width: $grid-float-breakpoint) {
-	.Navbar-left { .u-pull--left(); }
-	.Navbar-right { .u-pull--right(); }
+	.Navbar-left {
+		@include PullLeft();
+	}
+
+	.Navbar-right {
+		@include PullRight();
+	}
 }
 
 
@@ -292,10 +298,10 @@
 	@include box-shadow($shadow);
 
 	/* Mixin behavior for optimum display */
-	.Form--inline();
+	@extend .Form--inline;
 
 	.Form-group {
-		@media (max-width: $screen-xs-max) {
+		@media (max-width: $screen--extraSmall-max) {
 			margin-bottom: 5px;
 		}
 	}
@@ -453,7 +459,7 @@
 		}
 
 
-		@media (max-width: $screen-xs-max) {
+		@media (max-width: $screen--extraSmall-max) {
 			/* Dropdowns get custom display when collapsed */
 			.isOpen .Dropdown-menu {
 				> li > a {
@@ -592,7 +598,7 @@
 			}
 		}
 
-		@media (max-width: $screen-xs-max) {
+		@media (max-width: $screen--extraSmall-max) {
 			/* Dropdowns get custom display */
 			.isOpen .Dropdown-menu {
 				> .Dropdown-header {

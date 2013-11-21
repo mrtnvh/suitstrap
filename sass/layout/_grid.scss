@@ -96,6 +96,7 @@
  .Col--extraSmall-11 {
 	float: left;
  }
+
  .Col--extraSmall-1    { width: percentage((1 / $grid-columns)); }
  .Col--extraSmall-2    { width: percentage((2 / $grid-columns)); }
  .Col--extraSmall-3    { width: percentage((3 / $grid-columns)); }
@@ -119,9 +120,9 @@
  * it's full-width.
  */
 
- @media (min-width: $screen-small-min) {
+ @media (min-width: $screen--small-min) {
 	.Container {
-		width: $container-SM;
+		width: $container--small;
 	}
 
 	.Col--small-1,
@@ -198,9 +199,9 @@
  * it's full-width.
  */
 
- @media (min-width: $screen-medium-min) {
+ @media (min-width: $screen--medium-min) {
 	.Container {
-		width: $container-medium;
+		width: $container--medium;
 	}
 	.Col--medium-1,
 	.Col--medium-2,
@@ -280,9 +281,9 @@
  * it's full-width.
  */
 
- @media (min-width: $screen-large-min) {
+ @media (min-width: $screen--large-min) {
 	.Container {
-		width: $container-large;
+		width: $container--large;
 	}
 
 	.Col--large-1,

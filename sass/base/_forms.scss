@@ -242,11 +242,11 @@ input[type="checkbox"],
 
 /* Form control sizing */
 .InputSm {
-	@include inputSize($input-height-small, $padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $border-radius-small);
+	@include InputSize($input-height-small, $padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $border-radius-small);
 }
 
 .InputLg {
-	@include inputSize($input-height-large, $padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large);
+	@include InputSize($input-height-large, $padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large);
 }
 
 /**
@@ -256,15 +256,15 @@ input[type="checkbox"],
 
 /* Warning */
 .is-Warning {
-	.Form-controlValidation($state-warning-text; $state-warning-text; $state-warning-bg);
+	@include FormControlValidation($state-warning-text, $state-warning-text, $state-warning-bg);
 }
 /* Error */
 .is-Error {
-	.Form-controlValidation($state-danger-text; $state-danger-text; $state-danger-bg);
+	@include FormControlValidation($state-danger-text, $state-danger-text, $state-danger-bg);
 }
 /* Success */
 .is-Success {
-	.Form-controlValidation($state-success-text; $state-success-text; $state-success-bg);
+	@include FormControlValidation($state-success-text, $state-success-text, $state-success-bg);
 }
 
 /**
@@ -308,7 +308,7 @@ input[type="checkbox"],
 .Form--inline {
 
 	/* Kick in the inline */
-	@media (min-width: $screen-sm) {
+	@media (min-width: $screen--small) {
 		/* Inline-block all the things for "inline" */
 		.Form-group    {
 			display: inline-block;
@@ -366,7 +366,7 @@ input[type="checkbox"],
 	}
 
 	/* Only right align form labels here when the columns stop stacking */
-	@media (min-width: $screen-sm-min) {
+	@media (min-width: $screen--small-min) {
 		.ControlLabel {
 			text-align: right;
 		}

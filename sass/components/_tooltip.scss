@@ -11,13 +11,13 @@
 	visibility: visible;
 	font-size: $font-size-small;
 	line-height: 1.4;
-	.opacity(0);
+	@include opacity(0);
 
-	& @at-root #{&}--in         { .opacity(.9); }
-	& @at-root #{&}--top        { margin-top:    -3px; padding: $tooltip-arrow-width 0; }
-	& @at-root #{&}--right    { margin-left:    3px; padding: 0 $tooltip-arrow-width; }
-	& @at-root #{&}--bottom { margin-top:     3px; padding: $tooltip-arrow-width 0; }
-	& @at-root #{&}--left     { margin-left: -3px; padding: 0 $tooltip-arrow-width; }
+	@at-root #{&}--in     { @include opacity(.9); }
+	@at-root #{&}--top    { margin-top: -3px; padding: $tooltip-arrow-width 0; }
+	@at-root #{&}--right  { margin-left: 3px; padding: 0 $tooltip-arrow-width; }
+	@at-root #{&}--bottom { margin-top: 3px; padding: $tooltip-arrow-width 0; }
+	@at-root #{&}--left   { margin-left: -3px; padding: 0 $tooltip-arrow-width; }
 }
 
 /* Wrapper for the tooltip content */

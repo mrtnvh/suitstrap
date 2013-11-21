@@ -5,12 +5,12 @@
 
 /* Mixin and adjust the regular image class */
 .Thumbnail {
-    .img-thumbnail();
+    @extend .Image--thumbnail;
     display: block; /* Override the inline-block from `.img-thumbnail` */
     margin-bottom: $line-height-computed;
 
     > img {
-        @include ImgResponsive();
+        @include ImageResponsive();
     }
 }
 

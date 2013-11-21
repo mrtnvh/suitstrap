@@ -67,57 +67,49 @@
 		line-height: $line-height-base;
 		color: $dropdown-link-color;
 		white-space: nowrap; /* prevent links from randomly breaking onto new lines */
+
+		/* Hover state */
+		&:hover,
+		&:focus {
+			text-decoration: none;
+			color: $dropdown-link-hover-color;
+			background-color: $dropdown-link-hover-bg;
+		}
+	}
+
+	/* Active state */
+	> .isActive > a {
+		&,
+		&:hover,
+		&:focus {
+			color: $dropdown-link-active-color;
+			text-decoration: none;
+			outline: 0;
+			background-color: $dropdown-link-active-bg;
+		}
+	}
+
+	/* Disabled state Gray out text and ensure the hover/focus state remains gray */
+	> .isDisabled > a {
+		&,
+		&:hover,
+		&:focus {
+			color: $dropdown-link-disabled-color;
+		}
+
+		/* Nuke hover/focus effects */
+		&:hover,
+		&:focus {
+			text-decoration: none;
+			background-color: transparent;
+			background-image: none; /* Remove CSS gradient */
+			@include ResetFilter();
+			cursor: not-allowed;
+		}
 	}
 }
 
-/* Hover/Focus state
-   ========================================================================== */
-.Dropdown-menu > li > a {
-	&:hover,
-	&:focus {
-		text-decoration: none;
-		color: $dropdown-link-hover-color;
-		background-color: $dropdown-link-hover-bg;
-	}
-}
 
-/* Active state
-   ========================================================================== */
-.Dropdown-menu > .isActive > a {
-	&,
-	&:hover,
-	&:focus {
-		color: $dropdown-link-active-color;
-		text-decoration: none;
-		outline: 0;
-		background-color: $dropdown-link-active-bg;
-	}
-}
-
-/* Disabled state
-   ========================================================================== */
-/* Gray out text and ensure the hover/focus state remains gray */
-
-.Dropdown-menu > .isDisabled > a {
-	&,
-	&:hover,
-	&:focus {
-		color: $dropdown-link-disabled-color;
-	}
-}
-
-/* Nuke hover/focus effects
-   ========================================================================== */
-.Dropdown-menu > .isDisabled > a {
-	&:hover,
-	&:focus {
-		text-decoration: none;
-		background-color: transparent;
-		background-image: none; /* Remove CSS gradient */
-		@include ResetFilter();
-		cursor: not-allowed;
-	}
-}
 
 /* Open state for the dropdown
    ========================================================================== */
@@ -195,7 +187,9 @@
 @media (min-width: $grid-float-breakpoint) {
 	.NavbarRight {
 		.Dropdown-menu {
-			.u-pull--right > .Dropdown-menu();
+			.u-pull--right > * {
+				//@extend .Dropdown-menu;
+			}
 		}
 	}
 }

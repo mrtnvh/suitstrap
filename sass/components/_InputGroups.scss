@@ -33,14 +33,15 @@
 .InputGroup--large > .Form-control,
 .InputGroup--large > .InputGroup--addon,
 .InputGroup--large > .InputGroup--button > .Button {
-	@extend .Input--large();
+	@extend .Input--large;
 }
 
-.InputGroup--Small > .Form-control,
-.InputGroup--Small > .InputGroup--addon,
-.InputGroup--Small > .InputGroup--button > .Button {
-	@extend .Input--Small();
+.InputGroup--small > .Form-control,
+.InputGroup--small > .InputGroup--addon,
+.InputGroup--small > .InputGroup--button > .Button {
+	@extend .Input--small;
 }
+
 
 
 /* Display as table-cell
@@ -62,6 +63,8 @@
     vertical-align: middle; /* Match the inputs */
 }
 
+
+
 /* Text input groups
    ========================================================================== */
 .InputGroup--addon {
@@ -76,11 +79,12 @@
     border-radius: $border-radius-base;
 
     /* Sizing */
-    &.Input--Small {
-        padding: $padding--Smallall-vertical $padding--Smallall-horizontal;
-        font-size: $font-size--Smallall;
-        border-radius: $border-radius--Smallall;
+    &.Input--small {
+        padding: $padding-small-vertical $padding-small-horizontal;
+        font-size: $font-size-small;
+        border-radius: $border-radius-small;
     }
+
     &.Input--large {
         padding: $padding-large-vertical $padding-large-horizontal;
         font-size: $font-size-large;
@@ -102,9 +106,11 @@
 .InputGroup--button:last-child > .Button:not(:last-child):not(.Dropdown-toggle) {
     @include border-right-radius(0);
 }
+
 .InputGroup--addon:first-child {
     border-right: 0;
 }
+
 .InputGroup .Form-control:last-child,
 .InputGroup--addon:last-child,
 .InputGroup--button:last-child > .Button,
@@ -112,9 +118,12 @@
 .InputGroup--button:first-child > .Button:not(:first-child) {
     @include border-left-radius(0);
 }
+
 .InputGroup--addon:last-child {
     border-left: 0;
 }
+
+
 
 /* Button input groups
    ========================================================================== */
@@ -130,6 +139,7 @@
         margin-left: -1px;
     }
 }
+
 .InputGroup--button > .Button {
     position: relative;
     /* Jankily prevent input button groups from wrapping */

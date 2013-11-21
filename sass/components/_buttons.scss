@@ -25,7 +25,7 @@
 		$line-height-base,
 		$border-radius-base
 	);
-	@include UserSelect(none);
+	@include user-select(none);
 
 	&:focus {
 		@include TabFocus();
@@ -159,6 +159,7 @@
 		$border-radius-large
 	);
 }
+
 .Button--small,
 .Button--extraSmall {
 	/* line-height: ensure proper height of button next to small input */
@@ -170,6 +171,7 @@
 		$border-radius-small
 	);
 }
+
 .Button--extraSmall {
 	padding: 1px 5px;
 }

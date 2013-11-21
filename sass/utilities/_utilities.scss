@@ -6,16 +6,16 @@
    ========================================================================== */
 
 .u-clearfix {
-    @include MicroClearfix();
+	@include MicroClearfix();
 }
 .u-centerBlock {
-    @include CenterBlock();
+	@include CenterBlock();
 }
 .u-pull--right {
-    float: right !important;
+	@include PullRight();
 }
 .u-pull--left {
-    float: left !important;
+	@include PullLeft();
 }
 
 
@@ -25,16 +25,16 @@
 
 /* Note: Deprecated .hide in favor of .hidden or .sr-only (as appropriate) in v3.0.1 */
 .u-hide {
-    display: none !important;
+	display: none !important;
 }
 .u-show {
-    display: block !important;
+	display: block !important;
 }
 .u-invisible {
-    visibility: hidden;
+	visibility: hidden;
 }
 .u-textHide {
-    @include TextHide();
+	@include TextHide();
 }
 
 
@@ -43,5 +43,5 @@
    ========================================================================== */
 
 .u-affix {
-    position: fixed;
+	position: fixed;
 }
