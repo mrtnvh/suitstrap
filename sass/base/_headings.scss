@@ -44,3 +44,14 @@ h3, .u-h3 { font-size: $font-size-h3; }
 h4, .u-h4 { font-size: $font-size-h4; }
 h5, .u-h5 { font-size: $font-size-h5; }
 h6, .u-h6 { font-size: $font-size-h6; }
+
+
+
+/* PageHeader
+   ========================================================================== */
+
+.Page-header {
+	padding-bottom: (($line-height-computed / 2) - 1);
+	margin: ($line-height-computed * 2) 0 $line-height-computed;
+	border-bottom: 1px solid $page-header-border-color;
+}

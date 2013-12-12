@@ -7,15 +7,15 @@ permalink:        pretty
 
 # Server
 destination:      ./_gh_pages
-exclude:          [".editorconfig", ".gitignore", "bower.json", "composer.json", "CONTRIBUTING.md", "CNAME", "LICENSE", "Gruntfile.js", "package.json", "node_modules", "README.md", "less"]
+exclude:          [".editorconfig", ".gitignore", "bower.json", "composer.json", "CONTRIBUTING.md", "CNAME", "LICENSE", "Gruntfile.js", "package.json", "node_modules", "README.md", "less", "sass"]
 port:             9001
 
 # Custom vars
 current_version:  3.0.0
-repo:             https://github.com/twbs/bootstrap
+repo:             https://github.com/vanhoofmaarten/suitstrap
 
-download_source:  https://github.com/twbs/bootstrap/archive/v3.0.0.zip
-download_dist:    https://github.com/twbs/bootstrap/releases/download/v3.0.0/bootstrap-3.0.0-dist.zip
+# download_source:  https://github.com/twbs/bootstrap/archive/v3.0.0.zip
+# download_dist:    https://github.com/twbs/bootstrap/releases/download/v3.0.0/bootstrap-3.0.0-dist.zip
 
 blog:             http://blog.getbootstrap.com
 expo:             http://expo.getbootstrap.com

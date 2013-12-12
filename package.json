@@ -1,6 +1,6 @@
 {
 	"name": "Suitstrap"
-	, "description": "Sleek, intuitive, and powerful front-end framework for faster and easier web development. Now with SASS instead of LESS"
+	, "description": "Another Bootstrap fork aiming for a more modular and semantically framework. With the help, SUIT CSS, Sass, Compass."
 	, "version": "0.1.0"
 	, "keywords": ["bootstrap", "css", "sass"]
 	, "homepage": ""

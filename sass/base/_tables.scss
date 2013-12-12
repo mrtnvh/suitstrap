@@ -165,9 +165,9 @@ table {
 
 /* Generate the contextual variants
    ========================================================================== */
-@include TableRowVariant(success, $state-success-bg, $state-success-border);
-@include TableRowVariant(danger, $state-danger-bg, $state-danger-border);
-@include TableRowVariant(warning, $state-warning-bg, $state-warning-border);
+@include TableRowVariant(isSuccess, $state-success-bg, $state-success-border);
+@include TableRowVariant(isDanger, $state-danger-bg, $state-danger-border);
+@include TableRowVariant(isWarning, $state-warning-bg, $state-warning-border);
 
 
 /* Responsive tables

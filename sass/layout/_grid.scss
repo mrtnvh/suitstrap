@@ -177,17 +177,17 @@
 	.Col--small--pull-11 	{ right: percentage((11/ $grid-columns)); }
 
 	/* Offsets */
-	.Col--small-offset-1    { margin-left: percentage((1 / $grid-columns)); }
-	.Col--small-offset-2    { margin-left: percentage((2 / $grid-columns)); }
-	.Col--small-offset-3    { margin-left: percentage((3 / $grid-columns)); }
-	.Col--small-offset-4    { margin-left: percentage((4 / $grid-columns)); }
-	.Col--small-offset-5    { margin-left: percentage((5 / $grid-columns)); }
-	.Col--small-offset-6    { margin-left: percentage((6 / $grid-columns)); }
-	.Col--small-offset-7    { margin-left: percentage((7 / $grid-columns)); }
-	.Col--small-offset-8    { margin-left: percentage((8 / $grid-columns)); }
-	.Col--small-offset-9    { margin-left: percentage((9 / $grid-columns)); }
-	.Col--small-offset-10 	{ margin-left: percentage((10/ $grid-columns)); }
-	.Col--small-offset-11 	{ margin-left: percentage((11/ $grid-columns)); }
+	.Col--small--offset-1    { margin-left: percentage((1 / $grid-columns)); }
+	.Col--small--offset-2    { margin-left: percentage((2 / $grid-columns)); }
+	.Col--small--offset-3    { margin-left: percentage((3 / $grid-columns)); }
+	.Col--small--offset-4    { margin-left: percentage((4 / $grid-columns)); }
+	.Col--small--offset-5    { margin-left: percentage((5 / $grid-columns)); }
+	.Col--small--offset-6    { margin-left: percentage((6 / $grid-columns)); }
+	.Col--small--offset-7    { margin-left: percentage((7 / $grid-columns)); }
+	.Col--small--offset-8    { margin-left: percentage((8 / $grid-columns)); }
+	.Col--small--offset-9    { margin-left: percentage((9 / $grid-columns)); }
+	.Col--small--offset-10 	{ margin-left: percentage((10/ $grid-columns)); }
+	.Col--small--offset-11 	{ margin-left: percentage((11/ $grid-columns)); }
 }
 
 /**
@@ -217,59 +217,59 @@
 		float: left;
 	}
 
-	.Col--medium-1		{ width: percentage((1 / $grid-columns)); }
-	.Col--medium-2		{ width: percentage((2 / $grid-columns)); }
-	.Col--medium-3		{ width: percentage((3 / $grid-columns)); }
-	.Col--medium-4		{ width: percentage((4 / $grid-columns)); }
-	.Col--medium-5		{ width: percentage((5 / $grid-columns)); }
-	.Col--medium-6		{ width: percentage((6 / $grid-columns)); }
-	.Col--medium-7		{ width: percentage((7 / $grid-columns)); }
-	.Col--medium-8		{ width: percentage((8 / $grid-columns)); }
-	.Col--medium-9		{ width: percentage((9 / $grid-columns)); }
-	.Col--medium-10		{ width: percentage((10/ $grid-columns)); }
-	.Col--medium-11		{ width: percentage((11/ $grid-columns)); }
-	.Col--medium-12		{ width: 100%; }
+	.Col--medium-1            { width: percentage((1 / $grid-columns)); }
+	.Col--medium-2            { width: percentage((2 / $grid-columns)); }
+	.Col--medium-3            { width: percentage((3 / $grid-columns)); }
+	.Col--medium-4            { width: percentage((4 / $grid-columns)); }
+	.Col--medium-5            { width: percentage((5 / $grid-columns)); }
+	.Col--medium-6            { width: percentage((6 / $grid-columns)); }
+	.Col--medium-7            { width: percentage((7 / $grid-columns)); }
+	.Col--medium-8            { width: percentage((8 / $grid-columns)); }
+	.Col--medium-9            { width: percentage((9 / $grid-columns)); }
+	.Col--medium-10           { width: percentage((10/ $grid-columns)); }
+	.Col--medium-11           { width: percentage((11/ $grid-columns)); }
+	.Col--medium-12           { width: 100%; }
 
 	/* Push and pull columns for source order changes */
-	.Col--medium--push-0 	{ left: auto; }
-	.Col--medium--push-1 	{ left: percentage((1 / $grid-columns)); }
-	.Col--medium--push-2 	{ left: percentage((2 / $grid-columns)); }
-	.Col--medium--push-3 	{ left: percentage((3 / $grid-columns)); }
-	.Col--medium--push-4 	{ left: percentage((4 / $grid-columns)); }
-	.Col--medium--push-5 	{ left: percentage((5 / $grid-columns)); }
-	.Col--medium--push-6 	{ left: percentage((6 / $grid-columns)); }
-	.Col--medium--push-7 	{ left: percentage((7 / $grid-columns)); }
-	.Col--medium--push-8 	{ left: percentage((8 / $grid-columns)); }
-	.Col--medium--push-9 	{ left: percentage((9 / $grid-columns)); }
-	.Col--medium--push-10  	{ left: percentage((10/ $grid-columns)); }
-	.Col--medium--push-11  	{ left: percentage((11/ $grid-columns)); }
+	.Col--medium--push-0      { left: auto; }
+	.Col--medium--push-1      { left: percentage((1 / $grid-columns)); }
+	.Col--medium--push-2      { left: percentage((2 / $grid-columns)); }
+	.Col--medium--push-3      { left: percentage((3 / $grid-columns)); }
+	.Col--medium--push-4      { left: percentage((4 / $grid-columns)); }
+	.Col--medium--push-5      { left: percentage((5 / $grid-columns)); }
+	.Col--medium--push-6      { left: percentage((6 / $grid-columns)); }
+	.Col--medium--push-7      { left: percentage((7 / $grid-columns)); }
+	.Col--medium--push-8      { left: percentage((8 / $grid-columns)); }
+	.Col--medium--push-9      { left: percentage((9 / $grid-columns)); }
+	.Col--medium--push-10     { left: percentage((10/ $grid-columns)); }
+	.Col--medium--push-11     { left: percentage((11/ $grid-columns)); }
 
-	.Col--medium--pull-0   	{ right: auto; }
-	.Col--medium--pull-1   	{ right: percentage((1 / $grid-columns)); }
-	.Col--medium--pull-2   	{ right: percentage((2 / $grid-columns)); }
-	.Col--medium--pull-3   	{ right: percentage((3 / $grid-columns)); }
-	.Col--medium--pull-4   	{ right: percentage((4 / $grid-columns)); }
-	.Col--medium--pull-5   	{ right: percentage((5 / $grid-columns)); }
-	.Col--medium--pull-6   	{ right: percentage((6 / $grid-columns)); }
-	.Col--medium--pull-7   	{ right: percentage((7 / $grid-columns)); }
-	.Col--medium--pull-8   	{ right: percentage((8 / $grid-columns)); }
-	.Col--medium--pull-9   	{ right: percentage((9 / $grid-columns)); }
-	.Col--medium--pull-10 	{ right: percentage((10/ $grid-columns)); }
-	.Col--medium--pull-11 	{ right: percentage((11/ $grid-columns)); }
+	.Col--medium--pull-0      { right: auto; }
+	.Col--medium--pull-1      { right: percentage((1 / $grid-columns)); }
+	.Col--medium--pull-2      { right: percentage((2 / $grid-columns)); }
+	.Col--medium--pull-3      { right: percentage((3 / $grid-columns)); }
+	.Col--medium--pull-4      { right: percentage((4 / $grid-columns)); }
+	.Col--medium--pull-5      { right: percentage((5 / $grid-columns)); }
+	.Col--medium--pull-6      { right: percentage((6 / $grid-columns)); }
+	.Col--medium--pull-7      { right: percentage((7 / $grid-columns)); }
+	.Col--medium--pull-8      { right: percentage((8 / $grid-columns)); }
+	.Col--medium--pull-9      { right: percentage((9 / $grid-columns)); }
+	.Col--medium--pull-10     { right: percentage((10/ $grid-columns)); }
+	.Col--medium--pull-11     { right: percentage((11/ $grid-columns)); }
 
 	/* Offsets */
-	.Col--medium-offset-0    { margin-left: 0; }
-	.Col--medium-offset-1    { margin-left: percentage((1 / $grid-columns)); }
-	.Col--medium-offset-2    { margin-left: percentage((2 / $grid-columns)); }
-	.Col--medium-offset-3    { margin-left: percentage((3 / $grid-columns)); }
-	.Col--medium-offset-4    { margin-left: percentage((4 / $grid-columns)); }
-	.Col--medium-offset-5    { margin-left: percentage((5 / $grid-columns)); }
-	.Col--medium-offset-6    { margin-left: percentage((6 / $grid-columns)); }
-	.Col--medium-offset-7    { margin-left: percentage((7 / $grid-columns)); }
-	.Col--medium-offset-8    { margin-left: percentage((8 / $grid-columns)); }
-	.Col--medium-offset-9    { margin-left: percentage((9 / $grid-columns)); }
-	.Col--medium-offset-10 	 { margin-left: percentage((10/ $grid-columns)); }
-	.Col--medium-offset-11 	 { margin-left: percentage((11/ $grid-columns));		 }
+	.Col--medium--offset-0    { margin-left: 0; }
+	.Col--medium--offset-1    { margin-left: percentage((1 / $grid-columns)); }
+	.Col--medium--offset-2    { margin-left: percentage((2 / $grid-columns)); }
+	.Col--medium--offset-3    { margin-left: percentage((3 / $grid-columns)); }
+	.Col--medium--offset-4    { margin-left: percentage((4 / $grid-columns)); }
+	.Col--medium--offset-5    { margin-left: percentage((5 / $grid-columns)); }
+	.Col--medium--offset-6    { margin-left: percentage((6 / $grid-columns)); }
+	.Col--medium--offset-7    { margin-left: percentage((7 / $grid-columns)); }
+	.Col--medium--offset-8    { margin-left: percentage((8 / $grid-columns)); }
+	.Col--medium--offset-9    { margin-left: percentage((9 / $grid-columns)); }
+	.Col--medium--offset-10   { margin-left: percentage((10/ $grid-columns)); }
+	.Col--medium--offset-11   { margin-left: percentage((11/ $grid-columns)); }
 }
 
 /**
@@ -340,16 +340,16 @@
 	.Col--large--pull-11 	{ right: percentage((11/ $grid-columns)); }
 
 	/* Offsets */
-	.Col--large-offset-0    { margin-left: 0; }
-	.Col--large-offset-1    { margin-left: percentage((1 / $grid-columns)); }
-	.Col--large-offset-2    { margin-left: percentage((2 / $grid-columns)); }
-	.Col--large-offset-3    { margin-left: percentage((3 / $grid-columns)); }
-	.Col--large-offset-4    { margin-left: percentage((4 / $grid-columns)); }
-	.Col--large-offset-5    { margin-left: percentage((5 / $grid-columns)); }
-	.Col--large-offset-6    { margin-left: percentage((6 / $grid-columns)); }
-	.Col--large-offset-7    { margin-left: percentage((7 / $grid-columns)); }
-	.Col--large-offset-8    { margin-left: percentage((8 / $grid-columns)); }
-	.Col--large-offset-9    { margin-left: percentage((9 / $grid-columns)); }
-	.Col--large-offset-10 	{ margin-left: percentage((10/ $grid-columns)); }
-	.Col--large-offset-11 	{ margin-left: percentage((11/ $grid-columns)); }
+	.Col--large--offset-0    { margin-left: 0; }
+	.Col--large--offset-1    { margin-left: percentage((1 / $grid-columns)); }
+	.Col--large--offset-2    { margin-left: percentage((2 / $grid-columns)); }
+	.Col--large--offset-3    { margin-left: percentage((3 / $grid-columns)); }
+	.Col--large--offset-4    { margin-left: percentage((4 / $grid-columns)); }
+	.Col--large--offset-5    { margin-left: percentage((5 / $grid-columns)); }
+	.Col--large--offset-6    { margin-left: percentage((6 / $grid-columns)); }
+	.Col--large--offset-7    { margin-left: percentage((7 / $grid-columns)); }
+	.Col--large--offset-8    { margin-left: percentage((8 / $grid-columns)); }
+	.Col--large--offset-9    { margin-left: percentage((9 / $grid-columns)); }
+	.Col--large--offset-10 	{ margin-left: percentage((10/ $grid-columns)); }
+	.Col--large--offset-11 	{ margin-left: percentage((11/ $grid-columns)); }
 }

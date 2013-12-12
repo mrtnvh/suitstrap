@@ -19,14 +19,14 @@ ol {
    ========================================================================== */
 
 /* Unstyled keeps list items block level, just removes default browser padding and list-style */
-.u-list--unstyled {
+.List--unstyled {
 	padding-left: 0;
 	list-style: none;
 }
 
 /* Inline turns list items into inline-block */
-.u-list--inline {
-	@extend .u-list--unstyled;
+.List--inline {
+	@extend .List--unstyled;
 	> li {
 		display: inline-block;
 		padding-left: 5px;
@@ -58,7 +58,7 @@ dd {
    grid breakpoint is reached (default of ~768px). */
 
 @media (min-width: $grid-float-breakpoint) {
-	.u-dl-horizontal {
+	.Dl--horizontal {
 		dt {
 			float: left;
 			width: ($component-offset-horizontal - 20);

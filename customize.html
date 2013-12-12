@@ -2,21 +2,21 @@
 layout: default
 title: Customize and download
 slug: customize
-lead: Customize Bootstrap's components, LESS variables, and jQuery plugins to get your very own version.
+Lead: Customize Suitstrap's components, LESS variables, and jQuery plugins to get your very own version.
 base_url: "../"
 ---
 
 <!-- Customizer form -->
 <form class="bs-customizer" role="form">
   <div class="bs-docs-section" id="less-section">
-    <div class="page-header">
+    <div class="Page-header">
       <button class="btn btn-default toggle" type="button">Toggle all</button>
       <h1 id="less">LESS files</h1>
     </div>
-    <p class="lead">Choose which LESS files to compile into your custom build of Bootstrap. Not sure which files to use? Read through the <a href="../css/">CSS</a> and <a href="../components/">Components</a> pages in the docs.</p>
+    <p class="Lead">Choose which LESS files to compile into your custom build of Suitstrap. Not sure which files to use? Read through the <a href="../css/">CSS</a> and <a href="../components/">Components</a> pages in the docs.</p>
 
-    <div class="row">
-      <div class="col-xs-6 col-sm-4">
+    <div class="Row">
+      <div class="Col--extraSmall-6 Col--small-4">
         <h3>Common CSS</h3>
         <div class="checkbox">
           <label>
@@ -44,7 +44,7 @@ base_url: "../"
         </div>
         <div class="checkbox">
           <label>
-            <input type="checkbox" checked value="tables.less">
+            <input type="checkbox" checked value="Tables.less">
             Tables
           </label>
         </div>
@@ -60,9 +60,9 @@ base_url: "../"
             Buttons
           </label>
         </div>
-      </div><!-- .col-xs-6 .col-sm-4 -->
+      </div><!-- .Col--extraSmall-6 .Col--small-4 -->
 
-      <div class="col-xs-6 col-sm-4">
+      <div class="Col--extraSmall-6 Col--small-4">
         <h3>Components</h3>
         <div class="checkbox">
           <label>
@@ -178,9 +178,9 @@ base_url: "../"
             Close icon
           </label>
         </div>
-      </div><!-- .col-xs-6 .col-sm-4 -->
+      </div><!-- .Col--extraSmall-6 .Col--small-4 -->
 
-      <div class="col-xs-6 col-sm-4">
+      <div class="Col--extraSmall-6 Col--small-4">
         <h3>JavaScript components</h3>
         <div class="checkbox">
           <label>
@@ -232,20 +232,20 @@ base_url: "../"
             Component animations (for JS)
           </label>
         </div>
-      </div><!-- .col-xs-6 .col-sm-4 -->
-    </div><!-- /.row -->
+      </div><!-- .Col--extraSmall-6 .Col--small-4 -->
+    </div><!-- /.Row -->
   </div>
 
 
 
   <div class="bs-docs-section" id="plugin-section">
-    <div class="page-header">
+    <div class="Page-header">
       <button class="btn btn-default toggle" type="button">Toggle all</button>
       <h1 id="plugins">jQuery plugins</h1>
     </div>
-    <p class="lead">Choose which jQuery plugins should be included in your custom JavaScript files. Unsure what to include? Read the <a href="../javascript/">JavaScript</a> page in the docs.</p>
-    <div class="row">
-      <div class="col-lg-6">
+    <p class="Lead">Choose which jQuery plugins should be included in your custom JavaScript files. Unsure what to include? Read the <a href="../javascript/">JavaScript</a> page in the docs.</p>
+    <div class="Row">
+      <div class="Col--large-6">
         <h4>Linked to components</h4>
         <div class="checkbox">
           <label>
@@ -296,7 +296,7 @@ base_url: "../"
           </label>
         </div>
       </div>
-      <div class="col-lg-6">
+      <div class="Col--large-6">
         <h4>Magic</h4>
         <div class="checkbox">
           <label>
@@ -339,18 +339,18 @@ base_url: "../"
 
 
   <div class="bs-docs-section" id="less-variables-section">
-    <div class="page-header">
+    <div class="Page-header">
       <button class="btn btn-default toggle" type="button">Reset to defaults</button>
       <h1 id="less-variables">LESS variables</h1>
     </div>
-    <p class="lead">Customize LESS variables to define colors, sizes and more inside your custom CSS stylesheets.</p>
+    <p class="Lead">Customize LESS variables to define colors, sizes and more inside your custom CSS stylesheets.</p>
 
     <h2 id="variables-basics">Basics</h2>
 
 
     <h3>Color system</h3>
-    <div class="row">
-      <div class="col-md-6">
+    <div class="Row">
+      <div class="Col--medium-6">
         <label>@brand-primary</label>
         <input type="text" class="form-control" placeholder="#428bca" data-var="@brand-primary">
         <label>@brand-success</label>
@@ -358,7 +358,7 @@ base_url: "../"
         <label>@brand-warning</label>
         <input type="text" class="form-control" placeholder="#f0ad4e" data-var="@brand-warning">
       </div>
-      <div class="col-md-6">
+      <div class="Col--medium-6">
         <label>@brand-danger</label>
         <input type="text" class="form-control" placeholder="#d9534f" data-var="@brand-danger">
         <label>@brand-info</label>
@@ -368,8 +368,8 @@ base_url: "../"
 
 
     <h3>Body scaffolding</h3>
-    <div class="row">
-      <div class="col-md-6">
+    <div class="Row">
+      <div class="Col--medium-6">
         <label>@body-bg</label>
         <input type="text" class="form-control" placeholder="#fff" data-var="@body-bg">
         <p class="help-block">Background color for <code>&lt;body&gt;</code>.</p>
@@ -377,7 +377,7 @@ base_url: "../"
         <input type="text" class="form-control" placeholder="@gray-dark" data-var="@text-color">
         <p class="help-block">Global text color on <code>&lt;body&gt;</code>.</p>
       </div>
-      <div class="col-md-6">
+      <div class="Col--medium-6">
         <label>@link-color</label>
         <input type="text" class="form-control" placeholder="@brand-primary" data-var="@link-color">
         <p class="help-block">Global textual link color</p>
@@ -389,8 +389,8 @@ base_url: "../"
 
 
     <h3>Typography</h3>
-    <div class="row">
-      <div class="col-lg-6">
+    <div class="Row">
+      <div class="Col--large-6">
         <h4>Generic font variables</h4>
         <label>@font-family-sans-serif</label>
         <input type="text" class="form-control" placeholder="'Helvetica Neue', Helvetica, Arial, sans-serif" data-var="@font-family-sans-serif">
@@ -414,7 +414,7 @@ base_url: "../"
         <label>@line-height-small</label>
         <input type="text" class="form-control" placeholder="1.5" data-var="@line-height-small">
       </div>
-      <div class="col-lg-6">
+      <div class="Col--large-6">
         <h4>Heading font sizes</h4>
         <label>@font-size-h1</label>
         <input type="text" class="form-control" placeholder="floor(@font-size-base * 2.60)" data-var="@font-size-h1">
@@ -433,14 +433,14 @@ base_url: "../"
 
 
     <h3>Headings</h3>
-    <div class="row">
-      <div class="col-lg-6">
+    <div class="Row">
+      <div class="Col--large-6">
         <label>@headings-font-family</label>
         <input type="text" class="form-control" placeholder="@font-family-base" data-var="@headings-font-family">
         <label>@headings-font-weight</label>
         <input type="text" class="form-control" placeholder="500" data-var="@headings-font-weight">
       </div>
-      <div class="col-lg-6">
+      <div class="Col--large-6">
         <label>@headings-line-height</label>
         <input type="text" class="form-control" placeholder="1.1" data-var="@headings-line-height">
         <label>@headings-color</label>
@@ -450,14 +450,14 @@ base_url: "../"
 
 
     <h3>Code blocks</h3>
-    <div class="row">
-      <div class="col-lg-6">
+    <div class="Row">
+      <div class="Col--large-6">
         <label>@code-color</label>
         <input type="text" class="form-control" placeholder="#c7254e" data-var="@code-color">
         <label>@code-bg</label>
         <input type="text" class="form-control" placeholder="#f9f2f4" data-var="@code-bg">
       </div>
-      <div class="col-lg-6">
+      <div class="Col--large-6">
         <label>@pre-color</label>
         <input type="text" class="form-control" placeholder="@gray-dark" data-var="@pre-color">
         <label>@pre-bg</label>
@@ -469,61 +469,61 @@ base_url: "../"
 
 
     <h3>Media queries breakpoints</h3>
-    <div class="row">
-      <div class="col-xs-6 col-md-3">
+    <div class="Row">
+      <div class="Col--extraSmall-6 Col--medium-3">
         <label>@screen-xs-min</label>
         <input type="text" class="form-control" placeholder="480px" data-var="@screen-xs-min">
       </div>
-      <div class="col-xs-6 col-md-3">
+      <div class="Col--extraSmall-6 Col--medium-3">
         <label>@screen-sm-min</label>
         <input type="text" class="form-control" placeholder="768px" data-var="@screen-sm-min">
       </div>
-      <div class="col-xs-6 col-md-3">
+      <div class="Col--extraSmall-6 Col--medium-3">
         <label>@screen-md-min</label>
         <input type="text" class="form-control" placeholder="992px" data-var="@screen-md-min">
       </div>
-      <div class="col-xs-6 col-md-3">
+      <div class="Col--extraSmall-6 Col--medium-3">
         <label>@screen-lg-min</label>
         <input type="text" class="form-control" placeholder="1200px" data-var="@screen-lg-min">
       </div>
     </div>
 
     <h3>Layout and grid system</h3>
-    <div class="row">
-      <div class="col-xs-6 col-sm-4">
+    <div class="Row">
+      <div class="Col--extraSmall-6 Col--small-4">
         <label>@container-sm</label>
         <input type="text" class="form-control" placeholder="((720px + @grid-gutter-width))" data-var="@container-sm">
         <p class="help-block">For <code>@screen-sm-min</code> and up.</p>
       </div>
-      <div class="col-xs-6 col-sm-4">
+      <div class="Col--extraSmall-6 Col--small-4">
         <label>@container-md</label>
         <input type="text" class="form-control" placeholder="((940px + @grid-gutter-width))" data-var="@container-md">
         <p class="help-block">For <code>@screen-md-min</code> and up.</p>
       </div>
-      <div class="clearfix visible-xs"></div>
-      <div class="col-xs-6 col-sm-4">
+      <div class="u-clearfix u-visible--extraSmall"></div>
+      <div class="Col--extraSmall-6 Col--small-4">
         <label>@container-lg</label>
         <input type="text" class="form-control" placeholder="((1140px + @grid-gutter-width))" data-var="@container-lg">
         <p class="help-block">For <code>@screen-lg-min</code> and up.</p>
       </div>
     </div>
 
-    <div class="row">
+    <div class="Row">
 <!--
   Temporarily removed until mixins are restored in v3.1
-      <div class="col-xs-6 col-sm-4">
+      <div class="Col--extraSmall-6 Col--small-4">
         <label>@grid-columns</label>
         <input type="text" class="form-control" placeholder="12" data-var="@grid-columns">
         <p class="help-block">Number of columns in the grid.</p>
       </div>
  -->
-      <div class="col-xs-6 col-sm-4">
+      <div class="Col--extraSmall-6 Col--small-4">
         <label>@grid-gutter-width</label>
         <input type="text" class="form-control" placeholder="30px" data-var="@grid-gutter-width">
         <p class="help-block">Padding between columns.</p>
       </div>
-      <div class="clearfix visible-xs"></div>
-      <div class="col-xs-6 col-sm-4">
+      <div class="u-clearfix u-visible--extraSmall"></div>
+      <div class="Col--extraSmall-6 Col--small-4">
         <label>@grid-float-breakpoint</label>
         <input type="text" class="form-control" placeholder="@screen-sm-min" data-var="@grid-float-breakpoint">
         <p class="help-block">Point at which the navbar stops collapsing.</p>
@@ -534,20 +534,20 @@ base_url: "../"
     <h3>Components</h3>
 
     <h4>Padding</h4>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@padding-base-vertical</label>
         <input type="text" class="form-control" placeholder="6px" data-var="@padding-base-vertical">
         <label>@padding-base-horizontal</label>
         <input type="text" class="form-control" placeholder="12px" data-var="@padding-base-horizontal">
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@padding-large-vertical</label>
         <input type="text" class="form-control" placeholder="10px" data-var="@padding-large-vertical">
         <label>@padding-large-horizontal</label>
         <input type="text" class="form-control" placeholder="16px" data-var="@padding-large-horizontal">
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@padding-small-vertical</label>
         <input type="text" class="form-control" placeholder="5px" data-var="@padding-small-vertical">
         <label>@padding-small-horizontal</label>
@@ -556,29 +556,29 @@ base_url: "../"
     </div>
 
     <h4>Rounded corners</h4>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@border-radius-base</label>
         <input type="text" class="form-control" placeholder="4px" data-var="@border-radius-base">
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@border-radius-large</label>
         <input type="text" class="form-control" placeholder="6px" data-var="@border-radius-large">
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@border-radius-small</label>
         <input type="text" class="form-control" placeholder="3px" data-var="@border-radius-small">
       </div>
     </div>
 
     <h4>Component active state</h4>
-    <div class="row">
-      <div class="col-md-6">
+    <div class="Row">
+      <div class="Col--medium-6">
         <label>@component-active-color</label>
         <input type="text" class="form-control" placeholder="#fff" data-var="@component-active-color">
         <p class="help-block">Global color for active items (e.g., navs or dropdowns)</p>
       </div>
-      <div class="col-md-6">
+      <div class="Col--medium-6">
         <label>@component-active-bg</label>
         <input type="text" class="form-control" placeholder="@brand-primary" data-var="@component-active-bg">
         <p class="help-block">Global background color for active items (e.g., navs or dropdowns)</p>
@@ -586,12 +586,12 @@ base_url: "../"
     </div>
 
     <h4>Carets</h4>
-    <div class="row">
-      <div class="col-md-6">
+    <div class="Row">
+      <div class="Col--medium-6">
         <label>@caret-width-base</label>
         <input type="text" class="form-control" placeholder="4px" data-var="@caret-width-base">
       </div>
-      <div class="col-md-6">
+      <div class="Col--medium-6">
         <label>@caret-width-large</label>
         <input type="text" class="form-control" placeholder="5px" data-var="@caret-width-large">
       </div>
@@ -599,18 +599,18 @@ base_url: "../"
 
 
     <h2 id="variables-buttons">Buttons</h2>
-    <div class="row">
-      <div class="col-md-6">
+    <div class="Row">
+      <div class="Col--medium-6">
         <label>@btn-font-weight</label>
         <input type="text" class="form-control" placeholder="normal" data-var="@btn-font-weight">
       </div>
-      <div class="col-md-6">
+      <div class="Col--medium-6">
         <label>@btn-link-disabled-color</label>
         <input type="text" class="form-control" placeholder="@gray-light" data-var="@btn-link-disabled-color">
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-6">
+    <div class="Row">
+      <div class="Col--medium-6">
         <h4>Default</h4>
         <label>@btn-default-color</label>
         <input type="text" class="form-control" placeholder="#333" data-var="@btn-default-color">
@@ -633,7 +633,7 @@ base_url: "../"
         <label>@btn-info-border</label>
         <input type="text" class="form-control" placeholder="darken(@btn-info-bg, 5%)" data-var="@btn-info-border">
       </div>
-      <div class="col-md-6">
+      <div class="Col--medium-6">
         <h4>Success</h4>
         <label>@btn-success-color</label>
         <input type="text" class="form-control" placeholder="@btn-default-color" data-var="@btn-success-color">
@@ -660,8 +660,8 @@ base_url: "../"
 
 
     <h2 id="variables-form-states">Form states and alerts</h2>
-    <div class="row">
-      <div class="col-md-6">
+    <div class="Row">
+      <div class="Col--medium-6">
         <h4>Success</h4>
         <label>@state-success-text</label>
         <input type="text" class="form-control" placeholder="#468847" data-var="@state-success-text">
@@ -677,7 +677,7 @@ base_url: "../"
         <label>@state-warning-border</label>
         <input type="text" class="form-control" placeholder="darken(spin(@state-warning-bg, -10), 3%)" data-var="@state-warning-border">
       </div>
-      <div class="col-md-6">
+      <div class="Col--medium-6">
         <h4>Danger</h4>
         <label>@state-danger-text</label>
         <input type="text" class="form-control" placeholder="#b94a48" data-var="@state-danger-text">
@@ -699,23 +699,23 @@ base_url: "../"
     <h2 id="variables-alerts">Alerts</h2>
 
     <h4>Base styles</h4>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@alert-padding</label>
         <input type="text" class="form-control" placeholder="15px" data-var="@alert-padding">
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@alert-border-radius</label>
         <input type="text" class="form-control" placeholder="@border-radius-base" data-var="@alert-border-radius">
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@alert-link-font-weight</label>
         <input type="text" class="form-control" placeholder="bold" data-var="@alert-link-font-weight">
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-lg-6">
+    <div class="Row">
+      <div class="Col--large-6">
         <h4>Warning</h4>
         <label>@alert-warning-text</label>
         <input type="text" class="form-control" placeholder="@state-warning-text" data-var="@alert-warning-text">
@@ -732,7 +732,7 @@ base_url: "../"
         <label>@alert-success-border</label>
         <input type="text" class="form-control" placeholder="@state-success-border" data-var="@alert-success-border">
       </div>
-      <div class="col-lg-6">
+      <div class="Col--large-6">
         <h4>Danger</h4>
         <label>@alert-danger-text</label>
         <input type="text" class="form-control" placeholder="@state-danger-text" data-var="@alert-danger-text">
@@ -755,27 +755,27 @@ base_url: "../"
     <h2 id="variables-navbar">Navbar</h2>
 
     <h3>Base styles</h3>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@navbar-height</label>
         <input type="text" class="form-control" placeholder="50px" data-var="@navbar-height">
         <label>@navbar-margin-bottom</label>
         <input type="text" class="form-control" placeholder="@line-height-computed" data-var="@navbar-margin-bottom">
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@navbar-padding-horizontal</label>
         <input type="text" class="form-control" placeholder="floor(@grid-gutter-width / 2)" data-var="@navbar-padding-horizontal">
         <label>@navbar-padding-vertical</label>
         <input type="text" class="form-control" placeholder="((@navbar-height - @line-height-computed) / 2)" data-var="@@navbar-padding-vertical">
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@navbar-border-radius</label>
         <input type="text" class="form-control" placeholder="@border-radius-base" data-var="@navbar-border-radius">
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-lg-6">
+    <div class="Row">
+      <div class="Col--large-6">
         <h3>Default navbar</h3>
         <h4>Basics</h4>
         <label>@navbar-default-color</label>
@@ -818,7 +818,7 @@ base_url: "../"
         <input type="text" class="form-control" placeholder="#ddd" data-var="@navbar-default-toggle-border-color">
       </div>
 
-      <div class="col-lg-6">
+      <div class="Col--large-6">
         <h3>Inverted navbar</h3>
 
         <h4>Basics</h4>
@@ -867,8 +867,8 @@ base_url: "../"
     <h2 id="variables-nav">Nav</h2>
 
     <h3>Default nav</h3>
-    <div class="row">
-      <div class="col-lg-6">
+    <div class="Row">
+      <div class="Col--large-6">
         <h4>Common values</h4>
         <label>@nav-link-padding</label>
         <input type="text" class="form-control" placeholder="10px 15px" data-var="@nav-link-padding">
@@ -889,7 +889,7 @@ base_url: "../"
         <label>@nav-pills-active-link-hover-bg</label>
         <input type="text" class="form-control" placeholder="@component-active-bg" data-var="@nav-pills-active-link-hover-bg">
       </div>
-      <div class="col-lg-6">
+      <div class="Col--large-6">
         <h4>Tabs</h4>
         <label>@nav-tabs-border-color</label>
         <input type="text" class="form-control" placeholder="#ddd" data-var="@nav-tabs-border-color">
@@ -910,29 +910,29 @@ base_url: "../"
 
 
     <h2 id="variables-tables">Tables</h2>
-    <div class="row">
-      <div class="col-md-4">
-        <label>@table-cell-padding</label>
-        <input type="text" class="form-control" placeholder="8px" data-var="@table-cell-padding">
+    <div class="Row">
+      <div class="Col--medium-4">
+        <label>@Table-cell-padding</label>
+        <input type="text" class="form-control" placeholder="8px" data-var="@Table-cell-padding">
         <p class="help-block">Default padding for <code>&lt;th&gt;</code>s and <code>&lt;td&gt;</code>s</p>
-        <label>@table-condensed-cell-padding</label>
-        <input type="text" class="form-control" placeholder="5px" data-var="@table-condensed-cell-padding">
-        <p class="help-block">Default padding cells in <code>.table-condensed</code></p>
+        <label>@Table-condensed-cell-padding</label>
+        <input type="text" class="form-control" placeholder="5px" data-var="@Table-condensed-cell-padding">
+        <p class="help-block">Default padding cells in <code>.Table-condensed</code></p>
       </div>
-      <div class="col-md-4">
-        <label>@table-bg</label>
-        <input type="text" class="form-control" placeholder="transparent" data-var="@table-bg">
+      <div class="Col--medium-4">
+        <label>@Table-bg</label>
+        <input type="text" class="form-control" placeholder="transparent" data-var="@Table-bg">
         <p class="help-block">Default background color used for all tables.</p>
-        <label>@table-bg-accent</label>
-        <input type="text" class="form-control" placeholder="#f9f9f9" data-var="@table-bg-accent">
-        <p class="help-block">Background color used for <code>.table-striped</code>.</p>
+        <label>@Table-bg-accent</label>
+        <input type="text" class="form-control" placeholder="#f9f9f9" data-var="@Table-bg-accent">
+        <p class="help-block">Background color used for <code>.Table-striped</code>.</p>
       </div>
-      <div class="col-md-4">
-        <label>@table-bg-hover</label>
-        <input type="text" class="form-control" placeholder="#f5f5f5" data-var="@table-bg-hover">
-        <p class="help-block">Background color used for <code>.table-hover</code>.</p>
-        <label>@table-border-color</label>
-        <input type="text" class="form-control" placeholder="#ddd" data-var="@table-border-color">
+      <div class="Col--medium-4">
+        <label>@Table-bg-hover</label>
+        <input type="text" class="form-control" placeholder="#f5f5f5" data-var="@Table-bg-hover">
+        <p class="help-block">Background color used for <code>.Table-hover</code>.</p>
+        <label>@Table-border-color</label>
+        <input type="text" class="form-control" placeholder="#ddd" data-var="@Table-border-color">
         <p class="help-block">Border color for table and cell borders.</p>
       </div>
     </div>
@@ -941,8 +941,8 @@ base_url: "../"
     <h2 id="variables-forms">Forms</h2>
 
     <h3>Inputs</h3>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@input-color</label>
         <input type="text" class="form-control" placeholder="@gray" data-var="@input-color">
         <p class="help-block">Text color for <code>&lt;input&gt;</code>s</p>
@@ -950,7 +950,7 @@ base_url: "../"
         <input type="text" class="form-control" placeholder="#fff" data-var="@input-bg">
         <p class="help-block"><code>&lt;input&gt;</code> background color</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@input-border</label>
         <input type="text" class="form-control" placeholder="#ccc" data-var="@input-border">
         <p class="help-block"><code>&lt;input&gt;</code> border color</p>
@@ -958,7 +958,7 @@ base_url: "../"
         <input type="text" class="form-control" placeholder="@border-radius-base" data-var="@input-border-radius">
         <p class="help-block"><code>&lt;input&gt;</code> border radius</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@input-color-placeholder</label>
         <input type="text" class="form-control" placeholder="@gray-light" data-var="@input-color-placeholder">
         <p class="help-block">Placeholder text color</p>
@@ -966,13 +966,13 @@ base_url: "../"
     </div>
 
     <h3>Input states</h3>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@input-border-focus</label>
         <input type="text" class="form-control" placeholder="#66afe9" data-var="@input-border-focus">
         <p class="help-block">Border color for inputs on focus</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@input-bg-disabled</label>
         <input type="text" class="form-control" placeholder="@gray-lighter" data-var="@input-bg-disabled">
         <p class="help-block"><code>&lt;input disabled&gt;</code> background color</p>
@@ -980,18 +980,18 @@ base_url: "../"
     </div>
 
     <h3>Input sizes</h3>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@input-height-base</label>
         <input type="text" class="form-control" placeholder="(@line-height-computed + (@padding-base-vertical * 2) + 2)" data-var="@input-height-base">
         <p class="help-block">Default <code>.form-control</code> height</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@input-height-large</label>
         <input type="text" class="form-control" placeholder="(floor(@font-size-large * @line-height-large) + (@padding-large-vertical * 2) + 2)" data-var="@input-height-large">
         <p class="help-block">Large <code>.form-control</code> height</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@input-height-small</label>
         <input type="text" class="form-control" placeholder="(floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2) + 2)" data-var="@input-height-small">
         <p class="help-block">Small <code>.form-control</code> height</p>
@@ -999,25 +999,25 @@ base_url: "../"
     </div>
 
     <h3>Legend</h3>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@legend-color</label>
         <input type="text" class="form-control" placeholder="@gray-dark" data-var="@legend-color">
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@legend-border-color</label>
         <input type="text" class="form-control" placeholder="#e5e5e5" data-var="@legend-border-color">
       </div>
     </div>
 
     <h3>Input groups</h3>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@input-group-addon-bg</label>
         <input type="text" class="form-control" placeholder="@gray-lighter" data-var="@input-group-addon-bg">
         <p class="help-block">Background color for textual input addons</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@input-group-addon-border-color</label>
         <input type="text" class="form-control" placeholder="@input-border" data-var="@input-group-addon-border-color">
         <p class="help-block">Border color for textual input addons</p>
@@ -1026,8 +1026,8 @@ base_url: "../"
 
 
     <h2 id="variables-dropdowns">Dropdowns</h2>
-    <div class="row">
-      <div class="col-md-6">
+    <div class="Row">
+      <div class="Col--medium-6">
         <h3>Dropdown menu</h3>
         <label>@dropdown-bg</label>
         <input type="text" class="form-control" placeholder="#fff" data-var="@dropdown-bg">
@@ -1048,7 +1048,7 @@ base_url: "../"
         <input type="text" class="form-control" placeholder="@gray-light" data-var="@dropdown-header-color">
         <p class="help-block">Text color for headers within dropdown menus</p>
       </div>
-      <div class="col-md-6">
+      <div class="Col--medium-6">
         <h3>Dropdown items</h3>
         <label>@dropdown-link-color</label>
         <input type="text" class="form-control" placeholder="@gray-dark" data-var="@dropdown-link-color">
@@ -1078,15 +1078,15 @@ base_url: "../"
     <h2 id="variables-panels-wells">Panels and wells</h2>
 
     <h3>Common panel styles</h3>
-    <div class="row">
-      <div class="col-md-6">
+    <div class="Row">
+      <div class="Col--medium-6">
         <label>@panel-bg</label>
         <input type="text" class="form-control" placeholder="#fff" data-var="@panel-bg">
         <label>@panel-inner-border</label>
         <input type="text" class="form-control" placeholder="#ddd" data-var="@panel-inner-border">
         <p class="help-block">Border color for elements within panels</p>
       </div>
-      <div class="col-md-6">
+      <div class="Col--medium-6">
         <label>@panel-border-radius</label>
         <input type="text" class="form-control" placeholder="@border-radius-base" data-var="@panel-border-radius">
         <label>@panel-footer-bg</label>
@@ -1094,8 +1094,8 @@ base_url: "../"
       </div>
     </div>
     <h3>Contextual panel colors</h3>
-    <div class="row">
-      <div class="col-md-6">
+    <div class="Row">
+      <div class="Col--medium-6">
         <h4>Default</h4>
         <label>@panel-default-text</label>
         <input type="text" class="form-control" placeholder="@gray-dark" data-var="@panel-default-text">
@@ -1120,7 +1120,7 @@ base_url: "../"
         <label>@panel-success-heading-bg</label>
         <input type="text" class="form-control" placeholder="@state-success-bg" data-var="@panel-success-heading-bg">
       </div>
-      <div class="col-md-6">
+      <div class="Col--medium-6">
         <h4>Info</h4>
         <label>@panel-info-text</label>
         <input type="text" class="form-control" placeholder="@state-info-text" data-var="@panel-info-text">
@@ -1160,36 +1160,36 @@ base_url: "../"
     <h2 id="variables-badges">Badges</h2>
 
     <h3>Base styles</h3>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@badge-font-weight</label>
         <input type="text" class="form-control" placeholder="bold" data-var="@badge-font-weight">
         <label>@badge-color</label>
         <input type="text" class="form-control" placeholder="#fff" data-var="@badge-color">
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@badge-bg</label>
         <input type="text" class="form-control" placeholder="@gray-light" data-var="@badge-bg">
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@badge-border-radius</label>
         <input type="text" class="form-control" placeholder="10px" data-var="@badge-border-radius">
       </div>
     </div>
 
     <h3>States</h3>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@badge-link-hover-color</label>
         <input type="text" class="form-control" placeholder="#fff" data-var="@badge-link-hover-color">
         <p class="help-block">Linked badge text color on hover</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@badge-active-color</label>
         <input type="text" class="form-control" placeholder="@link-color" data-var="@badge-active-color">
         <p class="help-block">Badge text color in active nav link</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@badge-active-bg</label>
         <input type="text" class="form-control" placeholder="@badge-color" data-var="@badge-active-bg">
         <p class="help-block">Badge background color in active nav link</p>
@@ -1198,8 +1198,8 @@ base_url: "../"
 
 
     <h2 id="variables-breadcrumbs">Breadcrumbs</h2>
-    <div class="row">
-      <div class="col-md-6">
+    <div class="Row">
+      <div class="Col--medium-6">
         <label>@breadcrumb-color</label>
         <input type="text" class="form-control" placeholder="#ccc" data-var="@breadcrumb-color">
         <p class="help-block">Breadcrumb text color</p>
@@ -1207,7 +1207,7 @@ base_url: "../"
         <input type="text" class="form-control" placeholder="#f5f5f5" data-var="@breadcrumb-bg">
         <p class="help-block">Breadcrumb background color</p>
       </div>
-      <div class="col-md-6">
+      <div class="Col--medium-6">
         <label>@breadcrumb-active-color</label>
         <input type="text" class="form-control" placeholder="@gray-light" data-var="@breadcrumb-active-color">
         <p class="help-block">Text color of current page in the breadcrumb</p>
@@ -1218,20 +1218,20 @@ base_url: "../"
     </div>
 
     <h2 id="variables-jumbotron">Jumbotron</h2>
-    <div class="row">
-      <div class="col-lg-3">
+    <div class="Row">
+      <div class="Col--large-3">
         <label>@jumbotron-padding</label>
         <input type="text" class="form-control" placeholder="30px" data-var="@jumbotron-padding">
       </div>
-      <div class="col-lg-3">
+      <div class="Col--large-3">
         <label>@jumbotron-bg</label>
         <input type="text" class="form-control" placeholder="@gray-lighter" data-var="@jumbotron-bg">
       </div>
-      <div class="col-lg-3">
+      <div class="Col--large-3">
         <label>@jumbotron-color</label>
         <input type="text" class="form-control" placeholder="inherit" data-var="@jumbotron-color">
       </div>
-      <div class="col-lg-3">
+      <div class="Col--large-3">
         <label>@jumbotron-heading-color</label>
         <input type="text" class="form-control" placeholder="inherit" data-var="@jumbotron-heading-color">
       </div>
@@ -1241,13 +1241,13 @@ base_url: "../"
     <h2 id="variables-modals">Modals</h2>
 
     <h3>Base modal</h3>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@modal-inner-padding</label>
         <input type="text" class="form-control" placeholder="20px" data-var="@modal-inner-padding">
         <p class="help-block">Padding applied to the modal body</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@modal-backdrop-bg</label>
         <input type="text" class="form-control" placeholder="#000" data-var="@modal-backdrop-bg">
         <p class="help-block">Modal backdrop background color</p>
@@ -1255,18 +1255,18 @@ base_url: "../"
     </div>
 
     <h3>Modal header and footer</h3>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@modal-title-padding</label>
         <input type="text" class="form-control" placeholder="15px" data-var="@modal-title-padding">
         <p class="help-block">Padding applied to the modal title</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@modal-title-line-height</label>
         <input type="text" class="form-control" placeholder="@line-height-base" data-var="@modal-title-line-height">
         <p class="help-block">Modal title line-height</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@modal-header-border-color</label>
         <input type="text" class="form-control" placeholder="#e5e5e5" data-var="@modal-header-border-color">
         <p class="help-block">Modal header border color</p>
@@ -1277,18 +1277,18 @@ base_url: "../"
     </div>
 
     <h3>Modal content</h3>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@modal-content-bg</label>
         <input type="text" class="form-control" placeholder="#fff" data-var="@modal-content-bg">
         <p class="help-block">Background color of modal content area</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@modal-content-border-color</label>
         <input type="text" class="form-control" placeholder="rgba(0,0,0,.2)" data-var="@modal-content-border-color">
         <p class="help-block">Modal content border color</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@modal-content-fallback-border-color</label>
         <input type="text" class="form-control" placeholder="#999" data-var="@modal-content-fallback-border-color">
         <p class="help-block">Modal content border color <strong>for IE8</strong></p>
@@ -1297,26 +1297,26 @@ base_url: "../"
 
 
     <h2 id="variables-carousel">Carousel</h2>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@carousel-text-shadow</label>
         <input type="text" class="form-control" placeholder="0 1px 2px rgba(0,0,0,.6)" data-var="@carousel-text-shadow">
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@carousel-control-color</label>
         <input type="text" class="form-control" placeholder="#fff" data-var="@carousel-control-color">
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@carousel-caption-color</label>
         <input type="text" class="form-control" placeholder="#fff" data-var="@carousel-caption-color">
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@carousel-indicator-border-color</label>
         <input type="text" class="form-control" placeholder="#fff" data-var="@carousel-indicator-border-color">
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@carousel-indicator-active-bg</label>
         <input type="text" class="form-control" placeholder="#fff" data-var="@carousel-indicator-active-bg">
       </div>
@@ -1326,18 +1326,18 @@ base_url: "../"
     <h2 id="variables-list-group">List group</h2>
 
     <h3>Base styles</h3>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@list-group-bg</label>
         <input type="text" class="form-control" placeholder="#fff" data-var="@list-group-bg">
         <p class="help-block">Background color on <code>.list-group-item</code></p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@list-group-border</label>
         <input type="text" class="form-control" placeholder="#ddd" data-var="@list-group-border">
         <p class="help-block"><code>.list-group-item</code> border color</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@list-group-border-radius</label>
         <input type="text" class="form-control" placeholder="@border-radius-base" data-var="@list-group-border-radius">
         <p class="help-block">List group border radius</p>
@@ -1345,25 +1345,25 @@ base_url: "../"
     </div>
 
     <h3>Hover and active states</h3>
-    <div class="row">
-      <div class="col-md-6">
+    <div class="Row">
+      <div class="Col--medium-6">
         <label>@list-group-hover-bg</label>
         <input type="text" class="form-control" placeholder="#f5f5f5" data-var="@list-group-hover-bg">
         <p class="help-block">Background color of single list elements on hover</p>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@list-group-active-color</label>
         <input type="text" class="form-control" placeholder="#fff" data-var="@list-group-active-color">
         <p class="help-block">Text color of active list elements</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@list-group-active-bg</label>
         <input type="text" class="form-control" placeholder="@component-active-bg" data-var="@list-group-active-bg">
         <p class="help-block">Background color of active list elements</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@list-group-active-border</label>
         <input type="text" class="form-control" placeholder="@list-group-active-bg" data-var="@list-group-active-border">
         <p class="help-block">Border color of active list elements</p>
@@ -1374,8 +1374,8 @@ base_url: "../"
     <h2 id="variables-thumbnails">Thumbnails</h2>
 
     <h3>Base thumbnail</h3>
-    <div class="row">
-      <div class="col-md-6">
+    <div class="Row">
+      <div class="Col--medium-6">
         <label>@thumbnail-padding</label>
         <input type="text" class="form-control" placeholder="4px" data-var="@thumbnail-padding">
         <p class="help-block">Padding around the thumbnail image</p>
@@ -1383,7 +1383,7 @@ base_url: "../"
         <input type="text" class="form-control" placeholder="@body-bg" data-var="@thumbnail-bg">
         <p class="help-block">Thumbnail background color</p>
       </div>
-      <div class="col-md-6">
+      <div class="Col--medium-6">
         <label>@thumbnail-border</label>
         <input type="text" class="form-control" placeholder="#ddd" data-var="@thumbnail-border">
         <p class="help-block">Thumbnail border color</p>
@@ -1394,13 +1394,13 @@ base_url: "../"
     </div>
 
     <h3>Thumbnail captions</h3>
-    <div class="row">
-      <div class="col-md-6">
+    <div class="Row">
+      <div class="Col--medium-6">
         <label>@thumbnail-caption-padding</label>
         <input type="text" class="form-control" placeholder="9px" data-var="@thumbnail-caption-padding">
         <p class="help-block">Padding around the thumbnail caption</p>
       </div>
-      <div class="col-md-6">
+      <div class="Col--medium-6">
         <label>@thumbnail-caption-color</label>
         <input type="text" class="form-control" placeholder="@text-color" data-var="@thumbnail-caption-color">
         <p class="help-block">Custom text color for thumbnail captions</p>
@@ -1411,23 +1411,23 @@ base_url: "../"
     <h2 id="variables-progress">Progress bars</h2>
 
     <h3>Shared styles</h3>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@progress-bg</label>
         <input type="text" class="form-control" placeholder="#f5f5f5" data-var="@progress-bg">
         <p class="help-block">Background color of the whole progress component</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@progress-bar-color</label>
         <input type="text" class="form-control" placeholder="#fff" data-var="@progress-bar-color">
         <p class="help-block">Info progress bar text color</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@progress-bar-text-shadow</label>
         <input type="text" class="form-control" placeholder="0 -1px 0 rgba(0,0,0,.25)" data-var="@progress-bar-text-shadow">
         <p class="help-block">Info progress bar text shadow</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@progress-bar-bg</label>
         <input type="text" class="form-control" placeholder="@brand-primary" data-var="@progress-bar-bg">
         <p class="help-block">Default progress bar color</p>
@@ -1435,8 +1435,8 @@ base_url: "../"
     </div>
 
     <h3>Contextual states</h3>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@progress-bar-success-bg</label>
         <input type="text" class="form-control" placeholder="@brand-success" data-var="@progress-bar-success-bg">
         <p class="help-block">Success progress bar color</p>
@@ -1444,7 +1444,7 @@ base_url: "../"
         <input type="text" class="form-control" placeholder="@brand-info" data-var="@progress-bar-info-bg">
         <p class="help-block">Info progress bar color</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@progress-bar-warning-bg</label>
         <input type="text" class="form-control" placeholder="@brand-warning" data-var="@progress-bar-warning-bg">
         <p class="help-block">Warning progress bar color</p>
@@ -1458,18 +1458,18 @@ base_url: "../"
     <h2 id="variables-pagination">Pagination</h2>
 
     <h3>Default styles</h3>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@pagination-bg</label>
         <input type="text" class="form-control" placeholder="#fff" data-var="@pagination-bg">
         <p class="help-block">Background color</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@pagination-border</label>
         <input type="text" class="form-control" placeholder="#ddd" data-var="@pagination-border">
         <p class="help-block">Border color</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@pagination-hover-bg</label>
         <input type="text" class="form-control" placeholder="@gray-lighter" data-var="@pagination-hover-bg">
         <p class="help-block">Background hover color</p>
@@ -1477,18 +1477,18 @@ base_url: "../"
     </div>
 
     <h3>Disabled and active states</h3>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@pagination-disabled-color</label>
         <input type="text" class="form-control" placeholder="@gray-light" data-var="@pagination-disabled-color">
         <p class="help-block">Disabled text color</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@pagination-active-bg</label>
         <input type="text" class="form-control" placeholder="@brand-primary" data-var="@pagination-active-bg">
         <p class="help-block">Active background color</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@pagination-active-color</label>
         <input type="text" class="form-control" placeholder="#fff" data-var="@pagination-active-color">
         <p class="help-block">Active text color</p>
@@ -1497,13 +1497,13 @@ base_url: "../"
 
 
     <h2 id="variables-pager">Pager</h2>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@pager-border-radius</label>
         <input type="text" class="form-control" placeholder="15px" data-var="@pager-border-radius">
         <p class="help-block">Pager border radius</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@pager-disabled-color</label>
         <input type="text" class="form-control" placeholder="@gray-light" data-var="@pager-disabled-color">
         <p class="help-block">Pager disabled state color</p>
@@ -1512,26 +1512,26 @@ base_url: "../"
 
 
     <h2 id="variables-labels">Labels</h2>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@label-color</label>
         <input type="text" class="form-control" placeholder="#fff" data-var="@label-color">
         <p class="help-block">Default label text color</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@label-link-hover-color</label>
         <input type="text" class="form-control" placeholder="#fff" data-var="@label-link-hover-color">
         <p class="help-block">Default text color of a linked label</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@label-default-bg</label>
         <input type="text" class="form-control" placeholder="@gray-light" data-var="@label-default-bg">
         <p class="help-block">Default label background color</p>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@label-primary-bg</label>
         <input type="text" class="form-control" placeholder="@brand-primary" data-var="@label-primary-bg">
         <p class="help-block">Primary label background color</p>
@@ -1539,7 +1539,7 @@ base_url: "../"
         <input type="text" class="form-control" placeholder="@brand-success" data-var="@label-success-bg">
         <p class="help-block">Success label background color</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@label-info-bg</label>
         <input type="text" class="form-control" placeholder="@brand-info" data-var="@label-info-bg">
         <p class="help-block">Info label background color</p>
@@ -1547,7 +1547,7 @@ base_url: "../"
         <input type="text" class="form-control" placeholder="@brand-warning" data-var="@label-warning-bg">
         <p class="help-block">Warning label background color</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@label-danger-bg</label>
         <input type="text" class="form-control" placeholder="@brand-danger" data-var="@label-danger-bg">
         <p class="help-block">Danger label background color</p>
@@ -1558,8 +1558,8 @@ base_url: "../"
     <h2 id="variables-tooltips-popovers">Tooltips and popovers</h2>
 
     <h3>Tooltip</h3>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@tooltip-color</label>
         <input type="text" class="form-control" placeholder="#fff" data-var="@tooltip-color">
         <p class="help-block">Tooltip text color</p>
@@ -1567,7 +1567,7 @@ base_url: "../"
         <input type="text" class="form-control" placeholder="#000" data-var="@tooltip-bg">
         <p class="help-block">Tooltip background color</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@tooltip-arrow-width</label>
         <input type="text" class="form-control" placeholder="5px" data-var="@tooltip-arrow-width">
         <p class="help-block">Tooltip arrow width</p>
@@ -1575,7 +1575,7 @@ base_url: "../"
         <input type="text" class="form-control" placeholder="@tooltip-bg" data-var="@tooltip-arrow-color">
         <p class="help-block">Tooltip arrow color</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@tooltip-max-width</label>
         <input type="text" class="form-control" placeholder="200px" data-var="@tooltip-max-width">
         <p class="help-block">Tooltip max width</p>
@@ -1585,8 +1585,8 @@ base_url: "../"
     <h3>Popovers</h3>
 
     <h3>Base styles</h3>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@popover-bg</label>
         <input type="text" class="form-control" placeholder="#fff" data-var="@popover-bg">
         <p class="help-block">Popover body background color</p>
@@ -1594,7 +1594,7 @@ base_url: "../"
         <input type="text" class="form-control" placeholder="276px" data-var="@popover-max-width">
         <p class="help-block">Popover maximum width</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@popover-border-color</label>
         <input type="text" class="form-control" placeholder="rgba(0,0,0,.2)" data-var="@popover-border-color">
         <p class="help-block">Popover border color</p>
@@ -1602,7 +1602,7 @@ base_url: "../"
         <input type="text" class="form-control" placeholder="#ccc" data-var="@popover-fallback-border-color">
         <p class="help-block">Popover fallback border color</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@popover-title-bg</label>
         <input type="text" class="form-control" placeholder="darken(@popover-bg, 3%)" data-var="@popover-title-bg">
         <p class="help-block">Popover title background color</p>
@@ -1610,30 +1610,30 @@ base_url: "../"
     </div>
 
     <h3>Popover arrows</h3>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@popover-arrow-width</label>
         <input type="text" class="form-control" placeholder="10px" data-var="@popover-arrow-width">
         <p class="help-block">Popover arrow width</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@popover-arrow-color</label>
         <input type="text" class="form-control" placeholder="#fff" data-var="@popover-arrow-color">
         <p class="help-block">Popover arrow color</p>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@popover-arrow-outer-width</label>
         <input type="text" class="form-control" placeholder="(@popover-arrow-width + 1)" data-var="@popover-arrow-outer-width">
         <p class="help-block">Popover outer arrow width</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@popover-arrow-outer-color</label>
         <input type="text" class="form-control" placeholder="rgba(0,0,0,.25)" data-var="@popover-arrow-outer-color">
         <p class="help-block">Popover outer arrow color</p>
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@popover-arrow-outer-fallback-color</label>
         <input type="text" class="form-control" placeholder="#999" data-var="@popover-arrow-outer-fallback-color">
         <p class="help-block">Popover outer arrow fallback color</p>
@@ -1642,16 +1642,16 @@ base_url: "../"
 
 
     <h2 id="variables-close">Close button</h2>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="Row">
+      <div class="Col--medium-4">
         <label>@close-font-weight</label>
         <input type="text" class="form-control" placeholder="bold" data-var="@close-font-weight">
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@close-color</label>
         <input type="text" class="form-control" placeholder="#000" data-var="@close-color">
       </div>
-      <div class="col-md-4">
+      <div class="Col--medium-4">
         <label>@close-text-shadow</label>
         <input type="text" class="form-control" placeholder="0 1px 0 #fff" data-var="@close-text-shadow">
       </div>
@@ -1659,48 +1659,48 @@ base_url: "../"
 
 
     <h2 id="variables-type">Type</h2>
-    <div class="row">
-      <div class="col-md-6">
+    <div class="Row">
+      <div class="Col--medium-6">
         <label>@text-muted</label>
         <input type="text" class="form-control" placeholder="@gray-light" data-var="@text-muted">
         <p class="help-block">Text muted color</p>
       </div>
-      <div class="col-md-6">
+      <div class="Col--medium-6">
         <label>@abbr-border-color</label>
         <input type="text" class="form-control" placeholder="@gray-light" data-var="@abbr-border-color">
         <p class="help-block">Abbreviations and acronyms border color</p>
       </div>
-      <div class="col-md-6">
+      <div class="Col--medium-6">
         <label>@headings-small-color</label>
         <input type="text" class="form-control" placeholder="@gray-light" data-var="@headings-small-color">
         <p class="help-block">Headings small color</p>
       </div>
-      <div class="col-md-6">
+      <div class="Col--medium-6">
         <label>@blockquote-small-color</label>
         <input type="text" class="form-control" placeholder="@gray-light" data-var="@blockquote-small-color">
         <p class="help-block">Blockquote small color</p>
       </div>
-      <div class="col-md-6">
+      <div class="Col--medium-6">
         <label>@blockquote-border-color</label>
         <input type="text" class="form-control" placeholder="@gray-lighter" data-var="@blockquote-border-color">
         <p class="help-block">Blockquote border color</p>
       </div>
-      <div class="col-md-6">
-        <label>@page-header-border-color</label>
-        <input type="text" class="form-control" placeholder="@gray-lighter" data-var="@page-header-border-color">
+      <div class="Col--medium-6">
+        <label>@Page-header-border-color</label>
+        <input type="text" class="form-control" placeholder="@gray-lighter" data-var="@Page-header-border-color">
         <p class="help-block">Page header border color</p>
       </div>
     </div>
 
 
     <h2 id="variables-other">Other</h2>
-    <div class="row">
-      <div class="col-md-6">
+    <div class="Row">
+      <div class="Col--medium-6">
         <label>@hr-border</label>
         <input type="text" class="form-control" placeholder="@gray-lighter" data-var="@hr-border">
         <p class="help-block">Horizontal line color</p>
       </div>
-      <div class="col-md-6">
+      <div class="Col--medium-6">
         <label>@component-offset-horizontal</label>
         <input type="text" class="form-control" placeholder="180px" data-var="@component-offset-horizontal">
         <p class="help-block">Horizontal offset for forms and lists</p>
@@ -1709,10 +1709,10 @@ base_url: "../"
   </div>
 
   <div class="bs-docs-section">
-    <div class="page-header">
+    <div class="Page-header">
       <h1 id="download">Download</h1>
     </div>
-    <p class="lead">Hooray! Your custom version of Bootstrap is now ready to be compiled. Just click the button below to finish the process.</p>
+    <p class="Lead">Hooray! Your custom version of Suitstrap is now ready to be compiled. Just click the button below to finish the process.</p>
     <div class="bs-customize-download">
       <button type="submit" id="btn-compile" class="btn btn-block btn-lg btn-outline" onclick="_gaq.push(['_trackEvent', 'Customize', 'Download', 'Customize and Download']);">Compile and Download</button>
     </div>

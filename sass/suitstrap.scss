@@ -2,21 +2,6 @@
  * Bootstrap 3 with Compass SASS instead of LESS
  * and using the SUIT naming convention & code-style.
  *
- *
- * Inspiration:
- *	- SMACSS
- *  - BEM methodology
- *	- inuitcss.com
- *  - SUIT framework - https://github.com/suitcss/suit/blob/master/doc/README.md
- *
- * TODO
- *	- Import paths
- *	- Apply naming conventions
- * 	- Seperate type.
- *  - Add @extend(s) in modules
- *  - Add extra variables to make customizabeler from out variables.scss
- *  - Check @at-root
- *  - Excerpt components? Eg: https://github.com/suitcss/suit#example
  */
 
 /* Core variables and mixins
@@ -75,8 +60,6 @@
 @import "components/Panels.scss";
 @import "components/Wells.scss";
 @import "components/Close.scss";
-@import "components/PageHeader.scss";
-@import "components/Lead.scss";
 
 /* Components w/ JavaScript
    ========================================================================== */

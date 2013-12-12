@@ -137,7 +137,24 @@ module.exports = function(grunt) {
 		Jekyll
 		========================================================================== */
 		jekyll: {
-			docs: {}
+			docs: {
+
+			},
+			build: {
+				options: {
+					dest: '_gh_pages',
+					config: '_config.yml'
+				}
+			},
+			serve: {
+				options: {
+					serve: true,
+					dest: '_gh_pages',
+					drafts: true,
+					server_port: 5000,
+					exclude: ['node_modules', 'less'],
+				}
+			}
 		},
 
 	/* ==========================================================================
@@ -156,6 +173,10 @@ module.exports = function(grunt) {
 		Watch
 		========================================================================== */
 		watch: {
+			gruntfile: {
+				files: '<%= jshint.gruntfile.src %>',
+				tasks: ['jshint:gruntfile']
+			},
 			src: {
 				files: '<%= jshint.src.src %>',
 				tasks: ['jshint:src', 'qunit']
@@ -168,6 +189,24 @@ module.exports = function(grunt) {
 				files: ["sass/**/*.scss"],
 				tasks: ['compass:development']
 			},
+			docs:{
+				files: [
+					'_includes/**/*.html',
+					'_layouts/**/*.html',
+					'*.html',
+					'docs/**/*.*',
+					'docs-assets/**/*.*'
+				],
+				tasks: ['jekyll:build']
+			},
+			livereload: {
+				options: {
+					livereload: true
+				},
+				files: [
+					'_gh_pages/**/*'
+				]
+			}
 		}
 	});
 
@@ -205,7 +244,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('dist-js', ['concat', 'uglify']);
 
 	// CSS distribution task.
-	grunt.registerTask('dist-css', ['recess']);
+	grunt.registerTask('dist-css', ['compass:development']);
 
 	// Fonts distribution task.
 	grunt.registerTask('dist-fonts', ['copy']);
@@ -217,7 +256,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('default', ['test', 'dist', 'build-customizer']);
 
 	// task for building customizer
-	grunt.registerTask('build-customizer', 'Add scripts/less files to customizer.', function () {
+	grunt.registerTask('build-customizer', 'Add scripts/sass files to customizer.', function () {
 		var fs = require('fs')
 
 		function getFiles(type) {
