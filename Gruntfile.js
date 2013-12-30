@@ -45,6 +45,9 @@ module.exports = function(grunt) {
 			},
 			test: {
 				src: ['js/tests/unit/*.js']
+			},
+			docs:{
+				src: ['docs-assets/js/application.js']
 			}
 		},
 
@@ -71,7 +74,7 @@ module.exports = function(grunt) {
 					'js/tab.js',
 					'js/affix.js'
 				],
-				dest: 'dist/js/<%= pkg.name %>.js'
+				dest: 'dist/js/<%= pkg.slug %>.js'
 			}
 		},
 
@@ -85,7 +88,7 @@ module.exports = function(grunt) {
 			},
 			bootstrap: {
 				src: ['<%= concat.bootstrap.dest %>'],
-				dest: 'dist/js/<%= pkg.name %>.min.js'
+				dest: 'dist/js/<%= pkg.slug %>.min.js'
 			}
 		},
 
@@ -93,10 +96,27 @@ module.exports = function(grunt) {
 		Compass
 		========================================================================== */
 		compass: {
-			development :{
-				options: {
-						config: 'config.rb'
-				}
+			options: {
+				config: 'config.rb',
+			},
+			development: {
+				src: ["sass/**/*.scss"]
+			}
+		},
+
+	/* ==========================================================================
+		Minify CSS
+		========================================================================== */
+		cssmin: {
+			options: {
+				banner: '<%= banner %>',
+			},
+			minify: {
+				expand: true,
+				cwd: 'dist/css/',
+				src: ['*.css', '!*.min.css'],
+				dest: 'dist/css/',
+				ext: '.min.css'
 			}
 		},
 
@@ -186,8 +206,16 @@ module.exports = function(grunt) {
 				tasks: ['jshint:test', 'qunit']
 			},
 			compass:{
-				files: ["sass/**/*.scss"],
-				tasks: ['compass:development']
+				files: '<%= compass.development.src %>',
+				tasks: [
+					'compass:development',
+					'cssmin:minify',
+					'jekyll:build'
+				]
+			},
+			docs_js:{
+				files: '<%= jshint.docs.src %>',
+				tasks: ['jshint:docs']
 			},
 			docs:{
 				files: [
@@ -213,6 +241,7 @@ module.exports = function(grunt) {
 
 	// These plugins provide necessary tasks.
 	grunt.loadNpmTasks('browserstack-runner');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-concat');

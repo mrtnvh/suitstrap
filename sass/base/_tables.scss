@@ -155,10 +155,10 @@ table {
 .Table > thead > tr,
 .Table > tbody > tr,
 .Table > tfoot > tr {
-	> td.isActive,
-	> th.isActive,
-	&.isActive > td,
-	&.isActive > th    {
+	> td.is-active,
+	> th.is-active,
+	&.is-active > td,
+	&.is-active > th    {
 		background-color: $table-bg-active;
 	}
 }

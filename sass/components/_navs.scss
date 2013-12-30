@@ -28,7 +28,7 @@
 		}
 
 		/* Disabled state sets text to gray and nukes hover/tab effects */
-		&.isDisabled > a {
+		&.is-disabled > a {
 			color: $nav-disabled-link-color;
 
 			&:hover,
@@ -42,7 +42,7 @@
 	}
 
 	/* Open dropdowns */
-	.isOpen > a {
+	.is-open > a {
 		&,
 		&:hover,
 		&:focus {
@@ -101,7 +101,7 @@
 		}
 
 		/* Active state, and it's :hover to override normal :hover */
-		&.isActive > a {
+		&.is-active > a {
 			&,
 			&:hover,
 			&:focus {
@@ -140,7 +140,7 @@
 		}
 
 		/* Active state */
-		&.isActive > a {
+		&.is-active > a {
 			&,
 			&:hover,
 			&:focus {
@@ -205,9 +205,9 @@
 		border-radius: $border-radius-base;
 	}
 
-	> .isActive > a,
-	> .isActive > a:hover,
-	> .isActive > a:focus {
+	> .is-active > a,
+	> .is-active > a:hover,
+	> .is-active > a:focus {
 		border: 1px solid $nav-tabs-justified-link-border-color;
 	}
 
@@ -217,9 +217,9 @@
 			border-radius: $border-radius-base $border-radius-base 0 0;
 		}
 
-		> .isActive > a,
-		> .isActive > a:hover,
-		> .isActive > a:focus {
+		> .is-active > a,
+		> .is-active > a:hover,
+		> .is-active > a:focus {
 			border-bottom-color: $nav-tabs-justified-active-link-border-color;
 		}
 	}
@@ -230,7 +230,7 @@
    ========================================================================== */
 
 /* Clear any floats */
-.isTabbable {
+.is-tabbable {
 	@include MicroClearfix();
 }
 
@@ -242,7 +242,7 @@
 
 .TabContent,
 .PillContent {
-	> .isActive {
+	> .is-active {
 		display: block;
 	}
 }

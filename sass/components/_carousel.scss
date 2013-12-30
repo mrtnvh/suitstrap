@@ -26,11 +26,11 @@
 		}
 	}
 
-	> .isActive,
+	> .is-active,
 	> .isNext,
 	> .isPrevious { display: block; }
 
-	> .isActive {
+	> .is-active {
 		left: 0;
 	}
 
@@ -52,10 +52,10 @@
 		left: 0;
 	}
 
-	> .isActive.left {
+	> .is-active.left {
 		left: -100%;
 	}
-	> .isActive.right {
+	> .is-active.right {
 		left: 100%;
 	}
 }
@@ -169,7 +169,7 @@
 		border-radius: 10px;
 		cursor: pointer;
 	}
-	.isActive {
+	.is-active {
 		margin: 0;
 		width:    12px;
 		height: 12px;

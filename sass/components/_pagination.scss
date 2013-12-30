@@ -47,8 +47,8 @@
 		}
 	}
 
-	> .isActive > a,
-	> .isActive > span {
+	> .is-active > a,
+	> .is-active > span {
 		&,
 		&:hover,
 		&:focus {
@@ -60,7 +60,7 @@
 		}
 	}
 
-	> .isDisabled {
+	> .is-disabled {
 		> span,
 		> span:hover,
 		> span:focus,

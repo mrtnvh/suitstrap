@@ -37,13 +37,13 @@
 	}
 
 	&:active,
-	&.isActive {
+	&.is-active {
 		outline: 0;
 		background-image: none;
 		@include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
 	}
 
-	&.isDisabled,
+	&.is-disabled,
 	&[disabled],
 	fieldset[disabled] & {
 		cursor: not-allowed;

@@ -22,20 +22,26 @@
 
 /* Toggling content
    ========================================================================== */
+.u-screenReaderOnly{
+	@include ScreenReaderOnly();
+}
 
-/* Note: Deprecated .hide in favor of .hidden or .sr-only (as appropriate) in v3.0.1 */
 .u-hide {
 	display: none !important;
 }
+
 .u-show {
 	display: block !important;
 }
+
 .u-invisible {
 	visibility: hidden;
 }
+
 .u-textHide {
 	@include TextHide();
 }
+
 
 
 

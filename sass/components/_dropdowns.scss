@@ -78,7 +78,7 @@
 	}
 
 	/* Active state */
-	> .isActive > a {
+	> .is-active > a {
 		&,
 		&:hover,
 		&:focus {
@@ -90,7 +90,7 @@
 	}
 
 	/* Disabled state Gray out text and ensure the hover/focus state remains gray */
-	> .isDisabled > a {
+	> .is-disabled > a {
 		&,
 		&:hover,
 		&:focus {
@@ -113,7 +113,7 @@
 
 /* Open state for the dropdown
    ========================================================================== */
-.isOpen {
+.is-open {
 	/* Show the menu */
 	> .Dropdown-menu {
 		display: block;

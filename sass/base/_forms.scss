@@ -153,17 +153,23 @@ output {
 	 * we don't honor that edge case; we style them as disabled anyway.
 	 */
 	&[disabled],
-	&[readonly],
-	fieldset[disabled] & {
+	&[readonly] {
+		cursor: not-allowed;
+		background-color: $input-bg-disabled;
+	}
+
+	@at-root fieldset[disabled]#{&} {
 		cursor: not-allowed;
 		background-color: $input-bg-disabled;
 	}
 
 	/* Reset height for `textarea`s */
-	textarea & {
+	@at-root textarea#{&} {
 		height: auto;
 	}
 }
+
+
 
 /**
  * Form groups
@@ -174,6 +180,8 @@ output {
 .Form-group {
 	margin-bottom: 15px;
 }
+
+
 
 /**
  * Checkboxes and radios
@@ -189,6 +197,7 @@ output {
 	margin-bottom: 10px;
 	padding-left: 20px;
 	vertical-align: middle;
+
 	label {
 		display: inline;
 		margin-bottom: 0;
@@ -196,21 +205,23 @@ output {
 		cursor: pointer;
 	}
 }
+
 .Radio input[type="radio"],
-.RadioInline input[type="radio"],
+.Radio--inline input[type="radio"],
 .Checkbox input[type="checkbox"],
-.CheckboxInline input[type="checkbox"] {
+.Checkbox--inline input[type="checkbox"] {
 	float: left;
 	margin-left: -20px;
 }
+
 .Radio + .Radio,
 .Checkbox + .Checkbox {
 	margin-top: -5px; /* Move up sibling radios or checkboxes for tighter spacing */
 }
 
 /* Radios and checkboxes on same line */
-.RadioInline,
-.CheckboxInline {
+.Radio--inline,
+.Checkbox--inline {
 	display: inline-block;
 	padding-left: 20px;
 	margin-bottom: 0;
@@ -218,11 +229,14 @@ output {
 	font-weight: normal;
 	cursor: pointer;
 }
-.RadioInline + .RadioInline,
-.CheckboxInline + .CheckboxInline {
+
+.Radio--inline + .Radio--inline,
+.Checkbox--inline + .Checkbox--inline {
 	margin-top: 0;
 	margin-left: 10px; /* space out consecutive inline controls */
 }
+
+
 
 /**
  * Apply same disabled cursor tweak as for inputs
@@ -231,23 +245,27 @@ output {
 input[type="radio"],
 input[type="checkbox"],
 .Radio,
-.RadioInline,
+.Radio--inline,
 .Checkbox,
-.CheckboxInline {
+.Checkbox--inline {
 	&[disabled],
 	fieldset[disabled] & {
 		cursor: not-allowed;
 	}
 }
 
+
+
 /* Form control sizing */
-.InputSm {
+.Input--small {
 	@include InputSize($input-height-small, $padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $border-radius-small);
 }
 
-.InputLg {
+.Input--large {
 	@include InputSize($input-height-large, $padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large);
 }
+
+
 
 /**
  * Form control feedback states
@@ -255,17 +273,19 @@ input[type="checkbox"],
  */
 
 /* Warning */
-.is-Warning {
+.has-Warning {
 	@include FormControlValidation($state-warning-text, $state-warning-text, $state-warning-bg);
 }
 /* Error */
-.is-Error {
+.has-Error {
 	@include FormControlValidation($state-danger-text, $state-danger-text, $state-danger-bg);
 }
 /* Success */
-.is-Success {
+.has-Success {
 	@include FormControlValidation($state-success-text, $state-success-text, $state-success-bg);
 }
+
+
 
 /**
  * Static form control text
@@ -310,7 +330,7 @@ input[type="checkbox"],
 	/* Kick in the inline */
 	@media (min-width: $screen--small) {
 		/* Inline-block all the things for "inline" */
-		.Form-group    {
+		.Form-group {
 			display: inline-block;
 			margin-bottom: 0;
 			vertical-align: middle;
@@ -353,8 +373,8 @@ input[type="checkbox"],
 	.ControlLabel,
 	.Radio,
 	.Checkbox,
-	.Radio-inline,
-	.Checkbox-inline {
+	.Radio--inline,
+	.Checkbox--inline {
 		margin-top: 0;
 		margin-bottom: 0;
 		padding-top: ($padding-base-vertical + 1); /* Default padding plus a border */

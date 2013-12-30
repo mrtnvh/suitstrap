@@ -53,9 +53,9 @@ $(function () {
 
       test("should toggle active", function () {
         var btn = $('<button class="btn">mdo</button>')
-        ok(!btn.hasClass('active'), 'btn does not have active class')
+        ok(!btn.hasClass('is-active'), 'btn does not have active class')
         btn.button('toggle')
-        ok(btn.hasClass('active'), 'btn has class active')
+        ok(btn.hasClass('is-active'), 'btn has class active')
       })
 
       test("should toggle active when btn children are clicked", function () {
@@ -64,9 +64,9 @@ $(function () {
         btn
           .append(inner)
           .appendTo($('#qunit-fixture'))
-        ok(!btn.hasClass('active'), 'btn does not have active class')
+        ok(!btn.hasClass('is-active'), 'btn does not have active class')
         inner.click()
-        ok(btn.hasClass('active'), 'btn has class active')
+        ok(btn.hasClass('is-active'), 'btn has class active')
       })
 
       test("should toggle active when btn children are clicked within btn-group", function () {
@@ -76,14 +76,14 @@ $(function () {
         btngroup
           .append(btn.append(inner))
           .appendTo($('#qunit-fixture'))
-        ok(!btn.hasClass('active'), 'btn does not have active class')
+        ok(!btn.hasClass('is-active'), 'btn does not have active class')
         inner.click()
-        ok(btn.hasClass('active'), 'btn has class active')
+        ok(btn.hasClass('is-active'), 'btn has class active')
       })
 
       test("should check for closest matching toggle", function () {
         var group = '<div class="btn-group" data-toggle="buttons">' +
-          '<label class="btn btn-primary active">' +
+          '<label class="btn btn-primary is-active">' +
             '<input type="radio" name="options" id="option1" checked="true"> Option 1' +
           '</label>' +
           '<label class="btn btn-primary">' +
@@ -102,14 +102,14 @@ $(function () {
 
         group.appendTo($('#qunit-fixture'))
 
-        ok(btn1.hasClass('active'), 'btn1 has active class')
+        ok(btn1.hasClass('is-active'), 'btn1 has active class')
         ok(btn1.find('input').prop('checked'), 'btn1 is checked')
-        ok(!btn2.hasClass('active'), 'btn2 does not have active class')
+        ok(!btn2.hasClass('is-active'), 'btn2 does not have active class')
         ok(!btn2.find('input').prop('checked'), 'btn2 is not checked')
         btn2.find('input').click()
-        ok(!btn1.hasClass('active'), 'btn1 does not have active class')
+        ok(!btn1.hasClass('is-active'), 'btn1 does not have active class')
         ok(!btn1.find('input').prop('checked'), 'btn1 is checked')
-        ok(btn2.hasClass('active'), 'btn2 has active class')
+        ok(btn2.hasClass('is-active'), 'btn2 has active class')
         ok(btn2.find('input').prop('checked'), 'btn2 is checked')
       })
 

@@ -43,7 +43,7 @@ $(document).off('.alert.data-api')
     <h3 id="js-programmatic-api">Programmatic API</h3>
     <p>We also believe you should be able to use all Suitstrap plugins purely through the JavaScript API. All public APIs are single, chainable methods, and return the collection acted upon.</p>
 {% highlight js %}
-$(".btn.danger").button("toggle").addClass("fat")
+$(".Button.danger").button("toggle").addClass("fat")
 {% endhighlight %}
 
     <p>All methods should accept an optional options object, a string which targets a particular method, or nothing (which initiates a plugin with default behavior):</p>
@@ -59,7 +59,7 @@ $("#myModal").modal('show')                // initializes and invokes show immed
     <p>Sometimes it is necessary to use Suitstrap plugins with other UI frameworks. In these circumstances, namespace collisions can occasionally occur. If this happens, you may call <code>.noConflict</code> on the plugin you wish to revert the value of.</p>
 {% highlight js %}
 var bootstrapButton = $.fn.button.noConflict() // return $.fn.button to previously assigned value
-$.fn.bootstrapBtn = bootstrapButton            // give $().bootstrapBtn the Suitstrap functionality
+$.fn.bootstrapButton = bootstrapButton            // give $().bootstrapButton the Suitstrap functionality
 {% endhighlight %}
 
     <h3 id="js-events">Events</h3>
@@ -123,8 +123,8 @@ $('#myModal').on('show.bs.modal', function (e) {
               <p>One fine body&hellip;</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="Button Button--default" data-dismiss="modal">Close</button>
+              <button type="button" class="Button Button--primary">Save changes</button>
             </div>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
@@ -142,8 +142,8 @@ $('#myModal').on('show.bs.modal', function (e) {
         <p>One fine body&hellip;</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="Button Button--default" data-dismiss="modal">Close</button>
+        <button type="button" class="Button Button--primary">Save changes</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -166,7 +166,7 @@ $('#myModal').on('show.bs.modal', function (e) {
             <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
 
             <h4>Popover in a modal</h4>
-            <p>This <a href="#" role="button" class="btn btn-default popover-test" title="A Title" data-content="And here's some amazing content. It's very engaging. right?">button</a> should trigger a popover on click.</p>
+            <p>This <a href="#" role="button" class="Button Button--default popover-test" title="A Title" data-content="And here's some amazing content. It's very engaging. right?">button</a> should trigger a popover on click.</p>
 
             <h4>Tooltips in a modal</h4>
             <p><a href="#" class="tooltip-test" title="Tooltip">This link</a> and <a href="#" class="tooltip-test" title="Tooltip">that link</a> should have tooltips on hover.</p>
@@ -185,8 +185,8 @@ $('#myModal').on('show.bs.modal', function (e) {
             <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="Button Button--default" data-dismiss="modal">Close</button>
+            <button type="button" class="Button Button--primary">Save changes</button>
           </div>
 
         </div><!-- /.modal-content -->
@@ -194,13 +194,13 @@ $('#myModal').on('show.bs.modal', function (e) {
     </div><!-- /.modal -->
 
     <div class="bs-example" style="padding-bottom: 24px;">
-      <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+      <button class="Button Button--primary Button--large" data-toggle="modal" data-target="#myModal">
         Launch demo modal
       </button>
     </div><!-- /example -->
 {% highlight html %}
 <!-- Button trigger modal -->
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+<button class="Button Button--primary Button--large" data-toggle="modal" data-target="#myModal">
   Launch demo modal
 </button>
 
@@ -216,8 +216,8 @@ $('#myModal').on('show.bs.modal', function (e) {
         ...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="Button Button--default" data-dismiss="modal">Close</button>
+        <button type="button" class="Button Button--primary">Save changes</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -364,7 +364,7 @@ $('#myModal').on('hidden.bs.modal', function () {
       <nav id="navbar-example" class="navbar navbar-default navbar-static" role="navigation">
         <div class="navbar-header">
           <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-js-navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
+            <span class="u-screenReaderOnly">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -413,7 +413,7 @@ $('#myModal').on('hidden.bs.modal', function () {
     <h3>Within tabs</h3>
     <div class="bs-example">
       <ul class="nav nav-pills">
-        <li class="active"><a href="#">Regular link</a></li>
+        <li class="is-active"><a href="#">Regular link</a></li>
         <li class="dropdown">
           <a id="drop4" role="button" data-toggle="dropdown" href="#">Dropdown <b class="caret"></b></a>
           <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
@@ -532,12 +532,12 @@ $('#myDropdown').on('show.bs.dropdown', function () {
 
 
     <h2 id="scrollspy-examples">Example in navbar</h2>
-    <p>The ScrollSpy plugin is for automatically updating nav targets based on scroll position. Scroll the area below the navbar and watch the active class change. The dropdown sub items will be highlighted as well.</p>
+    <p>The ScrollSpy plugin is for automatically updating nav targets based on scroll position. Scroll the area below the navbar and watch the is-active class change. The dropdown sub items will be highlighted as well.</p>
     <div class="bs-example">
       <nav id="navbar-example2" class="navbar navbar-default navbar-static" role="navigation">
         <div class="navbar-header">
           <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-js-navbar-scrollspy">
-            <span class="sr-only">Toggle navigation</span>
+            <span class="u-screenReaderOnly">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -668,7 +668,7 @@ $('#myScrollspy').on('activate.bs.scrollspy', function () {
     <p>Add quick, dynamic tab functionality to transition through panes of local content, even via dropdown menus.</p>
     <div class="bs-example bs-example-tabs">
       <ul id="myTab" class="nav nav-tabs">
-        <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+        <li class="is-active"><a href="#home" data-toggle="tab">Home</a></li>
         <li><a href="#profile" data-toggle="tab">Profile</a></li>
         <li class="dropdown">
           <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
@@ -679,7 +679,7 @@ $('#myScrollspy').on('activate.bs.scrollspy', function () {
         </li>
       </ul>
       <div id="myTabContent" class="tab-content">
-        <div class="tab-pane fade in active" id="home">
+        <div class="tab-pane fade in is-active" id="home">
           <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
         </div>
         <div class="tab-pane fade" id="profile">
@@ -730,7 +730,7 @@ $('#myTab li:eq(2) a').tab('show') // Select third tab (0-indexed)
 
 <!-- Tab panes -->
 <div class="tab-content">
-  <div class="tab-pane active" id="home">...</div>
+  <div class="tab-pane is-active" id="home">...</div>
   <div class="tab-pane" id="profile">...</div>
   <div class="tab-pane" id="messages">...</div>
   <div class="tab-pane" id="settings">...</div>
@@ -741,7 +741,7 @@ $('#myTab li:eq(2) a').tab('show') // Select third tab (0-indexed)
     <p>To make tabs fade in, add <code>.fade</code> to each <code>.tab-pane</code>. The first tab pane must also have <code>.in</code> to properly fade in initial content.</p>
 {% highlight html %}
 <div class="tab-content">
-  <div class="tab-pane fade in active" id="home">...</div>
+  <div class="tab-pane fade in is-active" id="home">...</div>
   <div class="tab-pane fade" id="profile">...</div>
   <div class="tab-pane fade" id="messages">...</div>
   <div class="tab-pane fade" id="settings">...</div>
@@ -755,14 +755,14 @@ $('#myTab li:eq(2) a').tab('show') // Select third tab (0-indexed)
     </p>
 {% highlight html %}
 <ul class="nav nav-tabs" id="myTab">
-  <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+  <li class="is-active"><a href="#home" data-toggle="tab">Home</a></li>
   <li><a href="#profile" data-toggle="tab">Profile</a></li>
   <li><a href="#messages" data-toggle="tab">Messages</a></li>
   <li><a href="#settings" data-toggle="tab">Settings</a></li>
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="home">...</div>
+  <div class="tab-pane is-active" id="home">...</div>
   <div class="tab-pane" id="profile">...</div>
   <div class="tab-pane" id="messages">...</div>
   <div class="tab-pane" id="settings">...</div>
@@ -787,11 +787,11 @@ $('#myTab li:eq(2) a').tab('show') // Select third tab (0-indexed)
         <tbody>
          <tr>
            <td>show.bs.tab</td>
-           <td>This event fires on tab show, but before the new tab has been shown. Use <code>event.target</code> and <code>event.relatedTarget</code> to target the active tab and the previous active tab (if available) respectively.</td>
+           <td>This event fires on tab show, but before the new tab has been shown. Use <code>event.target</code> and <code>event.relatedTarget</code> to target the is-active tab and the previous is-active tab (if available) respectively.</td>
         </tr>
         <tr>
            <td>shown.bs.tab</td>
-           <td>This event fires on tab show after a tab has been shown. Use <code>event.target</code> and <code>event.relatedTarget</code> to target the active tab and the previous active tab (if available) respectively.</td>
+           <td>This event fires on tab show after a tab has been shown. Use <code>event.target</code> and <code>event.relatedTarget</code> to target the is-active tab and the previous is-active tab (if available) respectively.</td>
          </tr>
         </tbody>
       </table>
@@ -824,10 +824,10 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
     <h3>Four directions</h3>
     <div class="bs-example tooltip-demo">
       <div class="bs-example-tooltips">
-        <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</button>
-        <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
-        <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button>
-        <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</button>
+        <button type="button" class="Button Button--default" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</button>
+        <button type="button" class="Button Button--default" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
+        <button type="button" class="Button Button--default" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button>
+        <button type="button" class="Button Button--default" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</button>
       </div>
     </div><!-- /example -->
 
@@ -837,7 +837,7 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
     </div>
     <div class="bs-callout bs-callout-info">
       <h4>Tooltips in button groups and input groups require special setting</h4>
-      <p>When using tooltips on elements within a <code>.btn-group</code> or an <code>.input-group</code>, you'll have to specify the option <code>container: 'body'</code> (documented below) to avoid unwanted side effects (such as the element growing wider and/or losing its rounded corners when the tooltip is triggered).</p>
+      <p>When using tooltips on elements within a <code>.Button--group</code> or an <code>.input-group</code>, you'll have to specify the option <code>container: 'body'</code> (documented below) to avoid unwanted side effects (such as the element growing wider and/or losing its rounded corners when the tooltip is triggered).</p>
     </div>
     <div class="bs-callout bs-callout-info">
       <h4>Tooltips on disabled elements require wrapper elements</h4>
@@ -1007,7 +1007,7 @@ $('#myTooltip').on('hidden.bs.tooltip', function () {
     </div>
     <div class="bs-callout bs-callout-info">
       <h4>Popovers in button groups and input groups require special setting</h4>
-      <p>When using popovers on elements within a <code>.btn-group</code> or an <code>.input-group</code>, you'll have to specify the option <code>container: 'body'</code> (documented below) to avoid unwanted side effects (such as the element growing wider and/or losing its rounded corners when the popover is triggered).</p>
+      <p>When using popovers on elements within a <code>.Button--group</code> or an <code>.input-group</code>, you'll have to specify the option <code>container: 'body'</code> (documented below) to avoid unwanted side effects (such as the element growing wider and/or losing its rounded corners when the popover is triggered).</p>
     </div>
     <div class="bs-callout bs-callout-info">
       <h4>Popovers on disabled elements require wrapper elements</h4>
@@ -1055,22 +1055,22 @@ $('#myTooltip').on('hidden.bs.tooltip', function () {
 
     <h3>Live demo</h3>
     <div class="bs-example" style="padding-bottom: 24px;">
-      <a href="#" class="btn btn-lg btn-danger" data-toggle="popover" title="A Title" data-content="And here's some amazing content. It's very engaging. right?" role="button">Click to toggle popover</a>
+      <a href="#" class="Button Button--large Button--danger" data-toggle="popover" title="A Title" data-content="And here's some amazing content. It's very engaging. right?" role="button">Click to toggle popover</a>
     </div>
 
     <h4>Four directions</h4>
     <div class="bs-example tooltip-demo">
       <div class="bs-example-tooltips">
-        <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+        <button type="button" class="Button Button--default" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
           Popover on left
         </button>
-        <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+        <button type="button" class="Button Button--default" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
           Popover on top
         </button>
-        <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+        <button type="button" class="Button Button--default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
           Popover on bottom
         </button>
-        <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+        <button type="button" class="Button Button--default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
           Popover on right
         </button>
       </div>
@@ -1240,8 +1240,8 @@ $('#myPopover').on('hidden.bs.popover', function () {
         <h4>Oh snap! You got an error!</h4>
         <p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
         <p>
-          <button type="button" class="btn btn-danger">Take this action</button>
-          <button type="button" class="btn btn-default">Or do this</button>
+          <button type="button" class="Button Button--danger">Take this action</button>
+          <button type="button" class="Button Button--default">Or do this</button>
         </p>
       </div>
     </div><!-- /example -->
@@ -1309,12 +1309,12 @@ $('#my-alert').bind('closed.bs.alert', function () {
     <h4>Stateful</h4>
     <p>Add <code>data-loading-text="Loading..."</code> to use a loading state on a button.</p>
     <div class="bs-example" style="padding-bottom: 24px;">
-      <button type="button" id="fat-btn" data-loading-text="Loading..." class="btn btn-primary">
+      <button type="button" id="fat-Button" data-loading-text="Loading..." class="Button Button--primary">
         Loading state
       </button>
     </div><!-- /example -->
 {% highlight html %}
-<button type="button" data-loading-text="Loading..." class="btn btn-primary">
+<button type="button" data-loading-text="Loading..." class="Button Button--primary">
   Loading state
 </button>
 {% endhighlight %}
@@ -1322,65 +1322,65 @@ $('#my-alert').bind('closed.bs.alert', function () {
     <h4>Single toggle</h4>
     <p>Add <code>data-toggle="button"</code> to activate toggling on a single button.</p>
     <div class="bs-example" style="padding-bottom: 24px;">
-      <button type="button" class="btn btn-primary" data-toggle="button">Single toggle</button>
+      <button type="button" class="Button Button--primary" data-toggle="button">Single toggle</button>
     </div><!-- /example -->
 {% highlight html %}
-<button type="button" class="btn btn-primary" data-toggle="button">Single toggle</button>
+<button type="button" class="Button Button--primary" data-toggle="button">Single toggle</button>
 {% endhighlight %}
 
     <h4>Checkbox</h4>
-    <p>Add <code>data-toggle="buttons"</code> to a group of checkboxes for checkbox style toggling on btn-group.</p>
+    <p>Add <code>data-toggle="buttons"</code> to a group of checkboxes for checkbox style toggling on Button--group.</p>
     <div class="bs-example" style="padding-bottom: 24px;">
-      <div class="btn-group" data-toggle="buttons">
-        <label class="btn btn-primary">
+      <div class="Button--group" data-toggle="buttons">
+        <label class="Button Button--primary">
           <input type="checkbox"> Option 1
         </label>
-        <label class="btn btn-primary">
+        <label class="Button Button--primary">
           <input type="checkbox"> Option 2
         </label>
-        <label class="btn btn-primary">
+        <label class="Button Button--primary">
           <input type="checkbox"> Option 3
         </label>
       </div>
     </div><!-- /example -->
 {% highlight html %}
-<div class="btn-group" data-toggle="buttons">
-  <label class="btn btn-primary">
+<div class="Button--group" data-toggle="buttons">
+  <label class="Button Button--primary">
     <input type="checkbox"> Option 1
   </label>
-  <label class="btn btn-primary">
+  <label class="Button Button--primary">
     <input type="checkbox"> Option 2
   </label>
-  <label class="btn btn-primary">
+  <label class="Button Button--primary">
     <input type="checkbox"> Option 3
   </label>
 </div>
 {% endhighlight %}
 
     <h4>Radio</h4>
-    <p>Add <code>data-toggle="buttons"</code> to a group of radio inputs for radio style toggling on btn-group.</p>
+    <p>Add <code>data-toggle="buttons"</code> to a group of radio inputs for radio style toggling on Button--group.</p>
     <div class="bs-example" style="padding-bottom: 24px;">
-      <div class="btn-group" data-toggle="buttons">
-        <label class="btn btn-primary">
+      <div class="Button--group" data-toggle="buttons">
+        <label class="Button Button--primary">
           <input type="radio" name="options" id="option1"> Option 1
         </label>
-        <label class="btn btn-primary">
+        <label class="Button Button--primary">
           <input type="radio" name="options" id="option2"> Option 2
         </label>
-        <label class="btn btn-primary">
+        <label class="Button Button--primary">
           <input type="radio" name="options" id="option3"> Option 3
         </label>
       </div>
     </div><!-- /example -->
 {% highlight html %}
-<div class="btn-group" data-toggle="buttons">
-  <label class="btn btn-primary">
+<div class="Button--group" data-toggle="buttons">
+  <label class="Button Button--primary">
     <input type="radio" name="options" id="option1"> Option 1
   </label>
-  <label class="btn btn-primary">
+  <label class="Button Button--primary">
     <input type="radio" name="options" id="option2"> Option 2
   </label>
-  <label class="btn btn-primary">
+  <label class="Button Button--primary">
     <input type="radio" name="options" id="option3"> Option 3
   </label>
 </div>
@@ -1390,7 +1390,7 @@ $('#my-alert').bind('closed.bs.alert', function () {
     <h2 id="buttons-usage">Usage</h2>
     <p>Enable buttons via JavaScript:</p>
 {% highlight js %}
-$('.btn-group').button()
+$('.Button--group').button()
 {% endhighlight %}
 
     <h3>Markup</h3>
@@ -1408,14 +1408,14 @@ $('.btn-group').button()
       <p>You can enable auto toggling of a button by using the <code>data-toggle</code> attribute.</p>
     </div>
 {% highlight html %}
-<button type="button" class="btn" data-toggle="button">...</button>
+<button type="button" class="Button" data-toggle="button">...</button>
 {% endhighlight %}
 
     <h4>$().button('loading')</h4>
     <p>Sets button state to loading - disables button and swaps text to loading text. Loading text should be defined on the button element using the data attribute <code>data-loading-text</code>.
     </p>
 {% highlight html %}
-<button type="button" class="btn" data-loading-text="loading stuff...">...</button>
+<button type="button" class="Button" data-loading-text="loading stuff...">...</button>
 {% endhighlight %}
 
     <div class="bs-callout bs-callout-danger">
@@ -1429,9 +1429,9 @@ $('.btn-group').button()
     <h4>$().button(string)</h4>
     <p>Resets button state - swaps text to any data defined text state.</p>
 {% highlight html %}
-<button type="button" class="btn" data-complete-text="finished!" >...</button>
+<button type="button" class="Button" data-complete-text="finished!" >...</button>
 <script>
-  $('.btn').button('complete')
+  $('.Button').button('complete')
 </script>
 {% endhighlight %}
   </div>
@@ -1551,7 +1551,7 @@ $('.btn-group').button()
 
     <p>You can also use the plugin without the accordion markup. Make a button toggle the expanding and collapsing of another element.</p>
 {% highlight html %}
-<button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo">
+<button type="button" class="Button Button--danger" data-toggle="collapse" data-target="#demo">
   simple collapsible
 </button>
 
@@ -1672,12 +1672,12 @@ $('#myCollapsible').on('hidden.bs.collapse', function () {
     <div class="bs-example">
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="is-active"></li>
           <li data-target="#carousel-example-generic" data-slide-to="1"></li>
           <li data-target="#carousel-example-generic" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-          <div class="item active">
+          <div class="item is-active">
             <img src="data:image/png;base64," data-src="holder.js/900x500/auto/#777:#555/text:First slide" alt="First slide">
           </div>
           <div class="item">
@@ -1699,14 +1699,14 @@ $('#myCollapsible').on('hidden.bs.collapse', function () {
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="is-active"></li>
     <li data-target="#carousel-example-generic" data-slide-to="1"></li>
     <li data-target="#carousel-example-generic" data-slide-to="2"></li>
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
-    <div class="item active">
+    <div class="item is-active">
       <img src="..." alt="...">
       <div class="carousel-caption">
         ...
@@ -1734,12 +1734,12 @@ $('#myCollapsible').on('hidden.bs.collapse', function () {
     <div class="bs-example">
       <div id="carousel-example-captions" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-          <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-captions" data-slide-to="0" class="is-active"></li>
           <li data-target="#carousel-example-captions" data-slide-to="1"></li>
           <li data-target="#carousel-example-captions" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-          <div class="item active">
+          <div class="item is-active">
             <img data-src="holder.js/900x500/auto/#777:#777" src="data:image/png;base64," alt="First slide image">
             <div class="carousel-caption">
               <h3>First slide label</h3>
@@ -1770,7 +1770,7 @@ $('#myCollapsible').on('hidden.bs.collapse', function () {
       </div>
     </div><!-- /example -->
 {% highlight html %}
-<div class="item active">
+<div class="item is-active">
   <img src="..." alt="...">
   <div class="carousel-caption">
     <h3>...</h3>

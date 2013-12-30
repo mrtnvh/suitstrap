@@ -39,8 +39,8 @@ a.Badge {
 }
 
 /* Account for counters in navs */
-a.ListGroup-item.isActive > .Badge,
-.Nav--pills > .isActive > a > .Badge {
+a.ListGroup-item.is-active > .Badge,
+.Nav--pills > .is-active > a > .Badge {
     color: $badge-active-color;
     background-color: $badge-active-bg;
 }

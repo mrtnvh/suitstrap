@@ -47,7 +47,7 @@
         &:hover,
         &:focus,
         &:active,
-        &.isActive {
+        &.is-active {
             z-index: 2;
         }
         &:focus {
@@ -120,7 +120,7 @@
 
 /* On active and open, don't show outline */
 .ButtonGroup .Dropdown-toggle:active,
-.ButtonGroup.isOpen .Dropdown-toggle {
+.ButtonGroup.is-open .Dropdown-toggle {
     outline: 0;
 }
 
@@ -161,7 +161,7 @@
 * The clickable button for toggling the menu
 * Remove the gradient and set the same inset shadow as the :active state
 */
-.ButtonGroup.isOpen .Dropdown-toggle {
+.ButtonGroup.is-open .Dropdown-toggle {
     @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
 }
 

@@ -31,7 +31,7 @@ $(function () {
           + '</ul>'
           , dropdown = $(dropdownHTML).find('[data-toggle="dropdown"]').dropdown().click()
 
-        ok(!dropdown.parent('.dropdown').hasClass('open'), 'open class added on click')
+        ok(!dropdown.parent('.dropdown').hasClass('is-open'), 'open class added on click')
       })
 
       test("should not open dropdown if target is disabled", function () {
@@ -48,7 +48,7 @@ $(function () {
           + '</ul>'
           , dropdown = $(dropdownHTML).find('[data-toggle="dropdown"]').dropdown().click()
 
-        ok(!dropdown.parent('.dropdown').hasClass('open'), 'open class added on click')
+        ok(!dropdown.parent('.dropdown').hasClass('is-open'), 'open class added on click')
       })
 
       test("should add class open to menu if clicked", function () {
@@ -65,7 +65,7 @@ $(function () {
           + '</ul>'
           , dropdown = $(dropdownHTML).find('[data-toggle="dropdown"]').dropdown().click()
 
-        ok(dropdown.parent('.dropdown').hasClass('open'), 'open class added on click')
+        ok(dropdown.parent('.dropdown').hasClass('is-open'), 'open class added on click')
       })
 
       test("should test if element has a # before assuming it's a selector", function () {
@@ -82,7 +82,7 @@ $(function () {
           + '</ul>'
           , dropdown = $(dropdownHTML).find('[data-toggle="dropdown"]').dropdown().click()
 
-        ok(dropdown.parent('.dropdown').hasClass('open'), 'open class added on click')
+        ok(dropdown.parent('.dropdown').hasClass('is-open'), 'open class added on click')
       })
 
 
@@ -104,9 +104,9 @@ $(function () {
             .dropdown()
             .click()
 
-        ok(dropdown.parent('.dropdown').hasClass('open'), 'open class added on click')
+        ok(dropdown.parent('.dropdown').hasClass('is-open'), 'open class added on click')
         $('body').click()
-        ok(!dropdown.parent('.dropdown').hasClass('open'), 'open class removed')
+        ok(!dropdown.parent('.dropdown').hasClass('is-open'), 'open class removed')
         dropdown.remove()
       })
 
@@ -135,16 +135,16 @@ $(function () {
         ok(dropdowns.length == 2, "Should be two dropdowns")
 
         first.click()
-        ok(first.parents('.open').length == 1, 'open class added on click')
-        ok($('#qunit-fixture .open').length == 1, 'only one object is open')
+        ok(first.parents('.is-open').length == 1, 'open class added on click')
+        ok($('#qunit-fixture .is-open').length == 1, 'only one object is open')
         $('body').click()
-        ok($("#qunit-fixture .open").length === 0, 'open class removed')
+        ok($("#qunit-fixture .is-open").length === 0, 'open class removed')
 
         last.click()
-        ok(last.parent('.open').length == 1, 'open class added on click')
-        ok($('#qunit-fixture .open').length == 1, 'only one object is open')
+        ok(last.parent('.is-open').length == 1, 'open class added on click')
+        ok($('#qunit-fixture .is-open').length == 1, 'only one object is open')
         $('body').click()
-        ok($("#qunit-fixture .open").length === 0, 'open class removed')
+        ok($("#qunit-fixture .is-open").length === 0, 'open class removed')
 
         $("#qunit-fixture").html("")
       })

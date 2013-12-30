@@ -1,41 +1,35 @@
-/**
- * Bootstrap 3 with Compass SASS instead of LESS
- * and using the SUIT naming convention & code-style.
- *
- */
-
 /* Core variables and mixins
    ========================================================================== */
-@import "variables.scss";
 @import "compass";
+@import "variables.scss";
 @import "mixins/mixins.scss";
 
 /* Resets
    ========================================================================== */
 @import "utilities/normalize.scss";
-@import "utilities/_print.scss";
+@import "utilities/print.scss";
 
 /* Base styles
    ========================================================================== */
-@import "base/scaffolding.scss";
-@import "base/links.scss";
-@import "base/images.scss";
-@import "base/horizontalrules.scss";
-@import "base/abbreviations.scss";
-@import "base/address.scss";
-@import "base/blockquote.scss";
-@import "base/code.scss";
-@import "base/emphasis.scss";
-@import "base/forms.scss";
-@import "base/headings.scss";
-@import "base/lists.scss";
-@import "base/paragraphs.scss";
-@import "base/tables.scss";
+@import "base/Scaffolding.scss";
+@import "base/Links.scss";
+@import "base/Images.scss";
+@import "base/Horizontalrules.scss";
+@import "base/Abbreviations.scss";
+@import "base/Address.scss";
+@import "base/Blockquote.scss";
+@import "base/Code.scss";
+@import "base/Emphasis.scss";
+@import "base/Forms.scss";
+@import "base/Headings.scss";
+@import "base/Lists.scss";
+@import "base/Paragraphs.scss";
+@import "base/Tables.scss";
 
 /* Layout
    ========================================================================== */
-@import "layout/_grid.scss";
-@import "layout/_layout.scss";
+@import "layout/grid.scss";
+@import "layout/layout.scss";
 
 /* Components
    ========================================================================== */

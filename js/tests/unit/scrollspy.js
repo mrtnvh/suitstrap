@@ -31,7 +31,7 @@ $(function () {
           + '</div>'
           , $topbar = $(topbarHTML).scrollspy()
 
-        ok($topbar.find('.active', true))
+        ok($topbar.find('.is-active', true))
       })
 
 })

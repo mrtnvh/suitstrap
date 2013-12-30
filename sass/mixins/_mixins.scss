@@ -33,6 +33,26 @@
 		}
 	}
 
+
+
+	/**
+	 * Only display content to screen readers
+	 * See: http://a11yproject.com/posts/how-to-hide-content/
+	 */
+
+	@mixin ScreenReaderOnly() {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		padding: 0;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+		border: 0;
+	}
+
+
+
 	/* Float utilities */
 	@mixin PullRight() {
 		float: right !important;
@@ -82,6 +102,8 @@
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
+
+
 
 	/**
 	 * CSS image replacement
@@ -297,25 +319,25 @@
 		&:hover,
 		&:focus,
 		&:active,
-		&.isActive,
-		.isOpen .Dropdown-toggle & {
+		&.is-active,
+		.is-open .Dropdown-toggle & {
 			color: $color;
 			background-color: darken($background, 8%);
 					border-color: darken($border, 12%);
 		}
 		&:active,
-		&.isActive,
-		.isOpen .Dropdown-toggle & {
+		&.is-active,
+		.is-open .Dropdown-toggle & {
 			background-image: none;
 		}
-		&.isDisabled,
+		&.is-disabled,
 		&[disabled],
 		fieldset[disabled] & {
 			&,
 			&:hover,
 			&:focus,
 			&:active,
-			&.isActive {
+			&.is-active {
 				background-color: $background;
 						border-color: $border;
 			}

@@ -223,7 +223,7 @@
 
 	@media (max-width: $screen--extraSmall-max) {
 		/* Dropdowns get custom display when collapsed */
-		.isOpen .Dropdown-menu {
+		.is-open .Dropdown-menu {
 			position: static;
 			float: none;
 			width: auto;
@@ -274,11 +274,11 @@
  */
 
 @media (min-width: $grid-float-breakpoint) {
-	.Navbar-left {
+	.Navbar--left {
 		@include PullLeft();
 	}
 
-	.Navbar-right {
+	.Navbar--right {
 		@include PullRight();
 	}
 }
@@ -286,7 +286,7 @@
 
 /* Navbar form
    ========================================================================== */
-/* Extension of the `.form-inline` with some extra flavor for optimum display in our navbars. */
+/* Extension of the `.Form--inline` with some extra flavor for optimum display in our navbars. */
 
 .Navbar-form {
 	margin-left: -$navbar-padding-horizontal;
@@ -294,8 +294,10 @@
 	padding: 10px $navbar-padding-horizontal;
 	border-top: 1px solid transparent;
 	border-bottom: 1px solid transparent;
-	$shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1);
-	@include box-shadow($shadow);
+	@include box-shadow(
+		inset 0 1px 0 rgba(255,255,255,.1),
+		0 1px 0 rgba(255,255,255,.1)
+	);
 
 	/* Mixin behavior for optimum display */
 	@extend .Form--inline;
@@ -397,7 +399,7 @@
 				background-color: $navbar-default-link-hover-bg;
 			}
 		}
-		> .isActive > a {
+		> .is-active > a {
 			&,
 			&:hover,
 			&:focus {
@@ -405,7 +407,7 @@
 				background-color: $navbar-default-link-active-bg;
 			}
 		}
-		> .isDisabled > a {
+		> .is-disabled > a {
 			&,
 			&:hover,
 			&:focus {
@@ -421,7 +423,7 @@
 		&:focus {
 			background-color: $navbar-default-toggle-hover-bg;
 		}
-		.icon-bar {
+		.Icon--bar {
 			background-color: $navbar-default-toggle-icon-bar-bg;
 		}
 	}
@@ -441,7 +443,7 @@
 		}
 
 		/* Remove background color from open dropdown */
-		> .isOpen > a {
+		> .is-open > a {
 			&,
 			&:hover,
 			&:focus {
@@ -461,7 +463,7 @@
 
 		@media (max-width: $screen--extraSmall-max) {
 			/* Dropdowns get custom display when collapsed */
-			.isOpen .Dropdown-menu {
+			.is-open .Dropdown-menu {
 				> li > a {
 					color: $navbar-default-link-color;
 					&:hover,
@@ -470,7 +472,7 @@
 						background-color: $navbar-default-link-hover-bg;
 					}
 				}
-				> .isActive > a {
+				> .is-active > a {
 					&,
 					&:hover,
 					&:focus {
@@ -478,7 +480,7 @@
 						background-color: $navbar-default-link-active-bg;
 					}
 				}
-				> .isDisabled > a {
+				> .is-disabled > a {
 					&,
 					&:hover,
 					&:focus {
@@ -534,7 +536,7 @@
 				background-color: $navbar-inverse-link-hover-bg;
 			}
 		}
-		> .isActive > a {
+		> .is-active > a {
 			&,
 			&:hover,
 			&:focus {
@@ -542,7 +544,7 @@
 				background-color: $navbar-inverse-link-active-bg;
 			}
 		}
-		> .isDisabled > a {
+		> .is-disabled > a {
 			&,
 			&:hover,
 			&:focus {
@@ -559,7 +561,7 @@
 		&:focus {
 			background-color: $navbar-inverse-toggle-hover-bg;
 		}
-		.icon-bar {
+		.Icon--bar {
 			background-color: $navbar-inverse-toggle-icon-bar-bg;
 		}
 	}
@@ -571,7 +573,7 @@
 
 	/* Dropdowns */
 	.Navbar-nav {
-		> .isOpen > a {
+		> .is-open > a {
 			&,
 			&:hover,
 			&:focus {
@@ -587,7 +589,7 @@
 			border-top-color: $navbar-inverse-link-color;
 			border-bottom-color: $navbar-inverse-link-color;
 		}
-		> .isOpen > a {
+		> .is-open > a {
 			&,
 			&:hover,
 			&:focus {
@@ -600,7 +602,7 @@
 
 		@media (max-width: $screen--extraSmall-max) {
 			/* Dropdowns get custom display */
-			.isOpen .Dropdown-menu {
+			.is-open .Dropdown-menu {
 				> .Dropdown-header {
 					border-color: $navbar-inverse-border;
 				}
@@ -612,7 +614,7 @@
 						background-color: $navbar-inverse-link-hover-bg;
 					}
 				}
-				> .isActive > a {
+				> .is-active > a {
 					&,
 					&:hover,
 					&:focus {
@@ -620,7 +622,7 @@
 						background-color: $navbar-inverse-link-active-bg;
 					}
 				}
-				> .isDisabled > a {
+				> .is-disabled > a {
 					&,
 					&:hover,
 					&:focus {
