@@ -691,7 +691,7 @@ table {
 
   /* line 82, ../../sass/utilities/_print.scss */
   .Button > .Caret,
-  .DropUp > .Button > .Caret {
+  .Dropup > .Button > .Caret {
     border-top-color: #000 !important; }
 
   /* line 86, ../../sass/utilities/_print.scss */
@@ -910,7 +910,7 @@ code,
 kdb,
 pre,
 samp {
-  font-family: Monaco, Menlo, Consolas, "Courier New", monospace; }
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace; }
 
 /* Inline code
    ========================================================================== */
@@ -1198,7 +1198,7 @@ output {
    * we don't honor that edge case; we style them as disabled anyway.
    */
   /* Reset height for `textarea`s */ }
-  /* line 608, ../../sass/mixins/_mixins.scss */
+  /* line 600, ../../sass/mixins/_mixins.scss */
   .Form-control:focus {
     border-color: #66afe9;
     outline: 0;
@@ -1303,44 +1303,44 @@ input[type="checkbox"],
 /* Form control sizing */
 /* line 260, ../../sass/base/_Forms.scss */
 .Input--small, .InputGroup--small > .Form-control,
-.InputGroup--small > .InputGroup--addon,
-.InputGroup--small > .InputGroup--button > .Button {
+.InputGroup--small > .InputGroup-addon,
+.InputGroup--small > .InputGroup-button > .Button {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
   border-radius: 3px; }
-  /* line 629, ../../sass/mixins/_mixins.scss */
+  /* line 621, ../../sass/mixins/_mixins.scss */
   select .Input--small, select .InputGroup--small > .Form-control,
-  select .InputGroup--small > .InputGroup--addon,
-  select .InputGroup--small > .InputGroup--button > .Button {
+  select .InputGroup--small > .InputGroup-addon,
+  select .InputGroup--small > .InputGroup-button > .Button {
     height: 30px;
     line-height: 30px; }
-  /* line 634, ../../sass/mixins/_mixins.scss */
+  /* line 626, ../../sass/mixins/_mixins.scss */
   textarea .Input--small, textarea .InputGroup--small > .Form-control,
-  textarea .InputGroup--small > .InputGroup--addon,
-  textarea .InputGroup--small > .InputGroup--button > .Button {
+  textarea .InputGroup--small > .InputGroup-addon,
+  textarea .InputGroup--small > .InputGroup-button > .Button {
     height: auto; }
 
 /* line 264, ../../sass/base/_Forms.scss */
 .Input--large, .InputGroup--large > .Form-control,
-.InputGroup--large > .InputGroup--addon,
-.InputGroup--large > .InputGroup--button > .Button {
+.InputGroup--large > .InputGroup-addon,
+.InputGroup--large > .InputGroup-button > .Button {
   height: 45px;
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33;
   border-radius: 6px; }
-  /* line 629, ../../sass/mixins/_mixins.scss */
+  /* line 621, ../../sass/mixins/_mixins.scss */
   select .Input--large, select .InputGroup--large > .Form-control,
-  select .InputGroup--large > .InputGroup--addon,
-  select .InputGroup--large > .InputGroup--button > .Button {
+  select .InputGroup--large > .InputGroup-addon,
+  select .InputGroup--large > .InputGroup-button > .Button {
     height: 45px;
     line-height: 45px; }
-  /* line 634, ../../sass/mixins/_mixins.scss */
+  /* line 626, ../../sass/mixins/_mixins.scss */
   textarea .Input--large, textarea .InputGroup--large > .Form-control,
-  textarea .InputGroup--large > .InputGroup--addon,
-  textarea .InputGroup--large > .InputGroup--button > .Button {
+  textarea .InputGroup--large > .InputGroup-addon,
+  textarea .InputGroup--large > .InputGroup-button > .Button {
     height: auto; }
 
 /**
@@ -1353,24 +1353,24 @@ input[type="checkbox"],
   /* Color the label and help text */
   /* Set the border and box shadow on specific inputs to match */
   /* Set validation states also for addons */ }
-  /* line 571, ../../sass/mixins/_mixins.scss */
+  /* line 563, ../../sass/mixins/_mixins.scss */
   .has-Warning .HelpBlock,
   .has-Warning .ControlLabel {
     color: #c09853; }
-  /* line 576, ../../sass/mixins/_mixins.scss */
+  /* line 568, ../../sass/mixins/_mixins.scss */
   .has-Warning .Form-control {
     border-color: #c09853;
     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     /* Redeclare so transitions work */ }
-    /* line 579, ../../sass/mixins/_mixins.scss */
+    /* line 571, ../../sass/mixins/_mixins.scss */
     .has-Warning .Form-control:focus {
       border-color: #a47e3c;
       -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e;
       -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e;
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e; }
-  /* line 585, ../../sass/mixins/_mixins.scss */
+  /* line 577, ../../sass/mixins/_mixins.scss */
   .has-Warning .InputGroup-addon {
     color: #c09853;
     border-color: #c09853;
@@ -1382,24 +1382,24 @@ input[type="checkbox"],
   /* Color the label and help text */
   /* Set the border and box shadow on specific inputs to match */
   /* Set validation states also for addons */ }
-  /* line 571, ../../sass/mixins/_mixins.scss */
+  /* line 563, ../../sass/mixins/_mixins.scss */
   .has-Error .HelpBlock,
   .has-Error .ControlLabel {
     color: #b94a48; }
-  /* line 576, ../../sass/mixins/_mixins.scss */
+  /* line 568, ../../sass/mixins/_mixins.scss */
   .has-Error .Form-control {
     border-color: #b94a48;
     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     /* Redeclare so transitions work */ }
-    /* line 579, ../../sass/mixins/_mixins.scss */
+    /* line 571, ../../sass/mixins/_mixins.scss */
     .has-Error .Form-control:focus {
       border-color: #953b39;
       -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
       -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392; }
-  /* line 585, ../../sass/mixins/_mixins.scss */
+  /* line 577, ../../sass/mixins/_mixins.scss */
   .has-Error .InputGroup-addon {
     color: #b94a48;
     border-color: #b94a48;
@@ -1411,24 +1411,24 @@ input[type="checkbox"],
   /* Color the label and help text */
   /* Set the border and box shadow on specific inputs to match */
   /* Set validation states also for addons */ }
-  /* line 571, ../../sass/mixins/_mixins.scss */
+  /* line 563, ../../sass/mixins/_mixins.scss */
   .has-Success .HelpBlock,
   .has-Success .ControlLabel {
     color: #468847; }
-  /* line 576, ../../sass/mixins/_mixins.scss */
+  /* line 568, ../../sass/mixins/_mixins.scss */
   .has-Success .Form-control {
     border-color: #468847;
     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     /* Redeclare so transitions work */ }
-    /* line 579, ../../sass/mixins/_mixins.scss */
+    /* line 571, ../../sass/mixins/_mixins.scss */
     .has-Success .Form-control:focus {
       border-color: #356635;
       -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;
       -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b; }
-  /* line 585, ../../sass/mixins/_mixins.scss */
+  /* line 577, ../../sass/mixins/_mixins.scss */
   .has-Success .InputGroup-addon {
     color: #468847;
     border-color: #468847;
@@ -1530,24 +1530,19 @@ input[type="checkbox"],
     margin-bottom: 0;
     padding-top: 7px;
     /* Default padding plus a border */ }
-  /* line 26, ../../sass/mixins/_mixins.scss */
-  .Form--horizontal .Form-group:before, .Form--horizontal .Form-group:after {
-    content: " ";
-    /* 1 */
-    display: table;
-    /* 2 */ }
-  /* line 31, ../../sass/mixins/_mixins.scss */
-  .Form--horizontal .Form-group:after {
-    clear: both; }
-  @media (min-width: 768px) {
-    /* line 384, ../../sass/base/_Forms.scss */
-    .Form--horizontal .Form-group {
-      margin-left: -15px;
-      margin-right: -15px; } }
-  /* line 446, ../../sass/mixins/_mixins.scss */
-  .Form--horizontal .Form-group .row {
+  /* line 384, ../../sass/base/_Forms.scss */
+  .Form--horizontal .Form-group {
     margin-left: -15px;
     margin-right: -15px; }
+    /* line 26, ../../sass/mixins/_mixins.scss */
+    .Form--horizontal .Form-group:before, .Form--horizontal .Form-group:after {
+      content: " ";
+      /* 1 */
+      display: table;
+      /* 2 */ }
+    /* line 31, ../../sass/mixins/_mixins.scss */
+    .Form--horizontal .Form-group:after {
+      clear: both; }
   @media (min-width: 768px) {
     /* line 390, ../../sass/base/_Forms.scss */
     .Form--horizontal .ControlLabel {
@@ -2008,24 +2003,19 @@ table th[class*="col-"] {
 
 /* mobile first defaults
    ========================================================================== */
-/* line 26, ../../sass/mixins/_mixins.scss */
-.Row:before, .Row:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */ }
-/* line 31, ../../sass/mixins/_mixins.scss */
-.Row:after {
-  clear: both; }
-@media (min-width: 768px) {
-  /* line 14, ../../sass/layout/_grid.scss */
-  .Row {
-    margin-left: -15px;
-    margin-right: -15px; } }
-/* line 446, ../../sass/mixins/_mixins.scss */
-.Row .row {
+/* line 14, ../../sass/layout/_grid.scss */
+.Row {
   margin-left: -15px;
   margin-right: -15px; }
+  /* line 26, ../../sass/mixins/_mixins.scss */
+  .Row:before, .Row:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */ }
+  /* line 31, ../../sass/mixins/_mixins.scss */
+  .Row:after {
+    clear: both; }
 
 /* Common styles for Small and large grid columns
    ========================================================================== */
@@ -2994,7 +2984,7 @@ table th[class*="col-"] {
   content: "\e031"; }
 
 /* line 77, ../../sass/components/_Glyphicons.scss */
-.Glyphicon--list-alt:before {
+.Glyphicon--listAlt:before {
   content: "\e032"; }
 
 /* line 78, ../../sass/components/_Glyphicons.scss */
@@ -3354,7 +3344,7 @@ table th[class*="col-"] {
   content: "\e125"; }
 
 /* line 167, ../../sass/components/_Glyphicons.scss */
-.Glyphicon--thumbs-down:before {
+.Glyphicon--thumbsDown:before {
   content: "\e126"; }
 
 /* line 168, ../../sass/components/_Glyphicons.scss */
@@ -3490,7 +3480,7 @@ table th[class*="col-"] {
   content: "\e160"; }
 
 /* line 201, ../../sass/components/_Glyphicons.scss */
-.Glyphicon--log-in:before {
+.Glyphicon--logIn:before {
   content: "\e161"; }
 
 /* line 202, ../../sass/components/_Glyphicons.scss */
@@ -3602,7 +3592,7 @@ table th[class*="col-"] {
   content: "\e188"; }
 
 /* line 229, ../../sass/components/_Glyphicons.scss */
-.Glyphicon--soundDtereo:before {
+.Glyphicon--soundStereo:before {
   content: "\e189"; }
 
 /* line 230, ../../sass/components/_Glyphicons.scss */
@@ -3649,7 +3639,7 @@ table th[class*="col-"] {
    Dropdown menus
    ========================================================================== */
 /* Dropdown arrow/caret */
-/* line 7, ../../sass/components/_Dropdowns.scss */
+/* line 6, ../../sass/components/_Dropdowns.scss */
 .Caret {
   display: inline-block;
   width: 0;
@@ -3663,17 +3653,17 @@ table th[class*="col-"] {
   border-bottom: 0 dotted; }
 
 /* The dropdown wrapper (div) */
-/* line 21, ../../sass/components/_Dropdowns.scss */
+/* line 20, ../../sass/components/_Dropdowns.scss */
 .Dropdown {
   position: relative; }
 
 /* Prevent the focus on the dropdown toggle when closing dropdowns */
-/* line 26, ../../sass/components/_Dropdowns.scss */
+/* line 25, ../../sass/components/_Dropdowns.scss */
 .Dropdown-toggle:focus {
   outline: 0; }
 
 /* The dropdown menu (ul) */
-/* line 31, ../../sass/components/_Dropdowns.scss */
+/* line 30, ../../sass/components/_Dropdowns.scss */
 .Dropdown-menu {
   position: absolute;
   top: 100%;
@@ -3702,17 +3692,17 @@ table th[class*="col-"] {
   /* Links within the dropdown menu */
   /* Active state */
   /* Disabled state Gray out text and ensure the hover/focus state remains gray */ }
-  /* line 51, ../../sass/components/_Dropdowns.scss */
+  /* line 50, ../../sass/components/_Dropdowns.scss */
   .Dropdown-menu.u-pull--right {
     right: 0;
     left: auto; }
-  /* line 57, ../../sass/components/_Dropdowns.scss */
+  /* line 56, ../../sass/components/_Dropdowns.scss */
   .Dropdown-menu .Divider {
     height: 1px;
     margin: 9.5px 0;
     overflow: hidden;
     background-color: #e5e5e5; }
-  /* line 62, ../../sass/components/_Dropdowns.scss */
+  /* line 61, ../../sass/components/_Dropdowns.scss */
   .Dropdown-menu > li > a {
     display: block;
     padding: 3px 20px;
@@ -3723,24 +3713,24 @@ table th[class*="col-"] {
     white-space: nowrap;
     /* prevent links from randomly breaking onto new lines */
     /* Hover state */ }
-    /* line 72, ../../sass/components/_Dropdowns.scss */
+    /* line 71, ../../sass/components/_Dropdowns.scss */
     .Dropdown-menu > li > a:hover, .Dropdown-menu > li > a:focus {
       text-decoration: none;
       color: #262626;
       background-color: whitesmoke; }
-  /* line 82, ../../sass/components/_Dropdowns.scss */
+  /* line 81, ../../sass/components/_Dropdowns.scss */
   .Dropdown-menu > .is-active > a, .Dropdown-menu > .is-active > a:hover, .Dropdown-menu > .is-active > a:focus {
     color: white;
     text-decoration: none;
     outline: 0;
     background-color: #86b35f; }
-  /* line 93, ../../sass/components/_Dropdowns.scss */
+  /* line 92, ../../sass/components/_Dropdowns.scss */
   .Dropdown-menu > .is-disabled > a {
     /* Nuke hover/focus effects */ }
-    /* line 94, ../../sass/components/_Dropdowns.scss */
+    /* line 93, ../../sass/components/_Dropdowns.scss */
     .Dropdown-menu > .is-disabled > a, .Dropdown-menu > .is-disabled > a:hover, .Dropdown-menu > .is-disabled > a:focus {
       color: #999999; }
-    /* line 101, ../../sass/components/_Dropdowns.scss */
+    /* line 100, ../../sass/components/_Dropdowns.scss */
     .Dropdown-menu > .is-disabled > a:hover, .Dropdown-menu > .is-disabled > a:focus {
       text-decoration: none;
       background-color: transparent;
@@ -3751,20 +3741,20 @@ table th[class*="col-"] {
 
 /* Open state for the dropdown
    ========================================================================== */
-/* line 116, ../../sass/components/_Dropdowns.scss */
+/* line 115, ../../sass/components/_Dropdowns.scss */
 .is-open {
   /* Show the menu */
   /* Remove the outline when :focus is triggered */ }
-  /* line 118, ../../sass/components/_Dropdowns.scss */
+  /* line 117, ../../sass/components/_Dropdowns.scss */
   .is-open > .Dropdown-menu {
     display: block; }
-  /* line 123, ../../sass/components/_Dropdowns.scss */
+  /* line 122, ../../sass/components/_Dropdowns.scss */
   .is-open > a {
     outline: 0; }
 
 /* Dropdown section headers
    ========================================================================== */
-/* line 130, ../../sass/components/_Dropdowns.scss */
+/* line 131, ../../sass/components/_Dropdowns.scss */
 .Dropdown-header {
   display: block;
   padding: 3px 20px;
@@ -3774,7 +3764,7 @@ table th[class*="col-"] {
 
 /* Backdrop to catch body clicks on mobile, etc.
    ========================================================================== */
-/* line 140, ../../sass/components/_Dropdowns.scss */
+/* line 143, ../../sass/components/_Dropdowns.scss */
 .Dropdown-backdrop {
   position: fixed;
   left: 0;
@@ -3785,7 +3775,7 @@ table th[class*="col-"] {
 
 /* Right aligned dropdowns
    ========================================================================== */
-/* line 151, ../../sass/components/_Dropdowns.scss */
+/* line 156, ../../sass/components/_Dropdowns.scss */
 .u-pull--right > .Dropdown-menu {
   right: 0;
   left: auto; }
@@ -3793,23 +3783,23 @@ table th[class*="col-"] {
 /**
  * Allow for dropdowns to go bottom up (aka, dropup-menu)
  *
- * Just add .DropUp after the standard .Dropdown class and you're set, bro.
+ * Just add .Dropup after the standard .Dropdown class and you're set, bro.
  * TODO: abstract this so that the navbar fixed styles are not placed here?
 */
-/* line 163, ../../sass/components/_Dropdowns.scss */
-.DropUp,
+/* line 170, ../../sass/components/_Dropdowns.scss */
+.Dropup,
 .Navbar--fixedBottom .Dropdown {
   /* Reverse the caret */
   /* Different positioning for bottom up menu */ }
-  /* line 167, ../../sass/components/_Dropdowns.scss */
-  .DropUp .Caret,
+  /* line 174, ../../sass/components/_Dropdowns.scss */
+  .Dropup .Caret,
   .Navbar--fixedBottom .Dropdown .Caret {
     /* Firefox fix for https://github.com/twbs/bootstrap/issues/9538. Once this gets fixed, restore `border-top: 0;`. */
     border-top: 0 dotted;
     border-bottom: 4px solid black;
     content: ""; }
-  /* line 175, ../../sass/components/_Dropdowns.scss */
-  .DropUp .Dropdown-menu,
+  /* line 182, ../../sass/components/_Dropdowns.scss */
+  .Dropup .Dropdown-menu,
   .Navbar--fixedBottom .Dropdown .Dropdown-menu {
     top: auto;
     bottom: 100%;
@@ -4076,14 +4066,14 @@ input[type="button"].Button--block {
   border-top-color: #fff; }
 
 /* line 23, ../../sass/components/_ButtonGroups.scss */
-.DropUp .Button-default .Caret {
+.Dropup .Button-default .Caret {
   border-bottom-color: #333333; }
 /* line 31, ../../sass/components/_ButtonGroups.scss */
-.DropUp .Button--primary .Caret,
-.DropUp .Button--success .Caret,
-.DropUp .Button--warning .Caret,
-.DropUp .Button--danger .Caret,
-.DropUp .Button--info .Caret {
+.Dropup .Button--primary .Caret,
+.Dropup .Button--success .Caret,
+.Dropup .Button--warning .Caret,
+.Dropup .Button--danger .Caret,
+.Dropup .Button--info .Caret {
   border-bottom-color: #fff; }
 
 /* Make the div behave like a button */
@@ -4094,27 +4084,27 @@ input[type="button"].Button--block {
   display: inline-block;
   vertical-align: middle;
   /* match .Button alignment given font-size hack above */ }
-  /* line 43, ../../sass/components/_ButtonGroups.scss */
+  /* line 44, ../../sass/components/_ButtonGroups.scss */
   .ButtonGroup > .Button,
   .ButtonGroup--vertical > .Button {
     position: relative;
     float: left;
     /* Bring the "active" button to the front */ }
-    /* line 47, ../../sass/components/_ButtonGroups.scss */
+    /* line 49, ../../sass/components/_ButtonGroups.scss */
     .ButtonGroup > .Button:hover, .ButtonGroup > .Button:focus, .ButtonGroup > .Button:active, .ButtonGroup > .Button.is-active,
     .ButtonGroup--vertical > .Button:hover,
     .ButtonGroup--vertical > .Button:focus,
     .ButtonGroup--vertical > .Button:active,
     .ButtonGroup--vertical > .Button.is-active {
       z-index: 2; }
-    /* line 53, ../../sass/components/_ButtonGroups.scss */
+    /* line 56, ../../sass/components/_ButtonGroups.scss */
     .ButtonGroup > .Button:focus,
     .ButtonGroup--vertical > .Button:focus {
       /* Remove focus outline when dropdown JS adds it after closing the menu */
       outline: none; }
 
 /* Prevent double borders when buttons are next to each other */
-/* line 62, ../../sass/components/_ButtonGroups.scss */
+/* line 65, ../../sass/components/_ButtonGroups.scss */
 .ButtonGroup .Button + .Button,
 .ButtonGroup .Button + .ButtonGroup,
 .ButtonGroup .ButtonGroup + .Button,
@@ -4122,7 +4112,7 @@ input[type="button"].Button--block {
   margin-left: -1px; }
 
 /* Optional: Group multiple button groups together for a toolbar */
-/* line 71, ../../sass/components/_ButtonGroups.scss */
+/* line 74, ../../sass/components/_ButtonGroups.scss */
 .ButtonToolbar {
   /* Space out series of button groups */ }
   /* line 26, ../../sass/mixins/_mixins.scss */
@@ -4134,25 +4124,25 @@ input[type="button"].Button--block {
   /* line 31, ../../sass/mixins/_mixins.scss */
   .ButtonToolbar:after {
     clear: both; }
-  /* line 74, ../../sass/components/_ButtonGroups.scss */
+  /* line 77, ../../sass/components/_ButtonGroups.scss */
   .ButtonToolbar .ButtonGroup {
     float: left; }
-  /* line 80, ../../sass/components/_ButtonGroups.scss */
+  /* line 83, ../../sass/components/_ButtonGroups.scss */
   .ButtonToolbar > .Button + .Button,
   .ButtonToolbar > .Button + .ButtonGroup,
   .ButtonToolbar > .ButtonGroup + .Button,
   .ButtonToolbar > .ButtonGroup + .ButtonGroup {
     margin-left: 5px; }
 
-/* line 87, ../../sass/components/_ButtonGroups.scss */
+/* line 90, ../../sass/components/_ButtonGroups.scss */
 .ButtonGroup > .Button:not(:first-child):not(:last-child):not(.Dropdown-toggle) {
   border-radius: 0; }
 
 /* Set corners individual because sometimes a single button can be in a .ButtonGroup and we need :first-child and :last-child to both match */
-/* line 92, ../../sass/components/_ButtonGroups.scss */
+/* line 95, ../../sass/components/_ButtonGroups.scss */
 .ButtonGroup > .Button:first-child {
   margin-left: 0; }
-  /* line 94, ../../sass/components/_ButtonGroups.scss */
+  /* line 97, ../../sass/components/_ButtonGroups.scss */
   .ButtonGroup > .Button:first-child:not(:last-child):not(.Dropdown-toggle) {
     -moz-border-radius-topright: 0;
     -webkit-border-top-right-radius: 0;
@@ -4162,7 +4152,7 @@ input[type="button"].Button--block {
     border-bottom-right-radius: 0; }
 
 /* Need .Dropdown-toggle since :last-child doesn't apply given a .Dropdown-menu immediately after it */
-/* line 99, ../../sass/components/_ButtonGroups.scss */
+/* line 103, ../../sass/components/_ButtonGroups.scss */
 .ButtonGroup > .Button:last-child:not(:first-child),
 .ButtonGroup > .Dropdown-toggle:not(:first-child) {
   -moz-border-radius-topleft: 0;
@@ -4173,15 +4163,15 @@ input[type="button"].Button--block {
   border-bottom-left-radius: 0; }
 
 /* Custom edits for including BtnGroups within BtnGroups (useful for including dropdown buttons within a BtnGroup) */
-/* line 105, ../../sass/components/_ButtonGroups.scss */
+/* line 109, ../../sass/components/_ButtonGroups.scss */
 .ButtonGroup > .ButtonGroup {
   float: left; }
 
-/* line 108, ../../sass/components/_ButtonGroups.scss */
+/* line 113, ../../sass/components/_ButtonGroups.scss */
 .ButtonGroup > .ButtonGroup:not(:first-child):not(:last-child) > .Button {
   border-radius: 0; }
 
-/* line 112, ../../sass/components/_ButtonGroups.scss */
+/* line 118, ../../sass/components/_ButtonGroups.scss */
 .ButtonGroup > .ButtonGroup:first-child > .Button:last-child,
 .ButtonGroup > .ButtonGroup:first-child > .Dropdown-toggle {
   -moz-border-radius-topright: 0;
@@ -4191,7 +4181,7 @@ input[type="button"].Button--block {
   -webkit-border-bottom-right-radius: 0;
   border-bottom-right-radius: 0; }
 
-/* line 117, ../../sass/components/_ButtonGroups.scss */
+/* line 124, ../../sass/components/_ButtonGroups.scss */
 .ButtonGroup > .ButtonGroup:last-child > .Button:first-child {
   -moz-border-radius-topleft: 0;
   -webkit-border-top-left-radius: 0;
@@ -4201,7 +4191,7 @@ input[type="button"].Button--block {
   border-bottom-left-radius: 0; }
 
 /* On active and open, don't show outline */
-/* line 122, ../../sass/components/_ButtonGroups.scss */
+/* line 129, ../../sass/components/_ButtonGroups.scss */
 .ButtonGroup .Dropdown-toggle:active,
 .ButtonGroup.is-open .Dropdown-toggle {
   outline: 0; }
@@ -4213,12 +4203,12 @@ input[type="button"].Button--block {
 /* Split button dropdowns
    ========================================================================== */
 /* Give the line between buttons some depth*/
-/* line 150, ../../sass/components/_ButtonGroups.scss */
+/* line 157, ../../sass/components/_ButtonGroups.scss */
 .ButtonGroup > .Button + .Dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px; }
 
-/* line 155, ../../sass/components/_ButtonGroups.scss */
+/* line 162, ../../sass/components/_ButtonGroups.scss */
 .ButtonGroup > .Button-large + .Dropdown-toggle {
   padding-left: 12px;
   padding-right: 12px; }
@@ -4227,65 +4217,65 @@ input[type="button"].Button--block {
 * The clickable button for toggling the menu
 * Remove the gradient and set the same inset shadow as the :active state
 */
-/* line 164, ../../sass/components/_ButtonGroups.scss */
+/* line 171, ../../sass/components/_ButtonGroups.scss */
 .ButtonGroup.is-open .Dropdown-toggle {
   -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
 
 /* Reposition the caret */
-/* line 169, ../../sass/components/_ButtonGroups.scss */
+/* line 176, ../../sass/components/_ButtonGroups.scss */
 .Button .Caret {
   margin-left: 0; }
 
 /* Carets in other button sizes */
-/* line 173, ../../sass/components/_ButtonGroups.scss */
+/* line 181, ../../sass/components/_ButtonGroups.scss */
 .Button-large .Caret {
   border-width: 5px 5px 0;
   border-bottom-width: 0; }
 
-/* Upside down carets for .DropUp */
-/* line 178, ../../sass/components/_ButtonGroups.scss */
-.DropUp .Button-large .Caret {
+/* Upside down carets for .Dropup */
+/* line 187, ../../sass/components/_ButtonGroups.scss */
+.Dropup .Button-large .Caret {
   border-width: 0 5px 5px; }
 
 /* Vertical button groups
    ========================================================================== */
-/* line 186, ../../sass/components/_ButtonGroups.scss */
-.ButtonGroup-vertical {
+/* line 196, ../../sass/components/_ButtonGroups.scss */
+.ButtonGroup--vertical {
   /* Clear floats so dropdown menus can be properly placed */ }
-  /* line 187, ../../sass/components/_ButtonGroups.scss */
-  .ButtonGroup-vertical > .Button,
-  .ButtonGroup-vertical > .ButtonGroup {
+  /* line 197, ../../sass/components/_ButtonGroups.scss */
+  .ButtonGroup--vertical > .Button,
+  .ButtonGroup--vertical > .ButtonGroup {
     display: block;
     float: none;
     width: 100%;
     max-width: 100%; }
   /* line 26, ../../sass/mixins/_mixins.scss */
-  .ButtonGroup-vertical > .ButtonGroup:before, .ButtonGroup-vertical > .ButtonGroup:after {
+  .ButtonGroup--vertical > .ButtonGroup:before, .ButtonGroup--vertical > .ButtonGroup:after {
     content: " ";
     /* 1 */
     display: table;
     /* 2 */ }
   /* line 31, ../../sass/mixins/_mixins.scss */
-  .ButtonGroup-vertical > .ButtonGroup:after {
+  .ButtonGroup--vertical > .ButtonGroup:after {
     clear: both; }
-  /* line 198, ../../sass/components/_ButtonGroups.scss */
-  .ButtonGroup-vertical > .ButtonGroup > .Button {
+  /* line 208, ../../sass/components/_ButtonGroups.scss */
+  .ButtonGroup--vertical > .ButtonGroup > .Button {
     float: none; }
-  /* line 203, ../../sass/components/_ButtonGroups.scss */
-  .ButtonGroup-vertical > .Button + .Button,
-  .ButtonGroup-vertical > .Button + .ButtonGroup,
-  .ButtonGroup-vertical > .ButtonGroup + .Button,
-  .ButtonGroup-vertical > .ButtonGroup + .ButtonGroup {
+  /* line 213, ../../sass/components/_ButtonGroups.scss */
+  .ButtonGroup--vertical > .Button + .Button,
+  .ButtonGroup--vertical > .Button + .ButtonGroup,
+  .ButtonGroup--vertical > .ButtonGroup + .Button,
+  .ButtonGroup--vertical > .ButtonGroup + .ButtonGroup {
     margin-top: -1px;
     margin-left: 0; }
 
-/* line 213, ../../sass/components/_ButtonGroups.scss */
-.ButtonGroup-vertical > .Button:not(:first-child):not(:last-child) {
+/* line 223, ../../sass/components/_ButtonGroups.scss */
+.ButtonGroup--vertical > .Button:not(:first-child):not(:last-child) {
   border-radius: 0; }
-/* line 216, ../../sass/components/_ButtonGroups.scss */
-.ButtonGroup-vertical > .Button:first-child:not(:last-child) {
+/* line 227, ../../sass/components/_ButtonGroups.scss */
+.ButtonGroup--vertical > .Button:first-child:not(:last-child) {
   border-top-right-radius: 4px;
   -moz-border-radius-bottomleft: 0;
   -webkit-border-bottom-left-radius: 0;
@@ -4293,8 +4283,8 @@ input[type="button"].Button--block {
   -moz-border-radius-bottomright: 0;
   -webkit-border-bottom-right-radius: 0;
   border-bottom-right-radius: 0; }
-/* line 220, ../../sass/components/_ButtonGroups.scss */
-.ButtonGroup-vertical > .Button:last-child:not(:first-child) {
+/* line 232, ../../sass/components/_ButtonGroups.scss */
+.ButtonGroup--vertical > .Button:last-child:not(:first-child) {
   border-bottom-left-radius: 4px;
   -moz-border-radius-topleft: 0;
   -webkit-border-top-left-radius: 0;
@@ -4303,13 +4293,13 @@ input[type="button"].Button--block {
   -webkit-border-top-right-radius: 0;
   border-top-right-radius: 0; }
 
-/* line 225, ../../sass/components/_ButtonGroups.scss */
-.ButtonGroup-vertical > .ButtonGroup:not(:first-child):not(:last-child) > .Button {
+/* line 238, ../../sass/components/_ButtonGroups.scss */
+.ButtonGroup--vertical > .ButtonGroup:not(:first-child):not(:last-child) > .Button {
   border-radius: 0; }
 
-/* line 229, ../../sass/components/_ButtonGroups.scss */
-.ButtonGroup-vertical > .ButtonGroup:first-child > .Button:last-child,
-.ButtonGroup-vertical > .ButtonGroup:first-child > .Dropdown-toggle {
+/* line 243, ../../sass/components/_ButtonGroups.scss */
+.ButtonGroup--vertical > .ButtonGroup:first-child > .Button:last-child,
+.ButtonGroup--vertical > .ButtonGroup:first-child > .Dropdown-toggle {
   -moz-border-radius-bottomleft: 0;
   -webkit-border-bottom-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -4317,8 +4307,8 @@ input[type="button"].Button--block {
   -webkit-border-bottom-right-radius: 0;
   border-bottom-right-radius: 0; }
 
-/* line 234, ../../sass/components/_ButtonGroups.scss */
-.ButtonGroup-vertical > .ButtonGroup:last-child > .Button:first-child {
+/* line 249, ../../sass/components/_ButtonGroups.scss */
+.ButtonGroup--vertical > .ButtonGroup:last-child > .Button:first-child {
   -moz-border-radius-topleft: 0;
   -webkit-border-top-left-radius: 0;
   border-top-left-radius: 0;
@@ -4328,20 +4318,21 @@ input[type="button"].Button--block {
 
 /* Justified button groups
    ========================================================================== */
-/* line 243, ../../sass/components/_ButtonGroups.scss */
-.ButtonGroup-justified {
+/* line 258, ../../sass/components/_ButtonGroups.scss */
+.ButtonGroup--justified {
   display: table;
   width: 100%;
   table-layout: fixed;
   border-collapse: separate; }
-  /* line 248, ../../sass/components/_ButtonGroups.scss */
-  .ButtonGroup-justified .Button {
+  /* line 263, ../../sass/components/_ButtonGroups.scss */
+  .ButtonGroup--justified .Button,
+  .ButtonGroup--justified .ButtonGroup {
     float: none;
     display: table-cell;
     width: 1%; }
 
 /* Checkbox and radio options */
-/* line 256, ../../sass/components/_ButtonGroups.scss */
+/* line 272, ../../sass/components/_ButtonGroups.scss */
 [data-toggle="buttons"] > .Button > input[type="radio"],
 [data-toggle="buttons"] > .Button > input[type="checkbox"] {
   display: none; }
@@ -4378,20 +4369,20 @@ input[type="button"].Button--block {
 /* Display as table-cell
    ========================================================================== */
 /* line 49, ../../sass/components/_InputGroups.scss */
-.InputGroup--addon,
-.InputGroup--button,
+.InputGroup-addon,
+.InputGroup-button,
 .InputGroup .Form-control {
   display: table-cell; }
   /* line 54, ../../sass/components/_InputGroups.scss */
-  .InputGroup--addon:not(:first-child):not(:last-child),
-  .InputGroup--button:not(:first-child):not(:last-child),
+  .InputGroup-addon:not(:first-child):not(:last-child),
+  .InputGroup-button:not(:first-child):not(:last-child),
   .InputGroup .Form-control:not(:first-child):not(:last-child) {
     border-radius: 0; }
 
 /* Addon and addon wrapper for buttons */
 /* line 59, ../../sass/components/_InputGroups.scss */
-.InputGroup--addon,
-.InputGroup--button {
+.InputGroup-addon,
+.InputGroup-button {
   width: 1%;
   white-space: nowrap;
   vertical-align: middle;
@@ -4400,7 +4391,7 @@ input[type="button"].Button--block {
 /* Text input groups
    ========================================================================== */
 /* line 70, ../../sass/components/_InputGroups.scss */
-.InputGroup--addon {
+.InputGroup-addon {
   padding: 6px 12px;
   font-size: 14px;
   font-weight: normal;
@@ -4413,31 +4404,31 @@ input[type="button"].Button--block {
   /* Sizing */
   /* Nuke default margins from checkboxes and radios to vertically center within. */ }
   /* line 82, ../../sass/components/_InputGroups.scss */
-  .InputGroup--addon.Input--small,
-  .InputGroup--small > .InputGroup--addon,
-  .InputGroup--small > .InputGroup--button > .InputGroup--addon.Button {
+  .InputGroup-addon.Input--small,
+  .InputGroup--small > .InputGroup-addon,
+  .InputGroup--small > .InputGroup-button > .InputGroup-addon.Button {
     padding: 5px 10px;
     font-size: 12px;
     border-radius: 3px; }
   /* line 88, ../../sass/components/_InputGroups.scss */
-  .InputGroup--addon.Input--large,
-  .InputGroup--large > .InputGroup--addon,
-  .InputGroup--large > .InputGroup--button > .InputGroup--addon.Button {
+  .InputGroup-addon.Input--large,
+  .InputGroup--large > .InputGroup-addon,
+  .InputGroup--large > .InputGroup-button > .InputGroup-addon.Button {
     padding: 10px 16px;
     font-size: 18px;
     border-radius: 6px; }
   /* line 95, ../../sass/components/_InputGroups.scss */
-  .InputGroup--addon input[type="radio"],
-  .InputGroup--addon input[type="checkbox"] {
+  .InputGroup-addon input[type="radio"],
+  .InputGroup-addon input[type="checkbox"] {
     margin-top: 0; }
 
 /* Reset rounded corners */
 /* line 102, ../../sass/components/_InputGroups.scss */
 .InputGroup .Form-control:first-child,
-.InputGroup--addon:first-child,
-.InputGroup--button:first-child > .Button,
-.InputGroup--button:first-child > .Dropdown-toggle,
-.InputGroup--button:last-child > .Button:not(:last-child):not(.Dropdown-toggle) {
+.InputGroup-addon:first-child,
+.InputGroup-button:first-child > .Button,
+.InputGroup-button:first-child > .Dropdown-toggle,
+.InputGroup-button:last-child > .Button:not(:last-child):not(.Dropdown-toggle) {
   -moz-border-radius-topright: 0;
   -webkit-border-top-right-radius: 0;
   border-top-right-radius: 0;
@@ -4446,15 +4437,15 @@ input[type="button"].Button--block {
   border-bottom-right-radius: 0; }
 
 /* line 110, ../../sass/components/_InputGroups.scss */
-.InputGroup--addon:first-child {
+.InputGroup-addon:first-child {
   border-right: 0; }
 
 /* line 114, ../../sass/components/_InputGroups.scss */
 .InputGroup .Form-control:last-child,
-.InputGroup--addon:last-child,
-.InputGroup--button:last-child > .Button,
-.InputGroup--button:last-child > .Dropdown-toggle,
-.InputGroup--button:first-child > .Button:not(:first-child) {
+.InputGroup-addon:last-child,
+.InputGroup-button:last-child > .Button,
+.InputGroup-button:last-child > .Dropdown-toggle,
+.InputGroup-button:first-child > .Button:not(:first-child) {
   -moz-border-radius-topleft: 0;
   -webkit-border-top-left-radius: 0;
   border-top-left-radius: 0;
@@ -4463,33 +4454,33 @@ input[type="button"].Button--block {
   border-bottom-left-radius: 0; }
 
 /* line 122, ../../sass/components/_InputGroups.scss */
-.InputGroup--addon:last-child {
+.InputGroup-addon:last-child {
   border-left: 0; }
 
 /* Button input groups
    ========================================================================== */
 /* line 130, ../../sass/components/_InputGroups.scss */
-.InputGroup--button {
+.InputGroup-button {
   position: relative;
   white-space: nowrap;
   /* Negative margin to only have a 1px border between the two */ }
   /* line 135, ../../sass/components/_InputGroups.scss */
-  .InputGroup--button:first-child > .Button {
+  .InputGroup-button:first-child > .Button {
     margin-right: -1px; }
   /* line 138, ../../sass/components/_InputGroups.scss */
-  .InputGroup--button:last-child > .Button {
+  .InputGroup-button:last-child > .Button {
     margin-left: -1px; }
 
 /* line 143, ../../sass/components/_InputGroups.scss */
-.InputGroup--button > .Button {
+.InputGroup-button > .Button {
   position: relative;
   /* Jankily prevent input button groups from wrapping */
   /* Bring the "active" button to the front */ }
   /* line 146, ../../sass/components/_InputGroups.scss */
-  .InputGroup--button > .Button + .Button {
+  .InputGroup-button > .Button + .Button {
     margin-left: -4px; }
   /* line 150, ../../sass/components/_InputGroups.scss */
-  .InputGroup--button > .Button:hover, .InputGroup--button > .Button:active {
+  .InputGroup-button > .Button:hover, .InputGroup-button > .Button:active {
     z-index: 2; }
 
 /* ==========================================================================
@@ -4811,7 +4802,7 @@ input[type="button"].Button--block {
   .Navbar-collapse:after {
     clear: both; }
   /* line 68, ../../sass/components/_Navbar.scss */
-  .Navbar-collapse.in {
+  .Navbar-collapse.is-in {
     overflow-y: auto; }
   @media (min-width: 768px) {
     /* line 58, ../../sass/components/_Navbar.scss */
@@ -4821,20 +4812,20 @@ input[type="button"].Button--block {
       box-shadow: none;
       /* Account for first and last children spacing */ }
       /* line 77, ../../sass/components/_Navbar.scss */
-      .Navbar-collapse.Collapse {
+      .Navbar-collapse.Animation--collapse {
         display: block !important;
         height: auto !important;
         padding-bottom: 0;
         /* Override default setting */
         overflow: visible !important; }
       /* line 84, ../../sass/components/_Navbar.scss */
-      .Navbar-collapse.in {
+      .Navbar-collapse.is-in {
         overflow-y: visible; }
       /* line 89, ../../sass/components/_Navbar.scss */
       .Navbar-collapse .Navbar-nav.Navbar-left:first-child {
         margin-left: -15px; }
       /* line 92, ../../sass/components/_Navbar.scss */
-      .Navbar-collapse .Navbar-nav.NavbarRight:last-child {
+      .Navbar-collapse .Navbar-nav.Navbar--right:last-child {
         margin-right: -15px; }
       /* line 95, ../../sass/components/_Navbar.scss */
       .Navbar-collapse .Navbar-text:last-child {
@@ -4860,17 +4851,17 @@ input[type="button"].Button--block {
 /* Display the navbar across the entirity of the page or fixed it to the top or bottom of the page. */
 /* Static top (unfixed, but 100% wide) navbar */
 /* line 124, ../../sass/components/_Navbar.scss */
-.Navbar--staticTop {
+.Navbar--static--top {
   border-width: 0 0 1px; }
   @media (min-width: 768px) {
     /* line 124, ../../sass/components/_Navbar.scss */
-    .Navbar--staticTop {
+    .Navbar--static--top {
       border-radius: 0; } }
 
 /* Fix the top/bottom navbars when screen real estate supports it */
 /* line 132, ../../sass/components/_Navbar.scss */
-.Navbar--fixedTop,
-.Navbar--fixedBottom {
+.Navbar--fixed--top,
+.Navbar--fixed--bottom {
   position: fixed;
   right: 0;
   left: 0;
@@ -4878,17 +4869,17 @@ input[type="button"].Button--block {
   /* Undo the rounded corners */ }
   @media (min-width: 768px) {
     /* line 132, ../../sass/components/_Navbar.scss */
-    .Navbar--fixedTop,
-    .Navbar--fixedBottom {
+    .Navbar--fixed--top,
+    .Navbar--fixed--bottom {
       border-radius: 0; } }
 
 /* line 145, ../../sass/components/_Navbar.scss */
-.Navbar--fixedTop {
+.Navbar--fixed--top {
   z-index: 1030;
   top: 0; }
 
 /* line 150, ../../sass/components/_Navbar.scss */
-.Navbar--fixedBottom {
+.Navbar--fixed--bottom {
   bottom: 0;
   margin-bottom: 0;
   /* override .Navbar defaults */ }
@@ -4946,7 +4937,7 @@ input[type="button"].Button--block {
  */
 /* line 215, ../../sass/components/_Navbar.scss */
 .Navbar-nav {
-  margin: -7.75px;
+  margin: 7.25px -15px;
   /* Uncollapse the nav */ }
   /* line 218, ../../sass/components/_Navbar.scss */
   .Navbar-nav > li > a {
@@ -5054,7 +5045,7 @@ input[type="button"].Button--block {
 
 /* Menu position and menu caret support for dropups via extra dropup class */
 /* line 336, ../../sass/components/_Navbar.scss */
-.Navbar--fixedBottom .Navbar-nav > li > .Dropdown-menu {
+.Navbar--fixed--bottom .Navbar-nav > li > .Dropdown-menu {
   -moz-border-radius-bottomleft: 0;
   -webkit-border-bottom-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -5460,12 +5451,12 @@ input[type="button"].Button--block {
       text-decoration: none;
       background-color: #eeeeee; }
   /* line 31, ../../sass/components/_Pager.scss */
-  .Pager .isNext > a,
-  .Pager .isNext > span {
+  .Pager .is-next > a,
+  .Pager .is-next > span {
     float: right; }
   /* line 38, ../../sass/components/_Pager.scss */
-  .Pager .isPrevious > a,
-  .Pager .isPrevious > span {
+  .Pager .is-previous > a,
+  .Pager .is-previous > span {
     float: left; }
   /* line 45, ../../sass/components/_Pager.scss */
   .Pager .is-disabled > a,
@@ -5822,33 +5813,35 @@ a.Thumbnail:focus {
 
 /* Striped bars */
 /* line 44, ../../sass/components/_ProgressBars.scss */
-.Progress-striped .Progress-bar {
+.Progress--striped .Progress-bar {
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
   background-size: 40px 40px; }
 
 /* Call animation for the active one */
 /* line 50, ../../sass/components/_ProgressBars.scss */
 .Progress.is-active .Progress-bar {
-  -webkit-animation: progress-bar-stripes 2s linear infinite;
   -moz-animation: progress-bar-stripes 2s linear infinite;
-  -ms-animation: progress-bar-stripes 2s linear infinite;
-  -o-animation: progress-bar-stripes 2s linear infinite;
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
   animation: progress-bar-stripes 2s linear infinite; }
 
 /* Variations
    ========================================================================== */
-/* line 63, ../../sass/components/_ProgressBars.scss */
+/* line 59, ../../sass/components/_ProgressBars.scss */
 .Progress-bar--success {
   background-color: #5cb85c; }
 
-/* line 67, ../../sass/components/_ProgressBars.scss */
+/* line 63, ../../sass/components/_ProgressBars.scss */
 .Progress-bar--info {
   background-color: #5bc0de; }
 
-/* line 71, ../../sass/components/_ProgressBars.scss */
+/* line 67, ../../sass/components/_ProgressBars.scss */
 .Progress-bar--warning {
   background-color: #f0ad4e; }
 
-/* line 75, ../../sass/components/_ProgressBars.scss */
+/* line 71, ../../sass/components/_ProgressBars.scss */
 .Progress-bar--danger {
   background-color: #d9534f; }
 
@@ -5938,7 +5931,7 @@ a.Thumbnail:focus {
     -moz-border-radius-topright: 4px;
     -webkit-border-top-right-radius: 4px;
     border-top-right-radius: 4px; }
-  /* line 33, ../../sass/components/_ListGroup.scss */
+  /* line 34, ../../sass/components/_ListGroup.scss */
   .ListGroup-item:last-child {
     margin-bottom: 0;
     -moz-border-radius-bottomleft: 4px;
@@ -5947,24 +5940,24 @@ a.Thumbnail:focus {
     -moz-border-radius-bottomright: 4px;
     -webkit-border-bottom-right-radius: 4px;
     border-bottom-right-radius: 4px; }
-  /* line 39, ../../sass/components/_ListGroup.scss */
+  /* line 40, ../../sass/components/_ListGroup.scss */
   .ListGroup-item > .Badge {
     float: right; }
-  /* line 42, ../../sass/components/_ListGroup.scss */
+  /* line 44, ../../sass/components/_ListGroup.scss */
   .ListGroup-item > .Badge + .Badge {
     margin-right: 5px; }
-  /* line 47, ../../sass/components/_ListGroup.scss */
-  a .ListGroup-item {
+  /* line 49, ../../sass/components/_ListGroup.scss */
+  a.ListGroup-item {
     color: #555555;
     /* Hover state */ }
-    /* line 50, ../../sass/components/_ListGroup.scss */
-    a .ListGroup-item .ListGroup-item-heading {
+    /* line 52, ../../sass/components/_ListGroup.scss */
+    a.ListGroup-item .ListGroup-item-heading {
       color: #333333; }
-    /* line 55, ../../sass/components/_ListGroup.scss */
-    a .ListGroup-item:hover, a .ListGroup-item:focus {
+    /* line 57, ../../sass/components/_ListGroup.scss */
+    a.ListGroup-item:hover, a.ListGroup-item:focus {
       text-decoration: none;
       background-color: whitesmoke; }
-  /* line 63, ../../sass/components/_ListGroup.scss */
+  /* line 65, ../../sass/components/_ListGroup.scss */
   .ListGroup-item.is-active, .ListGroup-item.is-active:hover, .ListGroup-item.is-active:focus {
     z-index: 2;
     /* Place active items above their siblings for proper border styling */
@@ -5972,21 +5965,21 @@ a.Thumbnail:focus {
     background-color: #86b35f;
     border-color: #86b35f;
     /* Force color to inherit for custom content */ }
-    /* line 72, ../../sass/components/_ListGroup.scss */
+    /* line 74, ../../sass/components/_ListGroup.scss */
     .ListGroup-item.is-active .ListGroup-item-heading, .ListGroup-item.is-active:hover .ListGroup-item-heading, .ListGroup-item.is-active:focus .ListGroup-item-heading {
       color: inherit; }
-    /* line 76, ../../sass/components/_ListGroup.scss */
+    /* line 78, ../../sass/components/_ListGroup.scss */
     .ListGroup-item.is-active .ListGroup-item-text, .ListGroup-item.is-active:hover .ListGroup-item-text, .ListGroup-item.is-active:focus .ListGroup-item-text {
       color: #eff5e9; }
 
 /* Custom content options
    ========================================================================== */
-/* line 87, ../../sass/components/_ListGroup.scss */
+/* line 89, ../../sass/components/_ListGroup.scss */
 .ListGroup-item-heading {
   margin-top: 0;
   margin-bottom: 5px; }
 
-/* line 92, ../../sass/components/_ListGroup.scss */
+/* line 94, ../../sass/components/_ListGroup.scss */
 .ListGroup-item-text {
   margin-bottom: 0;
   line-height: 1.3; }
@@ -6169,93 +6162,93 @@ a.Thumbnail:focus {
 
 /* Contextual variations */
 /* line 151, ../../sass/components/_Panels.scss */
-.Panel-default {
+.Panel--default {
   border-color: #dddddd; }
   /* line 255, ../../sass/mixins/_mixins.scss */
-  .Panel-default > .Panel-heading {
+  .Panel--default > .Panel-heading {
     color: #333333;
     background-color: whitesmoke;
     border-color: #dddddd; }
     /* line 259, ../../sass/mixins/_mixins.scss */
-    .Panel-default > .Panel-heading + .Panel-collapse .Panel-body {
+    .Panel--default > .Panel-heading + .Panel-collapse .Panel-body {
       border-top-color: #dddddd; }
   /* line 264, ../../sass/mixins/_mixins.scss */
-  .Panel-default > .Panel-footer + .Panel-collapse .Panel-body {
+  .Panel--default > .Panel-footer + .Panel-collapse .Panel-body {
     border-bottom-color: #dddddd; }
 
 /* line 155, ../../sass/components/_Panels.scss */
-.Panel-primary {
+.Panel--primary {
   border-color: #86b35f; }
   /* line 255, ../../sass/mixins/_mixins.scss */
-  .Panel-primary > .Panel-heading {
+  .Panel--primary > .Panel-heading {
     color: white;
     background-color: #86b35f;
     border-color: #86b35f; }
     /* line 259, ../../sass/mixins/_mixins.scss */
-    .Panel-primary > .Panel-heading + .Panel-collapse .Panel-body {
+    .Panel--primary > .Panel-heading + .Panel-collapse .Panel-body {
       border-top-color: #86b35f; }
   /* line 264, ../../sass/mixins/_mixins.scss */
-  .Panel-primary > .Panel-footer + .Panel-collapse .Panel-body {
+  .Panel--primary > .Panel-footer + .Panel-collapse .Panel-body {
     border-bottom-color: #86b35f; }
 
 /* line 159, ../../sass/components/_Panels.scss */
-.Panel-success {
+.Panel--success {
   border-color: #d6e9c6; }
   /* line 255, ../../sass/mixins/_mixins.scss */
-  .Panel-success > .Panel-heading {
+  .Panel--success > .Panel-heading {
     color: #468847;
     background-color: #dff0d8;
     border-color: #d6e9c6; }
     /* line 259, ../../sass/mixins/_mixins.scss */
-    .Panel-success > .Panel-heading + .Panel-collapse .Panel-body {
+    .Panel--success > .Panel-heading + .Panel-collapse .Panel-body {
       border-top-color: #d6e9c6; }
   /* line 264, ../../sass/mixins/_mixins.scss */
-  .Panel-success > .Panel-footer + .Panel-collapse .Panel-body {
+  .Panel--success > .Panel-footer + .Panel-collapse .Panel-body {
     border-bottom-color: #d6e9c6; }
 
 /* line 163, ../../sass/components/_Panels.scss */
-.Panel-warning {
+.Panel--warning {
   border-color: #faebcc; }
   /* line 255, ../../sass/mixins/_mixins.scss */
-  .Panel-warning > .Panel-heading {
+  .Panel--warning > .Panel-heading {
     color: #c09853;
     background-color: #fcf8e3;
     border-color: #faebcc; }
     /* line 259, ../../sass/mixins/_mixins.scss */
-    .Panel-warning > .Panel-heading + .Panel-collapse .Panel-body {
+    .Panel--warning > .Panel-heading + .Panel-collapse .Panel-body {
       border-top-color: #faebcc; }
   /* line 264, ../../sass/mixins/_mixins.scss */
-  .Panel-warning > .Panel-footer + .Panel-collapse .Panel-body {
+  .Panel--warning > .Panel-footer + .Panel-collapse .Panel-body {
     border-bottom-color: #faebcc; }
 
 /* line 167, ../../sass/components/_Panels.scss */
-.Panel-danger {
+.Panel--danger {
   border-color: #ebccd1; }
   /* line 255, ../../sass/mixins/_mixins.scss */
-  .Panel-danger > .Panel-heading {
+  .Panel--danger > .Panel-heading {
     color: #b94a48;
     background-color: #f2dede;
     border-color: #ebccd1; }
     /* line 259, ../../sass/mixins/_mixins.scss */
-    .Panel-danger > .Panel-heading + .Panel-collapse .Panel-body {
+    .Panel--danger > .Panel-heading + .Panel-collapse .Panel-body {
       border-top-color: #ebccd1; }
   /* line 264, ../../sass/mixins/_mixins.scss */
-  .Panel-danger > .Panel-footer + .Panel-collapse .Panel-body {
+  .Panel--danger > .Panel-footer + .Panel-collapse .Panel-body {
     border-bottom-color: #ebccd1; }
 
 /* line 171, ../../sass/components/_Panels.scss */
-.Panel-info {
+.Panel--info {
   border-color: #bce8f1; }
   /* line 255, ../../sass/mixins/_mixins.scss */
-  .Panel-info > .Panel-heading {
+  .Panel--info > .Panel-heading {
     color: #3a87ad;
     background-color: #d9edf7;
     border-color: #bce8f1; }
     /* line 259, ../../sass/mixins/_mixins.scss */
-    .Panel-info > .Panel-heading + .Panel-collapse .Panel-body {
+    .Panel--info > .Panel-heading + .Panel-collapse .Panel-body {
       border-top-color: #bce8f1; }
   /* line 264, ../../sass/mixins/_mixins.scss */
-  .Panel-info > .Panel-footer + .Panel-collapse .Panel-body {
+  .Panel--info > .Panel-footer + .Panel-collapse .Panel-body {
     border-bottom-color: #bce8f1; }
 
 /* ==========================================================================
@@ -6363,7 +6356,7 @@ a.Thumbnail:focus {
     -webkit-transition: -webkit-transform 0.3s ease-out;
     transition: transform 0.3s ease-out; }
   /* line 34, ../../sass/components/_Modals.scss */
-  .Modal.in .Modal-dialog {
+  .Modal.is-in .Modal-dialog {
     -moz-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
@@ -6411,7 +6404,7 @@ a.Thumbnail:focus {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0; }
   /* line 74, ../../sass/components/_Modals.scss */
-  .Modal-backdrop.in {
+  .Modal-backdrop.is-in {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
     opacity: 0.5; }
 
@@ -6772,27 +6765,27 @@ a.Thumbnail:focus {
       line-height: 1; }
   /* line 29, ../../sass/components/_Carousel.scss */
   .Carousel-inner > .is-active,
-  .Carousel-inner > .isNext,
-  .Carousel-inner > .isPrevious {
+  .Carousel-inner > .is-next,
+  .Carousel-inner > .is-previous {
     display: block; }
   /* line 33, ../../sass/components/_Carousel.scss */
   .Carousel-inner > .is-active {
     left: 0; }
   /* line 37, ../../sass/components/_Carousel.scss */
-  .Carousel-inner > .isNext,
-  .Carousel-inner > .isPrevious {
+  .Carousel-inner > .is-next,
+  .Carousel-inner > .is-previous {
     position: absolute;
     top: 0;
     width: 100%; }
   /* line 44, ../../sass/components/_Carousel.scss */
-  .Carousel-inner > .isNext {
+  .Carousel-inner > .is-next {
     left: 100%; }
   /* line 47, ../../sass/components/_Carousel.scss */
-  .Carousel-inner > .isPrevious {
+  .Carousel-inner > .is-previous {
     left: -100%; }
   /* line 50, ../../sass/components/_Carousel.scss */
-  .Carousel-inner > .isNext.left,
-  .Carousel-inner > .isPrevious.right {
+  .Carousel-inner > .is-next.left,
+  .Carousel-inner > .is-previous.right {
     left: 0; }
   /* line 55, ../../sass/components/_Carousel.scss */
   .Carousel-inner > .is-active.left {
@@ -6953,25 +6946,25 @@ a.Thumbnail:focus {
  * fields in IE7-8. Source: https://github.com/twitter/bootstrap/pull/3552.
  */
 /* line 10, ../../sass/utilities/_ComponentAnimations.scss */
-.u-fade {
+.Animation--fade {
   opacity: 0;
   -moz-transition: opacity 0.15s linear;
   -o-transition: opacity 0.15s linear;
   -webkit-transition: opacity 0.15s linear;
   transition: opacity 0.15s linear; }
   /* line 13, ../../sass/utilities/_ComponentAnimations.scss */
-  .u-fade.in {
+  .Animation--fade.is-in {
     opacity: 1; }
 
 /* line 18, ../../sass/utilities/_ComponentAnimations.scss */
-.u-collapse {
+.Animation--collapse {
   display: none; }
   /* line 20, ../../sass/utilities/_ComponentAnimations.scss */
-  .u-collapse.in {
+  .Animation--collapse.is-in {
     display: block; }
 
 /* line 25, ../../sass/utilities/_ComponentAnimations.scss */
-.u-collapsing {
+.Animation--collapsing {
   position: relative;
   height: 0;
   overflow: hidden;
@@ -6995,23 +6988,23 @@ a.Thumbnail:focus {
 .u-clearfix:after {
   clear: both; }
 
-/* line 11, ../../sass/utilities/_Utilities.scss */
+/* line 10, ../../sass/utilities/_Utilities.scss */
 .u-centerBlock {
   display: block;
   margin-left: auto;
   margin-right: auto; }
 
-/* line 14, ../../sass/utilities/_Utilities.scss */
+/* line 13, ../../sass/utilities/_Utilities.scss */
 .u-pull--right {
   float: right !important; }
 
-/* line 17, ../../sass/utilities/_Utilities.scss */
+/* line 16, ../../sass/utilities/_Utilities.scss */
 .u-pull--left {
   float: left !important; }
 
 /* Toggling content
    ========================================================================== */
-/* line 25, ../../sass/utilities/_Utilities.scss */
+/* line 24, ../../sass/utilities/_Utilities.scss */
 .u-screenReaderOnly {
   position: absolute;
   width: 1px;
@@ -7022,19 +7015,19 @@ a.Thumbnail:focus {
   clip: rect(0 0 0 0);
   border: 0; }
 
-/* line 29, ../../sass/utilities/_Utilities.scss */
+/* line 28, ../../sass/utilities/_Utilities.scss */
 .u-hide {
   display: none !important; }
 
-/* line 33, ../../sass/utilities/_Utilities.scss */
+/* line 32, ../../sass/utilities/_Utilities.scss */
 .u-show {
   display: block !important; }
 
-/* line 37, ../../sass/utilities/_Utilities.scss */
+/* line 36, ../../sass/utilities/_Utilities.scss */
 .u-invisible {
   visibility: hidden; }
 
-/* line 41, ../../sass/utilities/_Utilities.scss */
+/* line 40, ../../sass/utilities/_Utilities.scss */
 .u-textHide {
   font: 0/0;
   color: transparent;
@@ -7044,7 +7037,7 @@ a.Thumbnail:focus {
 
 /* For Affix plugin
    ========================================================================== */
-/* line 51, ../../sass/utilities/_Utilities.scss */
+/* line 49, ../../sass/utilities/_Utilities.scss */
 .u-affix {
   position: fixed; }
 

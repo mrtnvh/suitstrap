@@ -33,7 +33,7 @@
 		this.$scrollElement = this.$element.on('scroll.bs.scroll-spy.data-api', process)
 		this.options = $.extend({}, ScrollSpy.DEFAULTS, options)
 		this.selector = (this.options.target || ((href = $(element).attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')) //strip for ie7
-			|| '') + ' .nav li > a'
+			|| '') + ' .Nav li > a'
 		this.offsets = $([])
 		this.targets = $([])
 		this.activeTarget = null

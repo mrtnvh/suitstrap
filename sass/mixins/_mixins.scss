@@ -434,19 +434,11 @@
 
 	/* Creates a wrapper for a series of columns */
 	@mixin MakeRow($gutter: $grid-gutter-width) {
+		margin-left:  ($gutter / -2);
+		margin-right: ($gutter / -2);
+
 		// Then clear the floated columns
 		@include MicroClearfix();
-
-		@media (min-width: $screen--small-min) {
-			margin-left:  ($gutter / -2);
-			margin-right: ($gutter / -2);
-		}
-
-		// Negative margin nested rows out to align the content of columns
-		.row {
-			margin-left:  ($gutter / -2);
-			margin-right: ($gutter / -2);
-		}
 	}
 
 	/* Generate the extra small columns */

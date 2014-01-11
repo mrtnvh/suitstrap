@@ -2,7 +2,6 @@
    Dropdown menus
    ========================================================================== */
 
-
 /* Dropdown arrow/caret */
 .Caret {
 	display: inline-block;
@@ -125,6 +124,8 @@
 	}
 }
 
+
+
 /* Dropdown section headers
    ========================================================================== */
 .Dropdown-header {
@@ -134,6 +135,8 @@
 	line-height: $line-height-base;
 	color: $dropdown-header-color;
 }
+
+
 
 /* Backdrop to catch body clicks on mobile, etc.
    ========================================================================== */
@@ -146,6 +149,8 @@
 	z-index: $zindex-dropdown - 10;
 }
 
+
+
 /* Right aligned dropdowns
    ========================================================================== */
 .u-pull--right > .Dropdown-menu {
@@ -153,14 +158,16 @@
 	left: auto;
 }
 
+
+
 /**
  * Allow for dropdowns to go bottom up (aka, dropup-menu)
  *
- * Just add .DropUp after the standard .Dropdown class and you're set, bro.
+ * Just add .Dropup after the standard .Dropdown class and you're set, bro.
  * TODO: abstract this so that the navbar fixed styles are not placed here?
 */
 
-.DropUp,
+.Dropup,
 .Navbar--fixedBottom .Dropdown {
 
 	/* Reverse the caret */
@@ -178,6 +185,7 @@
 		margin-bottom: 1px;
 	}
 }
+
 
 
 /* Component alignment

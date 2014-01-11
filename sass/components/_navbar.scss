@@ -65,7 +65,7 @@
 	@include MicroClearfix();
 	-webkit-overflow-scrolling: touch;
 
-	&.in {
+	&.is-in {
 		overflow-y: auto;
 	}
 
@@ -74,14 +74,14 @@
 		border-top: 0;
 		box-shadow: none;
 
-		&.Collapse {
+		&.Animation--collapse {
 			display: block !important;
 			height: auto !important;
 			padding-bottom: 0; /* Override default setting */
 			overflow: visible !important;
 		}
 
-		&.in {
+		&.is-in {
 			overflow-y: visible;
 		}
 
@@ -89,7 +89,7 @@
 		.Navbar-nav.Navbar-left:first-child {
 			margin-left: -$navbar-padding-horizontal;
 		}
-		.Navbar-nav.NavbarRight:last-child {
+		.Navbar-nav.Navbar--right:last-child {
 			margin-right: -$navbar-padding-horizontal;
 		}
 		.Navbar-text:last-child {
@@ -121,7 +121,7 @@
 /* Display the navbar across the entirity of the page or fixed it to the top or bottom of the page. */
 
 /* Static top (unfixed, but 100% wide) navbar */
-.Navbar--staticTop {
+.Navbar--static--top {
 	border-width: 0 0 1px;
 	@media (min-width: $grid-float-breakpoint) {
 		border-radius: 0;
@@ -129,8 +129,8 @@
 }
 
 /* Fix the top/bottom navbars when screen real estate supports it */
-.Navbar--fixedTop,
-.Navbar--fixedBottom {
+.Navbar--fixed--top,
+.Navbar--fixed--bottom {
 	position: fixed;
 	right: 0;
 	left: 0;
@@ -142,12 +142,12 @@
 	}
 }
 
-.Navbar--fixedTop {
+.Navbar--fixed--top {
 	z-index: $zindex-navbar-fixed;
 	top: 0;
 }
 
-.Navbar--fixedBottom {
+.Navbar--fixed--bottom {
 	bottom: 0;
 	margin-bottom: 0; /* override .Navbar defaults */
 }
@@ -213,10 +213,10 @@
  */
 
 .Navbar-nav {
-	margin: ($navbar-padding-vertical / 2) -$navbar-padding-horizontal;
+	margin: ($navbar-padding-vertical / 2) (-$navbar-padding-horizontal);
 
 	> li > a {
-		padding-top:        10px;
+		padding-top: 10px;
 		padding-bottom: 10px;
 		line-height: $line-height-computed;
 	}
@@ -333,7 +333,7 @@
 	@include border-top-radius(0);
 }
 /* Menu position and menu caret support for dropups via extra dropup class */
-.Navbar--fixedBottom .Navbar-nav > li > .Dropdown-menu {
+.Navbar--fixed--bottom .Navbar-nav > li > .Dropdown-menu {
 	@include border-bottom-radius(0);
 }
 

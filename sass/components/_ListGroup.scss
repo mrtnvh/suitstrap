@@ -30,6 +30,7 @@
     &:first-child {
         @include border-top-radius($list-group-border-radius);
     }
+
     &:last-child {
         margin-bottom: 0;
         @include border-bottom-radius($list-group-border-radius);
@@ -39,12 +40,13 @@
     > .Badge {
         float: right;
     }
+
     > .Badge + .Badge {
         margin-right: 5px;
     }
 
     /* Linked list items */
-    a & {
+    @at-root a#{&} {
         color: $list-group-link-color;
 
         .ListGroup-item-heading {

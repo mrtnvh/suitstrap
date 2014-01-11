@@ -214,8 +214,8 @@ module.exports = function(grunt) {
 				]
 			},
 			docs_js:{
-				files: '<%= jshint.docs.src %>',
-				tasks: ['jshint:docs']
+				files: ['<%= jshint.docs.src %>', '<%= concat.bootstrap.src %>'],
+				tasks: ['jshint:docs', 'dist-js']
 			},
 			docs:{
 				files: [

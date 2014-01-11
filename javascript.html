@@ -116,7 +116,7 @@ $('#myModal').on('show.bs.modal', function (e) {
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <button type="button" class="Close" data-dismiss="modal" aria-hidden="true">&times;</button>
               <h4 class="modal-title">Modal title</h4>
             </div>
             <div class="modal-body">
@@ -135,7 +135,7 @@ $('#myModal').on('show.bs.modal', function (e) {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <button type="button" class="Close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title">Modal title</h4>
       </div>
       <div class="modal-body">
@@ -158,7 +158,7 @@ $('#myModal').on('show.bs.modal', function (e) {
         <div class="modal-content">
 
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <button type="button" class="Close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <h4 class="modal-title" id="myModalLabel">Modal Heading</h4>
           </div>
           <div class="modal-body">
@@ -209,7 +209,7 @@ $('#myModal').on('show.bs.modal', function (e) {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <button type="button" class="Close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
       <div class="modal-body">
@@ -361,18 +361,18 @@ $('#myModal').on('hidden.bs.modal', function () {
 
     <h3>Within a navbar</h3>
     <div class="bs-example">
-      <nav id="navbar-example" class="navbar navbar-default navbar-static" role="navigation">
-        <div class="navbar-header">
-          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-js-navbar-collapse">
+      <nav id="navbar-example" class="avbar Navbar--default Navbar-static" role="navigation">
+        <div class="avbar-header">
+          <button class="avbar-toggle" type="button" data-toggle="collapse" data-target=".bs-js-Navbar-collapse">
             <span class="u-screenReaderOnly">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+            <span class="Icon--bar"></span>
+            <span class="Icon--bar"></span>
+            <span class="Icon--bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project Name</a>
+          <a class="avbar-brand" href="#">Project Name</a>
         </div>
-        <div class="collapse navbar-collapse bs-js-navbar-collapse">
-          <ul class="nav navbar-nav">
+        <div class="collapse Navbar-collapse bs-js-Navbar-collapse">
+          <ul class="av Navbar-nav">
             <li class="dropdown">
               <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
@@ -394,7 +394,7 @@ $('#myModal').on('hidden.bs.modal', function () {
               </ul>
             </li>
           </ul>
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="av Navbar-nav Navbar-right">
             <li id="fat-menu" class="dropdown">
               <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">Dropdown 3 <b class="caret"></b></a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
@@ -406,13 +406,13 @@ $('#myModal').on('hidden.bs.modal', function () {
               </ul>
             </li>
           </ul>
-        </div><!-- /.nav-collapse -->
-      </nav> <!-- /navbar-example -->
+        </div><!-- /.Nav-collapse -->
+      </nav> <!-- /Navbar-example -->
     </div> <!-- /example -->
 
     <h3>Within tabs</h3>
     <div class="bs-example">
-      <ul class="nav nav-pills">
+      <ul class="av Nav--pills">
         <li class="is-active"><a href="#">Regular link</a></li>
         <li class="dropdown">
           <a id="drop4" role="button" data-toggle="dropdown" href="#">Dropdown <b class="caret"></b></a>
@@ -534,18 +534,18 @@ $('#myDropdown').on('show.bs.dropdown', function () {
     <h2 id="scrollspy-examples">Example in navbar</h2>
     <p>The ScrollSpy plugin is for automatically updating nav targets based on scroll position. Scroll the area below the navbar and watch the is-active class change. The dropdown sub items will be highlighted as well.</p>
     <div class="bs-example">
-      <nav id="navbar-example2" class="navbar navbar-default navbar-static" role="navigation">
-        <div class="navbar-header">
-          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-js-navbar-scrollspy">
+      <nav id="navbar-example2" class="avbar Navbar--default Navbar-static" role="navigation">
+        <div class="avbar-header">
+          <button class="avbar-toggle" type="button" data-toggle="collapse" data-target=".bs-js-Navbar-scrollspy">
             <span class="u-screenReaderOnly">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+            <span class="Icon--bar"></span>
+            <span class="Icon--bar"></span>
+            <span class="Icon--bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project Name</a>
+          <a class="avbar-brand" href="#">Project Name</a>
         </div>
-        <div class="collapse navbar-collapse bs-js-navbar-scrollspy">
-          <ul class="nav navbar-nav">
+        <div class="collapse Navbar-collapse bs-js-Navbar-scrollspy">
+          <ul class="av Navbar-nav">
             <li><a href="#fat">@fat</a></li>
             <li><a href="#mdo">@mdo</a></li>
             <li class="dropdown">
@@ -560,7 +560,7 @@ $('#myDropdown').on('show.bs.dropdown', function () {
           </ul>
         </div>
       </nav>
-      <div data-spy="scroll" data-target="#navbar-example2" data-offset="0" class="scrollspy-example">
+      <div data-spy="scroll" data-target="#Navbar-example2" data-offset="0" class="scrollspy-example">
         <h4 id="fat">@fat</h4>
         <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.</p>
         <h4 id="mdo">@mdo</h4>
@@ -580,9 +580,9 @@ $('#myDropdown').on('show.bs.dropdown', function () {
     <h2 id="scrollspy-usage">Usage</h2>
 
     <h3>Via data attributes</h3>
-    <p>To easily add scrollspy behavior to your topbar navigation, add <code>data-spy="scroll"</code> to the element you want to spy on (most typically this would be the <code>&lt;body&gt;</code>). Then add the <code>data-target</code> attribute with the ID or class of the parent element of any Suitstrap <code>.nav</code> component.</p>
+    <p>To easily add scrollspy behavior to your topbar navigation, add <code>data-spy="scroll"</code> to the element you want to spy on (most typically this would be the <code>&lt;body&gt;</code>). Then add the <code>data-target</code> attribute with the ID or class of the parent element of any Suitstrap <code>.Nav</code> component.</p>
 {% highlight html %}
-<body data-spy="scroll" data-target="#navbar-example">
+<body data-spy="scroll" data-target="#Navbar-example">
   ...
 </body>
 {% endhighlight %}
@@ -590,7 +590,7 @@ $('#myDropdown').on('show.bs.dropdown', function () {
     <h3>Via JavaScript</h3>
     <p>Call the scrollspy via JavaScript:</p>
 {% highlight js %}
-$('body').scrollspy({ target: '#navbar-example' })
+$('body').scrollspy({ target: '#Navbar-example' })
 {% endhighlight %}
 
     <div class="bs-callout bs-callout-danger">
@@ -667,7 +667,7 @@ $('#myScrollspy').on('activate.bs.scrollspy', function () {
     <h2 id="tabs-examples">Example tabs</h2>
     <p>Add quick, dynamic tab functionality to transition through panes of local content, even via dropdown menus.</p>
     <div class="bs-example bs-example-tabs">
-      <ul id="myTab" class="nav nav-tabs">
+      <ul id="myTab" class="av Nav--tabs">
         <li class="is-active"><a href="#home" data-toggle="tab">Home</a></li>
         <li><a href="#profile" data-toggle="tab">Profile</a></li>
         <li class="dropdown">
@@ -696,7 +696,7 @@ $('#myScrollspy').on('activate.bs.scrollspy', function () {
 
     <div class="bs-callout bs-callout-info">
       <h4>Extends tabbed navigation</h4>
-      <p>This plugin extends the <a href="../components/#nav-tabs">tabbed navigation component</a> to add tabbable areas.</p>
+      <p>This plugin extends the <a href="../components/#Nav--tabs">tabbed navigation component</a> to add tabbable areas.</p>
     </div>
 
 
@@ -718,10 +718,10 @@ $('#myTab li:eq(2) a').tab('show') // Select third tab (0-indexed)
 {% endhighlight %}
 
     <h3>Markup</h3>
-    <p>You can activate a tab or pill navigation without writing any JavaScript by simply specifying <code>data-toggle="tab"</code> or <code>data-toggle="pill"</code> on an element. Adding the <code>nav</code> and <code>nav-tabs</code> classes to the tab <code>ul</code> will apply the Suitstrap <a href="{{ page.base_url }}components#nav-tabs">tab styling</a>, while adding the <code>nav</code> and <code>nav-pills</code> classes will apply <a href="{{ page.base_url }}components#nav-pills">pill styling</a>.</p>
+    <p>You can activate a tab or pill navigation without writing any JavaScript by simply specifying <code>data-toggle="tab"</code> or <code>data-toggle="pill"</code> on an element. Adding the <code>nav</code> and <code>Nav--tabs</code> classes to the tab <code>ul</code> will apply the Suitstrap <a href="{{ page.base_url }}components#Nav--tabs">tab styling</a>, while adding the <code>nav</code> and <code>Nav--pills</code> classes will apply <a href="{{ page.base_url }}components#Nav--pills">pill styling</a>.</p>
 {% highlight html %}
 <!-- Nav tabs -->
-<ul class="nav nav-tabs">
+<ul class="av Nav--tabs">
   <li><a href="#home" data-toggle="tab">Home</a></li>
   <li><a href="#profile" data-toggle="tab">Profile</a></li>
   <li><a href="#messages" data-toggle="tab">Messages</a></li>
@@ -754,7 +754,7 @@ $('#myTab li:eq(2) a').tab('show') // Select third tab (0-indexed)
       Activates a tab element and content container. Tab should have either a <code>data-target</code> or an <code>href</code> targeting a container node in the DOM.
     </p>
 {% highlight html %}
-<ul class="nav nav-tabs" id="myTab">
+<ul class="av Nav--tabs" id="myTab">
   <li class="is-active"><a href="#home" data-toggle="tab">Home</a></li>
   <li><a href="#profile" data-toggle="tab">Profile</a></li>
   <li><a href="#messages" data-toggle="tab">Messages</a></li>
@@ -837,7 +837,7 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
     </div>
     <div class="bs-callout bs-callout-info">
       <h4>Tooltips in button groups and input groups require special setting</h4>
-      <p>When using tooltips on elements within a <code>.Button--group</code> or an <code>.input-group</code>, you'll have to specify the option <code>container: 'body'</code> (documented below) to avoid unwanted side effects (such as the element growing wider and/or losing its rounded corners when the tooltip is triggered).</p>
+      <p>When using tooltips on elements within a <code>.Button--group</code> or an <code>.InputGroup</code>, you'll have to specify the option <code>container: 'body'</code> (documented below) to avoid unwanted side effects (such as the element growing wider and/or losing its rounded corners when the tooltip is triggered).</p>
     </div>
     <div class="bs-callout bs-callout-info">
       <h4>Tooltips on disabled elements require wrapper elements</h4>
@@ -1007,7 +1007,7 @@ $('#myTooltip').on('hidden.bs.tooltip', function () {
     </div>
     <div class="bs-callout bs-callout-info">
       <h4>Popovers in button groups and input groups require special setting</h4>
-      <p>When using popovers on elements within a <code>.Button--group</code> or an <code>.input-group</code>, you'll have to specify the option <code>container: 'body'</code> (documented below) to avoid unwanted side effects (such as the element growing wider and/or losing its rounded corners when the popover is triggered).</p>
+      <p>When using popovers on elements within a <code>.Button--group</code> or an <code>.InputGroup</code>, you'll have to specify the option <code>container: 'body'</code> (documented below) to avoid unwanted side effects (such as the element growing wider and/or losing its rounded corners when the popover is triggered).</p>
     </div>
     <div class="bs-callout bs-callout-info">
       <h4>Popovers on disabled elements require wrapper elements</h4>
@@ -1228,15 +1228,15 @@ $('#myPopover').on('hidden.bs.popover', function () {
     <h2 id="alerts-examples">Example alerts</h2>
     <p>Add dismiss functionality to all alert messages with this plugin.</p>
     <div class="bs-example">
-      <div class="alert alert-warning fade in">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <div class="Alert Alert--warning fade in">
+        <button type="button" class="Close" data-dismiss="alert" aria-hidden="true">&times;</button>
         <strong>Holy guacamole!</strong> Best check yo self, you're not looking too good.
       </div>
     </div><!-- /example -->
 
     <div class="bs-example">
-      <div class="alert alert-danger fade in">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <div class="Alert Alert--danger fade in">
+        <button type="button" class="Close" data-dismiss="alert" aria-hidden="true">&times;</button>
         <h4>Oh snap! You got an error!</h4>
         <p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
         <p>
@@ -1253,7 +1253,7 @@ $('#myPopover').on('hidden.bs.popover', function () {
 
     <h3>Markup</h3>
     <p>Just add <code>data-dismiss="alert"</code> to your close button to automatically give an alert close functionality.</p>
-    {% highlight html %}<a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>{% endhighlight %}
+    {% highlight html %}<a class="Close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>{% endhighlight %}
 
     <h3>Methods</h3>
 
@@ -1438,11 +1438,11 @@ $('.Button--group').button()
 
 
 
-  <!-- Collapse
+  <!-- Animation--collapse
   ================================================== -->
   <div class="bs-docs-section">
     <div class="Page-header">
-      <h1 id="collapse">Collapse <small>collapse.js</small></h1>
+      <h1 id="collapse">Animation--collapse <small>collapse.js</small></h1>
     </div>
 
     <h3>About</h3>
@@ -1450,52 +1450,52 @@ $('.Button--group').button()
 
     <div class="bs-callout bs-callout-danger">
       <h4>Plugin dependency</h4>
-      <p>Collapse requires the <a href="#transitions">transitions plugin</a> to be included in your version of Suitstrap.</p>
+      <p>Animation--collapse requires the <a href="#transitions">transitions plugin</a> to be included in your version of Suitstrap.</p>
     </div>
 
     <h2 id="collapse-examples">Example accordion</h2>
     <p>Using the collapse plugin, we built a simple accordion by extending the panel component.</p>
 
     <div class="bs-example">
-      <div class="panel-group" id="accordion">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
+      <div class="Panel-group" id="accordion">
+        <div class="Panel Panel--default">
+          <div class="Panel-heading">
+            <h4 class="Panel-title">
               <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
                 Collapsible Group Item #1
               </a>
             </h4>
           </div>
-          <div id="collapseOne" class="panel-collapse collapse in">
-            <div class="panel-body">
+          <div id="collapseOne" class="Panel-collapse collapse in">
+            <div class="Panel-body">
               Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
             </div>
           </div>
         </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
+        <div class="Panel Panel--default">
+          <div class="Panel-heading">
+            <h4 class="Panel-title">
               <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
                 Collapsible Group Item #2
               </a>
             </h4>
           </div>
-          <div id="collapseTwo" class="panel-collapse collapse">
-            <div class="panel-body">
+          <div id="collapseTwo" class="Panel-collapse collapse">
+            <div class="Panel-body">
               Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
             </div>
           </div>
         </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
+        <div class="Panel Panel--default">
+          <div class="Panel-heading">
+            <h4 class="Panel-title">
               <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
                 Collapsible Group Item #3
               </a>
             </h4>
           </div>
-          <div id="collapseThree" class="panel-collapse collapse">
-            <div class="panel-body">
+          <div id="collapseThree" class="Panel-collapse collapse">
+            <div class="Panel-body">
               Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
             </div>
           </div>
@@ -1503,45 +1503,45 @@ $('.Button--group').button()
       </div>
     </div><!-- /example -->
 {% highlight html %}
-<div class="panel-group" id="accordion">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
+<div class="Panel-group" id="accordion">
+  <div class="Panel Panel--default">
+    <div class="Panel-heading">
+      <h4 class="Panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
           Collapsible Group Item #1
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
-      <div class="panel-body">
+    <div id="collapseOne" class="Panel-collapse collapse in">
+      <div class="Panel-body">
         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
       </div>
     </div>
   </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
+  <div class="Panel Panel--default">
+    <div class="Panel-heading">
+      <h4 class="Panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
           Collapsible Group Item #2
         </a>
       </h4>
     </div>
-    <div id="collapseTwo" class="panel-collapse collapse">
-      <div class="panel-body">
+    <div id="collapseTwo" class="Panel-collapse collapse">
+      <div class="Panel-body">
         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
       </div>
     </div>
   </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
+  <div class="Panel Panel--default">
+    <div class="Panel-heading">
+      <h4 class="Panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
           Collapsible Group Item #3
         </a>
       </h4>
     </div>
-    <div id="collapseThree" class="panel-collapse collapse">
-      <div class="panel-body">
+    <div id="collapseThree" class="Panel-collapse collapse">
+      <div class="Panel-body">
         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
       </div>
     </div>
@@ -1688,10 +1688,10 @@ $('#myCollapsible').on('hidden.bs.collapse', function () {
           </div>
         </div>
         <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="Glyphicon Glyphicon--chevronLeft"></span>
         </a>
         <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="Glyphicon Glyphicon--chevronRight"></span>
         </a>
       </div>
     </div><!-- /example -->
@@ -1717,10 +1717,10 @@ $('#myCollapsible').on('hidden.bs.collapse', function () {
 
   <!-- Controls -->
   <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="Glyphicon Glyphicon--chevronLeft"></span>
   </a>
   <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="Glyphicon Glyphicon--chevronRight"></span>
   </a>
 </div>
 {% endhighlight %}
@@ -1762,10 +1762,10 @@ $('#myCollapsible').on('hidden.bs.collapse', function () {
           </div>
         </div>
         <a class="left carousel-control" href="#carousel-example-captions" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="Glyphicon Glyphicon--chevronLeft"></span>
         </a>
         <a class="right carousel-control" href="#carousel-example-captions" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="Glyphicon Glyphicon--chevronRight"></span>
         </a>
       </div>
     </div><!-- /example -->

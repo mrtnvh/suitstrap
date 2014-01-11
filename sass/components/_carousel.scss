@@ -27,28 +27,28 @@
 	}
 
 	> .is-active,
-	> .isNext,
-	> .isPrevious { display: block; }
+	> .is-next,
+	> .is-previous { display: block; }
 
 	> .is-active {
 		left: 0;
 	}
 
-	> .isNext,
-	> .isPrevious {
+	> .is-next,
+	> .is-previous {
 		position: absolute;
 		top: 0;
 		width: 100%;
 	}
 
-	> .isNext {
+	> .is-next {
 		left: 100%;
 	}
-	> .isPrevious {
+	> .is-previous {
 		left: -100%;
 	}
-	> .isNext.left,
-	> .isPrevious.right {
+	> .is-next.left,
+	> .is-previous.right {
 		left: 0;
 	}
 

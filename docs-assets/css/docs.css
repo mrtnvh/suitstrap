@@ -95,7 +95,7 @@ a:hover{
 .bs-docs-nav {
 	text-shadow: 0 -1px 0 rgba(0,0,0,.15);
 	background-color: #63944C;
-	border-color: #3B613A;
+	border-color: #517a3e;
 	box-shadow: 0 1px 0 rgba(255,255,255,.1);
 }
 .bs-docs-nav .Navbar-collapse {
@@ -113,14 +113,14 @@ a:hover{
 .bs-docs-nav .Navbar-nav > .is-active > a,
 .bs-docs-nav .Navbar-nav > .is-active > a:hover {
 	color: #fff;
-	background-color: #3B613A;
+	background-color: #517a3e;
 }
 .bs-docs-nav .Navbar-toggle {
 	border-color: #63944C;
 }
 .bs-docs-nav .Navbar-toggle:hover {
-	background-color: #3B613A;
-	border-color: #3B613A;
+	background-color: #517a3e;
+	border-color: #517a3e;
 }
 
 
@@ -580,13 +580,27 @@ h1[id] {
 	background-color: #fcf2f2;
 	border-color: #dFb5b4;
 }
+
+.bs-callout-danger h4 {
+	color: #b94a48;
+}
+
 .bs-callout-warning {
 	background-color: #fefbed;
 	border-color: #f1e7bc;
 }
+
+.bs-callout-warning h4 {
+	color: #8a6d3b;
+}
+
 .bs-callout-info {
 	background-color: #f0f7fd;
 	border-color: #d0e3f0;
+}
+
+.bs-callout-info h4 {
+	color: #34789a;
 }
 
 
@@ -681,12 +695,12 @@ h1[id] {
 .bs-example > .Form-control:last-child,
 .bs-example > .Table:last-child,
 .bs-example > .Navbar:last-child,
-.bs-example > .jumbotron:last-child,
-.bs-example > .alert:last-child,
-.bs-example > .panel:last-child,
-.bs-example > .list-group:last-child,
-.bs-example > .well:last-child,
-.bs-example > .progress:last-child,
+.bs-example > .Jumbotron:last-child,
+.bs-example > .Alert:last-child,
+.bs-example > .Panel:last-child,
+.bs-example > .ListGroup:last-child,
+.bs-example > .Well:last-child,
+.bs-example > .Progress:last-child,
 .bs-example > .Table-responsive:last-child > .Table {
 	margin-bottom: 0;
 }
@@ -742,7 +756,7 @@ h1[id] {
 .bs-example-control-sizing input[type="text"] + input[type="text"] {
 	margin-top: 10px;
 }
-.bs-example-form .input-group {
+.bs-example-form .InputGroup {
 	margin-bottom: 10px;
 }
 .bs-example > textarea.Form-control {
@@ -750,7 +764,7 @@ h1[id] {
 }
 
 /* List groups */
-.bs-example > .list-group {
+.bs-example > .ListGroup {
 	max-width: 400px;
 }
 
@@ -768,8 +782,8 @@ h1[id] {
 .bs-Navbar-bottom-example .Navbar-header {
 	margin-left: 0;
 }
-.bs-Navbar-top-example .Navbar-fixed-top,
-.bs-Navbar-bottom-example .Navbar-fixed-bottom {
+.bs-Navbar-top-example .Navbar--fixed--top,
+.bs-Navbar-bottom-example .Navbar--fixed--bottom {
 	position: relative;
 	margin-left: 0;
 	margin-right: 0;
@@ -781,21 +795,21 @@ h1[id] {
 	top: auto;
 	bottom: 15px;
 }
-.bs-Navbar-top-example .Navbar-fixed-top {
+.bs-Navbar-top-example .Navbar--fixed--top {
 	top: -1px;
 }
 .bs-Navbar-bottom-example {
 	padding-top: 45px;
 }
-.bs-Navbar-bottom-example .Navbar-fixed-bottom {
+.bs-Navbar-bottom-example .Navbar--fixed--bottom {
 	bottom: -1px;
 }
 .bs-Navbar-bottom-example .Navbar {
 	margin-bottom: 0;
 }
 @media (min-width: 768px) {
-	.bs-Navbar-top-example .Navbar-fixed-top,
-	.bs-Navbar-bottom-example .Navbar-fixed-bottom {
+	.bs-Navbar-top-example .Navbar--fixed--top,
+	.bs-Navbar-bottom-example .Navbar--fixed--bottom {
 		position: absolute;
 	}
 	.bs-Navbar-top-example {
@@ -837,7 +851,7 @@ h1[id] {
 }
 
 /* Example dropdowns */
-.bs-example > .dropdown > .dropdown-menu {
+.bs-example > .Dropdown > .Dropdown-menu {
 	position: static;
 	display: block;
 	margin-bottom: 5px;
@@ -862,7 +876,7 @@ h1[id] {
 	padding-bottom: 24px;
 	background-color: #f9f9f9;
 }
-.bs-example-popover .popover {
+.bs-example-popover .Popover {
 	position: relative;
 	display: block;
 	float: left;
@@ -1005,14 +1019,14 @@ h1[id] {
  * Special styles for displaying the icons and their classes in the docs.
  */
 
-.bs-glyphicons {
+.bs-Glyphicons {
 	padding-left: 0;
 	padding-bottom: 1px;
 	margin-bottom: 20px;
 	list-style: none;
 	overflow: hidden;
 }
-.bs-glyphicons li {
+.bs-Glyphicons li {
 	float: left;
 	width: 25%;
 	height: 115px;
@@ -1023,17 +1037,17 @@ h1[id] {
 	text-align: center;
 	border: 1px solid #ddd;
 }
-.bs-glyphicons .glyphicon {
+.bs-Glyphicons .Glyphicon {
 	display: block;
 	margin: 5px auto 10px;
 	font-size: 24px;
 }
-.bs-glyphicons li:hover {
+.bs-Glyphicons li:hover {
 	background-color: rgba(86,61,124,.1);
 }
 
 @media (min-width: 768px) {
-	.bs-glyphicons li {
+	.bs-Glyphicons li {
 		width: 12.5%;
 	}
 }
@@ -1113,7 +1127,7 @@ h1[id] {
 .bs-customizer-alert p {
 	margin-bottom: 0;
 }
-.bs-customizer-alert .glyphicon {
+.bs-customizer-alert .Glyphicon {
 	margin-right: 5px;
 }
 .bs-customizer-alert pre {

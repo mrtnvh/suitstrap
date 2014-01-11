@@ -31,14 +31,14 @@
  */
 
 .InputGroup--large > .Form-control,
-.InputGroup--large > .InputGroup--addon,
-.InputGroup--large > .InputGroup--button > .Button {
+.InputGroup--large > .InputGroup-addon,
+.InputGroup--large > .InputGroup-button > .Button {
 	@extend .Input--large;
 }
 
 .InputGroup--small > .Form-control,
-.InputGroup--small > .InputGroup--addon,
-.InputGroup--small > .InputGroup--button > .Button {
+.InputGroup--small > .InputGroup-addon,
+.InputGroup--small > .InputGroup-button > .Button {
 	@extend .Input--small;
 }
 
@@ -46,8 +46,8 @@
 
 /* Display as table-cell
    ========================================================================== */
-.InputGroup--addon,
-.InputGroup--button,
+.InputGroup-addon,
+.InputGroup-button,
 .InputGroup .Form-control {
     display: table-cell;
 
@@ -56,8 +56,8 @@
     }
 }
 /* Addon and addon wrapper for buttons */
-.InputGroup--addon,
-.InputGroup--button {
+.InputGroup-addon,
+.InputGroup-button {
     width: 1%;
     white-space: nowrap;
     vertical-align: middle; /* Match the inputs */
@@ -67,7 +67,7 @@
 
 /* Text input groups
    ========================================================================== */
-.InputGroup--addon {
+.InputGroup-addon {
     padding: $padding-base-vertical $padding-base-horizontal;
     font-size: $font-size-base;
     font-weight: normal;
@@ -100,26 +100,26 @@
 
 /* Reset rounded corners */
 .InputGroup .Form-control:first-child,
-.InputGroup--addon:first-child,
-.InputGroup--button:first-child > .Button,
-.InputGroup--button:first-child > .Dropdown-toggle,
-.InputGroup--button:last-child > .Button:not(:last-child):not(.Dropdown-toggle) {
+.InputGroup-addon:first-child,
+.InputGroup-button:first-child > .Button,
+.InputGroup-button:first-child > .Dropdown-toggle,
+.InputGroup-button:last-child > .Button:not(:last-child):not(.Dropdown-toggle) {
     @include border-right-radius(0);
 }
 
-.InputGroup--addon:first-child {
+.InputGroup-addon:first-child {
     border-right: 0;
 }
 
 .InputGroup .Form-control:last-child,
-.InputGroup--addon:last-child,
-.InputGroup--button:last-child > .Button,
-.InputGroup--button:last-child > .Dropdown-toggle,
-.InputGroup--button:first-child > .Button:not(:first-child) {
+.InputGroup-addon:last-child,
+.InputGroup-button:last-child > .Button,
+.InputGroup-button:last-child > .Dropdown-toggle,
+.InputGroup-button:first-child > .Button:not(:first-child) {
     @include border-left-radius(0);
 }
 
-.InputGroup--addon:last-child {
+.InputGroup-addon:last-child {
     border-left: 0;
 }
 
@@ -127,7 +127,7 @@
 
 /* Button input groups
    ========================================================================== */
-.InputGroup--button {
+.InputGroup-button {
     position: relative;
     white-space: nowrap;
 
@@ -140,7 +140,7 @@
     }
 }
 
-.InputGroup--button > .Button {
+.InputGroup-button > .Button {
     position: relative;
     /* Jankily prevent input button groups from wrapping */
     + .Button {

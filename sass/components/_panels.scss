@@ -148,26 +148,26 @@
 
 
 /* Contextual variations */
-.Panel-default {
+.Panel--default {
     @include PanelVariant($panel-default-border, $panel-default-text, $panel-default-heading-bg, $panel-default-border);
 }
 
-.Panel-primary {
+.Panel--primary {
     @include PanelVariant($panel-primary-border, $panel-primary-text, $panel-primary-heading-bg, $panel-primary-border);
 }
 
-.Panel-success {
+.Panel--success {
     @include PanelVariant($panel-success-border, $panel-success-text, $panel-success-heading-bg, $panel-success-border);
 }
 
-.Panel-warning {
+.Panel--warning {
     @include PanelVariant($panel-warning-border, $panel-warning-text, $panel-warning-heading-bg, $panel-warning-border);
 }
 
-.Panel-danger {
+.Panel--danger {
     @include PanelVariant($panel-danger-border, $panel-danger-text, $panel-danger-heading-bg, $panel-danger-border);
 }
 
-.Panel-info {
+.Panel--info {
     @include PanelVariant($panel-info-border, $panel-info-text, $panel-info-heading-bg, $panel-info-border);
 }
