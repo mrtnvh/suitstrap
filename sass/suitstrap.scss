@@ -33,6 +33,7 @@
 
 /* Components
    ========================================================================== */
+@import "components/ComponentAnimations.scss";
 @import "components/Glyphicons.scss";
 @import "components/Dropdowns.scss";
 @import "components/Buttons.scss";
@@ -64,6 +65,6 @@
 
 /* Utilities
    ========================================================================== */
-@import "utilities/ComponentAnimations.scss";
+
 @import "utilities/Utilities.scss";
 @import "utilities/ResponsiveUtilities.scss";

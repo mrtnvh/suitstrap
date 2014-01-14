@@ -82,6 +82,7 @@
 
 			if (option == 'toggle') data.toggle()
 			else if (option) data.setState(option)
+
 		})
 	}
 
@@ -102,7 +103,7 @@
 
 	$(document).on('click.bs.button.data-api', '[data-toggle^=button]', function(e) {
 		var $btn = $(e.target)
-		if (!$btn.hasClass('btn')) $btn = $btn.closest('.btn')
+		if (!$btn.hasClass('Button')) $btn = $btn.closest('.Button')
 		$btn.button('toggle')
 		e.preventDefault()
 	})

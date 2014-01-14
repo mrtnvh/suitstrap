@@ -235,13 +235,13 @@
 }
 
 /* Show/hide tabbable areas */
-.TabContent > .TabPane,
-.PillContent > .PillPane {
+.Tab-content > .Tab-pane,
+.Pill-content > .Pill-pane {
 	display: none;
 }
 
-.TabContent,
-.PillContent {
+.Tab-content,
+.Pill-content {
 	> .is-active {
 		display: block;
 	}

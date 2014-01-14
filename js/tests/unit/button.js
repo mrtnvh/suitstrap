@@ -17,7 +17,7 @@ $(function () {
       })
 
       test("should return set state to loading", function () {
-        var btn = $('<button class="btn" data-loading-text="fat">mdo</button>')
+        var btn = $('<button class="Button" data-loading-text="fat">mdo</button>')
         equals(btn.html(), 'mdo', 'btn text equals mdo')
         btn.button('loading')
         equals(btn.html(), 'fat', 'btn text equals fat')
@@ -30,7 +30,7 @@ $(function () {
       })
 
       test("should return reset state", function () {
-        var btn = $('<button class="btn" data-loading-text="fat">mdo</button>')
+        var btn = $('<button class="Button" data-loading-text="fat">mdo</button>')
         equals(btn.html(), 'mdo', 'btn text equals mdo')
         btn.button('loading')
         equals(btn.html(), 'fat', 'btn text equals fat')
@@ -52,14 +52,14 @@ $(function () {
       })
 
       test("should toggle active", function () {
-        var btn = $('<button class="btn">mdo</button>')
+        var btn = $('<button class="Button">mdo</button>')
         ok(!btn.hasClass('is-active'), 'btn does not have active class')
         btn.button('toggle')
         ok(btn.hasClass('is-active'), 'btn has class active')
       })
 
       test("should toggle active when btn children are clicked", function () {
-        var btn = $('<button class="btn" data-toggle="button">mdo</button>')
+        var btn = $('<button class="Button" data-toggle="button">mdo</button>')
           , inner = $('<i></i>')
         btn
           .append(inner)
@@ -69,9 +69,9 @@ $(function () {
         ok(btn.hasClass('is-active'), 'btn has class active')
       })
 
-      test("should toggle active when btn children are clicked within btn-group", function () {
-        var btngroup = $('<div class="btn-group" data-toggle="buttons"></div>')
-          , btn = $('<button class="btn">fat</button>')
+      test("should toggle active when btn children are clicked within ButtonGroup", function () {
+        var btngroup = $('<div class="ButtonGroup" data-toggle="buttons"></div>')
+          , btn = $('<button class="Button">fat</button>')
           , inner = $('<i></i>')
         btngroup
           .append(btn.append(inner))
@@ -82,14 +82,14 @@ $(function () {
       })
 
       test("should check for closest matching toggle", function () {
-        var group = '<div class="btn-group" data-toggle="buttons">' +
-          '<label class="btn btn-primary is-active">' +
+        var group = '<div class="ButtonGroup" data-toggle="buttons">' +
+          '<label class="Button Button--primary is-active">' +
             '<input type="radio" name="options" id="option1" checked="true"> Option 1' +
           '</label>' +
-          '<label class="btn btn-primary">' +
+          '<label class="Button Button--primary">' +
             '<input type="radio" name="options" id="option2"> Option 2' +
           '</label>' +
-          '<label class="btn btn-primary">' +
+          '<label class="Button Button--primary">' +
             '<input type="radio" name="options" id="option3"> Option 3' +
           '</label>' +
         '</div>'

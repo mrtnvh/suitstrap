@@ -126,10 +126,6 @@
 /* ==========================================================================
    Mixins
    ========================================================================== */
-/**
- * TODO
- *	- Replace Bootstraps default gradients with Compass's
-*/
 /* Utilities
    ========================================================================== */
 /**
@@ -1130,16 +1126,16 @@ output {
   /* Firefox 19+ */
   /* Internet Explorer 10+ */
   /* Safari and Chrome */ }
-  /* line 92, ../../sass/mixins/_mixins.scss */
+  /* line 88, ../../sass/mixins/_mixins.scss */
   .Form-control:-moz-placeholder {
     color: #999999; }
-  /* line 93, ../../sass/mixins/_mixins.scss */
+  /* line 89, ../../sass/mixins/_mixins.scss */
   .Form-control::-moz-placeholder {
     color: #999999; }
-  /* line 94, ../../sass/mixins/_mixins.scss */
+  /* line 90, ../../sass/mixins/_mixins.scss */
   .Form-control:-ms-input-placeholder {
     color: #999999; }
-  /* line 95, ../../sass/mixins/_mixins.scss */
+  /* line 91, ../../sass/mixins/_mixins.scss */
   .Form-control::-webkit-input-placeholder {
     color: #999999; }
 
@@ -1198,7 +1194,7 @@ output {
    * we don't honor that edge case; we style them as disabled anyway.
    */
   /* Reset height for `textarea`s */ }
-  /* line 600, ../../sass/mixins/_mixins.scss */
+  /* line 596, ../../sass/mixins/_mixins.scss */
   .Form-control:focus {
     border-color: #66afe9;
     outline: 0;
@@ -1310,13 +1306,13 @@ input[type="checkbox"],
   font-size: 12px;
   line-height: 1.5;
   border-radius: 3px; }
-  /* line 621, ../../sass/mixins/_mixins.scss */
+  /* line 617, ../../sass/mixins/_mixins.scss */
   select .Input--small, select .InputGroup--small > .Form-control,
   select .InputGroup--small > .InputGroup-addon,
   select .InputGroup--small > .InputGroup-button > .Button {
     height: 30px;
     line-height: 30px; }
-  /* line 626, ../../sass/mixins/_mixins.scss */
+  /* line 622, ../../sass/mixins/_mixins.scss */
   textarea .Input--small, textarea .InputGroup--small > .Form-control,
   textarea .InputGroup--small > .InputGroup-addon,
   textarea .InputGroup--small > .InputGroup-button > .Button {
@@ -1331,13 +1327,13 @@ input[type="checkbox"],
   font-size: 18px;
   line-height: 1.33;
   border-radius: 6px; }
-  /* line 621, ../../sass/mixins/_mixins.scss */
+  /* line 617, ../../sass/mixins/_mixins.scss */
   select .Input--large, select .InputGroup--large > .Form-control,
   select .InputGroup--large > .InputGroup-addon,
   select .InputGroup--large > .InputGroup-button > .Button {
     height: 45px;
     line-height: 45px; }
-  /* line 626, ../../sass/mixins/_mixins.scss */
+  /* line 622, ../../sass/mixins/_mixins.scss */
   textarea .Input--large, textarea .InputGroup--large > .Form-control,
   textarea .InputGroup--large > .InputGroup-addon,
   textarea .InputGroup--large > .InputGroup-button > .Button {
@@ -1353,24 +1349,24 @@ input[type="checkbox"],
   /* Color the label and help text */
   /* Set the border and box shadow on specific inputs to match */
   /* Set validation states also for addons */ }
-  /* line 563, ../../sass/mixins/_mixins.scss */
+  /* line 559, ../../sass/mixins/_mixins.scss */
   .has-Warning .HelpBlock,
   .has-Warning .ControlLabel {
     color: #c09853; }
-  /* line 568, ../../sass/mixins/_mixins.scss */
+  /* line 564, ../../sass/mixins/_mixins.scss */
   .has-Warning .Form-control {
     border-color: #c09853;
     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     /* Redeclare so transitions work */ }
-    /* line 571, ../../sass/mixins/_mixins.scss */
+    /* line 567, ../../sass/mixins/_mixins.scss */
     .has-Warning .Form-control:focus {
       border-color: #a47e3c;
       -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e;
       -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e;
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e; }
-  /* line 577, ../../sass/mixins/_mixins.scss */
+  /* line 573, ../../sass/mixins/_mixins.scss */
   .has-Warning .InputGroup-addon {
     color: #c09853;
     border-color: #c09853;
@@ -1382,24 +1378,24 @@ input[type="checkbox"],
   /* Color the label and help text */
   /* Set the border and box shadow on specific inputs to match */
   /* Set validation states also for addons */ }
-  /* line 563, ../../sass/mixins/_mixins.scss */
+  /* line 559, ../../sass/mixins/_mixins.scss */
   .has-Error .HelpBlock,
   .has-Error .ControlLabel {
     color: #b94a48; }
-  /* line 568, ../../sass/mixins/_mixins.scss */
+  /* line 564, ../../sass/mixins/_mixins.scss */
   .has-Error .Form-control {
     border-color: #b94a48;
     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     /* Redeclare so transitions work */ }
-    /* line 571, ../../sass/mixins/_mixins.scss */
+    /* line 567, ../../sass/mixins/_mixins.scss */
     .has-Error .Form-control:focus {
       border-color: #953b39;
       -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
       -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392; }
-  /* line 577, ../../sass/mixins/_mixins.scss */
+  /* line 573, ../../sass/mixins/_mixins.scss */
   .has-Error .InputGroup-addon {
     color: #b94a48;
     border-color: #b94a48;
@@ -1411,24 +1407,24 @@ input[type="checkbox"],
   /* Color the label and help text */
   /* Set the border and box shadow on specific inputs to match */
   /* Set validation states also for addons */ }
-  /* line 563, ../../sass/mixins/_mixins.scss */
+  /* line 559, ../../sass/mixins/_mixins.scss */
   .has-Success .HelpBlock,
   .has-Success .ControlLabel {
     color: #468847; }
-  /* line 568, ../../sass/mixins/_mixins.scss */
+  /* line 564, ../../sass/mixins/_mixins.scss */
   .has-Success .Form-control {
     border-color: #468847;
     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     /* Redeclare so transitions work */ }
-    /* line 571, ../../sass/mixins/_mixins.scss */
+    /* line 567, ../../sass/mixins/_mixins.scss */
     .has-Success .Form-control:focus {
       border-color: #356635;
       -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;
       -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b; }
-  /* line 577, ../../sass/mixins/_mixins.scss */
+  /* line 573, ../../sass/mixins/_mixins.scss */
   .has-Success .InputGroup-addon {
     color: #468847;
     border-color: #468847;
@@ -1534,13 +1530,13 @@ input[type="checkbox"],
   .Form--horizontal .Form-group {
     margin-left: -15px;
     margin-right: -15px; }
-    /* line 26, ../../sass/mixins/_mixins.scss */
+    /* line 22, ../../sass/mixins/_mixins.scss */
     .Form--horizontal .Form-group:before, .Form--horizontal .Form-group:after {
       content: " ";
       /* 1 */
       display: table;
       /* 2 */ }
-    /* line 31, ../../sass/mixins/_mixins.scss */
+    /* line 27, ../../sass/mixins/_mixins.scss */
     .Form--horizontal .Form-group:after {
       clear: both; }
   @media (min-width: 768px) {
@@ -1691,13 +1687,13 @@ dd {
   .Dl--horizontal dd {
     margin-left: 180px;
     /* Clear the floated `dt` if an empty `dd` is present */ }
-    /* line 26, ../../sass/mixins/_mixins.scss */
+    /* line 22, ../../sass/mixins/_mixins.scss */
     .Dl--horizontal dd:before, .Dl--horizontal dd:after {
       content: " ";
       /* 1 */
       display: table;
       /* 2 */ }
-    /* line 31, ../../sass/mixins/_mixins.scss */
+    /* line 27, ../../sass/mixins/_mixins.scss */
     .Dl--horizontal dd:after {
       clear: both; } }
 /* ==========================================================================
@@ -1852,7 +1848,7 @@ table th[class*="col-"] {
 /* Generate the contextual variants
    ========================================================================== */
 /* Exact selectors below required to override `.Table-striped` and prevent inheritance to nested tables. */
-/* line 289, ../../sass/mixins/_mixins.scss */
+/* line 285, ../../sass/mixins/_mixins.scss */
 .Table > thead > tr > td.isSuccess,
 .Table > thead > tr > th.isSuccess, .Table > thead > tr.isSuccess > td, .Table > thead > tr.isSuccess > th,
 .Table > tbody > tr > td.isSuccess,
@@ -1868,14 +1864,14 @@ table th[class*="col-"] {
 
 /* Hover states for `.Table--hover`*/
 /* Note: this is not available for cells or rows within `thead` or `tfoot`.*/
-/* line 301, ../../sass/mixins/_mixins.scss */
+/* line 297, ../../sass/mixins/_mixins.scss */
 .Table--hover > tbody > tr > td.isSuccess:hover,
 .Table--hover > tbody > tr > th.isSuccess:hover, .Table--hover > tbody > tr.isSuccess:hover > td, .Table--hover > tbody > tr.isSuccess:hover > th {
   background-color: #d0e9c6;
   border-color: #c9e2b3; }
 
 /* Exact selectors below required to override `.Table-striped` and prevent inheritance to nested tables. */
-/* line 289, ../../sass/mixins/_mixins.scss */
+/* line 285, ../../sass/mixins/_mixins.scss */
 .Table > thead > tr > td.isDanger,
 .Table > thead > tr > th.isDanger, .Table > thead > tr.isDanger > td, .Table > thead > tr.isDanger > th,
 .Table > tbody > tr > td.isDanger,
@@ -1891,14 +1887,14 @@ table th[class*="col-"] {
 
 /* Hover states for `.Table--hover`*/
 /* Note: this is not available for cells or rows within `thead` or `tfoot`.*/
-/* line 301, ../../sass/mixins/_mixins.scss */
+/* line 297, ../../sass/mixins/_mixins.scss */
 .Table--hover > tbody > tr > td.isDanger:hover,
 .Table--hover > tbody > tr > th.isDanger:hover, .Table--hover > tbody > tr.isDanger:hover > td, .Table--hover > tbody > tr.isDanger:hover > th {
   background-color: #ebcccc;
   border-color: #e4b9c0; }
 
 /* Exact selectors below required to override `.Table-striped` and prevent inheritance to nested tables. */
-/* line 289, ../../sass/mixins/_mixins.scss */
+/* line 285, ../../sass/mixins/_mixins.scss */
 .Table > thead > tr > td.isWarning,
 .Table > thead > tr > th.isWarning, .Table > thead > tr.isWarning > td, .Table > thead > tr.isWarning > th,
 .Table > tbody > tr > td.isWarning,
@@ -1914,7 +1910,7 @@ table th[class*="col-"] {
 
 /* Hover states for `.Table--hover`*/
 /* Note: this is not available for cells or rows within `thead` or `tfoot`.*/
-/* line 301, ../../sass/mixins/_mixins.scss */
+/* line 297, ../../sass/mixins/_mixins.scss */
 .Table--hover > tbody > tr > td.isWarning:hover,
 .Table--hover > tbody > tr > th.isWarning:hover, .Table--hover > tbody > tr.isWarning:hover > td, .Table--hover > tbody > tr.isWarning:hover > th {
   background-color: #faf2cc;
@@ -1991,13 +1987,13 @@ table th[class*="col-"] {
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px; }
-  /* line 26, ../../sass/mixins/_mixins.scss */
+  /* line 22, ../../sass/mixins/_mixins.scss */
   .Container:before, .Container:after {
     content: " ";
     /* 1 */
     display: table;
     /* 2 */ }
-  /* line 31, ../../sass/mixins/_mixins.scss */
+  /* line 27, ../../sass/mixins/_mixins.scss */
   .Container:after {
     clear: both; }
 
@@ -2007,13 +2003,13 @@ table th[class*="col-"] {
 .Row {
   margin-left: -15px;
   margin-right: -15px; }
-  /* line 26, ../../sass/mixins/_mixins.scss */
+  /* line 22, ../../sass/mixins/_mixins.scss */
   .Row:before, .Row:after {
     content: " ";
     /* 1 */
     display: table;
     /* 2 */ }
-  /* line 31, ../../sass/mixins/_mixins.scss */
+  /* line 27, ../../sass/mixins/_mixins.scss */
   .Row:after {
     clear: both; }
 
@@ -2803,6 +2799,41 @@ table th[class*="col-"] {
    ========================================================================== */
 /* Components
    ========================================================================== */
+/* ==========================================================================
+   Component animations
+   ========================================================================== */
+/* Heads up!
+ * We don't use the `@include opacity()` mixin here since it causes a bug with text
+ * fields in IE7-8. Source: https://github.com/twitter/bootstrap/pull/3552.
+ */
+/* line 10, ../../sass/components/_ComponentAnimations.scss */
+.Animation--fade {
+  opacity: 0;
+  -moz-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  -webkit-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear; }
+  /* line 13, ../../sass/components/_ComponentAnimations.scss */
+  .Animation--fade.is-in {
+    opacity: 1; }
+
+/* line 18, ../../sass/components/_ComponentAnimations.scss */
+.Animation--collapse {
+  display: none; }
+  /* line 20, ../../sass/components/_ComponentAnimations.scss */
+  .Animation--collapse.is-in {
+    display: block; }
+
+/* line 25, ../../sass/components/_ComponentAnimations.scss */
+.Animation--collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -moz-transition: height 0.35s ease;
+  -o-transition: height 0.35s ease;
+  -webkit-transition: height 0.35s ease;
+  transition: height 0.35s ease; }
+
 /**
  * Glyphicons for Bootstrap
  *
@@ -3871,15 +3902,15 @@ table th[class*="col-"] {
   color: #333333;
   background-color: white;
   border-color: #cccccc; }
-  /* line 319, ../../sass/mixins/_mixins.scss */
+  /* line 315, ../../sass/mixins/_mixins.scss */
   .Button--default:hover, .Button--default:focus, .Button--default:active, .Button--default.is-active, .is-open .Dropdown-toggle .Button--default {
     color: #333333;
     background-color: #ebebeb;
     border-color: #adadad; }
-  /* line 328, ../../sass/mixins/_mixins.scss */
+  /* line 324, ../../sass/mixins/_mixins.scss */
   .Button--default:active, .Button--default.is-active, .is-open .Dropdown-toggle .Button--default {
     background-image: none; }
-  /* line 336, ../../sass/mixins/_mixins.scss */
+  /* line 332, ../../sass/mixins/_mixins.scss */
   .Button--default.is-disabled, .Button--default.is-disabled:hover, .Button--default.is-disabled:focus, .Button--default.is-disabled:active, .Button--default.is-disabled.is-active, .Button--default[disabled], .Button--default[disabled]:hover, .Button--default[disabled]:focus, .Button--default[disabled]:active, .Button--default[disabled].is-active, fieldset[disabled] .Button--default, fieldset[disabled] .Button--default:hover, fieldset[disabled] .Button--default:focus, fieldset[disabled] .Button--default:active, fieldset[disabled] .Button--default.is-active {
     background-color: white;
     border-color: #cccccc; }
@@ -3889,15 +3920,15 @@ table th[class*="col-"] {
   color: white;
   background-color: #86b35f;
   border-color: #79a850; }
-  /* line 319, ../../sass/mixins/_mixins.scss */
+  /* line 315, ../../sass/mixins/_mixins.scss */
   .Button--primary:hover, .Button--primary:focus, .Button--primary:active, .Button--primary.is-active, .is-open .Dropdown-toggle .Button--primary {
     color: white;
     background-color: #729e4b;
     border-color: #5b7f3c; }
-  /* line 328, ../../sass/mixins/_mixins.scss */
+  /* line 324, ../../sass/mixins/_mixins.scss */
   .Button--primary:active, .Button--primary.is-active, .is-open .Dropdown-toggle .Button--primary {
     background-image: none; }
-  /* line 336, ../../sass/mixins/_mixins.scss */
+  /* line 332, ../../sass/mixins/_mixins.scss */
   .Button--primary.is-disabled, .Button--primary.is-disabled:hover, .Button--primary.is-disabled:focus, .Button--primary.is-disabled:active, .Button--primary.is-disabled.is-active, .Button--primary[disabled], .Button--primary[disabled]:hover, .Button--primary[disabled]:focus, .Button--primary[disabled]:active, .Button--primary[disabled].is-active, fieldset[disabled] .Button--primary, fieldset[disabled] .Button--primary:hover, fieldset[disabled] .Button--primary:focus, fieldset[disabled] .Button--primary:active, fieldset[disabled] .Button--primary.is-active {
     background-color: #86b35f;
     border-color: #79a850; }
@@ -3908,15 +3939,15 @@ table th[class*="col-"] {
   color: white;
   background-color: #f0ad4e;
   border-color: #eea236; }
-  /* line 319, ../../sass/mixins/_mixins.scss */
+  /* line 315, ../../sass/mixins/_mixins.scss */
   .Button--warning:hover, .Button--warning:focus, .Button--warning:active, .Button--warning.is-active, .is-open .Dropdown-toggle .Button--warning {
     color: white;
     background-color: #ed9c28;
     border-color: #d58512; }
-  /* line 328, ../../sass/mixins/_mixins.scss */
+  /* line 324, ../../sass/mixins/_mixins.scss */
   .Button--warning:active, .Button--warning.is-active, .is-open .Dropdown-toggle .Button--warning {
     background-image: none; }
-  /* line 336, ../../sass/mixins/_mixins.scss */
+  /* line 332, ../../sass/mixins/_mixins.scss */
   .Button--warning.is-disabled, .Button--warning.is-disabled:hover, .Button--warning.is-disabled:focus, .Button--warning.is-disabled:active, .Button--warning.is-disabled.is-active, .Button--warning[disabled], .Button--warning[disabled]:hover, .Button--warning[disabled]:focus, .Button--warning[disabled]:active, .Button--warning[disabled].is-active, fieldset[disabled] .Button--warning, fieldset[disabled] .Button--warning:hover, fieldset[disabled] .Button--warning:focus, fieldset[disabled] .Button--warning:active, fieldset[disabled] .Button--warning.is-active {
     background-color: #f0ad4e;
     border-color: #eea236; }
@@ -3927,15 +3958,15 @@ table th[class*="col-"] {
   color: white;
   background-color: #d9534f;
   border-color: #d43f3a; }
-  /* line 319, ../../sass/mixins/_mixins.scss */
+  /* line 315, ../../sass/mixins/_mixins.scss */
   .Button--danger:hover, .Button--danger:focus, .Button--danger:active, .Button--danger.is-active, .is-open .Dropdown-toggle .Button--danger {
     color: white;
     background-color: #d2322d;
     border-color: #ac2925; }
-  /* line 328, ../../sass/mixins/_mixins.scss */
+  /* line 324, ../../sass/mixins/_mixins.scss */
   .Button--danger:active, .Button--danger.is-active, .is-open .Dropdown-toggle .Button--danger {
     background-image: none; }
-  /* line 336, ../../sass/mixins/_mixins.scss */
+  /* line 332, ../../sass/mixins/_mixins.scss */
   .Button--danger.is-disabled, .Button--danger.is-disabled:hover, .Button--danger.is-disabled:focus, .Button--danger.is-disabled:active, .Button--danger.is-disabled.is-active, .Button--danger[disabled], .Button--danger[disabled]:hover, .Button--danger[disabled]:focus, .Button--danger[disabled]:active, .Button--danger[disabled].is-active, fieldset[disabled] .Button--danger, fieldset[disabled] .Button--danger:hover, fieldset[disabled] .Button--danger:focus, fieldset[disabled] .Button--danger:active, fieldset[disabled] .Button--danger.is-active {
     background-color: #d9534f;
     border-color: #d43f3a; }
@@ -3946,15 +3977,15 @@ table th[class*="col-"] {
   color: white;
   background-color: #5cb85c;
   border-color: #4cae4c; }
-  /* line 319, ../../sass/mixins/_mixins.scss */
+  /* line 315, ../../sass/mixins/_mixins.scss */
   .Button--success:hover, .Button--success:focus, .Button--success:active, .Button--success.is-active, .is-open .Dropdown-toggle .Button--success {
     color: white;
     background-color: #47a447;
     border-color: #398439; }
-  /* line 328, ../../sass/mixins/_mixins.scss */
+  /* line 324, ../../sass/mixins/_mixins.scss */
   .Button--success:active, .Button--success.is-active, .is-open .Dropdown-toggle .Button--success {
     background-image: none; }
-  /* line 336, ../../sass/mixins/_mixins.scss */
+  /* line 332, ../../sass/mixins/_mixins.scss */
   .Button--success.is-disabled, .Button--success.is-disabled:hover, .Button--success.is-disabled:focus, .Button--success.is-disabled:active, .Button--success.is-disabled.is-active, .Button--success[disabled], .Button--success[disabled]:hover, .Button--success[disabled]:focus, .Button--success[disabled]:active, .Button--success[disabled].is-active, fieldset[disabled] .Button--success, fieldset[disabled] .Button--success:hover, fieldset[disabled] .Button--success:focus, fieldset[disabled] .Button--success:active, fieldset[disabled] .Button--success.is-active {
     background-color: #5cb85c;
     border-color: #4cae4c; }
@@ -3965,15 +3996,15 @@ table th[class*="col-"] {
   color: white;
   background-color: #5bc0de;
   border-color: #46b8da; }
-  /* line 319, ../../sass/mixins/_mixins.scss */
+  /* line 315, ../../sass/mixins/_mixins.scss */
   .Button--info:hover, .Button--info:focus, .Button--info:active, .Button--info.is-active, .is-open .Dropdown-toggle .Button--info {
     color: white;
     background-color: #39b3d7;
     border-color: #269abc; }
-  /* line 328, ../../sass/mixins/_mixins.scss */
+  /* line 324, ../../sass/mixins/_mixins.scss */
   .Button--info:active, .Button--info.is-active, .is-open .Dropdown-toggle .Button--info {
     background-image: none; }
-  /* line 336, ../../sass/mixins/_mixins.scss */
+  /* line 332, ../../sass/mixins/_mixins.scss */
   .Button--info.is-disabled, .Button--info.is-disabled:hover, .Button--info.is-disabled:focus, .Button--info.is-disabled:active, .Button--info.is-disabled.is-active, .Button--info[disabled], .Button--info[disabled]:hover, .Button--info[disabled]:focus, .Button--info[disabled]:active, .Button--info[disabled].is-active, fieldset[disabled] .Button--info, fieldset[disabled] .Button--info:hover, fieldset[disabled] .Button--info:focus, fieldset[disabled] .Button--info:active, fieldset[disabled] .Button--info.is-active {
     background-color: #5bc0de;
     border-color: #46b8da; }
@@ -4115,13 +4146,13 @@ input[type="button"].Button--block {
 /* line 74, ../../sass/components/_ButtonGroups.scss */
 .ButtonToolbar {
   /* Space out series of button groups */ }
-  /* line 26, ../../sass/mixins/_mixins.scss */
+  /* line 22, ../../sass/mixins/_mixins.scss */
   .ButtonToolbar:before, .ButtonToolbar:after {
     content: " ";
     /* 1 */
     display: table;
     /* 2 */ }
-  /* line 31, ../../sass/mixins/_mixins.scss */
+  /* line 27, ../../sass/mixins/_mixins.scss */
   .ButtonToolbar:after {
     clear: both; }
   /* line 77, ../../sass/components/_ButtonGroups.scss */
@@ -4251,13 +4282,13 @@ input[type="button"].Button--block {
     float: none;
     width: 100%;
     max-width: 100%; }
-  /* line 26, ../../sass/mixins/_mixins.scss */
+  /* line 22, ../../sass/mixins/_mixins.scss */
   .ButtonGroup--vertical > .ButtonGroup:before, .ButtonGroup--vertical > .ButtonGroup:after {
     content: " ";
     /* 1 */
     display: table;
     /* 2 */ }
-  /* line 31, ../../sass/mixins/_mixins.scss */
+  /* line 27, ../../sass/mixins/_mixins.scss */
   .ButtonGroup--vertical > .ButtonGroup:after {
     clear: both; }
   /* line 208, ../../sass/components/_ButtonGroups.scss */
@@ -4506,13 +4537,13 @@ input[type="button"].Button--block {
    * Prevent IE8 from misplacing imgs
    * See https://github.com/h5bp/html5-boilerplate/issues/984#issuecomment-3985989
    */ }
-  /* line 26, ../../sass/mixins/_mixins.scss */
+  /* line 22, ../../sass/mixins/_mixins.scss */
   .Nav:before, .Nav:after {
     content: " ";
     /* 1 */
     display: table;
     /* 2 */ }
-  /* line 31, ../../sass/mixins/_mixins.scss */
+  /* line 27, ../../sass/mixins/_mixins.scss */
   .Nav:after {
     clear: both; }
   /* line 15, ../../sass/components/_Navs.scss */
@@ -4673,25 +4704,25 @@ input[type="button"].Button--block {
 /* Tabbable tabs
    ========================================================================== */
 /* Clear any floats */
-/* line 26, ../../sass/mixins/_mixins.scss */
+/* line 22, ../../sass/mixins/_mixins.scss */
 .is-tabbable:before, .is-tabbable:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */ }
-/* line 31, ../../sass/mixins/_mixins.scss */
+/* line 27, ../../sass/mixins/_mixins.scss */
 .is-tabbable:after {
   clear: both; }
 
 /* Show/hide tabbable areas */
 /* line 238, ../../sass/components/_Navs.scss */
-.TabContent > .TabPane,
-.PillContent > .PillPane {
+.Tab-content > .Tab-pane,
+.Pill-content > .Pill-pane {
   display: none; }
 
 /* line 245, ../../sass/components/_Navs.scss */
-.TabContent > .is-active,
-.PillContent > .is-active {
+.Tab-content > .is-active,
+.Pill-content > .is-active {
   display: block; }
 
 /* Dropdowns
@@ -4738,13 +4769,13 @@ input[type="button"].Button--block {
   margin-bottom: 21px;
   border: 1px solid transparent;
   /* Prevent floats from breaking the navbar */ }
-  /* line 26, ../../sass/mixins/_mixins.scss */
+  /* line 22, ../../sass/mixins/_mixins.scss */
   .Navbar:before, .Navbar:after {
     content: " ";
     /* 1 */
     display: table;
     /* 2 */ }
-  /* line 31, ../../sass/mixins/_mixins.scss */
+  /* line 27, ../../sass/mixins/_mixins.scss */
   .Navbar:after {
     clear: both; }
   @media (min-width: 768px) {
@@ -4758,13 +4789,13 @@ input[type="button"].Button--block {
  * Groups `.Navbar-brand` and `.Navbar-toggle` into a single component for easy
  * styling of responsive aspects.
  */
-/* line 26, ../../sass/mixins/_mixins.scss */
+/* line 22, ../../sass/mixins/_mixins.scss */
 .Navbar-header:before, .Navbar-header:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */ }
-/* line 31, ../../sass/mixins/_mixins.scss */
+/* line 27, ../../sass/mixins/_mixins.scss */
 .Navbar-header:after {
   clear: both; }
 @media (min-width: 768px) {
@@ -4792,13 +4823,13 @@ input[type="button"].Button--block {
   border-top: 1px solid transparent;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   -webkit-overflow-scrolling: touch; }
-  /* line 26, ../../sass/mixins/_mixins.scss */
+  /* line 22, ../../sass/mixins/_mixins.scss */
   .Navbar-collapse:before, .Navbar-collapse:after {
     content: " ";
     /* 1 */
     display: table;
     /* 2 */ }
-  /* line 31, ../../sass/mixins/_mixins.scss */
+  /* line 27, ../../sass/mixins/_mixins.scss */
   .Navbar-collapse:after {
     clear: both; }
   /* line 68, ../../sass/components/_Navbar.scss */
@@ -5367,12 +5398,12 @@ input[type="button"].Button--block {
 /* Sizing
    ========================================================================== */
 /* Large */
-/* line 358, ../../sass/mixins/_mixins.scss */
+/* line 354, ../../sass/mixins/_mixins.scss */
 .Pagination--large > li > a,
 .Pagination--large > li > span {
   padding: 10px 16px;
   font-size: 18px; }
-/* line 364, ../../sass/mixins/_mixins.scss */
+/* line 360, ../../sass/mixins/_mixins.scss */
 .Pagination--large > li:first-child > a,
 .Pagination--large > li:first-child > span {
   -moz-border-radius-topleft: 6px;
@@ -5381,7 +5412,7 @@ input[type="button"].Button--block {
   -moz-border-radius-bottomleft: 6px;
   -webkit-border-bottom-left-radius: 6px;
   border-bottom-left-radius: 6px; }
-/* line 370, ../../sass/mixins/_mixins.scss */
+/* line 366, ../../sass/mixins/_mixins.scss */
 .Pagination--large > li:last-child > a,
 .Pagination--large > li:last-child > span {
   -moz-border-radius-topright: 6px;
@@ -5392,12 +5423,12 @@ input[type="button"].Button--block {
   border-bottom-right-radius: 6px; }
 
 /* Small */
-/* line 358, ../../sass/mixins/_mixins.scss */
+/* line 354, ../../sass/mixins/_mixins.scss */
 .Pagination--small > li > a,
 .Pagination--small > li > span {
   padding: 5px 10px;
   font-size: 12px; }
-/* line 364, ../../sass/mixins/_mixins.scss */
+/* line 360, ../../sass/mixins/_mixins.scss */
 .Pagination--small > li:first-child > a,
 .Pagination--small > li:first-child > span {
   -moz-border-radius-topleft: 3px;
@@ -5406,7 +5437,7 @@ input[type="button"].Button--block {
   -moz-border-radius-bottomleft: 3px;
   -webkit-border-bottom-left-radius: 3px;
   border-bottom-left-radius: 3px; }
-/* line 370, ../../sass/mixins/_mixins.scss */
+/* line 366, ../../sass/mixins/_mixins.scss */
 .Pagination--small > li:last-child > a,
 .Pagination--small > li:last-child > span {
   -moz-border-radius-topright: 3px;
@@ -5425,13 +5456,13 @@ input[type="button"].Button--block {
   margin: 21px 0;
   list-style: none;
   text-align: center; }
-  /* line 26, ../../sass/mixins/_mixins.scss */
+  /* line 22, ../../sass/mixins/_mixins.scss */
   .Pager:before, .Pager:after {
     content: " ";
     /* 1 */
     display: table;
     /* 2 */ }
-  /* line 31, ../../sass/mixins/_mixins.scss */
+  /* line 27, ../../sass/mixins/_mixins.scss */
   .Pager:after {
     clear: both; }
   /* line 11, ../../sass/components/_Pager.scss */
@@ -5499,42 +5530,42 @@ input[type="button"].Button--block {
 /* line 37, ../../sass/components/_Labels.scss */
 .Label--default {
   background-color: #999999; }
-  /* line 382, ../../sass/mixins/_mixins.scss */
+  /* line 378, ../../sass/mixins/_mixins.scss */
   .Label--default[href]:hover, .Label--default[href]:focus {
     background-color: grey; }
 
 /* line 41, ../../sass/components/_Labels.scss */
 .Label--primary {
   background-color: #86b35f; }
-  /* line 382, ../../sass/mixins/_mixins.scss */
+  /* line 378, ../../sass/mixins/_mixins.scss */
   .Label--primary[href]:hover, .Label--primary[href]:focus {
     background-color: #6d9748; }
 
 /* line 45, ../../sass/components/_Labels.scss */
 .Label--success {
   background-color: #5cb85c; }
-  /* line 382, ../../sass/mixins/_mixins.scss */
+  /* line 378, ../../sass/mixins/_mixins.scss */
   .Label--success[href]:hover, .Label--success[href]:focus {
     background-color: #449d44; }
 
 /* line 49, ../../sass/components/_Labels.scss */
 .Label--info {
   background-color: #5bc0de; }
-  /* line 382, ../../sass/mixins/_mixins.scss */
+  /* line 378, ../../sass/mixins/_mixins.scss */
   .Label--info[href]:hover, .Label--info[href]:focus {
     background-color: #31b0d5; }
 
 /* line 53, ../../sass/components/_Labels.scss */
 .Label--warning {
   background-color: #f0ad4e; }
-  /* line 382, ../../sass/mixins/_mixins.scss */
+  /* line 378, ../../sass/mixins/_mixins.scss */
   .Label--warning[href]:hover, .Label--warning[href]:focus {
     background-color: #ec971f; }
 
 /* line 57, ../../sass/components/_Labels.scss */
 .Label--danger {
   background-color: #d9534f; }
-  /* line 382, ../../sass/mixins/_mixins.scss */
+  /* line 378, ../../sass/mixins/_mixins.scss */
   .Label--danger[href]:hover, .Label--danger[href]:focus {
     background-color: #c9302c; }
 
@@ -5706,10 +5737,10 @@ a.Thumbnail:focus {
   background-color: #dff0d8;
   border-color: #d6e9c6;
   color: #468847; }
-  /* line 275, ../../sass/mixins/_mixins.scss */
+  /* line 271, ../../sass/mixins/_mixins.scss */
   .Alert--success hr {
     border-top-color: #c9e2b3; }
-  /* line 278, ../../sass/mixins/_mixins.scss */
+  /* line 274, ../../sass/mixins/_mixins.scss */
   .Alert--success .Alert-link {
     color: #356635; }
 
@@ -5718,10 +5749,10 @@ a.Thumbnail:focus {
   background-color: #d9edf7;
   border-color: #bce8f1;
   color: #3a87ad; }
-  /* line 275, ../../sass/mixins/_mixins.scss */
+  /* line 271, ../../sass/mixins/_mixins.scss */
   .Alert--info hr {
     border-top-color: #a6e1ec; }
-  /* line 278, ../../sass/mixins/_mixins.scss */
+  /* line 274, ../../sass/mixins/_mixins.scss */
   .Alert--info .Alert-link {
     color: #2d6987; }
 
@@ -5730,10 +5761,10 @@ a.Thumbnail:focus {
   background-color: #fcf8e3;
   border-color: #faebcc;
   color: #c09853; }
-  /* line 275, ../../sass/mixins/_mixins.scss */
+  /* line 271, ../../sass/mixins/_mixins.scss */
   .Alert--warning hr {
     border-top-color: #f7e1b5; }
-  /* line 278, ../../sass/mixins/_mixins.scss */
+  /* line 274, ../../sass/mixins/_mixins.scss */
   .Alert--warning .Alert-link {
     color: #a47e3c; }
 
@@ -5742,10 +5773,10 @@ a.Thumbnail:focus {
   background-color: #f2dede;
   border-color: #ebccd1;
   color: #b94a48; }
-  /* line 275, ../../sass/mixins/_mixins.scss */
+  /* line 271, ../../sass/mixins/_mixins.scss */
   .Alert--danger hr {
     border-top-color: #e4b9c0; }
-  /* line 278, ../../sass/mixins/_mixins.scss */
+  /* line 274, ../../sass/mixins/_mixins.scss */
   .Alert--danger .Alert-link {
     color: #953b39; }
 
@@ -6002,13 +6033,13 @@ a.Thumbnail:focus {
 /* line 15, ../../sass/components/_Panels.scss */
 .Panel-body {
   padding: 15px; }
-  /* line 26, ../../sass/mixins/_mixins.scss */
+  /* line 22, ../../sass/mixins/_mixins.scss */
   .Panel-body:before, .Panel-body:after {
     content: " ";
     /* 1 */
     display: table;
     /* 2 */ }
-  /* line 31, ../../sass/mixins/_mixins.scss */
+  /* line 27, ../../sass/mixins/_mixins.scss */
   .Panel-body:after {
     clear: both; }
 
@@ -6164,90 +6195,90 @@ a.Thumbnail:focus {
 /* line 151, ../../sass/components/_Panels.scss */
 .Panel--default {
   border-color: #dddddd; }
-  /* line 255, ../../sass/mixins/_mixins.scss */
+  /* line 251, ../../sass/mixins/_mixins.scss */
   .Panel--default > .Panel-heading {
     color: #333333;
     background-color: whitesmoke;
     border-color: #dddddd; }
-    /* line 259, ../../sass/mixins/_mixins.scss */
+    /* line 255, ../../sass/mixins/_mixins.scss */
     .Panel--default > .Panel-heading + .Panel-collapse .Panel-body {
       border-top-color: #dddddd; }
-  /* line 264, ../../sass/mixins/_mixins.scss */
+  /* line 260, ../../sass/mixins/_mixins.scss */
   .Panel--default > .Panel-footer + .Panel-collapse .Panel-body {
     border-bottom-color: #dddddd; }
 
 /* line 155, ../../sass/components/_Panels.scss */
 .Panel--primary {
   border-color: #86b35f; }
-  /* line 255, ../../sass/mixins/_mixins.scss */
+  /* line 251, ../../sass/mixins/_mixins.scss */
   .Panel--primary > .Panel-heading {
     color: white;
     background-color: #86b35f;
     border-color: #86b35f; }
-    /* line 259, ../../sass/mixins/_mixins.scss */
+    /* line 255, ../../sass/mixins/_mixins.scss */
     .Panel--primary > .Panel-heading + .Panel-collapse .Panel-body {
       border-top-color: #86b35f; }
-  /* line 264, ../../sass/mixins/_mixins.scss */
+  /* line 260, ../../sass/mixins/_mixins.scss */
   .Panel--primary > .Panel-footer + .Panel-collapse .Panel-body {
     border-bottom-color: #86b35f; }
 
 /* line 159, ../../sass/components/_Panels.scss */
 .Panel--success {
   border-color: #d6e9c6; }
-  /* line 255, ../../sass/mixins/_mixins.scss */
+  /* line 251, ../../sass/mixins/_mixins.scss */
   .Panel--success > .Panel-heading {
     color: #468847;
     background-color: #dff0d8;
     border-color: #d6e9c6; }
-    /* line 259, ../../sass/mixins/_mixins.scss */
+    /* line 255, ../../sass/mixins/_mixins.scss */
     .Panel--success > .Panel-heading + .Panel-collapse .Panel-body {
       border-top-color: #d6e9c6; }
-  /* line 264, ../../sass/mixins/_mixins.scss */
+  /* line 260, ../../sass/mixins/_mixins.scss */
   .Panel--success > .Panel-footer + .Panel-collapse .Panel-body {
     border-bottom-color: #d6e9c6; }
 
 /* line 163, ../../sass/components/_Panels.scss */
 .Panel--warning {
   border-color: #faebcc; }
-  /* line 255, ../../sass/mixins/_mixins.scss */
+  /* line 251, ../../sass/mixins/_mixins.scss */
   .Panel--warning > .Panel-heading {
     color: #c09853;
     background-color: #fcf8e3;
     border-color: #faebcc; }
-    /* line 259, ../../sass/mixins/_mixins.scss */
+    /* line 255, ../../sass/mixins/_mixins.scss */
     .Panel--warning > .Panel-heading + .Panel-collapse .Panel-body {
       border-top-color: #faebcc; }
-  /* line 264, ../../sass/mixins/_mixins.scss */
+  /* line 260, ../../sass/mixins/_mixins.scss */
   .Panel--warning > .Panel-footer + .Panel-collapse .Panel-body {
     border-bottom-color: #faebcc; }
 
 /* line 167, ../../sass/components/_Panels.scss */
 .Panel--danger {
   border-color: #ebccd1; }
-  /* line 255, ../../sass/mixins/_mixins.scss */
+  /* line 251, ../../sass/mixins/_mixins.scss */
   .Panel--danger > .Panel-heading {
     color: #b94a48;
     background-color: #f2dede;
     border-color: #ebccd1; }
-    /* line 259, ../../sass/mixins/_mixins.scss */
+    /* line 255, ../../sass/mixins/_mixins.scss */
     .Panel--danger > .Panel-heading + .Panel-collapse .Panel-body {
       border-top-color: #ebccd1; }
-  /* line 264, ../../sass/mixins/_mixins.scss */
+  /* line 260, ../../sass/mixins/_mixins.scss */
   .Panel--danger > .Panel-footer + .Panel-collapse .Panel-body {
     border-bottom-color: #ebccd1; }
 
 /* line 171, ../../sass/components/_Panels.scss */
 .Panel--info {
   border-color: #bce8f1; }
-  /* line 255, ../../sass/mixins/_mixins.scss */
+  /* line 251, ../../sass/mixins/_mixins.scss */
   .Panel--info > .Panel-heading {
     color: #3a87ad;
     background-color: #d9edf7;
     border-color: #bce8f1; }
-    /* line 259, ../../sass/mixins/_mixins.scss */
+    /* line 255, ../../sass/mixins/_mixins.scss */
     .Panel--info > .Panel-heading + .Panel-collapse .Panel-body {
       border-top-color: #bce8f1; }
-  /* line 264, ../../sass/mixins/_mixins.scss */
+  /* line 260, ../../sass/mixins/_mixins.scss */
   .Panel--info > .Panel-footer + .Panel-collapse .Panel-body {
     border-bottom-color: #bce8f1; }
 
@@ -6321,14 +6352,14 @@ a.Thumbnail:focus {
    Modals
    ========================================================================== */
 /**
- * .Modal-open       - body class for killing the scroll
+ * .has-openModal    - body class for killing the scroll
  * .Modal            - container to scroll within
  * .Modal-dialog     - positioning shell for the actual modal
  * .Modal-content    - actual modal w/ bg and corners and shit
  */
 /* Kill the scroll on the body */
 /* line 13, ../../sass/components/_Modals.scss */
-.Modal--open {
+.has-openModal {
   overflow: hidden; }
 
 /* Container that the modal scrolls within */
@@ -6345,7 +6376,7 @@ a.Thumbnail:focus {
   z-index: 1040;
   /* When fading in the modal, animate it to slide down */ }
   /* line 30, ../../sass/components/_Modals.scss */
-  .Modal.fade .Modal-dialog {
+  .Modal.Animation--fade .Modal-dialog {
     -moz-transform: translate(0, -25%);
     -ms-transform: translate(0, -25%);
     -o-transform: translate(0, -25%);
@@ -6400,7 +6431,7 @@ a.Thumbnail:focus {
   background-color: black;
   /* Fade for backdrop */ }
   /* line 73, ../../sass/components/_Modals.scss */
-  .Modal-backdrop.fade {
+  .Modal-backdrop.Animation--fade {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0; }
   /* line 74, ../../sass/components/_Modals.scss */
@@ -6450,13 +6481,13 @@ a.Thumbnail:focus {
   /* Properly space out buttons */
   /* but override that for button groups */
   /* and override it for block buttons as well */ }
-  /* line 26, ../../sass/mixins/_mixins.scss */
+  /* line 22, ../../sass/mixins/_mixins.scss */
   .Modal-footer:before, .Modal-footer:after {
     content: " ";
     /* 1 */
     display: table;
     /* 2 */ }
-  /* line 31, ../../sass/mixins/_mixins.scss */
+  /* line 27, ../../sass/mixins/_mixins.scss */
   .Modal-footer:after {
     clear: both; }
   /* line 117, ../../sass/components/_Modals.scss */
@@ -6532,7 +6563,7 @@ a.Thumbnail:focus {
 
 /* Arrows */
 /* line 35, ../../sass/components/_Tooltip.scss */
-.Tooltip-arrow {
+.Arrow {
   position: absolute;
   width: 0;
   height: 0;
@@ -6540,53 +6571,53 @@ a.Thumbnail:focus {
   border-style: solid; }
 
 /* line 44, ../../sass/components/_Tooltip.scss */
-.Tooltip.top .Tooltip-arrow {
+.Tooltip--top .Arrow {
   bottom: 0;
   left: 50%;
   margin-left: -5px;
   border-width: 5px 5px 0;
   border-top-color: black; }
-/* line 51, ../../sass/components/_Tooltip.scss */
-.Tooltip.topLeft .Tooltip-arrow {
+/* line 52, ../../sass/components/_Tooltip.scss */
+.Tooltip--topLeft .Arrow {
   bottom: 0;
   left: 5px;
   border-width: 5px 5px 0;
   border-top-color: black; }
-/* line 57, ../../sass/components/_Tooltip.scss */
-.Tooltip.topRight .Tooltip-arrow {
+/* line 59, ../../sass/components/_Tooltip.scss */
+.Tooltip--topRight .Arrow {
   bottom: 0;
   right: 5px;
   border-width: 5px 5px 0;
   border-top-color: black; }
-/* line 63, ../../sass/components/_Tooltip.scss */
-.Tooltip.right .Tooltip-arrow {
+/* line 66, ../../sass/components/_Tooltip.scss */
+.Tooltip--right .Arrow {
   top: 50%;
   left: 0;
   margin-top: -5px;
   border-width: 5px 5px 5px 0;
   border-right-color: black; }
-/* line 70, ../../sass/components/_Tooltip.scss */
-.Tooltip.left .Tooltip-arrow {
+/* line 74, ../../sass/components/_Tooltip.scss */
+.Tooltip--left .Arrow {
   top: 50%;
   right: 0;
   margin-top: -5px;
   border-width: 5px 0 5px 5px;
   border-left-color: black; }
-/* line 77, ../../sass/components/_Tooltip.scss */
-.Tooltip.bottom .Tooltip-arrow {
+/* line 82, ../../sass/components/_Tooltip.scss */
+.Tooltip--bottom .Arrow {
   top: 0;
   left: 50%;
   margin-left: -5px;
   border-width: 0 5px 5px;
   border-bottom-color: black; }
-/* line 84, ../../sass/components/_Tooltip.scss */
-.Tooltip.bottomLeft .Tooltip-arrow {
+/* line 90, ../../sass/components/_Tooltip.scss */
+.Tooltip--bottomLeft .Arrow {
   top: 0;
   left: 5px;
   border-width: 0 5px 5px;
   border-bottom-color: black; }
-/* line 90, ../../sass/components/_Tooltip.scss */
-.Tooltip.bottomRight .Tooltip-arrow {
+/* line 97, ../../sass/components/_Tooltip.scss */
+.Tooltip--bottomRight .Arrow {
   top: 0;
   right: 5px;
   border-width: 0 5px 5px;
@@ -6618,16 +6649,16 @@ a.Thumbnail:focus {
   white-space: normal;
   /* Offset the popover to account for the popover arrow */ }
   /* line 27, ../../sass/components/_Popovers.scss */
-  .Popover.top {
+  .Popover--top {
     margin-top: -10px; }
   /* line 28, ../../sass/components/_Popovers.scss */
-  .Popover.right {
+  .Popover--right {
     margin-left: 10px; }
   /* line 29, ../../sass/components/_Popovers.scss */
-  .Popover.bottom {
+  .Popover--bottom {
     margin-top: 10px; }
   /* line 30, ../../sass/components/_Popovers.scss */
-  .Popover.left {
+  .Popover--left {
     margin-left: -10px; }
 
 /* line 33, ../../sass/components/_Popovers.scss */
@@ -6668,7 +6699,7 @@ a.Thumbnail:focus {
   content: ""; }
 
 /* line 72, ../../sass/components/_Popovers.scss */
-.Popover.top .Arrow {
+.Popover.Popover--top .Arrow, .Popover.Tooltip--top .Arrow {
   left: 50%;
   margin-left: -11px;
   border-bottom-width: 0;
@@ -6676,15 +6707,15 @@ a.Thumbnail:focus {
   /* IE8 fallback */
   border-top-color: rgba(0, 0, 0, 0.25);
   bottom: -11px; }
-  /* line 79, ../../sass/components/_Popovers.scss */
-  .Popover.top .Arrow:after {
+  /* line 80, ../../sass/components/_Popovers.scss */
+  .Popover.Popover--top .Arrow:after, .Popover.Tooltip--top .Arrow:after {
     content: " ";
     bottom: 1px;
     margin-left: -10px;
     border-bottom-width: 0;
     border-top-color: white; }
-/* line 88, ../../sass/components/_Popovers.scss */
-.Popover.right .Arrow {
+/* line 89, ../../sass/components/_Popovers.scss */
+.Popover.Popover--right .Arrow, .Popover.Tooltip--right .Arrow {
   top: 50%;
   left: -11px;
   margin-top: -11px;
@@ -6692,15 +6723,15 @@ a.Thumbnail:focus {
   border-right-color: #999999;
   /* IE8 fallback */
   border-right-color: rgba(0, 0, 0, 0.25); }
-  /* line 95, ../../sass/components/_Popovers.scss */
-  .Popover.right .Arrow:after {
+  /* line 97, ../../sass/components/_Popovers.scss */
+  .Popover.Popover--right .Arrow:after, .Popover.Tooltip--right .Arrow:after {
     content: " ";
     left: 1px;
     bottom: -10px;
     border-left-width: 0;
     border-right-color: white; }
-/* line 104, ../../sass/components/_Popovers.scss */
-.Popover.bottom .Arrow {
+/* line 106, ../../sass/components/_Popovers.scss */
+.Popover.Popover--bottom .Arrow, .Popover.Tooltip--bottom .Arrow {
   left: 50%;
   margin-left: -11px;
   border-top-width: 0;
@@ -6708,15 +6739,15 @@ a.Thumbnail:focus {
   /* IE8 fallback */
   border-bottom-color: rgba(0, 0, 0, 0.25);
   top: -11px; }
-  /* line 111, ../../sass/components/_Popovers.scss */
-  .Popover.bottom .Arrow:after {
+  /* line 114, ../../sass/components/_Popovers.scss */
+  .Popover.Popover--bottom .Arrow:after, .Popover.Tooltip--bottom .Arrow:after {
     content: " ";
     top: 1px;
     margin-left: -10px;
     border-top-width: 0;
     border-bottom-color: white; }
-/* line 120, ../../sass/components/_Popovers.scss */
-.Popover.left .Arrow {
+/* line 123, ../../sass/components/_Popovers.scss */
+.Popover.Popover--left .Arrow, .Popover.Tooltip--left .Arrow {
   top: 50%;
   right: -11px;
   margin-top: -11px;
@@ -6724,8 +6755,8 @@ a.Thumbnail:focus {
   border-left-color: #999999;
   /* IE8 fallback */
   border-left-color: rgba(0, 0, 0, 0.25); }
-  /* line 127, ../../sass/components/_Popovers.scss */
-  .Popover.left .Arrow:after {
+  /* line 131, ../../sass/components/_Popovers.scss */
+  .Popover.Popover--left .Arrow:after, .Popover.Tooltip--left .Arrow:after {
     content: " ";
     right: 1px;
     border-right-width: 0;
@@ -6765,38 +6796,44 @@ a.Thumbnail:focus {
       line-height: 1; }
   /* line 29, ../../sass/components/_Carousel.scss */
   .Carousel-inner > .is-active,
+  .Carousel-inner > .next,
   .Carousel-inner > .is-next,
+  .Carousel-inner > .prev,
   .Carousel-inner > .is-previous {
     display: block; }
-  /* line 33, ../../sass/components/_Carousel.scss */
+  /* line 37, ../../sass/components/_Carousel.scss */
   .Carousel-inner > .is-active {
     left: 0; }
-  /* line 37, ../../sass/components/_Carousel.scss */
+  /* line 41, ../../sass/components/_Carousel.scss */
+  .Carousel-inner > .next,
+  .Carousel-inner > .prev,
   .Carousel-inner > .is-next,
   .Carousel-inner > .is-previous {
     position: absolute;
     top: 0;
     width: 100%; }
-  /* line 44, ../../sass/components/_Carousel.scss */
+  /* line 50, ../../sass/components/_Carousel.scss */
+  .Carousel-inner > .next,
   .Carousel-inner > .is-next {
     left: 100%; }
-  /* line 47, ../../sass/components/_Carousel.scss */
+  /* line 55, ../../sass/components/_Carousel.scss */
+  .Carousel-inner > .prev,
   .Carousel-inner > .is-previous {
     left: -100%; }
-  /* line 50, ../../sass/components/_Carousel.scss */
-  .Carousel-inner > .is-next.left,
-  .Carousel-inner > .is-previous.right {
+  /* line 60, ../../sass/components/_Carousel.scss */
+  .Carousel-inner > .is-next.Carousel-control--left,
+  .Carousel-inner > .is-previous.Carousel-control--right {
     left: 0; }
-  /* line 55, ../../sass/components/_Carousel.scss */
-  .Carousel-inner > .is-active.left {
+  /* line 65, ../../sass/components/_Carousel.scss */
+  .Carousel-inner > .is-active.Carousel-control--left {
     left: -100%; }
-  /* line 58, ../../sass/components/_Carousel.scss */
-  .Carousel-inner > .is-active.right {
+  /* line 69, ../../sass/components/_Carousel.scss */
+  .Carousel-inner > .is-active.Carousel-control--right {
     left: 100%; }
 
 /* Left/right controls for nav
    ========================================================================== */
-/* line 68, ../../sass/components/_Carousel.scss */
+/* line 79, ../../sass/components/_Carousel.scss */
 .Carousel-control {
   position: absolute;
   top: 0;
@@ -6814,34 +6851,58 @@ a.Thumbnail:focus {
   /* Set gradients for backgrounds */
   /* Hover/focus state */
   /* Toggles */ }
-  /* line 87, ../../sass/components/_Carousel.scss */
-  .Carousel-control.right {
-    left: auto;
-    right: 0; }
   /* line 94, ../../sass/components/_Carousel.scss */
+  .Carousel-control--left {
+    background-image: -webkit-gradient(linear, 0% top, 100% top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.0001)));
+    /* Safari 4+, Chrome 2+ */
+    background-image: -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, 0.5) 0%), color-stop(rgba(0, 0, 0, 0.0001) 100%));
+    /* Safari 5.1+, Chrome 10+ */
+    background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
+    /* FF 3.6+ */
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
+    /* Standard, IE10 */
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1), argb(rgba(0, 0, 0, 0.5)), argb(rgba(0, 0, 0, 0.0001));
+    /* IE9 and down */ }
+  /* line 98, ../../sass/components/_Carousel.scss */
+  .Carousel-control--right {
+    left: auto;
+    right: 0;
+    background-image: -webkit-gradient(linear, 0% top, 100% top, from(rgba(0, 0, 0, 0.0001)), to(rgba(0, 0, 0, 0.5)));
+    /* Safari 4+, Chrome 2+ */
+    background-image: -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, 0.0001) 0%), color-stop(rgba(0, 0, 0, 0.5) 100%));
+    /* Safari 5.1+, Chrome 10+ */
+    background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
+    /* FF 3.6+ */
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
+    /* Standard, IE10 */
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1), argb(rgba(0, 0, 0, 0.0001)), argb(rgba(0, 0, 0, 0.5));
+    /* IE9 and down */ }
+  /* line 105, ../../sass/components/_Carousel.scss */
   .Carousel-control:hover, .Carousel-control:focus {
     color: white;
     text-decoration: none;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
     opacity: 0.9; }
-  /* line 102, ../../sass/components/_Carousel.scss */
+  /* line 113, ../../sass/components/_Carousel.scss */
   .Carousel-control .Icon--previous,
   .Carousel-control .Icon--next,
-  .Carousel-control .Glyphicon--chevron-left,
-  .Carousel-control .Glyphicon--chevron-right {
+  .Carousel-control .Glyphicon--chevronLeft,
+  .Carousel-control .Glyphicon--chevronRight {
     position: absolute;
     top: 50%;
     z-index: 5;
     display: inline-block; }
-  /* line 112, ../../sass/components/_Carousel.scss */
+  /* line 123, ../../sass/components/_Carousel.scss */
   .Carousel-control .Icon--previous,
-  .Carousel-control .Glyphicon--chevron-left {
+  .Carousel-control .Glyphicon--chevronLeft {
     left: 50%; }
-  /* line 117, ../../sass/components/_Carousel.scss */
+  /* line 128, ../../sass/components/_Carousel.scss */
   .Carousel-control .Icon--next,
-  .Carousel-control .Glyphicon--chevron-right {
+  .Carousel-control .Glyphicon--chevronRight {
     right: 50%; }
-  /* line 122, ../../sass/components/_Carousel.scss */
+  /* line 133, ../../sass/components/_Carousel.scss */
   .Carousel-control .Icon--previous,
   .Carousel-control .Icon--next {
     width: 20px;
@@ -6849,11 +6910,11 @@ a.Thumbnail:focus {
     margin-top: -10px;
     margin-left: -10px;
     font-family: serif; }
-  /* line 132, ../../sass/components/_Carousel.scss */
+  /* line 143, ../../sass/components/_Carousel.scss */
   .Carousel-control .Icon--previous:before {
     content: '\2039';
     /* SINGLE LEFT-POINTING ANGLE QUOTATION MARK (U+2039) */ }
-  /* line 137, ../../sass/components/_Carousel.scss */
+  /* line 148, ../../sass/components/_Carousel.scss */
   .Carousel-control .Icon--next:before {
     content: '\203a';
     /* SINGLE RIGHT-POINTING ANGLE QUOTATION MARK (U+203A) */ }
@@ -6863,7 +6924,7 @@ a.Thumbnail:focus {
  * Add an unordered list with the following class and add a list item for each
  * slide your carousel holds.
  */
-/* line 151, ../../sass/components/_Carousel.scss */
+/* line 162, ../../sass/components/_Carousel.scss */
 .Carousel-indicators {
   position: absolute;
   bottom: 10px;
@@ -6874,7 +6935,7 @@ a.Thumbnail:focus {
   padding-left: 0;
   list-style: none;
   text-align: center; }
-  /* line 162, ../../sass/components/_Carousel.scss */
+  /* line 173, ../../sass/components/_Carousel.scss */
   .Carousel-indicators li {
     display: inline-block;
     width: 10px;
@@ -6884,7 +6945,7 @@ a.Thumbnail:focus {
     border: 1px solid white;
     border-radius: 10px;
     cursor: pointer; }
-  /* line 172, ../../sass/components/_Carousel.scss */
+  /* line 183, ../../sass/components/_Carousel.scss */
   .Carousel-indicators .is-active {
     margin: 0;
     width: 12px;
@@ -6894,7 +6955,7 @@ a.Thumbnail:focus {
 /* Optional captions
 ========================================================================== */
 /* Hidden by default for smaller viewports */
-/* line 184, ../../sass/components/_Carousel.scss */
+/* line 195, ../../sass/components/_Carousel.scss */
 .Carousel-caption {
   position: absolute;
   left: 15%;
@@ -6906,7 +6967,7 @@ a.Thumbnail:focus {
   color: white;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); }
-  /* line 195, ../../sass/components/_Carousel.scss */
+  /* line 206, ../../sass/components/_Carousel.scss */
   .Carousel-caption .Button {
     text-shadow: none;
     /* No shadow for button elements in carousel-caption */ }
@@ -6914,9 +6975,9 @@ a.Thumbnail:focus {
 /* Scale up controls for tablets and up */
 @media screen and (min-width: 768px) {
   /* Scale up the controls a smidge */
-  /* line 206, ../../sass/components/_Carousel.scss */
-  .Carousel-control .Glyphicons-chevron-left,
-  .Carousel-control .Glyphicons-chevron-right,
+  /* line 217, ../../sass/components/_Carousel.scss */
+  .Carousel-control .Glyphicons-chevronLeft,
+  .Carousel-control .Glyphicons-chevronRight,
   .Carousel-control .Icon--previous,
   .Carousel-control .Icon--next {
     width: 30px;
@@ -6926,85 +6987,50 @@ a.Thumbnail:focus {
     font-size: 30px; }
 
   /* Show and left align the captions */
-  /* line 219, ../../sass/components/_Carousel.scss */
+  /* line 230, ../../sass/components/_Carousel.scss */
   .Carousel-caption {
     left: 20%;
     right: 20%;
     padding-bottom: 30px; }
 
   /* Move up the indicators */
-  /* line 226, ../../sass/components/_Carousel.scss */
+  /* line 237, ../../sass/components/_Carousel.scss */
   .Carousel-indicators {
     bottom: 20px; } }
 /* Utilities
    ========================================================================== */
 /* ==========================================================================
-   Component animations
-   ========================================================================== */
-/* Heads up!
- * We don't use the `@include opacity()` mixin here since it causes a bug with text
- * fields in IE7-8. Source: https://github.com/twitter/bootstrap/pull/3552.
- */
-/* line 10, ../../sass/utilities/_ComponentAnimations.scss */
-.Animation--fade {
-  opacity: 0;
-  -moz-transition: opacity 0.15s linear;
-  -o-transition: opacity 0.15s linear;
-  -webkit-transition: opacity 0.15s linear;
-  transition: opacity 0.15s linear; }
-  /* line 13, ../../sass/utilities/_ComponentAnimations.scss */
-  .Animation--fade.is-in {
-    opacity: 1; }
-
-/* line 18, ../../sass/utilities/_ComponentAnimations.scss */
-.Animation--collapse {
-  display: none; }
-  /* line 20, ../../sass/utilities/_ComponentAnimations.scss */
-  .Animation--collapse.is-in {
-    display: block; }
-
-/* line 25, ../../sass/utilities/_ComponentAnimations.scss */
-.Animation--collapsing {
-  position: relative;
-  height: 0;
-  overflow: hidden;
-  -moz-transition: height 0.35s ease;
-  -o-transition: height 0.35s ease;
-  -webkit-transition: height 0.35s ease;
-  transition: height 0.35s ease; }
-
-/* ==========================================================================
    Utility classes
    ========================================================================== */
 /* Floats
    ========================================================================== */
-/* line 26, ../../sass/mixins/_mixins.scss */
+/* line 22, ../../sass/mixins/_mixins.scss */
 .u-clearfix:before, .u-clearfix:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */ }
-/* line 31, ../../sass/mixins/_mixins.scss */
+/* line 27, ../../sass/mixins/_mixins.scss */
 .u-clearfix:after {
   clear: both; }
 
-/* line 10, ../../sass/utilities/_Utilities.scss */
+/* line 11, ../../sass/utilities/_Utilities.scss */
 .u-centerBlock {
   display: block;
   margin-left: auto;
   margin-right: auto; }
 
-/* line 13, ../../sass/utilities/_Utilities.scss */
+/* line 15, ../../sass/utilities/_Utilities.scss */
 .u-pull--right {
   float: right !important; }
 
-/* line 16, ../../sass/utilities/_Utilities.scss */
+/* line 19, ../../sass/utilities/_Utilities.scss */
 .u-pull--left {
   float: left !important; }
 
 /* Toggling content
    ========================================================================== */
-/* line 24, ../../sass/utilities/_Utilities.scss */
+/* line 27, ../../sass/utilities/_Utilities.scss */
 .u-screenReaderOnly {
   position: absolute;
   width: 1px;
@@ -7015,19 +7041,19 @@ a.Thumbnail:focus {
   clip: rect(0 0 0 0);
   border: 0; }
 
-/* line 28, ../../sass/utilities/_Utilities.scss */
+/* line 31, ../../sass/utilities/_Utilities.scss */
 .u-hide {
   display: none !important; }
 
-/* line 32, ../../sass/utilities/_Utilities.scss */
+/* line 35, ../../sass/utilities/_Utilities.scss */
 .u-show {
   display: block !important; }
 
-/* line 36, ../../sass/utilities/_Utilities.scss */
+/* line 39, ../../sass/utilities/_Utilities.scss */
 .u-invisible {
   visibility: hidden; }
 
-/* line 40, ../../sass/utilities/_Utilities.scss */
+/* line 43, ../../sass/utilities/_Utilities.scss */
 .u-textHide {
   font: 0/0;
   color: transparent;
@@ -7037,7 +7063,7 @@ a.Thumbnail:focus {
 
 /* For Affix plugin
    ========================================================================== */
-/* line 49, ../../sass/utilities/_Utilities.scss */
+/* line 52, ../../sass/utilities/_Utilities.scss */
 .u-affix {
   position: fixed; }
 
@@ -7071,288 +7097,288 @@ a.Thumbnail:focus {
   visibility: hidden !important; }
 
 /* Visibility utilities */
-/* line 419, ../../sass/mixins/_mixins.scss */
+/* line 415, ../../sass/mixins/_mixins.scss */
 .u-visible--extraSmall, tr .u-visible--extraSmall, th .u-visible--extraSmall, td .u-visible--extraSmall {
   display: none !important; }
 @media (max-width: 767px) {
   /* line 38, ../../sass/utilities/_ResponsiveUtilities.scss */
   .u-visible--extraSmall {
     display: block !important; }
-    /* line 409, ../../sass/mixins/_mixins.scss */
+    /* line 405, ../../sass/mixins/_mixins.scss */
     tr .u-visible--extraSmall {
       display: table-row !important; }
-    /* line 412, ../../sass/mixins/_mixins.scss */
+    /* line 408, ../../sass/mixins/_mixins.scss */
     th .u-visible--extraSmall, td .u-visible--extraSmall {
       display: table-cell !important; } }
 @media (min-width: 768px) and (max-width: 991px) {
   /* line 43, ../../sass/utilities/_ResponsiveUtilities.scss */
   .u-visible--extraSmall.u-visible--small {
     display: block !important; }
-    /* line 409, ../../sass/mixins/_mixins.scss */
+    /* line 405, ../../sass/mixins/_mixins.scss */
     tr .u-visible--extraSmall.u-visible--small {
       display: table-row !important; }
-    /* line 412, ../../sass/mixins/_mixins.scss */
+    /* line 408, ../../sass/mixins/_mixins.scss */
     th .u-visible--extraSmall.u-visible--small, td .u-visible--extraSmall.u-visible--small {
       display: table-cell !important; } }
 @media (min-width: 992px) and (max-width: 1199px) {
   /* line 48, ../../sass/utilities/_ResponsiveUtilities.scss */
   .u-visible--extraSmall.u-visible--medium {
     display: block !important; }
-    /* line 409, ../../sass/mixins/_mixins.scss */
+    /* line 405, ../../sass/mixins/_mixins.scss */
     tr .u-visible--extraSmall.u-visible--medium {
       display: table-row !important; }
-    /* line 412, ../../sass/mixins/_mixins.scss */
+    /* line 408, ../../sass/mixins/_mixins.scss */
     th .u-visible--extraSmall.u-visible--medium, td .u-visible--extraSmall.u-visible--medium {
       display: table-cell !important; } }
 @media (min-width: 1200px) {
   /* line 53, ../../sass/utilities/_ResponsiveUtilities.scss */
   .u-visible--extraSmall.u-visible--large {
     display: block !important; }
-    /* line 409, ../../sass/mixins/_mixins.scss */
+    /* line 405, ../../sass/mixins/_mixins.scss */
     tr .u-visible--extraSmall.u-visible--large {
       display: table-row !important; }
-    /* line 412, ../../sass/mixins/_mixins.scss */
+    /* line 408, ../../sass/mixins/_mixins.scss */
     th .u-visible--extraSmall.u-visible--large, td .u-visible--extraSmall.u-visible--large {
       display: table-cell !important; } }
 
-/* line 419, ../../sass/mixins/_mixins.scss */
+/* line 415, ../../sass/mixins/_mixins.scss */
 .u-visible--small, tr .u-visible--small, th .u-visible--small, td .u-visible--small {
   display: none !important; }
 @media (max-width: 767px) {
   /* line 61, ../../sass/utilities/_ResponsiveUtilities.scss */
   .u-visible--small.u-visible--extraSmall {
     display: block !important; }
-    /* line 409, ../../sass/mixins/_mixins.scss */
+    /* line 405, ../../sass/mixins/_mixins.scss */
     tr .u-visible--small.u-visible--extraSmall {
       display: table-row !important; }
-    /* line 412, ../../sass/mixins/_mixins.scss */
+    /* line 408, ../../sass/mixins/_mixins.scss */
     th .u-visible--small.u-visible--extraSmall, td .u-visible--small.u-visible--extraSmall {
       display: table-cell !important; } }
 @media (min-width: 768px) and (max-width: 991px) {
   /* line 59, ../../sass/utilities/_ResponsiveUtilities.scss */
   .u-visible--small {
     display: block !important; }
-    /* line 409, ../../sass/mixins/_mixins.scss */
+    /* line 405, ../../sass/mixins/_mixins.scss */
     tr .u-visible--small {
       display: table-row !important; }
-    /* line 412, ../../sass/mixins/_mixins.scss */
+    /* line 408, ../../sass/mixins/_mixins.scss */
     th .u-visible--small, td .u-visible--small {
       display: table-cell !important; } }
 @media (min-width: 992px) and (max-width: 1199px) {
   /* line 69, ../../sass/utilities/_ResponsiveUtilities.scss */
   .u-visible--small.u-visible--medium {
     display: block !important; }
-    /* line 409, ../../sass/mixins/_mixins.scss */
+    /* line 405, ../../sass/mixins/_mixins.scss */
     tr .u-visible--small.u-visible--medium {
       display: table-row !important; }
-    /* line 412, ../../sass/mixins/_mixins.scss */
+    /* line 408, ../../sass/mixins/_mixins.scss */
     th .u-visible--small.u-visible--medium, td .u-visible--small.u-visible--medium {
       display: table-cell !important; } }
 @media (min-width: 1200px) {
   /* line 74, ../../sass/utilities/_ResponsiveUtilities.scss */
   .u-visible--small.u-visible--large {
     display: block !important; }
-    /* line 409, ../../sass/mixins/_mixins.scss */
+    /* line 405, ../../sass/mixins/_mixins.scss */
     tr .u-visible--small.u-visible--large {
       display: table-row !important; }
-    /* line 412, ../../sass/mixins/_mixins.scss */
+    /* line 408, ../../sass/mixins/_mixins.scss */
     th .u-visible--small.u-visible--large, td .u-visible--small.u-visible--large {
       display: table-cell !important; } }
 
-/* line 419, ../../sass/mixins/_mixins.scss */
+/* line 415, ../../sass/mixins/_mixins.scss */
 .u-visible--medium, tr .u-visible--medium, th .u-visible--medium, td .u-visible--medium {
   display: none !important; }
 @media (max-width: 767px) {
   /* line 82, ../../sass/utilities/_ResponsiveUtilities.scss */
   .u-visible--medium.u-visible--extraSmall {
     display: block !important; }
-    /* line 409, ../../sass/mixins/_mixins.scss */
+    /* line 405, ../../sass/mixins/_mixins.scss */
     tr .u-visible--medium.u-visible--extraSmall {
       display: table-row !important; }
-    /* line 412, ../../sass/mixins/_mixins.scss */
+    /* line 408, ../../sass/mixins/_mixins.scss */
     th .u-visible--medium.u-visible--extraSmall, td .u-visible--medium.u-visible--extraSmall {
       display: table-cell !important; } }
 @media (min-width: 768px) and (max-width: 991px) {
   /* line 87, ../../sass/utilities/_ResponsiveUtilities.scss */
   .u-visible--medium.u-visible--small {
     display: block !important; }
-    /* line 409, ../../sass/mixins/_mixins.scss */
+    /* line 405, ../../sass/mixins/_mixins.scss */
     tr .u-visible--medium.u-visible--small {
       display: table-row !important; }
-    /* line 412, ../../sass/mixins/_mixins.scss */
+    /* line 408, ../../sass/mixins/_mixins.scss */
     th .u-visible--medium.u-visible--small, td .u-visible--medium.u-visible--small {
       display: table-cell !important; } }
 @media (min-width: 992px) and (max-width: 1199px) {
   /* line 80, ../../sass/utilities/_ResponsiveUtilities.scss */
   .u-visible--medium {
     display: block !important; }
-    /* line 409, ../../sass/mixins/_mixins.scss */
+    /* line 405, ../../sass/mixins/_mixins.scss */
     tr .u-visible--medium {
       display: table-row !important; }
-    /* line 412, ../../sass/mixins/_mixins.scss */
+    /* line 408, ../../sass/mixins/_mixins.scss */
     th .u-visible--medium, td .u-visible--medium {
       display: table-cell !important; } }
 @media (min-width: 1200px) {
   /* line 95, ../../sass/utilities/_ResponsiveUtilities.scss */
   .u-visible--medium.u-visible--large {
     display: block !important; }
-    /* line 409, ../../sass/mixins/_mixins.scss */
+    /* line 405, ../../sass/mixins/_mixins.scss */
     tr .u-visible--medium.u-visible--large {
       display: table-row !important; }
-    /* line 412, ../../sass/mixins/_mixins.scss */
+    /* line 408, ../../sass/mixins/_mixins.scss */
     th .u-visible--medium.u-visible--large, td .u-visible--medium.u-visible--large {
       display: table-cell !important; } }
 
-/* line 419, ../../sass/mixins/_mixins.scss */
+/* line 415, ../../sass/mixins/_mixins.scss */
 .u-visible--large, tr .u-visible--large, th .u-visible--large, td .u-visible--large {
   display: none !important; }
 @media (max-width: 767px) {
   /* line 103, ../../sass/utilities/_ResponsiveUtilities.scss */
   .u-visible--large.u-visible--extraSmall {
     display: block !important; }
-    /* line 409, ../../sass/mixins/_mixins.scss */
+    /* line 405, ../../sass/mixins/_mixins.scss */
     tr .u-visible--large.u-visible--extraSmall {
       display: table-row !important; }
-    /* line 412, ../../sass/mixins/_mixins.scss */
+    /* line 408, ../../sass/mixins/_mixins.scss */
     th .u-visible--large.u-visible--extraSmall, td .u-visible--large.u-visible--extraSmall {
       display: table-cell !important; } }
 @media (min-width: 768px) and (max-width: 991px) {
   /* line 108, ../../sass/utilities/_ResponsiveUtilities.scss */
   .u-visible--large.u-visible--small {
     display: block !important; }
-    /* line 409, ../../sass/mixins/_mixins.scss */
+    /* line 405, ../../sass/mixins/_mixins.scss */
     tr .u-visible--large.u-visible--small {
       display: table-row !important; }
-    /* line 412, ../../sass/mixins/_mixins.scss */
+    /* line 408, ../../sass/mixins/_mixins.scss */
     th .u-visible--large.u-visible--small, td .u-visible--large.u-visible--small {
       display: table-cell !important; } }
 @media (min-width: 992px) and (max-width: 1199px) {
   /* line 113, ../../sass/utilities/_ResponsiveUtilities.scss */
   .u-visible--large.u-visible--medium {
     display: block !important; }
-    /* line 409, ../../sass/mixins/_mixins.scss */
+    /* line 405, ../../sass/mixins/_mixins.scss */
     tr .u-visible--large.u-visible--medium {
       display: table-row !important; }
-    /* line 412, ../../sass/mixins/_mixins.scss */
+    /* line 408, ../../sass/mixins/_mixins.scss */
     th .u-visible--large.u-visible--medium, td .u-visible--large.u-visible--medium {
       display: table-cell !important; } }
 @media (min-width: 1200px) {
   /* line 101, ../../sass/utilities/_ResponsiveUtilities.scss */
   .u-visible--large {
     display: block !important; }
-    /* line 409, ../../sass/mixins/_mixins.scss */
+    /* line 405, ../../sass/mixins/_mixins.scss */
     tr .u-visible--large {
       display: table-row !important; }
-    /* line 412, ../../sass/mixins/_mixins.scss */
+    /* line 408, ../../sass/mixins/_mixins.scss */
     th .u-visible--large, td .u-visible--large {
       display: table-cell !important; } }
 
 /* line 123, ../../sass/utilities/_ResponsiveUtilities.scss */
 .u-hidden--extraSmall {
   display: block !important; }
-  /* line 409, ../../sass/mixins/_mixins.scss */
+  /* line 405, ../../sass/mixins/_mixins.scss */
   tr .u-hidden--extraSmall {
     display: table-row !important; }
-  /* line 412, ../../sass/mixins/_mixins.scss */
+  /* line 408, ../../sass/mixins/_mixins.scss */
   th .u-hidden--extraSmall, td .u-hidden--extraSmall {
     display: table-cell !important; }
   @media (max-width: 767px) {
-    /* line 419, ../../sass/mixins/_mixins.scss */
+    /* line 415, ../../sass/mixins/_mixins.scss */
     .u-hidden--extraSmall, tr .u-hidden--extraSmall, th .u-hidden--extraSmall, td .u-hidden--extraSmall {
       display: none !important; } }
   @media (min-width: 768px) and (max-width: 991px) {
-    /* line 419, ../../sass/mixins/_mixins.scss */
+    /* line 415, ../../sass/mixins/_mixins.scss */
     .u-hidden--extraSmall.u-hidden--small, tr .u-hidden--extraSmall.u-hidden--small, th .u-hidden--extraSmall.u-hidden--small, td .u-hidden--extraSmall.u-hidden--small {
       display: none !important; } }
   @media (min-width: 992px) and (max-width: 1199px) {
-    /* line 419, ../../sass/mixins/_mixins.scss */
+    /* line 415, ../../sass/mixins/_mixins.scss */
     .u-hidden--extraSmall.u-hidden--medium, tr .u-hidden--extraSmall.u-hidden--medium, th .u-hidden--extraSmall.u-hidden--medium, td .u-hidden--extraSmall.u-hidden--medium {
       display: none !important; } }
   @media (min-width: 1200px) {
-    /* line 419, ../../sass/mixins/_mixins.scss */
+    /* line 415, ../../sass/mixins/_mixins.scss */
     .u-hidden--extraSmall.u-hidden--large, tr .u-hidden--extraSmall.u-hidden--large, th .u-hidden--extraSmall.u-hidden--large, td .u-hidden--extraSmall.u-hidden--large {
       display: none !important; } }
 
 /* line 144, ../../sass/utilities/_ResponsiveUtilities.scss */
 .u-hidden--small {
   display: block !important; }
-  /* line 409, ../../sass/mixins/_mixins.scss */
+  /* line 405, ../../sass/mixins/_mixins.scss */
   tr .u-hidden--small {
     display: table-row !important; }
-  /* line 412, ../../sass/mixins/_mixins.scss */
+  /* line 408, ../../sass/mixins/_mixins.scss */
   th .u-hidden--small, td .u-hidden--small {
     display: table-cell !important; }
   @media (max-width: 767px) {
-    /* line 419, ../../sass/mixins/_mixins.scss */
+    /* line 415, ../../sass/mixins/_mixins.scss */
     .u-hidden--small.u-hidden--extraSmall, tr .u-hidden--small.u-hidden--extraSmall, th .u-hidden--small.u-hidden--extraSmall, td .u-hidden--small.u-hidden--extraSmall {
       display: none !important; } }
   @media (min-width: 768px) and (max-width: 991px) {
-    /* line 419, ../../sass/mixins/_mixins.scss */
+    /* line 415, ../../sass/mixins/_mixins.scss */
     .u-hidden--small, tr .u-hidden--small, th .u-hidden--small, td .u-hidden--small {
       display: none !important; } }
   @media (min-width: 992px) and (max-width: 1199px) {
-    /* line 419, ../../sass/mixins/_mixins.scss */
+    /* line 415, ../../sass/mixins/_mixins.scss */
     .u-hidden--small.u-hidden--medium, tr .u-hidden--small.u-hidden--medium, th .u-hidden--small.u-hidden--medium, td .u-hidden--small.u-hidden--medium {
       display: none !important; } }
   @media (min-width: 1200px) {
-    /* line 419, ../../sass/mixins/_mixins.scss */
+    /* line 415, ../../sass/mixins/_mixins.scss */
     .u-hidden--small.u-hidden--large, tr .u-hidden--small.u-hidden--large, th .u-hidden--small.u-hidden--large, td .u-hidden--small.u-hidden--large {
       display: none !important; } }
 
 /* line 165, ../../sass/utilities/_ResponsiveUtilities.scss */
 .u-hidden--medium {
   display: block !important; }
-  /* line 409, ../../sass/mixins/_mixins.scss */
+  /* line 405, ../../sass/mixins/_mixins.scss */
   tr .u-hidden--medium {
     display: table-row !important; }
-  /* line 412, ../../sass/mixins/_mixins.scss */
+  /* line 408, ../../sass/mixins/_mixins.scss */
   th .u-hidden--medium, td .u-hidden--medium {
     display: table-cell !important; }
   @media (max-width: 767px) {
-    /* line 419, ../../sass/mixins/_mixins.scss */
+    /* line 415, ../../sass/mixins/_mixins.scss */
     .u-hidden--medium.u-hidden--extraSmall, tr .u-hidden--medium.u-hidden--extraSmall, th .u-hidden--medium.u-hidden--extraSmall, td .u-hidden--medium.u-hidden--extraSmall {
       display: none !important; } }
   @media (min-width: 768px) and (max-width: 991px) {
-    /* line 419, ../../sass/mixins/_mixins.scss */
+    /* line 415, ../../sass/mixins/_mixins.scss */
     .u-hidden--medium.u-hidden--small, tr .u-hidden--medium.u-hidden--small, th .u-hidden--medium.u-hidden--small, td .u-hidden--medium.u-hidden--small {
       display: none !important; } }
   @media (min-width: 992px) and (max-width: 1199px) {
-    /* line 419, ../../sass/mixins/_mixins.scss */
+    /* line 415, ../../sass/mixins/_mixins.scss */
     .u-hidden--medium, tr .u-hidden--medium, th .u-hidden--medium, td .u-hidden--medium {
       display: none !important; } }
   @media (min-width: 1200px) {
-    /* line 419, ../../sass/mixins/_mixins.scss */
+    /* line 415, ../../sass/mixins/_mixins.scss */
     .u-hidden--medium.u-hidden--large, tr .u-hidden--medium.u-hidden--large, th .u-hidden--medium.u-hidden--large, td .u-hidden--medium.u-hidden--large {
       display: none !important; } }
 
 /* line 186, ../../sass/utilities/_ResponsiveUtilities.scss */
 .u-hidden--large {
   display: block !important; }
-  /* line 409, ../../sass/mixins/_mixins.scss */
+  /* line 405, ../../sass/mixins/_mixins.scss */
   tr .u-hidden--large {
     display: table-row !important; }
-  /* line 412, ../../sass/mixins/_mixins.scss */
+  /* line 408, ../../sass/mixins/_mixins.scss */
   th .u-hidden--large, td .u-hidden--large {
     display: table-cell !important; }
   @media (max-width: 767px) {
-    /* line 419, ../../sass/mixins/_mixins.scss */
+    /* line 415, ../../sass/mixins/_mixins.scss */
     .u-hidden--large.u-hidden--extraSmall, tr .u-hidden--large.u-hidden--extraSmall, th .u-hidden--large.u-hidden--extraSmall, td .u-hidden--large.u-hidden--extraSmall {
       display: none !important; } }
   @media (min-width: 768px) and (max-width: 991px) {
-    /* line 419, ../../sass/mixins/_mixins.scss */
+    /* line 415, ../../sass/mixins/_mixins.scss */
     .u-hidden--large.u-hidden--small, tr .u-hidden--large.u-hidden--small, th .u-hidden--large.u-hidden--small, td .u-hidden--large.u-hidden--small {
       display: none !important; } }
   @media (min-width: 992px) and (max-width: 1199px) {
-    /* line 419, ../../sass/mixins/_mixins.scss */
+    /* line 415, ../../sass/mixins/_mixins.scss */
     .u-hidden--large.u-hidden--medium, tr .u-hidden--large.u-hidden--medium, th .u-hidden--large.u-hidden--medium, td .u-hidden--large.u-hidden--medium {
       display: none !important; } }
   @media (min-width: 1200px) {
-    /* line 419, ../../sass/mixins/_mixins.scss */
+    /* line 415, ../../sass/mixins/_mixins.scss */
     .u-hidden--large, tr .u-hidden--large, th .u-hidden--large, td .u-hidden--large {
       display: none !important; } }
 
 /* Print utilities */
-/* line 419, ../../sass/mixins/_mixins.scss */
+/* line 415, ../../sass/mixins/_mixins.scss */
 .u-visible--print, tr .u-visible--print, th .u-visible--print, td .u-visible--print {
   display: none !important; }
 
@@ -7360,13 +7386,13 @@ a.Thumbnail:focus {
   /* line 214, ../../sass/utilities/_ResponsiveUtilities.scss */
   .u-visible--print {
     display: block !important; }
-    /* line 409, ../../sass/mixins/_mixins.scss */
+    /* line 405, ../../sass/mixins/_mixins.scss */
     tr .u-visible--print {
       display: table-row !important; }
-    /* line 412, ../../sass/mixins/_mixins.scss */
+    /* line 408, ../../sass/mixins/_mixins.scss */
     th .u-visible--print, td .u-visible--print {
       display: table-cell !important; }
 
-  /* line 419, ../../sass/mixins/_mixins.scss */
+  /* line 415, ../../sass/mixins/_mixins.scss */
   .u-hidden--print, tr .u-hidden--print, th .u-hidden--print, td .u-hidden--print {
     display: none !important; } }

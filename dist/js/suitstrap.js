@@ -258,6 +258,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
 			if (option == 'toggle') data.toggle()
 			else if (option) data.setState(option)
+
 		})
 	}
 
@@ -278,7 +279,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
 	$(document).on('click.bs.button.data-api', '[data-toggle^=button]', function(e) {
 		var $btn = $(e.target)
-		if (!$btn.hasClass('btn')) $btn = $btn.closest('.btn')
+		if (!$btn.hasClass('Button')) $btn = $btn.closest('.Button')
 		$btn.button('toggle')
 		e.preventDefault()
 	})
@@ -313,7 +314,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
 	var Carousel = function(element, options) {
 		this.$element = $(element)
-		this.$indicators = this.$element.find('.carousel-indicators')
+		this.$indicators = this.$element.find('.Carousel-indicators')
 		this.options = options
 		this.paused =
 			this.sliding =
@@ -343,7 +344,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 	}
 
 	Carousel.prototype.getActiveIndex = function() {
-		this.$active = this.$element.find('.item.active')
+		this.$active = this.$element.find('.Carousel-item.is-active')
 		this.$items = this.$active.parent().children()
 
 		return this.$items.index(this.$active)
@@ -387,7 +388,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 	}
 
 	Carousel.prototype.slide = function(type, next) {
-		var $active = this.$element.find('.item.active')
+		var $active = this.$element.find('.Carousel-item.is-active')
 		var $next = next || $active[type]()
 		var isCycling = this.interval
 		var direction = type == 'next' ? 'left' : 'right'
@@ -396,7 +397,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
 		if (!$next.length) {
 			if (!this.options.wrap) return
-			$next = this.$element.find('.item')[fallback]()
+			$next = this.$element.find('.Carousel-item')[fallback]()
 		}
 
 		this.sliding = true
@@ -561,7 +562,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 		this.$element.trigger(startEvent)
 		if (startEvent.isDefaultPrevented()) return
 
-		var actives = this.$parent && this.$parent.find('> .panel > .in')
+		var actives = this.$parent && this.$parent.find('> .Panel > .is-in')
 
 		if (actives && actives.length) {
 			var hasData = actives.data('bs.collapse')
@@ -675,8 +676,8 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 		var $parent = parent && $(parent)
 
 		if (!data || !data.transitioning) {
-			if ($parent) $parent.find('[data-toggle=collapse][data-parent="' + parent + '"]').not($this).addClass('collapsed')
-			$this[$target.hasClass('is-in') ? 'addClass' : 'removeClass']('collapsed')
+			if ($parent) $parent.find('[data-toggle=collapse][data-parent="' + parent + '"]').not($this).addClass('Animation--collapsed')
+			$this[$target.hasClass('is-in') ? 'addClass' : 'removeClass'](' Animation--collapsed')
 		}
 
 		$target.collapse(option)
@@ -904,7 +905,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 		this.$element.on('click.dismiss.modal', '[data-dismiss="modal"]', $.proxy(this.hide, this))
 
 		this.backdrop(function() {
-			var transition = $.support.transition && that.$element.hasClass('fade')
+			var transition = $.support.transition && that.$element.hasClass('Animation--fade')
 
 			if (!that.$element.parent().length) {
 				that.$element.appendTo(document.body) // don't move modals dom position
@@ -917,7 +918,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 			}
 
 			that.$element
-				.addClass('in')
+				.addClass('is-in')
 				.attr('aria-hidden', false)
 
 			that.enforceFocus()
@@ -927,7 +928,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 			})
 
 			transition ?
-				that.$element.find('.modal-dialog') // wait for modal to slide in
+				that.$element.find('.Modal-dialog') // wait for modal to slide in
 			.one($.support.transition.end, function() {
 				that.$element.focus().trigger(e)
 			})
@@ -952,11 +953,11 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 		$(document).off('focusin.bs.modal')
 
 		this.$element
-			.removeClass('in')
+			.removeClass('is-in')
 			.attr('aria-hidden', true)
 			.off('click.dismiss.modal')
 
-		$.support.transition && this.$element.hasClass('fade') ?
+		$.support.transition && this.$element.hasClass('Animation--fade') ?
 			this.$element
 			.one($.support.transition.end, $.proxy(this.hideModal, this))
 			.emulateTransitionEnd(300) :
@@ -999,12 +1000,12 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
 	Modal.prototype.backdrop = function(callback) {
 		var that = this
-		var animate = this.$element.hasClass('fade') ? 'fade' : ''
+		var animate = this.$element.hasClass('Animation--fade') ? 'Animation--fade' : ''
 
 		if (this.isShown && this.options.backdrop) {
 			var doAnimate = $.support.transition && animate
 
-			this.$backdrop = $('<div class="modal-backdrop ' + animate + '" />')
+			this.$backdrop = $('<div class="Modal-backdrop ' + animate + '" />')
 				.appendTo(document.body)
 
 			this.$element.on('click.dismiss.modal', $.proxy(function(e) {
@@ -1014,7 +1015,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
 			if (doAnimate) this.$backdrop[0].offsetWidth // force reflow
 
-			this.$backdrop.addClass('in')
+			this.$backdrop.addClass('is-in')
 
 			if (!callback) return
 
@@ -1025,9 +1026,9 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 				callback()
 
 		} else if (!this.isShown && this.$backdrop) {
-			this.$backdrop.removeClass('in')
+			this.$backdrop.removeClass('is-in')
 
-			$.support.transition && this.$element.hasClass('fade') ?
+			$.support.transition && this.$element.hasClass('Animation--fade') ?
 				this.$backdrop
 				.one($.support.transition.end, callback)
 				.emulateTransitionEnd(150) :
@@ -1089,11 +1090,11 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 	})
 
 	$(document)
-		.on('show.bs.modal', '.modal', function() {
-			$(document.body).addClass('modal-open')
+		.on('show.bs.modal', '.Modal', function() {
+			$(document.body).addClass('has-openModal')
 		})
-		.on('hidden.bs.modal', '.modal', function() {
-			$(document.body).removeClass('modal-open')
+		.on('hidden.bs.modal', '.Modal', function() {
+			$(document.body).removeClass('has-openModal')
 		})
 
 }(window.jQuery);
@@ -1140,7 +1141,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 		animation: true,
 		placement: 'top',
 		selector: false,
-		template: '<div class="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
+		template: '<div class="Tooltip"><div class="Arrow"></div><div class="Tooltip-inner"></div></div>',
 		trigger: 'hover focus',
 		title: '',
 		delay: 0,
@@ -1248,7 +1249,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
 			this.setContent()
 
-			if (this.options.animation) $tip.addClass('fade')
+			if (this.options.animation) $tip.addClass('Animation--fade')
 
 			var placement = typeof this.options.placement == 'function' ?
 				this.options.placement.call(this, $tip[0], this.$element[0]) :
@@ -1265,7 +1266,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 					left: 0,
 					display: 'block'
 				})
-				.addClass(placement)
+				.addClass('Tooltip--' + placement)
 
 			this.options.container ? $tip.appendTo(this.options.container) : $tip.insertAfter(this.$element)
 
@@ -1289,8 +1290,8 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 					placement
 
 				$tip
-					.removeClass(orgPlacement)
-					.addClass(placement)
+					.removeClass("Tooltip--" + orgPlacement)
+					.addClass("Tooltip--" + placement)
 			}
 
 			var calculatedOffset = this.getCalculatedOffset(placement, pos, actualWidth, actualHeight)
@@ -1319,7 +1320,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
 		$tip
 			.offset(offset)
-			.addClass('in')
+			.addClass('is-in')
 
 		// check to see if placing tip in new offset caused the tip to resize itself
 		var actualWidth = $tip[0].offsetWidth
@@ -1359,8 +1360,8 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 		var $tip = this.tip()
 		var title = this.getTitle()
 
-		$tip.find('.tooltip-inner')[this.options.html ? 'html' : 'text'](title)
-		$tip.removeClass('fade in top bottom left right')
+		$tip.find('.Tooltip-inner')[this.options.html ? 'html' : 'text'](title)
+		$tip.removeClass('Animation--fade is-in Tooltip--top Tooltip--bottom Tooltip--left Tooltip--right')
 	}
 
 	Tooltip.prototype.hide = function() {
@@ -1376,9 +1377,9 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
 		if (e.isDefaultPrevented()) return
 
-		$tip.removeClass('in')
+		$tip.removeClass('is-in')
 
-		$.support.transition && this.$tip.hasClass('fade') ?
+		$.support.transition && this.$tip.hasClass('Animation--fade') ?
 			$tip
 			.one($.support.transition.end, complete)
 			.emulateTransitionEnd(150) :
@@ -1443,7 +1444,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 	}
 
 	Tooltip.prototype.arrow = function() {
-		return this.$arrow = this.$arrow || this.tip().find('.tooltip-arrow')
+		return this.$arrow = this.$arrow || this.tip().find('.Arrow')
 	}
 
 	Tooltip.prototype.validate = function() {
@@ -1468,7 +1469,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
 	Tooltip.prototype.toggle = function(e) {
 		var self = e ? $(e.currentTarget)[this.type](this.getDelegateOptions()).data('bs.' + this.type) : this
-		self.tip().hasClass('in') ? self.leave(self) : self.enter(self)
+		self.tip().hasClass('is-in') ? self.leave(self) : self.enter(self)
 	}
 
 	Tooltip.prototype.destroy = function() {
@@ -1541,7 +1542,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 		placement: 'right',
 		trigger: 'click',
 		content: '',
-		template: '<div class="popover"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
+		template: '<div class="Popover"><div class="Arrow"></div><h3 class="Popover-title"></h3><div class="Popover-content"></div></div>'
 	})
 
 
@@ -1561,14 +1562,14 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 		var title = this.getTitle()
 		var content = this.getContent()
 
-		$tip.find('.popover-title')[this.options.html ? 'html' : 'text'](title)
-		$tip.find('.popover-content')[this.options.html ? 'html' : 'text'](content)
+		$tip.find('.Popover-title')[this.options.html ? 'html' : 'text'](title)
+		$tip.find('.Popover-content')[this.options.html ? 'html' : 'text'](content)
 
-		$tip.removeClass('fade top bottom left right in')
+		$tip.removeClass('.Animation--fade .is-in Popover--top Popover--bottom Popover--left Popover--right')
 
 		// IE8 doesn't accept hiding via the `:empty` pseudo selector, we have to do
 		// this manually by checking the contents.
-		if (!$tip.find('.popover-title').html()) $tip.find('.popover-title').hide()
+		if (!$tip.find('.Popover-title').html()) $tip.find('.Popover-title').hide()
 	}
 
 	Popover.prototype.hasContent = function() {
@@ -1585,7 +1586,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 	}
 
 	Popover.prototype.arrow = function() {
-		return this.$arrow = this.$arrow || this.tip().find('.arrow')
+		return this.$arrow = this.$arrow || this.tip().find('.Arrow')
 	}
 
 	Popover.prototype.tip = function() {
@@ -1811,7 +1812,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
 	Tab.prototype.show = function() {
 		var $this = this.element
-		var $ul = $this.closest('ul:not(.dropdown-menu)')
+		var $ul = $this.closest('ul:not(.Dropdown-menu)')
 		var selector = $this.attr('data-target')
 
 		if (!selector) {
@@ -1821,7 +1822,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
 		if ($this.parent('li').hasClass('is-active')) return
 
-		var previous = $ul.find('.active:last a')[0]
+		var previous = $ul.find('.is-active:last a')[0]
 		var e = $.Event('show.bs.tab', {
 			relatedTarget: previous
 		})
@@ -1842,26 +1843,26 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 	}
 
 	Tab.prototype.activate = function(element, container, callback) {
-		var $active = container.find('> .active')
-		var transition = callback && $.support.transition && $active.hasClass('fade')
+		var $active = container.find('> .is-active')
+		var transition = callback && $.support.transition && $active.hasClass('Animation--fade')
 
 			function next() {
 				$active
 					.removeClass('is-active')
-					.find('> .dropdown-menu > .active')
+					.find('> .Dropdown-menu > .is-active')
 					.removeClass('is-active')
 
 				element.addClass('is-active')
 
 				if (transition) {
 					element[0].offsetWidth // reflow for transition
-					element.addClass('in')
+					element.addClass('is-in')
 				} else {
-					element.removeClass('fade')
+					element.removeClass('Animation--fade')
 				}
 
-				if (element.parent('.dropdown-menu')) {
-					element.closest('li.dropdown').addClass('is-active')
+				if (element.parent('.Dropdown-menu')) {
+					element.closest('li.Dropdown').addClass('is-active')
 				}
 
 				callback && callback()
@@ -1873,7 +1874,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 			.emulateTransitionEnd(150) :
 			next()
 
-		$active.removeClass('in')
+		$active.removeClass('is-in')
 	}
 
 
@@ -1952,7 +1953,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     this.checkPosition()
   }
 
-  Affix.RESET = 'affix affix-top affix-bottom'
+  Affix.RESET = 'u-affix u-affix-top u-affix-bottom'
 
   Affix.DEFAULTS = {
     offset: 0
@@ -1986,7 +1987,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     this.affixed = affix
     this.unpin   = affix == 'bottom' ? position.top - scrollTop : null
 
-    this.$element.removeClass(Affix.RESET).addClass('affix' + (affix ? '-' + affix : ''))
+    this.$element.removeClass(Affix.RESET).addClass('u-affix' + (affix ? '--' + affix : ''))
 
     if (affix == 'bottom') {
       this.$element.offset({ top: document.body.offsetHeight - offsetBottom - this.$element.height() })

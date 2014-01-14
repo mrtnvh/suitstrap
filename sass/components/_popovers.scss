@@ -24,10 +24,10 @@
     white-space: normal;
 
     /* Offset the popover to account for the popover arrow */
-    &.top         { margin-top: -10px; }
-    &.right     { margin-left: 10px; }
-    &.bottom    { margin-top: 10px; }
-    &.left        { margin-left: -10px; }
+    @at-root #{&}--top    { margin-top: -10px; }
+    @at-root #{&}--right  { margin-left: 10px; }
+    @at-root #{&}--bottom { margin-top: 10px; }
+    @at-root #{&}--left   { margin-left: -10px; }
 }
 
 .Popover-title {
@@ -69,7 +69,8 @@
 }
 
 .Popover {
-    &.top .Arrow {
+    &.Popover--top .Arrow,
+    &.Tooltip--top .Arrow {
         left: 50%;
         margin-left: -$popover-arrow-outer-width;
         border-bottom-width: 0;
@@ -85,7 +86,8 @@
         }
     }
 
-    &.right .Arrow {
+    &.Popover--right .Arrow,
+    &.Tooltip--right .Arrow {
         top: 50%;
         left: -$popover-arrow-outer-width;
         margin-top: -$popover-arrow-outer-width;
@@ -101,7 +103,8 @@
         }
     }
 
-    &.bottom .Arrow {
+    &.Popover--bottom .Arrow,
+    &.Tooltip--bottom .Arrow {
         left: 50%;
         margin-left: -$popover-arrow-outer-width;
         border-top-width: 0;
@@ -117,7 +120,8 @@
         }
     }
 
-    &.left .Arrow {
+    &.Popover--left .Arrow,
+    &.Tooltip--left .Arrow {
         top: 50%;
         right: -$popover-arrow-outer-width;
         margin-top: -$popover-arrow-outer-width;

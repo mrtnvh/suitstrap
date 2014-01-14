@@ -453,7 +453,7 @@ a:hover{
  */
 
 /* By default it's not affixed in mobile views, so undo that */
-.bs-sidebar.affix {
+.bs-sidebar.u-affix {
 	position: static;
 }
 
@@ -507,27 +507,27 @@ a:hover{
 		display: block;
 	}
 	/* Widen the fixed sidebar */
-	.bs-sidebar.affix,
-	.bs-sidebar.affix-bottom {
+	.bs-sidebar.u-affix,
+	.bs-sidebar.u-affix--bottom {
 		width: 213px;
 	}
-	.bs-sidebar.affix {
+	.bs-sidebar.u-affix {
 		position: fixed; /* Undo the static from mobile first approach */
 		top: 80px;
 	}
-	.bs-sidebar.affix-bottom {
+	.bs-sidebar.u-affix--bottom {
 		position: absolute; /* Undo the static from mobile first approach */
 	}
-	.bs-sidebar.affix-bottom .bs-sidenav,
-	.bs-sidebar.affix .bs-sidenav {
+	.bs-sidebar.u-affix--bottom .bs-sidenav,
+	.bs-sidebar.u-affix .bs-sidenav {
 		margin-top: 0;
 		margin-bottom: 0;
 	}
 }
 @media screen and (min-width: 1200px) {
 	/* Widen the fixed sidebar again */
-	.bs-sidebar.affix-bottom,
-	.bs-sidebar.affix {
+	.bs-sidebar.u-affix--bottom,
+	.bs-sidebar.u-affix {
 		width: 263px;
 	}
 }
@@ -835,7 +835,7 @@ h1[id] {
 .bs-example-modal {
 	background-color: #f5f5f5;
 }
-.bs-example-modal .modal {
+.bs-example-modal .Modal {
 	position: relative;
 	top: auto;
 	right: auto;
@@ -844,7 +844,7 @@ h1[id] {
 	z-index: 1;
 	display: block;
 }
-.bs-example-modal .modal-dialog {
+.bs-example-modal .Modal-dialog {
 	left: auto;
 	margin-left: auto;
 	margin-right: auto;
@@ -858,7 +858,7 @@ h1[id] {
 }
 
 /* Example tabbable tabs */
-.bs-example-tabs .Nav-tabs {
+.bs-example-tabs .Nav--tabs {
 	margin-bottom: 15px;
 }
 

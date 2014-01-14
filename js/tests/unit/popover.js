@@ -24,9 +24,9 @@ $(function () {
           .appendTo('#qunit-fixture')
           .popover('show')
 
-        ok($('.popover').length, 'popover was inserted')
+        ok($('.Popover').length, 'popover was inserted')
         popover.popover('hide')
-        ok(!$(".popover").length, 'popover removed')
+        ok(!$(".Popover").length, 'popover removed')
       })
 
       test("should store popover instance in popover data object", function () {
@@ -52,12 +52,12 @@ $(function () {
 
         popover.popover('show')
 
-        ok($('.popover').length, 'popover was inserted')
-        equals($('.popover .popover-title').text(), '@fat', 'title correctly inserted')
-        equals($('.popover .popover-content').text(), 'loves writing tests （╯°□°）╯︵ ┻━┻', 'content correctly inserted')
+        ok($('.Popover').length, 'popover was inserted')
+        equals($('.Popover .Popover-title').text(), '@fat', 'title correctly inserted')
+        equals($('.Popover .Popover-content').text(), 'loves writing tests （╯°□°）╯︵ ┻━┻', 'content correctly inserted')
 
         popover.popover('hide')
-        ok(!$('.popover').length, 'popover was removed')
+        ok(!$('.Popover').length, 'popover was removed')
         $('#qunit-fixture').empty()
       })
 
@@ -68,12 +68,12 @@ $(function () {
           .popover()
           .popover('show')
 
-        ok($('.popover').length, 'popover was inserted')
-        equals($('.popover .popover-title').text(), '@mdo', 'title correctly inserted')
-        equals($('.popover .popover-content').text(), "loves data attributes (づ｡◕‿‿◕｡)づ ︵ ┻━┻", 'content correctly inserted')
+        ok($('.Popover').length, 'popover was inserted')
+        equals($('.Popover .Popover-title').text(), '@mdo', 'title correctly inserted')
+        equals($('.Popover .Popover-content').text(), "loves data attributes (づ｡◕‿‿◕｡)づ ︵ ┻━┻", 'content correctly inserted')
 
         popover.popover('hide')
-        ok(!$('.popover').length, 'popover was removed')
+        ok(!$('.Popover').length, 'popover was removed')
         $('#qunit-fixture').empty()
       })
 
@@ -88,12 +88,12 @@ $(function () {
           })
           .popover('show')
 
-        ok($('.popover').length, 'popover was inserted')
-        equals($('.popover .popover-title').text(), '@mdo', 'title correctly inserted')
-        equals($('.popover .popover-content').text(), "loves data attributes (づ｡◕‿‿◕｡)づ ︵ ┻━┻", 'content correctly inserted')
+        ok($('.Popover').length, 'popover was inserted')
+        equals($('.Popover .Popover-title').text(), '@mdo', 'title correctly inserted')
+        equals($('.Popover .Popover-content').text(), "loves data attributes (づ｡◕‿‿◕｡)づ ︵ ┻━┻", 'content correctly inserted')
 
         popover.popover('hide')
-        ok(!$('.popover').length, 'popover was removed')
+        ok(!$('.Popover').length, 'popover was removed')
         $('#qunit-fixture').empty()
       })
 
@@ -104,16 +104,16 @@ $(function () {
           .popover({
             title: 'Test'
           , content: 'Test'
-          , template: '<div class="popover foobar"><div class="arrow"></div><div class="inner"><h3 class="title"></h3><div class="content"><p></p></div></div></div>'
+          , template: '<div class="Popover foobar"><div class="arrow"></div><div class="inner"><h3 class="title"></h3><div class="content"><p></p></div></div></div>'
           })
 
         popover.popover('show')
 
-        ok($('.popover').length, 'popover was inserted')
-        ok($('.popover').hasClass('foobar'), 'custom class is present')
+        ok($('.Popover').length, 'popover was inserted')
+        ok($('.Popover').hasClass('foobar'), 'custom class is present')
 
         popover.popover('hide')
-        ok(!$('.popover').length, 'popover was removed')
+        ok(!$('.Popover').length, 'popover was removed')
         $('#qunit-fixture').empty()
       })
 

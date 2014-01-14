@@ -27,13 +27,19 @@
 	}
 
 	> .is-active,
+	> .next,
 	> .is-next,
-	> .is-previous { display: block; }
+	> .prev,
+	> .is-previous {
+		display: block;
+	}
 
 	> .is-active {
 		left: 0;
 	}
 
+	> .next,
+	> .prev,
 	> .is-next,
 	> .is-previous {
 		position: absolute;
@@ -41,21 +47,26 @@
 		width: 100%;
 	}
 
+	> .next,
 	> .is-next {
 		left: 100%;
 	}
+
+	> .prev,
 	> .is-previous {
 		left: -100%;
 	}
-	> .is-next.left,
-	> .is-previous.right {
+
+	> .is-next.Carousel-control--left,
+	> .is-previous.Carousel-control--right {
 		left: 0;
 	}
 
-	> .is-active.left {
+	> .is-active.Carousel-control--left {
 		left: -100%;
 	}
-	> .is-active.right {
+
+	> .is-active.Carousel-control--right {
 		left: 100%;
 	}
 }
@@ -80,14 +91,14 @@
 	/* animation if you trip this while in the middle of another animation. */
 
 	/* Set gradients for backgrounds */
-	&.left {
-		// #gradient > .horizontal($start-color: rgba(0,0,0,.5); $end-color: rgba(0,0,0,.0001));
+	@at-root #{&}--left {
+		@include Gradient--horizontal($start-color: rgba(0,0,0,.5), $end-color: rgba(0,0,0,.0001));
 	}
 
-	&.right {
+	@at-root #{&}--right {
 		left: auto;
 		right: 0;
-		// #gradient > .horizontal($start-color: rgba(0,0,0,.0001); $end-color: rgba(0,0,0,.5));
+		@include Gradient--horizontal($start-color: rgba(0,0,0,.0001), $end-color: rgba(0,0,0,.5));
 	}
 
 	/* Hover/focus state */
@@ -101,8 +112,8 @@
 	/* Toggles */
 	.Icon--previous,
 	.Icon--next,
-	.Glyphicon--chevron-left,
-	.Glyphicon--chevron-right {
+	.Glyphicon--chevronLeft,
+	.Glyphicon--chevronRight {
 		position: absolute;
 		top: 50%;
 		z-index: 5;
@@ -110,12 +121,12 @@
 	}
 
 	.Icon--previous,
-	.Glyphicon--chevron-left {
+	.Glyphicon--chevronLeft {
 		left: 50%;
 	}
 
 	.Icon--next,
-	.Glyphicon--chevron-right {
+	.Glyphicon--chevronRight {
 		right: 50%;
 	}
 
@@ -203,8 +214,8 @@
 
 	/* Scale up the controls a smidge */
 	.Carousel-control {
-		.Glyphicons-chevron-left,
-		.Glyphicons-chevron-right,
+		.Glyphicons-chevronLeft,
+		.Glyphicons-chevronRight,
 		.Icon--previous,
 		.Icon--next {
 			width: 30px;

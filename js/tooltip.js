@@ -40,7 +40,7 @@
 		animation: true,
 		placement: 'top',
 		selector: false,
-		template: '<div class="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
+		template: '<div class="Tooltip"><div class="Arrow"></div><div class="Tooltip-inner"></div></div>',
 		trigger: 'hover focus',
 		title: '',
 		delay: 0,
@@ -148,7 +148,7 @@
 
 			this.setContent()
 
-			if (this.options.animation) $tip.addClass('fade')
+			if (this.options.animation) $tip.addClass('Animation--fade')
 
 			var placement = typeof this.options.placement == 'function' ?
 				this.options.placement.call(this, $tip[0], this.$element[0]) :
@@ -165,7 +165,7 @@
 					left: 0,
 					display: 'block'
 				})
-				.addClass(placement)
+				.addClass('Tooltip--' + placement)
 
 			this.options.container ? $tip.appendTo(this.options.container) : $tip.insertAfter(this.$element)
 
@@ -189,8 +189,8 @@
 					placement
 
 				$tip
-					.removeClass(orgPlacement)
-					.addClass(placement)
+					.removeClass("Tooltip--" + orgPlacement)
+					.addClass("Tooltip--" + placement)
 			}
 
 			var calculatedOffset = this.getCalculatedOffset(placement, pos, actualWidth, actualHeight)
@@ -219,7 +219,7 @@
 
 		$tip
 			.offset(offset)
-			.addClass('in')
+			.addClass('is-in')
 
 		// check to see if placing tip in new offset caused the tip to resize itself
 		var actualWidth = $tip[0].offsetWidth
@@ -259,8 +259,8 @@
 		var $tip = this.tip()
 		var title = this.getTitle()
 
-		$tip.find('.tooltip-inner')[this.options.html ? 'html' : 'text'](title)
-		$tip.removeClass('fade in top bottom left right')
+		$tip.find('.Tooltip-inner')[this.options.html ? 'html' : 'text'](title)
+		$tip.removeClass('Animation--fade is-in Tooltip--top Tooltip--bottom Tooltip--left Tooltip--right')
 	}
 
 	Tooltip.prototype.hide = function() {
@@ -276,9 +276,9 @@
 
 		if (e.isDefaultPrevented()) return
 
-		$tip.removeClass('in')
+		$tip.removeClass('is-in')
 
-		$.support.transition && this.$tip.hasClass('fade') ?
+		$.support.transition && this.$tip.hasClass('Animation--fade') ?
 			$tip
 			.one($.support.transition.end, complete)
 			.emulateTransitionEnd(150) :
@@ -343,7 +343,7 @@
 	}
 
 	Tooltip.prototype.arrow = function() {
-		return this.$arrow = this.$arrow || this.tip().find('.tooltip-arrow')
+		return this.$arrow = this.$arrow || this.tip().find('.Arrow')
 	}
 
 	Tooltip.prototype.validate = function() {
@@ -368,7 +368,7 @@
 
 	Tooltip.prototype.toggle = function(e) {
 		var self = e ? $(e.currentTarget)[this.type](this.getDelegateOptions()).data('bs.' + this.type) : this
-		self.tip().hasClass('in') ? self.leave(self) : self.enter(self)
+		self.tip().hasClass('is-in') ? self.leave(self) : self.enter(self)
 	}
 
 	Tooltip.prototype.destroy = function() {

@@ -30,7 +30,7 @@
 
 	Tab.prototype.show = function() {
 		var $this = this.element
-		var $ul = $this.closest('ul:not(.dropdown-menu)')
+		var $ul = $this.closest('ul:not(.Dropdown-menu)')
 		var selector = $this.attr('data-target')
 
 		if (!selector) {
@@ -40,7 +40,7 @@
 
 		if ($this.parent('li').hasClass('is-active')) return
 
-		var previous = $ul.find('.active:last a')[0]
+		var previous = $ul.find('.is-active:last a')[0]
 		var e = $.Event('show.bs.tab', {
 			relatedTarget: previous
 		})
@@ -61,26 +61,26 @@
 	}
 
 	Tab.prototype.activate = function(element, container, callback) {
-		var $active = container.find('> .active')
-		var transition = callback && $.support.transition && $active.hasClass('fade')
+		var $active = container.find('> .is-active')
+		var transition = callback && $.support.transition && $active.hasClass('Animation--fade')
 
 			function next() {
 				$active
 					.removeClass('is-active')
-					.find('> .dropdown-menu > .active')
+					.find('> .Dropdown-menu > .is-active')
 					.removeClass('is-active')
 
 				element.addClass('is-active')
 
 				if (transition) {
 					element[0].offsetWidth // reflow for transition
-					element.addClass('in')
+					element.addClass('is-in')
 				} else {
-					element.removeClass('fade')
+					element.removeClass('Animation--fade')
 				}
 
-				if (element.parent('.dropdown-menu')) {
-					element.closest('li.dropdown').addClass('is-active')
+				if (element.parent('.Dropdown-menu')) {
+					element.closest('li.Dropdown').addClass('is-active')
 				}
 
 				callback && callback()
@@ -92,7 +92,7 @@
 			.emulateTransitionEnd(150) :
 			next()
 
-		$active.removeClass('in')
+		$active.removeClass('is-in')
 	}
 
 

@@ -3,14 +3,14 @@
    ========================================================================== */
 
 /**
- * .Modal-open       - body class for killing the scroll
+ * .has-openModal    - body class for killing the scroll
  * .Modal            - container to scroll within
  * .Modal-dialog     - positioning shell for the actual modal
  * .Modal-content    - actual modal w/ bg and corners and shit
  */
 
 /* Kill the scroll on the body */
-.Modal--open {
+.has-openModal {
 	overflow: hidden;
 }
 
@@ -27,7 +27,7 @@
 	z-index: $zindex-modal-background;
 
 	/* When fading in the modal, animate it to slide down */
-	&.fade .Modal-dialog {
+	&.Animation--fade .Modal-dialog {
 		@include translate(0, -25%);
 		@include transition(transform 0.3s ease-out);
 	}
@@ -70,7 +70,7 @@
 	background-color: $modal-backdrop-bg;
 
 	/* Fade for backdrop */
-	&.fade { @include opacity(0); }
+	&.Animation--fade { @include opacity(0); }
 	&.is-in { @include opacity(.5); }
 }
 

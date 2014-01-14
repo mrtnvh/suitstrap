@@ -32,7 +32,7 @@
 }
 
 /* Arrows */
-.Tooltip-arrow {
+.Arrow {
 	position: absolute;
 	width: 0;
 	height: 0;
@@ -41,53 +41,60 @@
 }
 
 .Tooltip {
-	&.top .Tooltip-arrow {
+	@at-root #{&}--top .Arrow {
 		bottom: 0;
 		left: 50%;
 		margin-left: -$tooltip-arrow-width;
 		border-width: $tooltip-arrow-width $tooltip-arrow-width 0;
 		border-top-color: $tooltip-arrow-color;
 	}
-	&.topLeft .Tooltip-arrow {
+
+	@at-root #{&}--topLeft .Arrow {
 		bottom: 0;
 		left: $tooltip-arrow-width;
 		border-width: $tooltip-arrow-width $tooltip-arrow-width 0;
 		border-top-color: $tooltip-arrow-color;
 	}
-	&.topRight .Tooltip-arrow {
+
+	@at-root #{&}--topRight .Arrow {
 		bottom: 0;
 		right: $tooltip-arrow-width;
 		border-width: $tooltip-arrow-width $tooltip-arrow-width 0;
 		border-top-color: $tooltip-arrow-color;
 	}
-	&.right .Tooltip-arrow {
+
+	@at-root #{&}--right .Arrow {
 		top: 50%;
 		left: 0;
 		margin-top: -$tooltip-arrow-width;
 		border-width: $tooltip-arrow-width $tooltip-arrow-width $tooltip-arrow-width 0;
 		border-right-color: $tooltip-arrow-color;
 	}
-	&.left .Tooltip-arrow {
+
+	@at-root #{&}--left .Arrow {
 		top: 50%;
 		right: 0;
 		margin-top: -$tooltip-arrow-width;
 		border-width: $tooltip-arrow-width 0 $tooltip-arrow-width $tooltip-arrow-width;
 		border-left-color: $tooltip-arrow-color;
 	}
-	&.bottom .Tooltip-arrow {
+
+	@at-root #{&}--bottom .Arrow {
 		top: 0;
 		left: 50%;
 		margin-left: -$tooltip-arrow-width;
 		border-width: 0 $tooltip-arrow-width $tooltip-arrow-width;
 		border-bottom-color: $tooltip-arrow-color;
 	}
-	&.bottomLeft .Tooltip-arrow {
+
+	@at-root #{&}--bottomLeft .Arrow {
 		top: 0;
 		left: $tooltip-arrow-width;
 		border-width: 0 $tooltip-arrow-width $tooltip-arrow-width;
 		border-bottom-color: $tooltip-arrow-color;
 	}
-	&.bottomRight .Tooltip-arrow {
+
+	@at-root #{&}--bottomRight .Arrow {
 		top: 0;
 		right: $tooltip-arrow-width;
 		border-width: 0 $tooltip-arrow-width $tooltip-arrow-width;

@@ -49,7 +49,7 @@
 		this.$element.trigger(startEvent)
 		if (startEvent.isDefaultPrevented()) return
 
-		var actives = this.$parent && this.$parent.find('> .panel > .in')
+		var actives = this.$parent && this.$parent.find('> .Panel > .is-in')
 
 		if (actives && actives.length) {
 			var hasData = actives.data('bs.collapse')
@@ -163,8 +163,8 @@
 		var $parent = parent && $(parent)
 
 		if (!data || !data.transitioning) {
-			if ($parent) $parent.find('[data-toggle=collapse][data-parent="' + parent + '"]').not($this).addClass('collapsed')
-			$this[$target.hasClass('is-in') ? 'addClass' : 'removeClass']('collapsed')
+			if ($parent) $parent.find('[data-toggle=collapse][data-parent="' + parent + '"]').not($this).addClass('Animation--collapsed')
+			$this[$target.hasClass('is-in') ? 'addClass' : 'removeClass'](' Animation--collapsed')
 		}
 
 		$target.collapse(option)

@@ -36,7 +36,7 @@
     this.checkPosition()
   }
 
-  Affix.RESET = 'affix affix-top affix-bottom'
+  Affix.RESET = 'u-affix u-affix-top u-affix-bottom'
 
   Affix.DEFAULTS = {
     offset: 0
@@ -70,7 +70,7 @@
     this.affixed = affix
     this.unpin   = affix == 'bottom' ? position.top - scrollTop : null
 
-    this.$element.removeClass(Affix.RESET).addClass('affix' + (affix ? '-' + affix : ''))
+    this.$element.removeClass(Affix.RESET).addClass('u-affix' + (affix ? '--' + affix : ''))
 
     if (affix == 'bottom') {
       this.$element.offset({ top: document.body.offsetHeight - offsetBottom - this.$element.height() })

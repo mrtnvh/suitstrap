@@ -60,7 +60,7 @@
 		this.$element.on('click.dismiss.modal', '[data-dismiss="modal"]', $.proxy(this.hide, this))
 
 		this.backdrop(function() {
-			var transition = $.support.transition && that.$element.hasClass('fade')
+			var transition = $.support.transition && that.$element.hasClass('Animation--fade')
 
 			if (!that.$element.parent().length) {
 				that.$element.appendTo(document.body) // don't move modals dom position
@@ -73,7 +73,7 @@
 			}
 
 			that.$element
-				.addClass('in')
+				.addClass('is-in')
 				.attr('aria-hidden', false)
 
 			that.enforceFocus()
@@ -83,7 +83,7 @@
 			})
 
 			transition ?
-				that.$element.find('.modal-dialog') // wait for modal to slide in
+				that.$element.find('.Modal-dialog') // wait for modal to slide in
 			.one($.support.transition.end, function() {
 				that.$element.focus().trigger(e)
 			})
@@ -108,11 +108,11 @@
 		$(document).off('focusin.bs.modal')
 
 		this.$element
-			.removeClass('in')
+			.removeClass('is-in')
 			.attr('aria-hidden', true)
 			.off('click.dismiss.modal')
 
-		$.support.transition && this.$element.hasClass('fade') ?
+		$.support.transition && this.$element.hasClass('Animation--fade') ?
 			this.$element
 			.one($.support.transition.end, $.proxy(this.hideModal, this))
 			.emulateTransitionEnd(300) :
@@ -155,12 +155,12 @@
 
 	Modal.prototype.backdrop = function(callback) {
 		var that = this
-		var animate = this.$element.hasClass('fade') ? 'fade' : ''
+		var animate = this.$element.hasClass('Animation--fade') ? 'Animation--fade' : ''
 
 		if (this.isShown && this.options.backdrop) {
 			var doAnimate = $.support.transition && animate
 
-			this.$backdrop = $('<div class="modal-backdrop ' + animate + '" />')
+			this.$backdrop = $('<div class="Modal-backdrop ' + animate + '" />')
 				.appendTo(document.body)
 
 			this.$element.on('click.dismiss.modal', $.proxy(function(e) {
@@ -170,7 +170,7 @@
 
 			if (doAnimate) this.$backdrop[0].offsetWidth // force reflow
 
-			this.$backdrop.addClass('in')
+			this.$backdrop.addClass('is-in')
 
 			if (!callback) return
 
@@ -181,9 +181,9 @@
 				callback()
 
 		} else if (!this.isShown && this.$backdrop) {
-			this.$backdrop.removeClass('in')
+			this.$backdrop.removeClass('is-in')
 
-			$.support.transition && this.$element.hasClass('fade') ?
+			$.support.transition && this.$element.hasClass('Animation--fade') ?
 				this.$backdrop
 				.one($.support.transition.end, callback)
 				.emulateTransitionEnd(150) :
@@ -245,11 +245,11 @@
 	})
 
 	$(document)
-		.on('show.bs.modal', '.modal', function() {
-			$(document.body).addClass('modal-open')
+		.on('show.bs.modal', '.Modal', function() {
+			$(document.body).addClass('has-openModal')
 		})
-		.on('hidden.bs.modal', '.modal', function() {
-			$(document.body).removeClass('modal-open')
+		.on('hidden.bs.modal', '.Modal', function() {
+			$(document.body).removeClass('has-openModal')
 		})
 
 }(window.jQuery);

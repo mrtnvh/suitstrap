@@ -84,7 +84,7 @@ $(function () {
         var collapsible = $('<div id="test1" class="is-in"></div>')
           .appendTo($('#qunit-fixture'))
           .on('hide.bs.collapse', function () {
-            ok(target.hasClass('collapsed'))
+            ok(target.hasClass('Animation--collapsed'))
             start()
           })
 
@@ -104,21 +104,21 @@ $(function () {
         var collapsible1 = $('<div id="body1" class="is-in"></div>')
           .appendTo(accordion.find('.accordion-group').eq(0))
 
-        var target2 = $('<a class="collapsed" data-toggle="collapse" href="#body2" data-parent="#accordion"></a>')
+        var target2 = $('<a class="Animation--collapsed" data-toggle="collapse" href="#body2" data-parent="#accordion"></a>')
           .appendTo(accordion.find('.accordion-group').eq(1))
 
         var collapsible2 = $('<div id="body2"></div>')
           .appendTo(accordion.find('.accordion-group').eq(1))
 
-        var target3 = $('<a class="collapsed" data-toggle="collapse" href="#body3" data-parent="#accordion"></a>')
+        var target3 = $('<a class="Animation--collapsed" data-toggle="collapse" href="#body3" data-parent="#accordion"></a>')
           .appendTo(accordion.find('.accordion-group').eq(2))
 
         var collapsible3 = $('<div id="body3"></div>')
           .appendTo(accordion.find('.accordion-group').eq(2))
           .on('show.bs.collapse', function () {
-            ok(target1.hasClass('collapsed'))
-            ok(target2.hasClass('collapsed'))
-            ok(!target3.hasClass('collapsed'))
+            ok(target1.hasClass('Animation--collapsed'))
+            ok(target2.hasClass('Animation--collapsed'))
+            ok(!target3.hasClass('Animation--collapsed'))
 
             start()
           })
@@ -139,21 +139,21 @@ $(function () {
         var collapsible1 = $('<div id="body1" class="is-in"></div>')
           .appendTo(accordion.find('.accordion-group').eq(0))
 
-        var target2 = $('<a class="collapsed" data-toggle="collapse" href="#body2" data-parent=".accordion"></a>')
+        var target2 = $('<a class="Animation--collapsed" data-toggle="collapse" href="#body2" data-parent=".accordion"></a>')
           .appendTo(accordion.find('.accordion-group').eq(1))
 
         var collapsible2 = $('<div id="body2"></div>')
           .appendTo(accordion.find('.accordion-group').eq(1))
 
-        var target3 = $('<a class="collapsed" data-toggle="collapse" href="#body3" data-parent=".accordion"></a>')
+        var target3 = $('<a class="Animation--collapsed" data-toggle="collapse" href="#body3" data-parent=".accordion"></a>')
           .appendTo(accordion.find('.accordion-group').eq(2))
 
         var collapsible3 = $('<div id="body3"></div>')
           .appendTo(accordion.find('.accordion-group').eq(2))
           .on('show.bs.collapse', function () {
-            ok(target1.hasClass('collapsed'))
-            ok(target2.hasClass('collapsed'))
-            ok(!target3.hasClass('collapsed'))
+            ok(target1.hasClass('Animation--collapsed'))
+            ok(target2.hasClass('Animation--collapsed'))
+            ok(!target3.hasClass('Animation--collapsed'))
 
             start()
           })

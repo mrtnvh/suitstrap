@@ -81,7 +81,7 @@
 	$("[data-toggle=popover]").popover()
 
 	// button state demo
-	$('#fat-btn').click(function () {
+	$('#fat-button').click(function () {
 		var btn = $(this)
 		btn.button('loading')
 		setTimeout(function () {
