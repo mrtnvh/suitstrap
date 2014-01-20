@@ -1,11 +1,69 @@
-# Bootstrap with SASS/Compass
+# Suitstrap
 
-Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development. This is a forked version with all the LESS replaced by SASS and the Compass framework and a methodology combination of [SUIT](https://github.com/suitcss/suit/blob/master/doc/README.md) & [SMACCS](http://smacss.com/).
+Another Bootstrap fork aiming for a more modular and semantically framework. With the help of [SUIT](https://github.com/suitcss/suit/blob/master/doc/README.md), [SMACCS](http://smacss.com/), [Sass](http://sass-lang.com), [Compass](http://compass-style.org).
 
-## In full development
-This thang is in full development, so documentation will follow when appropriate.
+To get started, check out [http://suitstrap.maartenvanhoof.be](http://suitstrap.maartenvanhoof.be)!
 
-## PEACE
+
+
+## Contributing
+
+Please read through our [contributing guidelines](https://github.com/twbs/suitstrap/blob/master/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
+
+More over, if your pull request contains JavaScript patches or features, you must include relevant unit tests. All HTML and CSS should conform to the custom [SUIT](http://github.com/vanhoofmaarten/code-guide) convention, slighty adapted and maintained by [Maarten Van Hoof](http://github.com/vanhoofmaarten).
+
+Editor preferences are available in the [editor config](.editorconfig) for easy use in common text editors. Read more and download plugins at [http://editorconfig.org](http://editorconfig.org).
+
+
+
+
+## Compiling CSS and JavaScript
+
+Bootstrap uses [Grunt](http://gruntjs.com/) with convenient methods for working with the framework. It's how we compile our code, run tests, and more. To use it, install the required dependencies as directed and then run some Grunt commands.
+
+### Install Grunt
+
+From the command line:
+
+1. Install `grunt-cli` globally with `npm install -g grunt-cli`.
+2. Navigate to the root `/bootstrap` directory, then run `npm install`. npm will look at [package.json](package.json) and automatically install the necessary local dependencies listed there.
+
+When completed, you'll be able to run the various Grunt commands provided from the command line.
+
+**Unfamiliar with `npm`? Don't have node installed?** That's a-okay. npm stands for [node packaged modules](http://npmjs.org/) and is a way to manage development dependencies through node.js. [Download and install node.js](http://nodejs.org/download/) before proceeding.
+
+### Available Grunt commands
+
+#### Build - `grunt`
+Run `grunt` to run tests locally and compile the CSS and JavaScript into `/dist`. **Uses [recess](http://twitter.github.io/recess/) and [UglifyJS](http://lisperator.net/uglifyjs/).**
+
+#### Only compile CSS and JavaScript - `grunt dist`
+`grunt dist` creates the `/dist` directory with compiled files. **Uses [recess](http://twitter.github.io/recess/) and [UglifyJS](http://lisperator.net/uglifyjs/).**
+
+#### Tests - `grunt test`
+Runs [JSHint](http://jshint.com) and [QUnit](http://qunitjs.com/) tests headlessly in [PhantomJS](http://phantomjs.org/) (used for CI).
+
+#### Watch - `grunt watch`
+This is a convenience method for watching just Less files and automatically building them whenever you save.
+
+### Troubleshooting dependencies
+
+Should you encounter problems with installing dependencies or running Grunt commands, uninstall all previous dependency versions (global and local). Then, rerun `npm install`.
+
+
+## Adaptor
+
+**Maarten Van Hoof**
+
++ [http://twitter.com/vanhoofmaarten](http://twitter.com/vanhoofmaarten)
++ [http://github.com/vanhoofmaarten](http://github.com/vanhoofmaarten)
+
+
+## Copyright and license
+
+Copyright 2014 Twitter, Inc under [the Apache 2.0 license](LICENSE).
+
+
 
 <!-- Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development, created and maintained by [Mark Otto](http://twitter.com/mdo) and [Jacob Thornton](http://twitter.com/fat).
 
