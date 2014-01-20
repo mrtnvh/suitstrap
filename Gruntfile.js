@@ -15,11 +15,10 @@ module.exports = function(grunt) {
 		banner: '/*!\n' +
 							' * Suitstrap <%= pkg.version %> by @vanhoofmaarten\n' +
 							' *\n' +
-							' * Forked from Bootstrap v3.0.0 by @fat and @mdo\n' +
 							' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
 							' * Licensed under <%= _.pluck(pkg.licenses, "url").join(", ") %>\n' +
 							' *\n' +
-							' * Designed and built with all the love in the world by @mdo and @fat.\n' +
+							' * Forked from Bootstrap v3.0.0 ,designed and built with all the love in the world by @mdo and @fat.\n' +
 							' */\n',
 		jqueryCheck: 'if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery") }\n\n',
 

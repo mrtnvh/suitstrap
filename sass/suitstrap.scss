@@ -4,10 +4,14 @@
 @import "variables.scss";
 @import "mixins/mixins.scss";
 
+
+
 /* Resets
    ========================================================================== */
 @import "utilities/normalize.scss";
 @import "utilities/print.scss";
+
+
 
 /* Base styles
    ========================================================================== */
@@ -26,13 +30,11 @@
 @import "base/Paragraphs.scss";
 @import "base/Tables.scss";
 
-/* Layout
-   ========================================================================== */
-@import "layout/grid.scss";
-@import "layout/layout.scss";
+
 
 /* Components
    ========================================================================== */
+@import "components/Grid.scss";
 @import "components/ComponentAnimations.scss";
 @import "components/Glyphicons.scss";
 @import "components/Dropdowns.scss";
@@ -56,6 +58,8 @@
 @import "components/Wells.scss";
 @import "components/Close.scss";
 
+
+
 /* Components w/ JavaScript
    ========================================================================== */
 @import "components/Modals.scss";
@@ -63,8 +67,9 @@
 @import "components/Popovers.scss";
 @import "components/Carousel.scss";
 
+
+
 /* Utilities
    ========================================================================== */
-
 @import "utilities/Utilities.scss";
 @import "utilities/ResponsiveUtilities.scss";

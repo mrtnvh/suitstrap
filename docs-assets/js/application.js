@@ -77,6 +77,17 @@
 		container: ".bs-docs-navbar .nav"
 	})
 
+	$('a[href^="#"]').on("click", function(a) {
+		a.preventDefault()
+		var b = this.hash,
+			c = $(b)
+		$("html, body").stop().animate({
+			scrollTop: c.offset().top
+		}, 400, "swing", function() {
+			window.location.hash = b
+		})
+	})
+
 	// popover demo
 	$("[data-toggle=popover]").popover()
 

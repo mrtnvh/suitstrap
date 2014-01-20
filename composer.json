@@ -1,12 +1,13 @@
 {
 	"name": "Suitstrap"
-	, "description": "Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development."
-	, "keywords": ["bootstrap", "css"]
-	, "homepage": "http://getbootstrap.com"
+	, "description": "Another Bootstrap fork aiming for a more modular and semantically framework. With the help of SUIT, Sass & Compass"
+	, "keywords": ["suitstrap", "bootstrap", "css", "sass", "SUIT"]
+	, "homepage": "http://suitstrap.maartenvanhoof.be/"
 	, "authors": [
+		"@vanhoofmaarten"
 		]
 	, "support": {
-			"issues": "https://github.com/vanhoofmaarten/bootstrap-compass/issues"
+			"issues": "https://github.com/vanhoofmaarten/suitstrap/issues"
 		}
 	, "license": "Apache-2.0"
 }
