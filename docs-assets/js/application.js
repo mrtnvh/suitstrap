@@ -82,7 +82,7 @@
 		var b = this.hash,
 			c = $(b)
 		$("html, body").stop().animate({
-			scrollTop: c.offset().top
+			scrollTop: c.offset().top - $(".Navbar--fixed--top").height() - 25
 		}, 400, "swing", function() {
 			window.location.hash = b
 		})
