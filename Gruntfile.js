@@ -3,7 +3,7 @@
 module.exports = function(grunt) {
 	"use strict";
 
-	var btoa = require('btoa')
+
 
 	/* Project configuration. */
 	grunt.initConfig({
@@ -18,9 +18,11 @@ module.exports = function(grunt) {
 							' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
 							' * Licensed under <%= _.pluck(pkg.licenses, "url").join(", ") %>\n' +
 							' *\n' +
-							' * Forked from Bootstrap v3.0.0 ,designed and built with all the love in the world by @mdo and @fat.\n' +
+							' * Forked from Bootstrap v3.0.0, designed and built with all the love in the world by @mdo and @fat.\n' +
 							' */\n',
 		jqueryCheck: 'if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery") }\n\n',
+
+
 
 	/* ==========================================================================
 		Clean
@@ -28,6 +30,8 @@ module.exports = function(grunt) {
 		clean: {
 			dist: ['dist']
 		},
+
+
 
 	/* ==========================================================================
 		JSHint
@@ -49,6 +53,8 @@ module.exports = function(grunt) {
 				src: ['docs-assets/js/application.js']
 			}
 		},
+
+
 
 	/* ==========================================================================
 		Concat
@@ -77,6 +83,8 @@ module.exports = function(grunt) {
 			}
 		},
 
+
+
 	/* ==========================================================================
 		Uglify
 		========================================================================== */
@@ -91,17 +99,23 @@ module.exports = function(grunt) {
 			}
 		},
 
+
+
 	/* ==========================================================================
-		Compass
+		Sass
 		========================================================================== */
-		compass: {
-			options: {
-				config: 'config.rb',
+		sass: {
+			options:{
+				sourceMap: false
 			},
 			development: {
-				src: ["sass/**/*.scss"]
+				files: {
+					'<%= src %>Css/suitstrap.css': '<%= src %>Sass/suitstrap.scss'
+				}
 			}
 		},
+
+
 
 	/* ==========================================================================
 		Minify CSS
@@ -119,6 +133,8 @@ module.exports = function(grunt) {
 			}
 		},
 
+
+
 	/* ==========================================================================
 		Copy
 		========================================================================== */
@@ -130,6 +146,8 @@ module.exports = function(grunt) {
 			}
 		},
 
+
+
 	/* ==========================================================================
 		Qunit
 		========================================================================== */
@@ -139,6 +157,8 @@ module.exports = function(grunt) {
 			},
 			files: ['js/tests/*.html']
 		},
+
+
 
 	/* ==========================================================================
 		Connect
@@ -151,6 +171,8 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+
+
 
 	/* ==========================================================================
 		Jekyll
@@ -176,6 +198,8 @@ module.exports = function(grunt) {
 			}
 		},
 
+
+
 	/* ==========================================================================
 		Validation
 		========================================================================== */
@@ -187,6 +211,8 @@ module.exports = function(grunt) {
 				src: ["_gh_pages/**/*.html"]
 			}
 		},
+
+
 
 	/* ==========================================================================
 		Watch
@@ -204,12 +230,11 @@ module.exports = function(grunt) {
 				files: '<%= jshint.test.src %>',
 				tasks: ['jshint:test', 'qunit']
 			},
-			compass:{
-				files: '<%= compass.development.src %>',
+			sass:{
+				files: ["sass/**/*.scss"],
 				tasks: [
-					'compass:development',
-					'cssmin:minify',
-					'jekyll:build'
+					'sass:development',
+					'cssmin:minify'
 				]
 			},
 			docs_js:{
@@ -238,41 +263,22 @@ module.exports = function(grunt) {
 	});
 
 
-	// These plugins provide necessary tasks.
-	grunt.loadNpmTasks('browserstack-runner');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-contrib-compass');
-	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-contrib-connect');
-	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-qunit');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-html-validation');
-	grunt.loadNpmTasks('grunt-jekyll');
-	grunt.loadNpmTasks('grunt-recess');
+	/*  Define used plugins
+		========================================================================== */
+	require('time-grunt')(grunt);
+	require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
+
+
+
 
 	// Docs HTML validation task
 	grunt.registerTask('validate-html', ['jekyll', 'validation']);
-
-	// Test task.
-	var testSubtasks = ['dist-css', 'jshint', 'qunit', 'validate-html'];
-	// Only run BrowserStack tests under Travis
-	if (process.env.TRAVIS) {
-		// Only run BrowserStack tests if this is a mainline commit in twbs/bootstrap, or you have your own BrowserStack key
-		if ((process.env.TRAVIS_REPO_SLUG === 'twbs/bootstrap' && process.env.TRAVIS_PULL_REQUEST === 'false') || process.env.TWBS_HAVE_OWN_BROWSERSTACK_KEY) {
-			testSubtasks.push('browserstack_runner');
-		}
-	}
-	grunt.registerTask('test', testSubtasks);
 
 	// JS distribution task.
 	grunt.registerTask('dist-js', ['concat', 'uglify']);
 
 	// CSS distribution task.
-	grunt.registerTask('dist-css', ['compass:development']);
+	grunt.registerTask('dist-css', ['sass:development']);
 
 	// Fonts distribution task.
 	grunt.registerTask('dist-fonts', ['copy']);

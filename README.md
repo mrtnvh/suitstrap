@@ -19,14 +19,14 @@ Editor preferences are available in the [editor config](.editorconfig) for easy 
 
 ## Compiling CSS and JavaScript
 
-Bootstrap uses [Grunt](http://gruntjs.com/) with convenient methods for working with the framework. It's how we compile our code, run tests, and more. To use it, install the required dependencies as directed and then run some Grunt commands.
+Suitstrap uses [Grunt](http://gruntjs.com/) with convenient methods for working with the framework. It's how we compile our code, run tests, and more. To use it, install the required dependencies as directed and then run some Grunt commands.
 
 ### Install Grunt
 
 From the command line:
 
 1. Install `grunt-cli` globally with `npm install -g grunt-cli`.
-2. Navigate to the root `/bootstrap` directory, then run `npm install`. npm will look at [package.json](package.json) and automatically install the necessary local dependencies listed there.
+2. Navigate to the root `/suitstrap` directory, then run `npm install`. npm will look at [package.json](package.json) and automatically install the necessary local dependencies listed there.
 
 When completed, you'll be able to run the various Grunt commands provided from the command line.
 
@@ -44,24 +44,11 @@ Run `grunt` to run tests locally and compile the CSS and JavaScript into `/dist`
 Runs [JSHint](http://jshint.com) and [QUnit](http://qunitjs.com/) tests headlessly in [PhantomJS](http://phantomjs.org/) (used for CI).
 
 #### Watch - `grunt watch`
-This is a convenience method for watching just Less files and automatically building them whenever you save.
+This is a convenience method for watching just Sass files and automatically building them whenever you save.
 
 ### Troubleshooting dependencies
 
 Should you encounter problems with installing dependencies or running Grunt commands, uninstall all previous dependency versions (global and local). Then, rerun `npm install`.
-
-
-## Adaptor
-
-**Maarten Van Hoof**
-
-+ [http://twitter.com/vanhoofmaarten](http://twitter.com/vanhoofmaarten)
-+ [http://github.com/vanhoofmaarten](http://github.com/vanhoofmaarten)
-
-
-## Copyright and license
-
-Copyright 2014 Twitter, Inc under [the Apache 2.0 license](LICENSE).
 
 
 
@@ -188,7 +175,7 @@ Keep track of development and community news.
 * Read and subscribe to the [The Official Bootstrap Blog](http://blog.getbootstrap.com).
 * Have a question that's not a feature request or bug report? [Ask on the mailing list.](http://groups.google.com/group/twitter-bootstrap)
 * Chat with fellow Bootstrappers in IRC. On the `irc.freenode.net` server, in the `##twitter-bootstrap` channel.
-
+-->
 
 
 
@@ -222,7 +209,12 @@ For more information on SemVer, please visit [http://semver.org/](http://semver.
 + [http://twitter.com/fat](http://twitter.com/fat)
 + [http://github.com/fat](http://github.com/fat)
 
+## Adaptor
 
+**Maarten Van Hoof**
+
++ [http://twitter.com/vanhoofmaarten](http://twitter.com/vanhoofmaarten)
++ [http://github.com/vanhoofmaarten](http://github.com/vanhoofmaarten)
 
 ## Copyright and license
 
