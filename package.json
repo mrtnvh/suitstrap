@@ -1,7 +1,7 @@
 {
   "name": "Suitstrap",
   "slug": "suitstrap",
-  "description": "Another Bootstrap fork aiming for a more modular and semantically framework. With the help, SUIT CSS, Sass, Compass.",
+  "description": "Bootstrap fork aiming for a more modular and semantically framework. With the help of SUIT CSS conventions and Sass.",
   "version": "0.2.0-alpha",
   "keywords": [
     "suitstrap",
@@ -9,8 +9,11 @@
     "css",
     "sass"
   ],
-  "homepage": "",
-  "author": "@vanhoofmaarten",
+  "homepage": "http://suitstrap.maartenvanhoof.be",
+  "author": {
+  	"twitter": "@vanhoofmaarten",
+  	"name": "Maarten Van Hoof"
+  },
   "scripts": {
     "test": "grunt test"
   },
@@ -23,28 +26,28 @@
   },
   "licenses": [
     {
-      "type": "Apache-2.0",
-      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+      "type": "MIT",
+      "url": "https://github.com/vanhoofmaarten/suitstrap/blob/master/LICENSE"
     }
   ],
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-autoprefixer": "^1.0.1",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-concat": "^0.5.0",
-    "grunt-contrib-connect": "^0.8.0",
-    "grunt-contrib-copy": "^0.5.0",
-    "grunt-contrib-cssmin": "^0.10.0",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-qunit": "^0.5.2",
-    "grunt-contrib-uglify": "^0.5.1",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-html-validation": "^0.1.18",
-    "grunt-imageoptim": "^1.4.1",
-    "grunt-jekyll": "^0.4.2",
-    "grunt-rename": "^0.1.4",
-    "grunt-sass": "^0.14.1",
-    "load-grunt-tasks": "^0.6.0",
-    "time-grunt": "^1.0.0"
+    "grunt": "~0.4.5",
+    "grunt-autoprefixer": "~1.0.1",
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-contrib-concat": "~0.5.0",
+    "grunt-contrib-connect": "~0.8.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-cssmin": "~0.10.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-qunit": "~0.5.2",
+    "grunt-contrib-uglify": "~0.5.1",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-html-validation": "~0.1.18",
+    "grunt-imageoptim": "~1.4.1",
+    "grunt-jekyll": "~0.4.2",
+    "grunt-rename": "~0.1.4",
+    "grunt-sass": "~0.14.1",
+    "load-grunt-tasks": "~0.6.0",
+    "time-grunt": "~1.0.0"
   }
 }

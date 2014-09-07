@@ -1,6 +1,7 @@
 # Ignore compiled docs
 _gh_pages
 _site
+.ruby-version
 
 # Numerous always-ignore extensions
 *.diff
@@ -28,6 +29,7 @@ Thumbs.db
 nbproject
 *.sublime-project
 *.sublime-workspace
+.idea
 
 # Komodo
 *.komodoproject
@@ -43,4 +45,4 @@ validation-report.json
 .CVS
 .idea
 node_modules
-random
+bower_components
