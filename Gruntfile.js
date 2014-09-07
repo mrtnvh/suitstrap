@@ -9,67 +9,102 @@
 module.exports = function(grunt) {
 	"use strict";
 
-	// Force use of Unix newlines
+	/* Force use of Unix newlines */
 	grunt.util.linefeed = '\n';
 
+	RegExp.quote = function(string) {
+		return string.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
+	};
 
 	/* Project configuration. */
 	grunt.initConfig({
 
-	/* ==========================================================================
-		Metadata
-		========================================================================== */
+		/* ==========================================================================
+		 * Metadata
+		 * ======================================================================== */
 		pkg: grunt.file.readJSON('package.json'),
 		banner: '/*!\n' +
-							' * Suitstrap <%= pkg.version %> by @vanhoofmaarten\n' +
-							' *\n' +
-							' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>\n' +
-							' * Licensed under <%= _.pluck(pkg.licenses, "url").join(", ") %>\n' +
-							' *\n' +
-							' * Forked from Bootstrap v3.0.0, designed and built with all the love in the world by @mdo and @fat.\n' +
-							' */\n',
-		jqueryCheck: 'if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery") }\n\n',
+			' * Suitstrap <%= pkg.version %> by @vanhoofmaarten\n' +
+			' *\n' +
+			' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>\n' +
+			' * Licensed under <%= _.pluck(pkg.licenses, "url").join(", ") %>\n' +
+			' *\n' +
+			' * Forked from Bootstrap v3.0.0, designed and built with all the love in the world by @mdo and @fat.\n' +
+			' */\n',
+		jqueryCheck: 'if (typeof jQuery === \'undefined\') { throw new Error(\'Suitstrap\\\'s JavaScript requires jQuery\') }\n\n',
 
 
 
-	/* ==========================================================================
-		Clean
-		========================================================================== */
+		/* ==========================================================================
+		 * Clean
+		 * ======================================================================== */
 		clean: {
-			dist: ['dist']
+			dist: ['dist'],
+			docs: 'docs/dist'
 		},
 
 
 
-	/* ==========================================================================
-		JSHint
-		========================================================================== */
+		/* ==========================================================================
+		 * JSHint
+		 * ======================================================================== */
 		jshint: {
 			options: {
 				jshintrc: 'js/.jshintrc'
 			},
-			gruntfile: {
-				src: 'Gruntfile.js'
+			grunt: {
+				options: {
+					jshintrc: 'grunt/.jshintrc'
+				},
+				src: ['Gruntfile.js', 'grunt/*.js']
 			},
-			src: {
-				src: ['js/*.js']
+			core: {
+				src: 'js/*.js'
 			},
 			test: {
-				src: ['js/tests/unit/*.js']
+				options: {
+					jshintrc: 'js/tests/unit/.jshintrc'
+				},
+				src: 'js/tests/unit/*.js'
 			},
-			docs:{
-				src: ['docs-assets/js/application.js']
+			assets: {
+				src: ['docs/assets/js/src/*.js', 'docs/assets/js/*.js', '!docs/assets/js/*.min.js']
+			}
+		},
+
+
+		/* ==========================================================================
+		 * JSCS // JavaScript Code Style checker
+		 * ======================================================================== */
+		jscs: {
+			options: {
+				config: 'js/.jscsrc'
+			},
+			grunt: {
+				src: '<%= jshint.grunt.src %>'
+			},
+			core: {
+				src: '<%= jshint.core.src %>'
+			},
+			test: {
+				src: '<%= jshint.test.src %>'
+			},
+			assets: {
+				options: {
+					requireCamelCaseOrUpperCaseIdentifiers: null
+				},
+				src: '<%= jshint.assets.src %>'
 			}
 		},
 
 
 
-	/* ==========================================================================
-		Concat
-		========================================================================== */
+		/* ==========================================================================
+		 * Concat
+		 * ======================================================================== */
 		concat: {
 			options: {
-				banner: '<%= banner %><%= jqueryCheck %>',
+				banner: '<%= banner %>\n<%= jqueryCheck %>',
 				stripBanners: false
 			},
 			bootstrap: {
@@ -93,27 +128,59 @@ module.exports = function(grunt) {
 
 
 
-	/* ==========================================================================
-		Uglify
-		========================================================================== */
+		/* ==========================================================================
+		 * Uglify
+		 * ======================================================================== */
 		uglify: {
 			options: {
 				banner: '<%= banner %>',
 				report: 'min'
 			},
-			bootstrap: {
-				src: ['<%= concat.bootstrap.dest %>'],
+			core: {
+				src: '<%= concat.bootstrap.dest %>',
 				dest: 'dist/js/<%= pkg.slug %>.min.js'
+			},
+			customize: {
+				src: [
+					'docs/assets/js/vendor/less.min.js',
+					'docs/assets/js/vendor/jszip.min.js',
+					'docs/assets/js/vendor/uglify.min.js',
+					'docs/assets/js/vendor/blob.js',
+					'docs/assets/js/vendor/filesaver.js',
+					'docs/assets/js/raw-files.min.js',
+					'docs/assets/js/src/customizer.js'
+				],
+				dest: 'docs/assets/js/customize.min.js'
+			},
+			docsJs: {
+				// NOTE: This src list is duplicated in footer.html; if making changes here, be sure to update the other copy too.
+				src: [
+					'docs/assets/js/vendor/holder.js',
+					'docs/assets/js/vendor/ZeroClipboard.min.js',
+					'docs/assets/js/src/application.js'
+				],
+				dest: 'docs/assets/js/docs.min.js'
 			}
 		},
 
 
+		/* ==========================================================================
+		 * Qunit
+		 * ======================================================================== */
+		qunit: {
+			options: {
+				inject: 'js/tests/unit/phantom.js'
+			},
+			files: 'js/tests/index.html'
+		},
 
-	/* ==========================================================================
-		Sass
-		========================================================================== */
+
+
+		/* ==========================================================================
+		 * Sass
+		 * ======================================================================== */
 		sass: {
-			options:{
+			options: {
 				sourceMap: false
 			},
 			development: {
@@ -125,52 +192,147 @@ module.exports = function(grunt) {
 
 
 
-	/* ==========================================================================
-		Minify CSS
-		========================================================================== */
+		/* ==========================================================================
+		 * Autoprefixer
+		 * ======================================================================== */
+		autoprefixer: {
+			options: {
+				browsers: [
+					'Android 2.3',
+					'Android >= 4',
+					'Chrome >= 20',
+					'Firefox >= 24', // Firefox 24 is the latest ESR
+					'Explorer >= 8',
+					'iOS >= 6',
+					'Opera >= 12',
+					'Safari >= 6'
+				]
+			},
+			core: {
+				options: {
+					map: true
+				},
+				src: 'dist/css/<%= pkg.slug %>.css'
+			},
+			theme: {
+				options: {
+					map: true
+				},
+				src: 'dist/css/<%= pkg.slug %>-theme.css'
+			},
+			docs: {
+				src: 'docs/assets/css/src/docs.css'
+			},
+			examples: {
+				expand: true,
+				cwd: 'docs/examples/',
+				src: ['**/*.css'],
+				dest: 'docs/examples/'
+			}
+		},
+
+
+
+		/* ==========================================================================
+		 * CSS Lint
+		 * ======================================================================== */
+		csslint: {
+			options: {
+				csslintrc: 'sass/.csslintrc'
+			},
+			dist: [
+				'dist/css/<%= pkg.slug %>.css',
+				'dist/css/<%= pkg.slug %>-theme.css'
+			],
+			examples: [
+				'docs/examples/**/*.css'
+			],
+			docs: {
+				options: {
+					ids: false,
+					'overqualified-elements': false
+				},
+				src: 'docs/assets/css/src/docs.css'
+			}
+		},
+
+
+
+		/* ==========================================================================
+		 * Minify CSS
+		 * ======================================================================== */
 		cssmin: {
 			options: {
+				compatibility: 'ie8',
+				keepSpecialComments: '*',
+				noAdvanced: true,
 				banner: '<%= banner %>',
 			},
-			minify: {
+			minifyCore: {
+				src: 'dist/css/<%= pkg.slug %>.css',
+				dest: 'dist/css/<%= pkg.slug %>.min.css'
+			},
+			minifyTheme: {
+				src: 'dist/css/<%= pkg.slug %>-theme.css',
+				dest: 'dist/css/<%= pkg.slug %>-theme.min.css'
+			},
+			docs: {
+				src: [
+					'docs/assets/css/src/docs.css',
+					'docs/assets/css/src/pygments-manni.css'
+				],
+				dest: 'docs/assets/css/docs.min.css'
+			}
+		},
+
+
+
+		/* ==========================================================================
+		 * Reorder CSS
+		 * ======================================================================== */
+		csscomb: {
+			options: {
+				config: 'sass/.csscomb.json'
+			},
+			dist: {
 				expand: true,
 				cwd: 'dist/css/',
 				src: ['*.css', '!*.min.css'],
-				dest: 'dist/css/',
-				ext: '.min.css'
+				dest: 'dist/css/'
+			},
+			examples: {
+				expand: true,
+				cwd: 'docs/examples/',
+				src: '**/*.css',
+				dest: 'docs/examples/'
+			},
+			docs: {
+				src: 'docs/assets/css/src/docs.css',
+				dest: 'docs/assets/css/src/docs.css'
 			}
 		},
 
 
 
-	/* ==========================================================================
-		Copy
-		========================================================================== */
+		/* ==========================================================================
+		 * Copy
+		 * ======================================================================== */
 		copy: {
 			fonts: {
-				expand: true,
-				src: ["fonts/*"],
+				src: 'fonts/*',
 				dest: 'dist/'
+			},
+			docs: {
+				src: 'dist/*/*',
+				dest: 'docs/'
 			}
 		},
 
 
 
-	/* ==========================================================================
-		Qunit
-		========================================================================== */
-		qunit: {
-			options: {
-				inject: 'js/tests/unit/phantom.js'
-			},
-			files: ['js/tests/*.html']
-		},
-
-
-
-	/* ==========================================================================
-		Connect
-		========================================================================== */
+		/* ==========================================================================
+		 * Connect
+		 * ======================================================================== */
 		connect: {
 			server: {
 				options: {
@@ -182,139 +344,154 @@ module.exports = function(grunt) {
 
 
 
-	/* ==========================================================================
-		Jekyll
-		========================================================================== */
+		/* ==========================================================================
+		 * Jekyll
+		 * ======================================================================== */
 		jekyll: {
-			docs: {
-
-			},
-			build: {
-				options: {
-					dest: '_gh_pages',
-					config: '_config.yml'
-				}
-			},
-			serve: {
-				options: {
-					serve: true,
-					dest: '_gh_pages',
-					drafts: true,
-					server_port: 5000,
-					exclude: ['node_modules', 'less'],
-				}
-			}
+			docs: {},
 		},
 
 
 
-	/* ==========================================================================
-		Validation
-		========================================================================== */
+		/* ==========================================================================
+		 * Validation
+		 * ======================================================================== */
 		validation: {
 			options: {
-				reset: true
+				charset: 'utf-8',
+				doctype: 'HTML5',
+				failHard: true,
+				reset: true,
+				relaxerror: [
+					'Bad value X-UA-Compatible for attribute http-equiv on element meta.',
+					'Element img is missing required attribute src.',
+					'Attribute autocomplete not allowed on element input at this point.',
+					'Attribute autocomplete not allowed on element button at this point.'
+				]
 			},
 			files: {
-				src: ["_gh_pages/**/*.html"]
+				src: '_gh_pages/**/*.html'
 			}
 		},
 
 
 
-	/* ==========================================================================
-		Watch
-		========================================================================== */
+		/* ==========================================================================
+		 * Find and replace
+		 * ======================================================================== */
+		sed: {
+			versionNumber: {
+				pattern: (function() {
+					var old = grunt.option('oldver');
+					return old ? RegExp.quote(old) : old;
+				})(),
+				replacement: grunt.option('newver'),
+				recursive: true
+			}
+		},
+
+
+
+		/* ==========================================================================
+		 * Watch
+		 * ======================================================================== */
 		watch: {
-			gruntfile: {
-				files: '<%= jshint.gruntfile.src %>',
-				tasks: ['jshint:gruntfile']
+			grunt : {
+				files: '<%= jshint.grunt.src %>',
+				tasks: ['jshint:grunt']
 			},
 			src: {
-				files: '<%= jshint.src.src %>',
-				tasks: ['jshint:src', 'qunit']
+				files: '<%= jshint.core.src %>',
+				tasks: ['jshint:src', 'qunit', 'concat']
 			},
 			test: {
 				files: '<%= jshint.test.src %>',
 				tasks: ['jshint:test', 'qunit']
 			},
-			sass:{
+			sass: {
 				files: ["sass/**/*.scss"],
 				tasks: [
 					'sass:development',
 					'cssmin:minify'
 				]
-			},
-			docs_js:{
-				files: ['<%= jshint.docs.src %>', '<%= concat.bootstrap.src %>'],
-				tasks: ['jshint:docs', 'dist-js']
-			},
-			docs:{
-				files: [
-					'_includes/**/*.html',
-					'_layouts/**/*.html',
-					'*.html',
-					'docs/**/*.*',
-					'docs-assets/**/*.*'
-				],
-				tasks: ['jekyll:build']
-			},
-			livereload: {
-				options: {
-					livereload: true
-				},
-				files: [
-					'_gh_pages/**/*'
-				]
 			}
-		}
+		},
+
+
+
 	});
+
 
 
 	/*  Define used plugins
 		========================================================================== */
 	require('time-grunt')(grunt);
-	require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
+	require('load-grunt-tasks')(grunt, {
+		scope: 'devDependencies'
+	});
 
 
 
+	/*  Define tasks
+		========================================================================== */
 
 	// Docs HTML validation task
 	grunt.registerTask('validate-html', ['jekyll', 'validation']);
 
+	var runSubset = function(subset) {
+		return !process.env.TWBS_TEST || process.env.TWBS_TEST === subset;
+	};
+	var isUndefOrNonZero = function(val) {
+		return val === undefined || val !== '0';
+	};
+
+	// Test task.
+	var testSubtasks = [];
+
+	// Skip core tests if running a different subset of the test suite
+	if (runSubset('core')) {
+		testSubtasks = testSubtasks.concat(['dist-css', 'dist-js', 'csslint:dist', 'jshint:core', 'jshint:test', 'jshint:grunt', 'jscs:core', 'jscs:test', 'jscs:grunt', 'qunit', 'docs']);
+	}
+
+	// Skip HTML validation if running a different subset of the test suite
+	if (runSubset('validate-html') &&
+		// Skip HTML5 validator on Travis when [skip validator] is in the commit message
+		isUndefOrNonZero(process.env.TWBS_DO_VALIDATOR)) {
+		testSubtasks.push('validate-html');
+	}
+
+	grunt.registerTask('test', testSubtasks);
+
 	// JS distribution task.
-	grunt.registerTask('dist-js', ['concat', 'uglify']);
+	grunt.registerTask('dist-js', ['concat', 'uglify:core']);
 
 	// CSS distribution task.
-	grunt.registerTask('dist-css', ['sass:development']);
-
-	// Fonts distribution task.
-	grunt.registerTask('dist-fonts', ['copy']);
+	grunt.registerTask('sass-compile', ['sass:compileCore', 'sass:compileTheme']);
+	grunt.registerTask('dist-css', ['sass-compile', 'autoprefixer:core', 'autoprefixer:theme', 'csscomb:dist', 'cssmin:minifyCore', 'cssmin:minifyTheme']);
 
 	// Full distribution task.
-	grunt.registerTask('dist', ['clean', 'dist-css', 'dist-fonts', 'dist-js']);
+	grunt.registerTask('dist', ['clean:dist', 'dist-css', 'copy:fonts', 'dist-js']);
 
 	// Default task.
-	grunt.registerTask('default', ['test', 'dist', 'build-customizer']);
+	grunt.registerTask('default', ['clean:dist', 'copy:fonts', 'test']);
+
+	// Version numbering task.
+	// grunt change-version-number --oldver=A.B.C --newver=X.Y.Z
+	// This can be overzealous, so its changes should always be manually reviewed!
+	grunt.registerTask('change-version-number', 'sed');
 
 	// task for building customizer
-	grunt.registerTask('build-customizer', 'Add scripts/sass files to customizer.', function () {
-		var fs = require('fs')
+	// grunt.registerTask('build-customizer', ['build-customizer-html', 'build-raw-files']);
+	// grunt.registerTask('build-customizer-html', 'jade');
+	// grunt.registerTask('build-raw-files', 'Add scripts/less files to customizer.', function() {
+	// 	var banner = grunt.template.process('<%= banner %>');
+	// 	generateRawFiles(grunt, banner);
+	// });
 
-		function getFiles(type) {
-			var files = {}
-			fs.readdirSync(type)
-				.filter(function (path) {
-					return type == 'fonts' ? true : new RegExp('\\.' + type + '$').test(path)
-				})
-				.forEach(function (path) {
-					var fullPath = type + '/' + path
-					return files[path] = (type == 'fonts' ? btoa(fs.readFileSync(fullPath)) : fs.readFileSync(fullPath, 'utf8'))
-				})
-			return 'var __' + type + ' = ' + JSON.stringify(files) + '\n'
-		}
-
-		var files = getFiles('js') + getFiles('less') + getFiles('fonts')
-		fs.writeFileSync('docs-assets/js/raw-files.js', files)
-	});
+	// Docs task.
+	grunt.registerTask('docs-css', ['autoprefixer:docs', 'autoprefixer:examples', 'csscomb:docs', 'csscomb:examples', 'cssmin:docs']);
+	grunt.registerTask('lint-docs-css', ['csslint:docs', 'csslint:examples']);
+	grunt.registerTask('docs-js', ['uglify:docsJs', 'uglify:customize']);
+	grunt.registerTask('lint-docs-js', ['jshint:assets', 'jscs:assets']);
+	grunt.registerTask('docs', ['docs-css', 'lint-docs-css', 'docs-js', 'lint-docs-js', 'clean:docs', 'copy:docs', 'build-customizer']);
 };
