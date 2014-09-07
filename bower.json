@@ -1,9 +1,28 @@
 {
 	"name": "suitstrap",
+	"description": "Bootstrap fork aiming for a more modular and semantically framework. With the help of SUIT CSS conventions and Sass.",
 	"version": "0.2.0-alpha",
-	"main": ["./dist/js/suitstrap.js", "./dist/css/suitstrap.css", "./dist/fonts/*"],
+	"keywords": [
+		"suitstrap",
+		"bootstrap",
+		"css",
+		"sass",
+		"mobile-first",
+		"responsive",
+		"front-end",
+		"framework",
+		"web"
+	],
+	"homepage": "http://suitstrap.maartenvanhoof.be",
 	"ignore": [
-			"**/.*"
+		"**/.*"
+		"_config.yml",
+		"CNAME",
+		"composer.json",
+		"CONTRIBUTING.md",
+		"docs",
+		"js/tests",
+		"test-infra"
 	],
 	"dependencies": {
 		"jquery": ">= 1.9.0"

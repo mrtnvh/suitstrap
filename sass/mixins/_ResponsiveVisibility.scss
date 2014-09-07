@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Responsive utilities
+   ========================================================================== */
+
+/**
+ * More easily include all the states for responsive-utilities.less.
+ */
+
+@mixin ResponsiveVisibility() {
+	display: block !important;
+
+	table& {
+		display: table;
+	}
+
+	tr& {
+		display: table-row !important;
+	}
+
+	th&,
+	td& {
+		display: table-cell !important;
+	}
+}
+
+@mixin ResponsiveInvisibility() {
+	display: none !important;
+}

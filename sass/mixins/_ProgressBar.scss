@@ -1,0 +1,11 @@
+/* ==========================================================================
+   Progress bars
+   ========================================================================== */
+
+@mixin ProgressBarVariant($color) {
+	background-color: $color;
+
+	.Progress--striped & {
+		@include Gradient--striped;
+	}
+}

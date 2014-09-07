@@ -1,0 +1,10 @@
+/* ==========================================================================
+   Contextual backgrounds
+   ========================================================================== */
+
+@mixin BackgroundVariant($color){
+	background-color: @color;
+	a#{&}:hover {
+		background-color: darken(@color, 10%);
+	}
+}

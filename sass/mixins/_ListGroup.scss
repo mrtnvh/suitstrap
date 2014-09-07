@@ -1,0 +1,31 @@
+/* ==========================================================================
+   List Groups
+   ========================================================================== */
+
+@mixin ListGroupItemVariant($state, $background, $color) {
+	.ListGroup-item-#{$state} {
+		color: $color;
+		background-color: $background;
+
+		a#{&} {
+			color: $color;
+
+			.ListGroup-item-heading {
+				color: inherit;
+			}
+
+			&:hover,
+			&:focus {
+				color: $color;
+				background-color: darken($background, 5%);
+			}
+			&.is-active,
+			&.is-active:hover,
+			&.is-active:focus {
+				color: #fff;
+				background-color: $color;
+				border-color: $color;
+			}
+		}
+	}
+}

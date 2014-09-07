@@ -1,8 +1,51 @@
+/*
+ * Suitstrap's Styles
+ * http://suitstrap.maartenvanhoof.be/
+ *
+ * Copyright 2013-2014 Maarten Van Hoof
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+
 /* Core variables and mixins
    ========================================================================== */
-@import "compass";
 @import "variables.scss";
 @import "mixins/mixins.scss";
+
+	/* Utilities */
+	@import "mixins/Hide-text.scss";
+	@import "mixins/Image.scss";
+	@import "mixins/Labels.scss";
+	@import "mixins/ResetFilter.scss";
+	@import "mixins/Resize.scss";
+	@import "mixins/ResponsiveVisibility.scss";
+	@import "mixins/Size.scss";
+	@import "mixins/TabFocus.scss";
+	@import "mixins/TableRow.scss";
+	@import "mixins/TextEmphasis.scss";
+	@import "mixins/TextOverflow.scss";
+
+	/* Components */
+	@import "mixins/Alerts.scss";
+	@import "mixins/Buttons.scss";
+	@import "mixins/Panels.scss";
+	@import "mixins/Pagination.scss";
+	@import "mixins/ListGroup.scss";
+	@import "mixins/Forms.scss";
+	@import "mixins/NavDivider.scss";
+	@import "mixins/ProgressBar.scss";
+	@import "mixins/TableRow.less";
+
+	/* Skins */
+	@import "mixins/BackgroundVariant.scss";
+	@import "mixins/BorderRadius.scss";
+	@import "mixins/Gradients.scss";
+
+	/* Layout */
+	@import "mixins/Clearfix.scss";
+	@import "mixins/CenterBlock.scss";
+	@import "mixins/NavVerticalAlign.scss";
+	@import "mixins/Grid.scss";
 
 
 
