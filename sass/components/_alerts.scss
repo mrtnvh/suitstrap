@@ -36,11 +36,11 @@
  * Expand the right padding and account for the close button's positioning.
  */
 
-.Alert--dismissable {
+.Alert--dismissible {
  padding-right: ($alert-padding + 20);
 
 	/* Adjust close link position */
-	.Alert--dismissable-close {
+	.Close {
 		position: relative;
 		top: -2px;
 		right: -21px;

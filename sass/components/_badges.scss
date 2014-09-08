@@ -3,48 +3,53 @@
    ========================================================================== */
 
 .Badge {
-    display: inline-block;
-    min-width: 10px;
-    padding: 3px 7px;
-    font-size: $font-size-small;
-    font-weight: $badge-font-weight;
-    color: $badge-color;
-    line-height: $badge-line-height;
-    vertical-align: baseline;
-    white-space: nowrap;
-    text-align: center;
-    background-color: $badge-bg;
-    border-radius: $badge-border-radius;
+	display: inline-block;
+	min-width: 10px;
+	padding: 3px 7px;
+	font-size: $font-size-small;
+	font-weight: $badge-font-weight;
+	color: $badge-color;
+	line-height: $badge-line-height;
+	vertical-align: baseline;
+	white-space: nowrap;
+	text-align: center;
+	background-color: $badge-bg;
+	border-radius: $badge-border-radius;
 
-    /* Empty badges collapse automatically (not available in IE8) */
-    &:empty {
-        display: none;
-    }
+	/* Empty badges collapse automatically (not available in IE8) */
+	&:empty {
+		display: none;
+	}
+
+	/* Quick fix for labels/badges in buttons */
+	.Button & {
+		position: relative;
+		top: -1px;
+	}
+
+	.Button-extraSmall & {
+		top: 0;
+		padding: 1px 5px;
+	}
+
+	/* Account for counters in navs */
+	a.ListGroup-item.is-active > &,
+	.Nav--pills > .is-active > a > & {
+		color: $badge-active-color;
+		background-color: $badge-active-bg;
+	}
+
+	.Nav--pills > li > a > & {
+		margin-left: 3px;
+	}
 }
 
 /* Hover state, but only for links */
 a.Badge {
-    &:hover,
-    &:focus {
-        color: $badge-link-hover-color;
-        text-decoration: none;
-        cursor: pointer;
-    }
-}
-
-/* Quick fix for labels/badges in buttons */
-.Button .Badge {
-    position: relative;
-    top: -1px;
-}
-
-/* Account for counters in navs */
-a.ListGroup-item.is-active > .Badge,
-.Nav--pills > .is-active > a > .Badge {
-    color: $badge-active-color;
-    background-color: $badge-active-bg;
-}
-
-.Nav--pills > li > a > .Badge {
-    margin-left: 3px;
+	&:hover,
+	&:focus {
+		color: $badge-link-hover-color;
+		text-decoration: none;
+		cursor: pointer;
+	}
 }

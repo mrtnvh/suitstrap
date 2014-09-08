@@ -17,16 +17,22 @@
 /* #222 */
 /* #333 */
 /* #555 */
-/* #999 */
+/* #777 */
 /* #eee */
 /* Brand colors
 	   ========================================================================== */
 /* Scaffolding
 	   ========================================================================== */
+/* Background color for `<body>`. */
+/* Global text color on `<body>`. */
 /* Links
 	   ========================================================================== */
+/* Global textual link color. */
+/* Link hover color set via `darken()` function. */
 /* Typography
 	   ========================================================================== */
+/* Font, line-height, and color for body text, headings, and more. */
+/* Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`. */
 /* Iconography
 	   ========================================================================== */
 /* Components
@@ -34,9 +40,6 @@
 /* Based on 14px font-size and 1.428 line-height (~20px to start) */
 /* Tables
 	   ========================================================================== */
-/* overall background-color */
-/* for striping */
-/* table and cell border */
 /* Buttons
 	   ========================================================================== */
 /* Forms
@@ -682,7 +685,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.5;
-  color: #444;
+  color: #555555;
   background-color: #fff; }
 
 /* Reset fonts for relevant elements
@@ -765,7 +768,7 @@ hr {
    ========================================================================== */
 abbr[title], abbr[data-original-title] {
   cursor: help;
-  border-bottom: 1px dotted #999999; }
+  border-bottom: 1px dotted #777777; }
 
 abbr.Initialism {
   font-size: 90%;
@@ -796,7 +799,7 @@ blockquote {
   blockquote small {
     display: block;
     line-height: 1.5;
-    color: #999999; }
+    color: #777777; }
     blockquote small:before {
       content: '\2014 \00A0';
       /* EM DASH, NBSP */ }
@@ -878,7 +881,7 @@ cite {
 
 /* Contextual emphasis */
 .Text--muted {
-  color: #999999; }
+  color: #777777; }
 
 .Text--primary {
   color: #86b35f; }
@@ -1005,13 +1008,13 @@ output {
   /* Internet Explorer 10+ */
   /* Safari and Chrome */ }
   .Form-control:-moz-placeholder {
-    color: #999999; }
+    color: #999; }
   .Form-control::-moz-placeholder {
-    color: #999999; }
+    color: #999; }
   .Form-control:-ms-input-placeholder {
-    color: #999999; }
+    color: #999; }
   .Form-control::-webkit-input-placeholder {
-    color: #999999; }
+    color: #999; }
 
 /**
  * Common form controls
@@ -1147,14 +1150,14 @@ input[type="radio"][disabled], fieldset[disabled] input[type="radio"], input[typ
     height: auto; }
 
 .Input--large, .InputGroup--large > .Form-control, .InputGroup--large > .InputGroup-addon, .InputGroup--large > .InputGroup-button > .Button {
-  height: 45px;
+  height: 46px;
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33;
   border-radius: 6px; }
   .Input--large select.Input--large, .Input--large .InputGroup--large > .Form-control, .InputGroup--large > .Input--large .Form-control, .Input--large .InputGroup--large > .InputGroup-addon, .InputGroup--large > .Input--large .InputGroup-addon, .Input--large .InputGroup--large > .InputGroup-button > .Button, .InputGroup--large > .InputGroup-button > .Input--large .Button, .Input--large .InputGroup--large > select.Form-control, .InputGroup--large > .Input--large select.Form-control, .Input--large .InputGroup--large > select.InputGroup-addon, .InputGroup--large > .Input--large select.InputGroup-addon, .Input--large .InputGroup--large > .InputGroup-button > select.Button, .InputGroup--large > .InputGroup-button > .Input--large select.Button {
-    height: 45px;
-    line-height: 45px; }
+    height: 46px;
+    line-height: 46px; }
   .Input--large textarea.Input--large, .Input--large .InputGroup--large > .Form-control, .InputGroup--large > .Input--large .Form-control, .Input--large .InputGroup--large > .InputGroup-addon, .InputGroup--large > .Input--large .InputGroup-addon, .Input--large .InputGroup--large > .InputGroup-button > .Button, .InputGroup--large > .InputGroup-button > .Input--large .Button, .Input--large .InputGroup--large > textarea.Form-control, .InputGroup--large > .Input--large textarea.Form-control, .Input--large .InputGroup--large > textarea.InputGroup-addon, .InputGroup--large > .Input--large textarea.InputGroup-addon, .Input--large .InputGroup--large > .InputGroup-button > textarea.Button, .InputGroup--large > .InputGroup-button > .Input--large textarea.Button, .Input--large select[multiple].Input--large, .Input--large .InputGroup--large > .Form-control, .InputGroup--large > .Input--large .Form-control, .Input--large .InputGroup--large > .InputGroup-addon, .InputGroup--large > .Input--large .InputGroup-addon, .Input--large .InputGroup--large > .InputGroup-button > .Button, .InputGroup--large > .InputGroup-button > .Input--large .Button, .Input--large .InputGroup--large > select[multiple].Form-control, .InputGroup--large > .Input--large select[multiple].Form-control, .Input--large .InputGroup--large > select[multiple].InputGroup-addon, .InputGroup--large > .Input--large select[multiple].InputGroup-addon, .Input--large .InputGroup--large > .InputGroup-button > select[multiple].Button, .InputGroup--large > .InputGroup-button > .Input--large select[multiple].Button {
     height: auto; }
 
@@ -1247,7 +1250,7 @@ input[type="radio"][disabled], fieldset[disabled] input[type="radio"], input[typ
   /* account for any element using help-block */
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #848484;
+  color: #959595;
   /* lighten the text some for contrast */ }
 
 /**
@@ -1328,7 +1331,7 @@ h1, h2, h3, h4, h5, h6, .u-h1, .u-h2, .u-h3, .u-h4, .u-h5, .u-h6 {
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .u-h1 small, .u-h2 small, .u-h3 small, .u-h4 small, .u-h5 small, .u-h6 small {
     font-weight: normal;
     line-height: 1;
-    color: #999999; }
+    color: #777777; }
 
 h1, h2, h3 {
   margin-top: 21px;
@@ -2751,7 +2754,7 @@ table td[class*="col-"], table th[class*="col-"] {
   .Dropdown-menu > .is-disabled > a {
     /* Nuke hover/focus effects */ }
     .Dropdown-menu > .is-disabled > a, .Dropdown-menu > .is-disabled > a:hover, .Dropdown-menu > .is-disabled > a:focus {
-      color: #999999; }
+      color: #777777; }
     .Dropdown-menu > .is-disabled > a:hover, .Dropdown-menu > .is-disabled > a:focus {
       text-decoration: none;
       background-color: transparent;
@@ -2777,7 +2780,7 @@ table td[class*="col-"], table th[class*="col-"] {
   padding: 3px 20px;
   font-size: 12px;
   line-height: 1.5;
-  color: #999999; }
+  color: #777777; }
 
 /* Backdrop to catch body clicks on mobile, etc.
    ========================================================================== */
@@ -2988,7 +2991,7 @@ table td[class*="col-"], table th[class*="col-"] {
     text-decoration: underline;
     background-color: transparent; }
   .Button--link[disabled]:hover, .Button--link[disabled]:focus, fieldset[disabled] .Button--link:hover, fieldset[disabled] .Button--link:focus {
-    color: #999999;
+    color: #777777;
     text-decoration: none; }
 
 /* Button Sizes
@@ -3348,9 +3351,9 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
         text-decoration: none;
         background-color: #eeeeee; }
     .Nav > li.is-disabled > a {
-      color: #999999; }
+      color: #777777; }
       .Nav > li.is-disabled > a:hover, .Nav > li.is-disabled > a:focus {
-        color: #999999;
+        color: #777777;
         text-decoration: none;
         background-color: transparent;
         cursor: not-allowed; }
@@ -3859,14 +3862,14 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
   /* Darken the responsive nav toggle */
   /* Dropdowns */ }
   .Navbar--inverse .Navbar-brand {
-    color: #999999; }
+    color: #777777; }
     .Navbar--inverse .Navbar-brand:hover, .Navbar--inverse .Navbar-brand:focus {
       color: #fff;
       background-color: transparent; }
   .Navbar--inverse .Navbar-text {
-    color: #999999; }
+    color: #777777; }
   .Navbar--inverse .Navbar-nav > li > a {
-    color: #999999; }
+    color: #777777; }
     .Navbar--inverse .Navbar-nav > li > a:hover, .Navbar--inverse .Navbar-nav > li > a:focus {
       color: #fff;
       background-color: transparent; }
@@ -3891,8 +3894,8 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
     border-top-color: #fff;
     border-bottom-color: #fff; }
   .Navbar--inverse .Navbar-nav > .Dropdown > a .Caret {
-    border-top-color: #999999;
-    border-bottom-color: #999999; }
+    border-top-color: #777777;
+    border-bottom-color: #777777; }
   .Navbar--inverse .Navbar-nav > .is-open > a .Caret, .Navbar--inverse .Navbar-nav > .is-open > a:hover .Caret, .Navbar--inverse .Navbar-nav > .is-open > a:focus .Caret {
     border-top-color: #fff;
     border-bottom-color: #fff; }
@@ -3902,7 +3905,7 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
       .Navbar--inverse .Navbar-nav .is-open .Dropdown-menu > .Dropdown-header {
         border-color: #090909; }
       .Navbar--inverse .Navbar-nav .is-open .Dropdown-menu > li > a {
-        color: #999999; }
+        color: #777777; }
         .Navbar--inverse .Navbar-nav .is-open .Dropdown-menu > li > a:hover, .Navbar--inverse .Navbar-nav .is-open .Dropdown-menu > li > a:focus {
           color: #fff;
           background-color: transparent; }
@@ -3913,7 +3916,7 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
         color: #444;
         background-color: transparent; } }
   .Navbar--inverse .Navbar-link {
-    color: #999999; }
+    color: #777777; }
     .Navbar--inverse .Navbar-link:hover {
       color: #fff; }
 
@@ -3934,7 +3937,7 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
       padding: 0 5px;
       color: #ccc; }
   .Breadcrumb > .is-active {
-    color: #999999; }
+    color: #777777; }
 
 /* ==========================================================================
    Pagination (multiple pages)
@@ -3973,7 +3976,7 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
     border-color: #86b35f;
     cursor: default; }
   .Pagination > .is-disabled > span, .Pagination > .is-disabled > span:hover, .Pagination > .is-disabled > span:focus, .Pagination > .is-disabled > a, .Pagination > .is-disabled > a:hover, .Pagination > .is-disabled > a:focus {
-    color: #999999;
+    color: #777777;
     background-color: #fff;
     border-color: #ddd;
     cursor: not-allowed; }
@@ -4033,7 +4036,7 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
   .Pager .is-previous > a, .Pager .is-previous > span {
     float: left; }
   .Pager .is-disabled > a, .Pager .is-disabled > a:hover, .Pager .is-disabled > a:focus, .Pager .is-disabled > span {
-    color: #999999;
+    color: #777777;
     background-color: #fff;
     cursor: not-allowed; }
 
@@ -4064,9 +4067,9 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
    ========================================================================== */
 /* Contextual variations (linked labels get darker on :hover) */
 .Label--default {
-  background-color: #999999; }
+  background-color: #777777; }
   .Label--default[href]:hover, .Label--default[href]:focus {
-    background-color: #808080; }
+    background-color: #5e5e5e; }
 
 .Label--primary {
   background-color: #86b35f; }
@@ -4107,30 +4110,30 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
   vertical-align: baseline;
   white-space: nowrap;
   text-align: center;
-  background-color: #999999;
+  background-color: #777777;
   border-radius: 10px;
-  /* Empty badges collapse automatically (not available in IE8) */ }
+  /* Empty badges collapse automatically (not available in IE8) */
+  /* Quick fix for labels/badges in buttons */
+  /* Account for counters in navs */ }
   .Badge:empty {
     display: none; }
+  .Button .Badge {
+    position: relative;
+    top: -1px; }
+  .Button-extraSmall .Badge {
+    top: 0;
+    padding: 1px 5px; }
+  a.ListGroup-item.is-active > .Badge, .Nav--pills > .is-active > a > .Badge {
+    color: #86b35f;
+    background-color: #fff; }
+  .Nav--pills > li > a > .Badge {
+    margin-left: 3px; }
 
 /* Hover state, but only for links */
 a.Badge:hover, a.Badge:focus {
   color: #fff;
   text-decoration: none;
   cursor: pointer; }
-
-/* Quick fix for labels/badges in buttons */
-.Button .Badge {
-  position: relative;
-  top: -1px; }
-
-/* Account for counters in navs */
-a.ListGroup-item.is-active > .Badge, .Nav--pills > .is-active > a > .Badge {
-  color: #86b35f;
-  background-color: #fff; }
-
-.Nav--pills > li > a > .Badge {
-  margin-left: 3px; }
 
 /* ==========================================================================
    Jumbotron
@@ -4187,7 +4190,7 @@ a.Thumbnail:hover, a.Thumbnail:focus {
 
 .Thumbnail .Caption {
   padding: 9px;
-  color: #444; }
+  color: #555555; }
 
 /* ==========================================================================
    Alerts
@@ -4215,10 +4218,10 @@ a.Thumbnail:hover, a.Thumbnail:focus {
  * Dismissable alerts
  * Expand the right padding and account for the close button's positioning.
  */
-.Alert--dismissable {
+.Alert--dismissible {
   padding-right: 35px;
   /* Adjust close link position */ }
-  .Alert--dismissable .Alert--dismissable-close {
+  .Alert--dismissible .Close {
     position: relative;
     top: -2px;
     right: -21px;
