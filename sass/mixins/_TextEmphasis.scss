@@ -2,10 +2,12 @@
    Text emphasis
    ========================================================================== */
 
-@mixin TextEmphasisVariant($color) {
+@mixin TextEmphasisVariant($parent: null) {
 	color: $color;
 
-	a#{&}:hover {
-		color: darken($color, 10%);
+	@if ($parent = null){
+		#{"a" + $parent + ":hover"} {
+			color: darken($color, 10%);
+		}
 	}
 }

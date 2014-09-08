@@ -27,14 +27,14 @@
 			> a,
 			> span {
 				margin-left: 0;
-				@include border-left-radius($border-radius-base);
+				@include BorderLeftRadius($border-radius-base);
 			}
 		}
 
 		&:last-child {
 			> a,
 			> span {
-				@include border-right-radius($border-radius-base);
+				@include BorderRightRadius($border-radius-base);
 			}
 		}
 	}

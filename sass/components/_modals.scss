@@ -28,11 +28,11 @@
 
 	/* When fading in the modal, animate it to slide down */
 	&.Animation--fade .Modal-dialog {
-		@include translate(0, -25%);
-		@include transition(transform 0.3s ease-out);
+		transform: translate( 0, -25%);
+		transition: transform 0.3s ease-out;
 	}
 	&.is-in .Modal-dialog {
-		@include translate(0, 0);
+		transform: translate( 0, 0);
 	}
 }
 
@@ -52,7 +52,7 @@
 	border: 1px solid $modal-content-fallback-border-color; /*old browsers fallback (ie8 etc) */
 	border: 1px solid $modal-content-border-color;
 	border-radius: $border-radius-large;
-	@include box-shadow(0 3px 9px rgba(0,0,0,.5));
+	box-shadow: 0 3px 9px rgba(0,0,0,.5);
 	background-clip: padding-box;
 
 	/* Remove focus outline from opened modal */
@@ -70,8 +70,8 @@
 	background-color: $modal-backdrop-bg;
 
 	/* Fade for backdrop */
-	&.Animation--fade { @include opacity(0); }
-	&.is-in { @include opacity(.5); }
+	&.Animation--fade { opacity: 0; }
+	&.is-in { opacity: .5; }
 }
 
 /**
@@ -140,7 +140,7 @@
 	}
 
 	.Modal-content {
-		@include box-shadow(0 5px 15px rgba(0,0,0,.5));
+		box-shadow: 0 5px 15px rgba(0,0,0,.5);
 	}
 
 }

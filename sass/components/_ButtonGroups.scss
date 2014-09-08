@@ -95,14 +95,14 @@
 .ButtonGroup > .Button:first-child {
 	margin-left: 0;
 	&:not(:last-child):not(.Dropdown-toggle) {
-		@include border-right-radius(0);
+		@include BorderRightRadius(0);
 	}
 }
 
 /* Need .Dropdown-toggle since :last-child doesn't apply given a .Dropdown-menu immediately after it */
 .ButtonGroup > .Button:last-child:not(:first-child),
 .ButtonGroup > .Dropdown-toggle:not(:first-child) {
-	@include border-left-radius(0);
+	@include BorderLeftRadius(0);
 }
 
 /* Custom edits for including BtnGroups within BtnGroups (useful for including dropdown buttons within a BtnGroup) */
@@ -117,12 +117,12 @@
 .ButtonGroup > .ButtonGroup:first-child {
 	> .Button:last-child,
 	> .Dropdown-toggle {
-		@include border-right-radius(0);
+		@include BorderRightRadius(0);
 	}
 }
 
 .ButtonGroup > .ButtonGroup:last-child > .Button:first-child {
-	@include border-left-radius(0);
+	@include BorderLeftRadius(0);
 }
 
 /* On active and open, don't show outline */
@@ -169,7 +169,7 @@
 * Remove the gradient and set the same inset shadow as the :active state
 */
 .ButtonGroup.is-open .Dropdown-toggle {
-	@include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+	box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
 }
 
 /* Reposition the caret */
@@ -226,12 +226,12 @@
 
 	&:first-child:not(:last-child) {
 		border-top-right-radius: $border-radius-base;
-		@include border-bottom-radius(0);
+		@include BorderBottomRadius(0);
 	}
 
 	&:last-child:not(:first-child) {
 		border-bottom-left-radius: $border-radius-base;
-		@include border-top-radius(0);
+		@include BorderTopRadius(0);
 	}
 }
 
@@ -242,12 +242,12 @@
 .ButtonGroup--vertical > .ButtonGroup:first-child {
 	> .Button:last-child,
 	> .Dropdown-toggle {
-		@include border-bottom-radius(0);
+		@include BorderBottomRadius(0);
 	}
 }
 
 .ButtonGroup--vertical > .ButtonGroup:last-child > .Button:first-child {
-	@include border-top-radius(0);
+	@include BorderTopRadius(0);
 }
 
 

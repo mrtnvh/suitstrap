@@ -36,7 +36,7 @@ label {
 
 /* Override content-box in Normalize (* isn't specific enough) */
 input[type="search"] {
-	@include box-sizing(border-box);
+	box-sizing: border-box;
 }
 
 /* Position radios and checkboxes better */
@@ -140,8 +140,8 @@ output {
 	background-image: none; /* Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214 */
 	border: 1px solid $input-border;
 	border-radius: $input-border-radius;
-	@include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
-	@include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 
 	/* Customize the `:focus` state to imitate native WebKit styles. */
 	@include FormControlFocus();
@@ -157,18 +157,17 @@ output {
 		cursor: not-allowed;
 		background-color: $input-bg-disabled;
 	}
-
-	@at-root fieldset[disabled]#{&} {
-		cursor: not-allowed;
-		background-color: $input-bg-disabled;
-	}
-
-	/* Reset height for `textarea`s */
-	@at-root textarea#{&} {
-		height: auto;
-	}
 }
 
+fieldset[disabled].Form-control {
+	cursor: not-allowed;
+	background-color: $input-bg-disabled;
+}
+
+/* Reset height for `textarea`s */
+textarea.Form-control {
+	height: auto;
+}
 
 
 /**
@@ -258,11 +257,27 @@ input[type="checkbox"],
 
 /* Form control sizing */
 .Input--small {
-	@include InputSize($input-height-small, $padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $border-radius-small);
+	@include InputSize(
+		$input-height-small,
+		$padding-small-vertical,
+		$padding-small-horizontal,
+		$font-size-small,
+		$line-height-small,
+		$border-radius-small,
+		".Input--small"
+	);
 }
 
 .Input--large {
-	@include InputSize($input-height-large, $padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large);
+	@include InputSize(
+		$input-height-large,
+		$padding-large-vertical,
+		$padding-large-horizontal,
+		$font-size-large,
+		$line-height-large,
+		$border-radius-large,
+		".Input--large"
+	);
 }
 
 

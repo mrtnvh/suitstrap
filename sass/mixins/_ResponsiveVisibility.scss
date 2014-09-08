@@ -6,19 +6,21 @@
  * More easily include all the states for responsive-utilities.less.
  */
 
-@mixin ResponsiveVisibility() {
-	display: block !important;
+@mixin ResponsiveVisibility($type: "block") {
 
-	table& {
+	@if ($type = block) {
+		display: block !important;
+	}
+
+	@if ($type = table) {
 		display: table;
 	}
 
-	tr& {
+	@if ($type = table-row) {
 		display: table-row !important;
 	}
 
-	th&,
-	td& {
+	@if ($type = table-cell) {
 		display: table-cell !important;
 	}
 }

@@ -9,7 +9,7 @@
 
 .Animation--fade {
 	opacity: 0;
-	@include transition(opacity .15s linear);
+	transition: opacity .15s linear;
 	&.is-in {
 		opacity: 1;
 	}
@@ -26,5 +26,5 @@
 	position: relative;
 	height: 0;
 	overflow: hidden;
-	@include transition(height .35s ease);
+	transition: height .35s ease;
 }

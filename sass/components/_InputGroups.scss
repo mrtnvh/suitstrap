@@ -5,21 +5,21 @@
 /* Base styles
    ========================================================================== */
 .InputGroup {
-    position: relative; /* For dropdowns */
-    display: table;
-    border-collapse: separate; /* prevent input groups from inheriting border styles from table cells when placed within a table */
+	position: relative; /* For dropdowns */
+	display: table;
+	border-collapse: separate; /* prevent input groups from inheriting border styles from table cells when placed within a table */
 
-    /* Undo padding and float of grid classes */
-    &.col {
-        float: none;
-        padding-left: 0;
-        padding-right: 0;
-    }
+	/* Undo padding and float of grid classes */
+	&.col {
+		float: none;
+		padding-left: 0;
+		padding-right: 0;
+	}
 
-    .Form-control {
-        width: 100%;
-        margin-bottom: 0;
-    }
+	.Form-control {
+		width: 100%;
+		margin-bottom: 0;
+	}
 }
 
 
@@ -49,18 +49,18 @@
 .InputGroup-addon,
 .InputGroup-button,
 .InputGroup .Form-control {
-    display: table-cell;
+	display: table-cell;
 
-    &:not(:first-child):not(:last-child) {
-        border-radius: 0;
-    }
+	&:not(:first-child):not(:last-child) {
+		border-radius: 0;
+	}
 }
 /* Addon and addon wrapper for buttons */
 .InputGroup-addon,
 .InputGroup-button {
-    width: 1%;
-    white-space: nowrap;
-    vertical-align: middle; /* Match the inputs */
+	width: 1%;
+	white-space: nowrap;
+	vertical-align: middle; /* Match the inputs */
 }
 
 
@@ -68,34 +68,34 @@
 /* Text input groups
    ========================================================================== */
 .InputGroup-addon {
-    padding: $padding-base-vertical $padding-base-horizontal;
-    font-size: $font-size-base;
-    font-weight: normal;
-    line-height: 1;
-    color: $input-color;
-    text-align: center;
-    background-color: $input-group-addon-bg;
-    border: 1px solid $input-group-addon-border-color;
-    border-radius: $border-radius-base;
+	padding: $padding-base-vertical $padding-base-horizontal;
+	font-size: $font-size-base;
+	font-weight: normal;
+	line-height: 1;
+	color: $input-color;
+	text-align: center;
+	background-color: $input-group-addon-bg;
+	border: 1px solid $input-group-addon-border-color;
+	border-radius: $border-radius-base;
 
-    /* Sizing */
-    &.Input--small {
-        padding: $padding-small-vertical $padding-small-horizontal;
-        font-size: $font-size-small;
-        border-radius: $border-radius-small;
-    }
+	/* Sizing */
+	&.Input--small {
+		padding: $padding-small-vertical $padding-small-horizontal;
+		font-size: $font-size-small;
+		border-radius: $border-radius-small;
+	}
 
-    &.Input--large {
-        padding: $padding-large-vertical $padding-large-horizontal;
-        font-size: $font-size-large;
-        border-radius: $border-radius-large;
-    }
+	&.Input--large {
+		padding: $padding-large-vertical $padding-large-horizontal;
+		font-size: $font-size-large;
+		border-radius: $border-radius-large;
+	}
 
-    /* Nuke default margins from checkboxes and radios to vertically center within. */
-    input[type="radio"],
-    input[type="checkbox"] {
-        margin-top: 0;
-    }
+	/* Nuke default margins from checkboxes and radios to vertically center within. */
+	input[type="radio"],
+	input[type="checkbox"] {
+		margin-top: 0;
+	}
 }
 
 /* Reset rounded corners */
@@ -104,11 +104,11 @@
 .InputGroup-button:first-child > .Button,
 .InputGroup-button:first-child > .Dropdown-toggle,
 .InputGroup-button:last-child > .Button:not(:last-child):not(.Dropdown-toggle) {
-    @include border-right-radius(0);
+	@include BorderRightRadius(0);
 }
 
 .InputGroup-addon:first-child {
-    border-right: 0;
+	border-right: 0;
 }
 
 .InputGroup .Form-control:last-child,
@@ -116,11 +116,11 @@
 .InputGroup-button:last-child > .Button,
 .InputGroup-button:last-child > .Dropdown-toggle,
 .InputGroup-button:first-child > .Button:not(:first-child) {
-    @include border-left-radius(0);
+	@include BorderLeftRadius(0);
 }
 
 .InputGroup-addon:last-child {
-    border-left: 0;
+	border-left: 0;
 }
 
 
@@ -128,27 +128,27 @@
 /* Button input groups
    ========================================================================== */
 .InputGroup-button {
-    position: relative;
-    white-space: nowrap;
+	position: relative;
+	white-space: nowrap;
 
-    /* Negative margin to only have a 1px border between the two */
-    &:first-child > .Button {
-        margin-right: -1px;
-    }
-    &:last-child > .Button {
-        margin-left: -1px;
-    }
+	/* Negative margin to only have a 1px border between the two */
+	&:first-child > .Button {
+		margin-right: -1px;
+	}
+	&:last-child > .Button {
+		margin-left: -1px;
+	}
 }
 
 .InputGroup-button > .Button {
-    position: relative;
-    /* Jankily prevent input button groups from wrapping */
-    + .Button {
-        margin-left: -4px;
-    }
-    /* Bring the "active" button to the front */
-    &:hover,
-    &:active {
-        z-index: 2;
-    }
+	position: relative;
+	/* Jankily prevent input button groups from wrapping */
+	+ .Button {
+		margin-left: -4px;
+	}
+	/* Bring the "active" button to the front */
+	&:hover,
+	&:active {
+		z-index: 2;
+	}
 }

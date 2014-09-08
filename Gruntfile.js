@@ -411,8 +411,7 @@ module.exports = function(grunt) {
 			sass: {
 				files: ["sass/**/*.scss"],
 				tasks: [
-					'sass:development',
-					'cssmin:minify'
+					'sass:development'
 				]
 			}
 		},

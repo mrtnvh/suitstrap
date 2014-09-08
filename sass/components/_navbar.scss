@@ -294,10 +294,10 @@
 	padding: 10px $navbar-padding-horizontal;
 	border-top: 1px solid transparent;
 	border-bottom: 1px solid transparent;
-	@include box-shadow(
+	box-shadow:
 		inset 0 1px 0 rgba(255,255,255,.1),
 		0 1px 0 rgba(255,255,255,.1)
-	);
+	;
 
 	/* Mixin behavior for optimum display */
 	@extend .Form--inline;
@@ -319,7 +319,7 @@
 		margin-right: 0;
 		padding-top: 0;
 		padding-bottom: 0;
-		@include box-shadow(none);
+		box-shadow: none;
 	}
 }
 
@@ -330,11 +330,11 @@
 /* Menu position and menu carets */
 .Navbar-nav > li > .Dropdown-menu {
 	margin-top: 0;
-	@include border-top-radius(0);
+	@include BorderTopRadius(0);
 }
 /* Menu position and menu caret support for dropups via extra dropup class */
 .Navbar--fixed--bottom .Navbar-nav > li > .Dropdown-menu {
-	@include border-bottom-radius(0);
+	@include BorderBottomRadius(0);
 }
 
 /* Right aligned menus need alt position */

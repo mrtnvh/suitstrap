@@ -7,9 +7,9 @@
 
 /* Easily usable on <ul>, <ol>, or <div>. */
 .ListGroup {
-    /* No need to set list-style: none; since .ListGroup-item is block level */
-    margin-bottom: 20px;
-    padding-left: 0; /* reset padding because ul and ol */
+	/* No need to set list-style: none, since .ListGroup-item is block level */
+	margin-bottom: 20px;
+	padding-left: 0; /* reset padding because ul and ol */
 }
 
 
@@ -18,67 +18,67 @@
    ========================================================================== */
 
 .ListGroup-item {
-    position: relative;
-    display: block;
-    padding: 10px 15px;
-    /* Place the border on the list items and negative margin up for better styling */
-    margin-bottom: -1px;
-    background-color: $list-group-bg;
-    border: 1px solid $list-group-border;
+	position: relative;
+	display: block;
+	padding: 10px 15px;
+	/* Place the border on the list items and negative margin up for better styling */
+	margin-bottom: -1px;
+	background-color: $list-group-bg;
+	border: 1px solid $list-group-border;
 
-    /* Round the first and last items */
-    &:first-child {
-        @include border-top-radius($list-group-border-radius);
-    }
+	/* Round the first and last items */
+	&:first-child {
+		@include BorderTopRadius($list-group-border-radius);
+	}
 
-    &:last-child {
-        margin-bottom: 0;
-        @include border-bottom-radius($list-group-border-radius);
-    }
+	&:last-child {
+		margin-bottom: 0;
+		@include BorderBottomRadius($list-group-border-radius);
+	}
 
-    /* Align badges within list items */
-    > .Badge {
-        float: right;
-    }
+	/* Align badges within list items */
+	> .Badge {
+		float: right;
+	}
 
-    > .Badge + .Badge {
-        margin-right: 5px;
-    }
+	> .Badge + .Badge {
+		margin-right: 5px;
+	}
 
-    /* Linked list items */
-    @at-root a#{&} {
-        color: $list-group-link-color;
+	/* Active class on item itself, not parent */
+	&.is-active,
+	&.is-active:hover,
+	&.is-active:focus {
+		z-index: 2; /* Place active items above their siblings for proper border styling */
+		color: $list-group-active-color;
+		background-color: $list-group-active-bg;
+		border-color: $list-group-active-border;
 
-        .ListGroup-item-heading {
-            color: $list-group-link-heading-color;
-        }
+		/* Force color to inherit for custom content */
+		.ListGroup-item-heading {
+			color: inherit;
+		}
 
-        /* Hover state */
-        &:hover,
-        &:focus {
-            text-decoration: none;
-            background-color: $list-group-hover-bg;
-        }
-    }
+		.ListGroup-item-text {
+			color: lighten($list-group-active-bg, 40%);
+		}
+	}
+}
 
-    /* Active class on item itself, not parent */
-    &.is-active,
-    &.is-active:hover,
-    &.is-active:focus {
-        z-index: 2; /* Place active items above their siblings for proper border styling */
-        color: $list-group-active-color;
-        background-color: $list-group-active-bg;
-        border-color: $list-group-active-border;
+/* Linked list items */
+a.ListGroup-item {
+	color: $list-group-link-color;
 
-        /* Force color to inherit for custom content */
-        .ListGroup-item-heading {
-            color: inherit;
-        }
+	.ListGroup-item-heading {
+		color: $list-group-link-heading-color;
+	}
 
-        .ListGroup-item-text {
-            color: lighten($list-group-active-bg, 40%);
-        }
-    }
+	/* Hover state */
+	&:hover,
+	&:focus {
+		text-decoration: none;
+		background-color: $list-group-hover-bg;
+	}
 }
 
 
@@ -87,11 +87,11 @@
    ========================================================================== */
 
 .ListGroup-item-heading {
-    margin-top: 0;
-    margin-bottom: 5px;
+	margin-top: 0;
+	margin-bottom: 5px;
 }
 
 .ListGroup-item-text {
-    margin-bottom: 0;
-    line-height: 1.3;
+	margin-bottom: 0;
+	line-height: 1.3;
 }

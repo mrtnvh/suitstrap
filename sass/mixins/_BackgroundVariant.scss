@@ -2,9 +2,12 @@
    Contextual backgrounds
    ========================================================================== */
 
-@mixin BackgroundVariant($color){
-	background-color: @color;
-	a#{&}:hover {
-		background-color: darken(@color, 10%);
+@mixin BackgroundVariant($color, $class: null){
+	background-color: $color;
+
+	@if ($class != null){
+		#{"a" + $class}:hover {
+			background-color: darken($color, 10%);
+		}
 	}
 }
