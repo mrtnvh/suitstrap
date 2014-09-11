@@ -180,14 +180,20 @@ module.exports = function(grunt) {
 		 * Sass
 		 * ======================================================================== */
 		sass: {
-			options: {
-				sourceMap: false
+			compileCore: {
+				options: {
+					//sourceMap: true
+				},
+				src: 'sass/suitstrap.scss',
+				dest: 'dist/css/<%= pkg.name %>.css'
 			},
-			development: {
-				files: {
-					'<%= src %>Css/suitstrap.css': '<%= src %>Sass/suitstrap.scss'
-				}
-			}
+			// compileTheme: {
+			// 	options: {
+			// 		//sourceMap: true
+			// 	},
+			// 	src: 'sass/theme.scss',
+			// 	dest: 'dist/css/<%= pkg.name %>-theme.css'
+			// }
 		},
 
 
@@ -410,9 +416,7 @@ module.exports = function(grunt) {
 			},
 			sass: {
 				files: ["sass/**/*.scss"],
-				tasks: [
-					'sass:development'
-				]
+				tasks: ['sass']
 			}
 		},
 

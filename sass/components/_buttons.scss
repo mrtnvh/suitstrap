@@ -13,6 +13,7 @@
 	font-weight: $btn-font-weight;
 	text-align: center;
 	vertical-align: middle;
+	touch-action: manipulation;
 	cursor: pointer;
 	background-image: none; /* Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214 */
 	border: 1px solid transparent;
@@ -27,13 +28,20 @@
 	);
 	user-select: none;
 
-	&:focus {
-		@include TabFocus();
+	&,
+	&:active,
+	&.is-active {
+		&:focus,
+		&.focus {
+			@include TabFocus();
+		}
 	}
 
 	&:hover,
-	&:focus {
+	&:focus,
+	&.focus {
 		color: $btn-default-color;
+		text-decoration: none;
 	}
 
 	&:active,
@@ -113,28 +121,31 @@
 .Button--link {
 	color: $link-color;
 	font-weight: normal;
-	cursor: pointer;
 	border-radius: 0;
 
 	&,
 	&:active,
+	&.is-active,
 	&[disabled],
 	fieldset[disabled] & {
 		background-color: transparent;
 		box-shadow: none;
 	}
+
 	&,
 	&:hover,
 	&:focus,
 	&:active {
 		border-color: transparent;
 	}
+
 	&:hover,
 	&:focus {
 		color: $link-hover-color;
 		text-decoration: underline;
 		background-color: transparent;
 	}
+
 	&[disabled],
 	fieldset[disabled] & {
 		&:hover,
@@ -160,8 +171,7 @@
 	);
 }
 
-.Button--small,
-.Button--extraSmall {
+.Button--small{
 	/* line-height: ensure proper height of button next to small input */
 	@include ButtonSize(
 		$padding-small-vertical,
@@ -173,8 +183,15 @@
 }
 
 .Button--extraSmall {
-	padding: 1px 5px;
+	@include ButtonSize(
+		$padding-xs-vertical,
+		$padding-xs-horizontal,
+		$font-size-small,
+		$line-height-small,
+		$border-radius-small
+	);
 }
+
 
 
 /* Block button

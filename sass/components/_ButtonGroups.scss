@@ -2,38 +2,6 @@
    Button groups
    ========================================================================== */
 
-/**
- * Button carets
- * Match the button text color to the arrow/caret for indicating dropdown-ness.
- */
-
-.Caret {
-	.Button--default & {
-		border-top-color: $btn-default-color;
-	}
-	.Button--primary &,
-	.Button--success &,
-	.Button--warning &,
-	.Button--danger &,
-	.Button--info & {
-		border-top-color: #fff;
-	}
-}
-.Dropup {
-	& .Button-default .Caret {
-		border-bottom-color: $btn-default-color;
-	}
-	.Button--primary,
-	.Button--success,
-	.Button--warning,
-	.Button--danger,
-	.Button--info {
-	 .Caret {
-			border-bottom-color: #fff;
-		}
-	}
-}
-
 /* Make the div behave like a button */
 .ButtonGroup,
 .ButtonGroup--vertical {
@@ -55,7 +23,7 @@
 
 		&:focus {
 			/* Remove focus outline when dropdown JS adds it after closing the menu */
-			outline: none;
+			outline: 0;
 		}
 	}
 }
@@ -67,23 +35,6 @@
 	.ButtonGroup + .Button,
 	.ButtonGroup + .ButtonGroup {
 		margin-left: -1px;
-	}
-}
-
-/* Optional: Group multiple button groups together for a toolbar */
-.ButtonToolbar {
-	@include MicroClearfix();
-
-	.ButtonGroup {
-		float: left;
-	}
-	/* Space out series of button groups */
-	> .Button,
-	> .ButtonGroup {
-		+ .Button,
-		+ .ButtonGroup {
-			margin-left: 5px;
-		}
 	}
 }
 
@@ -159,7 +110,7 @@
 	padding-right: 8px;
 }
 
-.ButtonGroup > .Button-large + .Dropdown-toggle {
+.ButtonGroup > .Button--large + .Dropdown-toggle {
 	padding-left: 12px;
 	padding-right: 12px;
 }
@@ -170,6 +121,10 @@
 */
 .ButtonGroup.is-open .Dropdown-toggle {
 	box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+
+	&.Button-link{
+		box-shadow: none;
+	}
 }
 
 /* Reposition the caret */
@@ -178,13 +133,13 @@
 }
 
 /* Carets in other button sizes */
-.Button-large .Caret {
+.Button--large .Caret {
 	border-width: $caret-width-large $caret-width-large 0;
 	border-bottom-width: 0;
 }
 
 /* Upside down carets for .Dropup */
-.Dropup .Button-large .Caret {
+.Dropup .Button--large .Caret {
 	border-width: 0 $caret-width-large $caret-width-large;
 }
 
@@ -195,7 +150,8 @@
 
 .ButtonGroup--vertical {
 	> .Button,
-	> .ButtonGroup {
+	> .ButtonGroup,
+	> .ButtonGroup > .Button {
 		display: block;
 		float: none;
 		width: 100%;
@@ -205,6 +161,7 @@
 	/* Clear floats so dropdown menus can be properly placed */
 	> .ButtonGroup {
 		@include MicroClearfix();
+
 		> .Button {
 			float: none;
 		}
@@ -246,7 +203,7 @@
 	}
 }
 
-.ButtonGroup--vertical > .ButtonGroup:last-child > .Button:first-child {
+.ButtonGroup--vertical > .ButtonGroup:last-child:not(:first-child) > .Button:first-child {
 	@include BorderTopRadius(0);
 }
 
@@ -260,16 +217,45 @@
 	width: 100%;
 	table-layout: fixed;
 	border-collapse: separate;
+
 	.Button,
 	.ButtonGroup {
 		float: none;
 		display: table-cell;
 		width: 1%;
 	}
+
+	> .ButtonGroup .Button {
+		width: 100%;
+	}
+
+	> .ButtonGroup .Dropdown-menu {
+		left: auto;
+	}
 }
 
-/* Checkbox and radio options */
-[data-toggle="buttons"] > .Button > input[type="radio"],
-[data-toggle="buttons"] > .Button > input[type="checkbox"] {
-	display: none;
+
+
+/**
+ * Checkbox and radio options
+ *
+ * In order to support the browser's form validation feedback, powered by the
+ * `required` attribute, we have to "hide" the inputs via `opacity`. We cannot
+ * use `display: none;` or `visibility: hidden;` as that also hides the popover.
+ * This way, we ensure a DOM element is visible to position the popover from.
+ *
+ * See https://github.com/twbs/bootstrap/pull/12794 for more.
+ */
+
+[data-toggle="buttons"] {
+	> .Button,
+	> .ButtonGroup > .Button {
+		input[type="radio"],
+		input[type="checkbox"] {
+			position: absolute;
+			z-index: -1;
+			opacity: 0;
+		}
+	}
 }
+
