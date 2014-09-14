@@ -6,7 +6,7 @@
  * inline element with the appropriate classes, like so:
  *
  * <a href="#"><span class="glyphicon glyphicon-star"></span> Star</a>
-*/
+ */
 
 /* Import the fonts */
 @font-face {
@@ -19,9 +19,7 @@
 }
 
 /* Catchall baseclass */
-
-.Glyphicon,
-[class*="Glyphicon"] {
+.Glyphicon {
 	position: relative;
 	top: 1px;
 	display: inline-block;
@@ -30,10 +28,7 @@
 	font-weight: normal;
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
-
-	&:empty{
-		width: 1em;
-	}
+	-moz-osx-font-smoothing: grayscale;
 }
 
 /* Individual icons */

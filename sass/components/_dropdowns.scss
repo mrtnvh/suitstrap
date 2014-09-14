@@ -12,8 +12,6 @@
 	border-top: $caret-width-base solid $dropdown-caret-color;
 	border-right: $caret-width-base solid transparent;
 	border-left: $caret-width-base solid transparent;
-	/* Firefox fix for https://github.com/twbs/bootstrap/issues/9538. Once fixed, we can just straight up remove this. */
-	border-bottom: 0 dotted;
 }
 
 /* The dropdown wrapper (div) */
@@ -39,6 +37,7 @@
 	margin: 2px 0 0; /* override default ul */
 	list-style: none;
 	font-size: $font-size-base;
+	text-align: left; /* Ensures proper alignment if parent has it changed (e.g., modal footer) */
 	background-color: $dropdown-bg;
 	border: 1px solid $dropdown-fallback-border; /* IE8 fallback */
 	border: 1px solid $dropdown-border;
@@ -47,6 +46,7 @@
 	background-clip: padding-box;
 
 	/* Aligns the dropdown menu to right */
+	/* Deprecated as of 3.1.0 in favor of `.dropdown-menu-[dir]` */
 	&.u-pull--right {
 		right: 0;
 		left: auto;
@@ -125,6 +125,33 @@
 }
 
 
+/* Menu positioning
+   ========================================================================== */
+/*
+ * Add extra class to `.dropdown-menu` to flip the alignment of the dropdown
+ * menu with the parent.
+ */
+
+.Dropdown-menu--right {
+	left: auto; /* Reset the default from `.dropdown-menu` */
+	right: 0;
+}
+
+/**
+ * With v3, we enabled auto-flipping if you have a dropdown within a right
+ * aligned nav component. To enable the undoing of that, we provide an override
+ * to restore the default dropdown menu alignment.
+ *
+ * This is only for left-aligning a dropdown menu within a `.navbar-right` or
+ * `.pull-right` nav component.
+ */
+
+.Dropdown-menu--left {
+	left: 0;
+	right: auto;
+}
+
+
 
 /* Dropdown section headers
    ========================================================================== */
@@ -134,6 +161,7 @@
 	font-size: $font-size-small;
 	line-height: $line-height-base;
 	color: $dropdown-header-color;
+	white-space: nowrap; /* as with > li > a */
 }
 
 
@@ -193,11 +221,18 @@
 /* Reiterate per navbar.less and the modified component alignment there. */
 
 @media (min-width: $grid-float-breakpoint) {
-	.NavbarRight {
+	.Navbar--right {
 		.Dropdown-menu {
-			.u-pull--right > * {
-				//@extend .Dropdown-menu;
-			}
+			/* @extend dropdown-menu-right(); */
+		}
+
+		/**
+		 *  Necessary for overrides of the default right aligned menu.
+		 *  Will remove come v4 in all likelihood.
+		 */
+
+		.Dropdown-menu--left {
+			//@extend dropdown-menu-left();
 		}
 	}
 }

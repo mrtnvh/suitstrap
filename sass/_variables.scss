@@ -267,38 +267,38 @@
 	//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
 
 	// Extra small screen / phone
-	/* Deprecated `$screen-xs` as of v3.0.1 */
-	$screen-xs:                  480px;
-	/* Deprecated `$screen-xs-min` as of v3.2.0 */
-	$screen-xs-min:              $screen-xs;
-	/* Deprecated `$screen-phone` as of v3.0.1 */
-	$screen-phone:               $screen-xs-min;
+	/* Deprecated `$screen--extraSmall` as of v3.0.1 */
+	$screen--extraSmall:     480px;
+	/* Deprecated `$screen--extraSmall-min` as of v3.2.0 */
+	$screen--extraSmall-min: $screen--extraSmall;
+	/* Deprecated `$screen--phone` as of v3.0.1 */
+	$screen--phone:          $screen--extraSmall-min;
 
 	// Small screen / tablet
-	/* Deprecated `$screen-sm` as of v3.0.1 */
-	$screen-sm:                  768px;
-	$screen-sm-min:              $screen-sm;
-	/* Deprecated `$screen-tablet` as of v3.0.1 */
-	$screen-tablet:              $screen-sm-min;
+	/* Deprecated `$screen--small` as of v3.0.1 */
+	$screen--small:          768px;
+	$screen--small-min:      $screen--small;
+	/* Deprecated `$screen--tablet` as of v3.0.1 */
+	$screen--tablet:         $screen--small-min;
 
 	// Medium screen / desktop
-	/* Deprecated `$screen-md` as of v3.0.1 */
-	$screen-md:                  992px;
-	$screen-md-min:              $screen-md;
-	/* Deprecated `$screen-desktop` as of v3.0.1 */
-	$screen-desktop:             $screen-md-min;
+	/* Deprecated `$screen--medium` as of v3.0.1 */
+	$screen--medium:         992px;
+	$screen--medium-min:     $screen--medium;
+	/* Deprecated `$screen--desktop` as of v3.0.1 */
+	$screen--desktop:        $screen--medium-min;
 
 	// Large screen / wide desktop
-	/* Deprecated `$screen-lg` as of v3.0.1 */
-	$screen-lg:                  1200px;
-	$screen-lg-min:              $screen-lg;
-	/* Deprecated `$screen-lg-desktop` as of v3.0.1 */
-	$screen-lg-desktop:          $screen-lg-min;
+	/* Deprecated `$screen--large` as of v3.0.1 */
+	$screen--large:          1200px;
+	$screen--large-min:      $screen--large;
+	/* Deprecated `$screen--large-desktop` as of v3.0.1 */
+	$screen--large-desktop:  $screen--large-min;
 
 	// So media queries don't overlap when required, provide a maximum
-	$screen-xs-max:              ($screen-sm-min - 1);
-	$screen-sm-max:              ($screen-md-min - 1);
-	$screen-md-max:              ($screen-lg-min - 1);
+	$screen--extraSmall-max: ($screen--small-min - 1);
+	$screen--small-max:      ($screen--medium-min - 1);
+	$screen--medium-max:     ($screen--large-min - 1);
 
 
 	/* Grid system
@@ -310,9 +310,11 @@
 	$grid-gutter-width:         30px;
 	// Navbar collapse
 	/* Point at which the navbar becomes uncollapsed. */
-	$grid-float-breakpoint:     $screen-sm-min;
+	$grid-float-breakpoint:     $screen--small-min;
 	/* Point at which the navbar begins collapsing. */
 	$grid-float-breakpoint-max: ($grid-float-breakpoint - 1);
+
+	$grid-breakpoints : "extraSmall", "small", "medium", "large";
 
 
 	/* Container sizes
@@ -320,34 +322,34 @@
 	//## Define the maximum width of `.container` for different screen sizes.
 
 	// Small screen / tablet
-	$container-tablet:             ((720px + $grid-gutter-width));
-	/* For `$screen-sm-min` and up. */
-	$container-sm:                 $container-tablet;
+	$container--tablet:       ((720px + $grid-gutter-width));
+	/* For `$screen--small-min` and up. */
+	$container--small:        $container--tablet;
 
 	// Medium screen / desktop
-	$container-desktop:            ((940px + $grid-gutter-width));
-	/* For `$screen-md-min` and up. */
-	$container-md:                 $container-desktop;
+	$container--desktop:      ((940px + $grid-gutter-width));
+	/* For `$screen--medium-min` and up. */
+	$container--medium:       $container--desktop;
 
 	// Large screen / wide desktop
-	$container-large-desktop:      ((1140px + $grid-gutter-width));
-	/* For `$screen-lg-min` and up. */
-	$container-lg:                 $container-large-desktop;
+	$container--large-desktop:((1140px + $grid-gutter-width));
+	/* For `$screen--large-min` and up. */
+	$container--large:        $container--large-desktop;
 
 
 	/* Navbar
-	   ========================================================================== */
+       ========================================================================== */
 
 	/* Basics of a navbar */
-	$navbar-height:                    50px;
-	$navbar-margin-bottom:             $line-height-computed;
-	$navbar-border-radius:             $border-radius-base;
-	$navbar-padding-horizontal:        floor($grid-gutter-width / 2);
-	$navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2);
+	$navbar-height:                            50px;
+	$navbar-margin-bottom:                     $line-height-computed;
+	$navbar-border-radius:                     $border-radius-base;
+	$navbar-padding-horizontal:                floor($grid-gutter-width / 2);
+	$navbar-padding-vertical:                  (($navbar-height - $line-height-computed) / 2);
 
-	$navbar-default-color:             #777;
-	$navbar-default-bg:                #f8f8f8;
-	$navbar-default-border:            darken($navbar-default-bg, 6.5%);
+	$navbar-default-color:                     #777;
+	$navbar-default-bg:                        #f8f8f8;
+	$navbar-default-border:                    darken($navbar-default-bg, 6.5%);
 
 	/* Navbar links */
 	$navbar-default-link-color:                #777;

@@ -2,354 +2,75 @@
    Grid system
    ========================================================================== */
 
+/**
+ * Container widths
+ * Set the container width, and override it for fixed navbars in media queries
+ */
 
-/* Set the container width, and override it for fixed navbars in media queries
-   ========================================================================== */
 .Container {
 	@include ContainerFixed();
+
+	&.Container--fixed{
+		@media (min-width: $screen--small-min) {
+			width: $container--small;
+		}
+		@media (min-width: $screen--medium-min) {
+			width: $container--medium;
+		}
+		@media (min-width: $screen--large-min) {
+			width: $container--large;
+		}
+	}
 }
 
-/* mobile first defaults
-   ========================================================================== */
+/**
+ * Row
+ * Rows contain and clear the floats of your columns.
+ */
+
 .Row {
 	@include MakeRow();
 }
 
-/* Common styles for Small and large grid columns
-   ========================================================================== */
-.Col--extraSmall-1,
-.Col--extraSmall-2,
-.Col--extraSmall-3,
-.Col--extraSmall-4,
-.Col--extraSmall-5,
-.Col--extraSmall-6,
-.Col--extraSmall-7,
-.Col--extraSmall-8,
-.Col--extraSmall-9,
-.Col--extraSmall-10,
-.Col--extraSmall-11,
-.Col--extraSmall-12,
-.Col--small-1,
-.Col--small-2,
-.Col--small-3,
-.Col--small-4,
-.Col--small-5,
-.Col--small-6,
-.Col--small-7,
-.Col--small-8,
-.Col--small-9,
-.Col--small-10,
-.Col--small-11,
-.Col--small-12,
-.Col--medium-1,
-.Col--medium-2,
-.Col--medium-3,
-.Col--medium-4,
-.Col--medium-5,
-.Col--medium-6,
-.Col--medium-7,
-.Col--medium-8,
-.Col--medium-9,
-.Col--medium-10,
-.Col--medium-11,
-.Col--medium-12,
-.Col--large-1,
-.Col--large-2,
-.Col--large-3,
-.Col--large-4,
-.Col--large-5,
-.Col--large-6,
-.Col--large-7,
-.Col--large-8,
-.Col--large-9,
-.Col--large-10,
-.Col--large-11,
-.Col--large-12 {
-	position: relative;
-	/* Prevent columns from collapsing when empty */
-	min-height: 1px;
-	/* Inner gutter via padding */
-	padding-left:    ($grid-gutter-width / 2);
-	padding-right: ($grid-gutter-width / 2);
-}
-
 /**
- * Extra Small grid
- *
- * Grid classes for extra SMall devices like SMartphones. No offset, push, or
- * pull classes are present here due to the size of the target.
- *
- * Note that `.Col--extraSmall-12` doesn't get floated on purpose--there's no need since
- * it's full-width.
+ * Columns
+ * Common styles for small and large grid columns
  */
 
- .Col--extraSmall-1,
- .Col--extraSmall-2,
- .Col--extraSmall-3,
- .Col--extraSmall-4,
- .Col--extraSmall-5,
- .Col--extraSmall-6,
- .Col--extraSmall-7,
- .Col--extraSmall-8,
- .Col--extraSmall-9,
- .Col--extraSmall-10,
- .Col--extraSmall-11 {
-	float: left;
- }
+@include MakeGridColumns;
 
- .Col--extraSmall-1    { width: percentage((1 / $grid-columns)); }
- .Col--extraSmall-2    { width: percentage((2 / $grid-columns)); }
- .Col--extraSmall-3    { width: percentage((3 / $grid-columns)); }
- .Col--extraSmall-4    { width: percentage((4 / $grid-columns)); }
- .Col--extraSmall-5    { width: percentage((5 / $grid-columns)); }
- .Col--extraSmall-6    { width: percentage((6 / $grid-columns)); }
- .Col--extraSmall-7    { width: percentage((7 / $grid-columns)); }
- .Col--extraSmall-8    { width: percentage((8 / $grid-columns)); }
- .Col--extraSmall-9    { width: percentage((9 / $grid-columns)); }
- .Col--extraSmall-10 { width: percentage((10/ $grid-columns)); }
- .Col--extraSmall-11 { width: percentage((11/ $grid-columns)); }
- .Col--extraSmall-12 { width: 100%; }
+/**
+ * Extra small grid
+ * Columns, offsets, pushes, and pulls for extra small devices like
+ * smartphones.
+ */
+
+@include MakeGrid(nth($grid-breakpoints, 1));
 
 /**
  * Small grid
- *
- * Columns, offsets, pushes, and pulls for the SMall device range, from phones
+ * Columns, offsets, pushes, and pulls for the small device range, from phones
  * to tablets.
- *
- * Note that `.Col--small-12` doesn't get floated on purpose--there's no need since
- * it's full-width.
  */
 
- @media (min-width: $screen--small-min) {
-	.Container {
-		width: $container--small;
-	}
-
-	.Col--small-1,
-	.Col--small-2,
-	.Col--small-3,
-	.Col--small-4,
-	.Col--small-5,
-	.Col--small-6,
-	.Col--small-7,
-	.Col--small-8,
-	.Col--small-9,
-	.Col--small-10,
-	.Col--small-11 {
-		float: left;
-	}
-	.Col--small-1 		{ width: percentage((1 / $grid-columns)); }
-	.Col--small-2 		{ width: percentage((2 / $grid-columns)); }
-	.Col--small-3 		{ width: percentage((3 / $grid-columns)); }
-	.Col--small-4 		{ width: percentage((4 / $grid-columns)); }
-	.Col--small-5 		{ width: percentage((5 / $grid-columns)); }
-	.Col--small-6 		{ width: percentage((6 / $grid-columns)); }
-	.Col--small-7 		{ width: percentage((7 / $grid-columns)); }
-	.Col--small-8 		{ width: percentage((8 / $grid-columns)); }
-	.Col--small-9 		{ width: percentage((9 / $grid-columns)); }
-	.Col--small-10 		{ width: percentage((10/ $grid-columns)); }
-	.Col--small-11 		{ width: percentage((11/ $grid-columns)); }
-	.Col--small-12 		{ width: 100%; }
-
-	/* Push and pull columns for source order changes*/
-	.Col--small--push-1 	{ left: percentage((1 / $grid-columns)); }
-	.Col--small--push-2 	{ left: percentage((2 / $grid-columns)); }
-	.Col--small--push-3 	{ left: percentage((3 / $grid-columns)); }
-	.Col--small--push-4 	{ left: percentage((4 / $grid-columns)); }
-	.Col--small--push-5 	{ left: percentage((5 / $grid-columns)); }
-	.Col--small--push-6 	{ left: percentage((6 / $grid-columns)); }
-	.Col--small--push-7 	{ left: percentage((7 / $grid-columns)); }
-	.Col--small--push-8 	{ left: percentage((8 / $grid-columns)); }
-	.Col--small--push-9 	{ left: percentage((9 / $grid-columns)); }
-	.Col--small--push-10 	{ left: percentage((10/ $grid-columns)); }
-	.Col--small--push-11 	{ left: percentage((11/ $grid-columns)); }
-
-	.Col--small--pull-1 	{ right: percentage((1 / $grid-columns)); }
-	.Col--small--pull-2 	{ right: percentage((2 / $grid-columns)); }
-	.Col--small--pull-3 	{ right: percentage((3 / $grid-columns)); }
-	.Col--small--pull-4 	{ right: percentage((4 / $grid-columns)); }
-	.Col--small--pull-5 	{ right: percentage((5 / $grid-columns)); }
-	.Col--small--pull-6 	{ right: percentage((6 / $grid-columns)); }
-	.Col--small--pull-7 	{ right: percentage((7 / $grid-columns)); }
-	.Col--small--pull-8 	{ right: percentage((8 / $grid-columns)); }
-	.Col--small--pull-9 	{ right: percentage((9 / $grid-columns)); }
-	.Col--small--pull-10 	{ right: percentage((10/ $grid-columns)); }
-	.Col--small--pull-11 	{ right: percentage((11/ $grid-columns)); }
-
-	/* Offsets */
-	.Col--small--offset-1    { margin-left: percentage((1 / $grid-columns)); }
-	.Col--small--offset-2    { margin-left: percentage((2 / $grid-columns)); }
-	.Col--small--offset-3    { margin-left: percentage((3 / $grid-columns)); }
-	.Col--small--offset-4    { margin-left: percentage((4 / $grid-columns)); }
-	.Col--small--offset-5    { margin-left: percentage((5 / $grid-columns)); }
-	.Col--small--offset-6    { margin-left: percentage((6 / $grid-columns)); }
-	.Col--small--offset-7    { margin-left: percentage((7 / $grid-columns)); }
-	.Col--small--offset-8    { margin-left: percentage((8 / $grid-columns)); }
-	.Col--small--offset-9    { margin-left: percentage((9 / $grid-columns)); }
-	.Col--small--offset-10 	{ margin-left: percentage((10/ $grid-columns)); }
-	.Col--small--offset-11 	{ margin-left: percentage((11/ $grid-columns)); }
+@media (min-width: $screen--small-min) {
+  @include MakeGrid(nth($grid-breakpoints, 2));
 }
 
 /**
  * Medium grid
- *
  * Columns, offsets, pushes, and pulls for the desktop device range.
- *
- * Note that `.Col--medium-12` doesn't get floated on purpose--there's no need since
- * it's full-width.
  */
 
- @media (min-width: $screen--medium-min) {
-	.Container {
-		width: $container--medium;
-	}
-	.Col--medium-1,
-	.Col--medium-2,
-	.Col--medium-3,
-	.Col--medium-4,
-	.Col--medium-5,
-	.Col--medium-6,
-	.Col--medium-7,
-	.Col--medium-8,
-	.Col--medium-9,
-	.Col--medium-10,
-	.Col--medium-11 {
-		float: left;
-	}
-
-	.Col--medium-1            { width: percentage((1 / $grid-columns)); }
-	.Col--medium-2            { width: percentage((2 / $grid-columns)); }
-	.Col--medium-3            { width: percentage((3 / $grid-columns)); }
-	.Col--medium-4            { width: percentage((4 / $grid-columns)); }
-	.Col--medium-5            { width: percentage((5 / $grid-columns)); }
-	.Col--medium-6            { width: percentage((6 / $grid-columns)); }
-	.Col--medium-7            { width: percentage((7 / $grid-columns)); }
-	.Col--medium-8            { width: percentage((8 / $grid-columns)); }
-	.Col--medium-9            { width: percentage((9 / $grid-columns)); }
-	.Col--medium-10           { width: percentage((10/ $grid-columns)); }
-	.Col--medium-11           { width: percentage((11/ $grid-columns)); }
-	.Col--medium-12           { width: 100%; }
-
-	/* Push and pull columns for source order changes */
-	.Col--medium--push-0      { left: auto; }
-	.Col--medium--push-1      { left: percentage((1 / $grid-columns)); }
-	.Col--medium--push-2      { left: percentage((2 / $grid-columns)); }
-	.Col--medium--push-3      { left: percentage((3 / $grid-columns)); }
-	.Col--medium--push-4      { left: percentage((4 / $grid-columns)); }
-	.Col--medium--push-5      { left: percentage((5 / $grid-columns)); }
-	.Col--medium--push-6      { left: percentage((6 / $grid-columns)); }
-	.Col--medium--push-7      { left: percentage((7 / $grid-columns)); }
-	.Col--medium--push-8      { left: percentage((8 / $grid-columns)); }
-	.Col--medium--push-9      { left: percentage((9 / $grid-columns)); }
-	.Col--medium--push-10     { left: percentage((10/ $grid-columns)); }
-	.Col--medium--push-11     { left: percentage((11/ $grid-columns)); }
-
-	.Col--medium--pull-0      { right: auto; }
-	.Col--medium--pull-1      { right: percentage((1 / $grid-columns)); }
-	.Col--medium--pull-2      { right: percentage((2 / $grid-columns)); }
-	.Col--medium--pull-3      { right: percentage((3 / $grid-columns)); }
-	.Col--medium--pull-4      { right: percentage((4 / $grid-columns)); }
-	.Col--medium--pull-5      { right: percentage((5 / $grid-columns)); }
-	.Col--medium--pull-6      { right: percentage((6 / $grid-columns)); }
-	.Col--medium--pull-7      { right: percentage((7 / $grid-columns)); }
-	.Col--medium--pull-8      { right: percentage((8 / $grid-columns)); }
-	.Col--medium--pull-9      { right: percentage((9 / $grid-columns)); }
-	.Col--medium--pull-10     { right: percentage((10/ $grid-columns)); }
-	.Col--medium--pull-11     { right: percentage((11/ $grid-columns)); }
-
-	/* Offsets */
-	.Col--medium--offset-0    { margin-left: 0; }
-	.Col--medium--offset-1    { margin-left: percentage((1 / $grid-columns)); }
-	.Col--medium--offset-2    { margin-left: percentage((2 / $grid-columns)); }
-	.Col--medium--offset-3    { margin-left: percentage((3 / $grid-columns)); }
-	.Col--medium--offset-4    { margin-left: percentage((4 / $grid-columns)); }
-	.Col--medium--offset-5    { margin-left: percentage((5 / $grid-columns)); }
-	.Col--medium--offset-6    { margin-left: percentage((6 / $grid-columns)); }
-	.Col--medium--offset-7    { margin-left: percentage((7 / $grid-columns)); }
-	.Col--medium--offset-8    { margin-left: percentage((8 / $grid-columns)); }
-	.Col--medium--offset-9    { margin-left: percentage((9 / $grid-columns)); }
-	.Col--medium--offset-10   { margin-left: percentage((10/ $grid-columns)); }
-	.Col--medium--offset-11   { margin-left: percentage((11/ $grid-columns)); }
+@media (min-width: $screen--medium-min) {
+  @include MakeGrid(nth($grid-breakpoints, 3));
 }
 
 /**
  * Large grid
- *
  * Columns, offsets, pushes, and pulls for the large desktop device range.
- *
- * Note that `.Col--large-12` doesn't get floated on purpose--there's no need since
- * it's full-width.
  */
 
- @media (min-width: $screen--large-min) {
-	.Container {
-		width: $container--large;
-	}
-
-	.Col--large-1,
-	.Col--large-2,
-	.Col--large-3,
-	.Col--large-4,
-	.Col--large-5,
-	.Col--large-6,
-	.Col--large-7,
-	.Col--large-8,
-	.Col--large-9,
-	.Col--large-10,
-	.Col--large-11 {
-		float: left;
-	}
-	.Col--large-1 		{ width: percentage((1 / $grid-columns)); }
-	.Col--large-2 		{ width: percentage((2 / $grid-columns)); }
-	.Col--large-3 		{ width: percentage((3 / $grid-columns)); }
-	.Col--large-4 		{ width: percentage((4 / $grid-columns)); }
-	.Col--large-5 		{ width: percentage((5 / $grid-columns)); }
-	.Col--large-6 		{ width: percentage((6 / $grid-columns)); }
-	.Col--large-7 		{ width: percentage((7 / $grid-columns)); }
-	.Col--large-8 		{ width: percentage((8 / $grid-columns)); }
-	.Col--large-9 		{ width: percentage((9 / $grid-columns)); }
-	.Col--large-10  	{ width: percentage((10/ $grid-columns)); }
-	.Col--large-11  	{ width: percentage((11/ $grid-columns)); }
-	.Col--large-12  	{ width: 100%; }
-
-	/* Push and pull columns for source order changes */
-	.Col--large--push-0 	{ left: auto; }
-	.Col--large--push-1 	{ left: percentage((1 / $grid-columns)); }
-	.Col--large--push-2 	{ left: percentage((2 / $grid-columns)); }
-	.Col--large--push-3 	{ left: percentage((3 / $grid-columns)); }
-	.Col--large--push-4 	{ left: percentage((4 / $grid-columns)); }
-	.Col--large--push-5 	{ left: percentage((5 / $grid-columns)); }
-	.Col--large--push-6 	{ left: percentage((6 / $grid-columns)); }
-	.Col--large--push-7 	{ left: percentage((7 / $grid-columns)); }
-	.Col--large--push-8 	{ left: percentage((8 / $grid-columns)); }
-	.Col--large--push-9 	{ left: percentage((9 / $grid-columns)); }
-	.Col--large--push-10 	{ left: percentage((10/ $grid-columns)); }
-	.Col--large--push-11 	{ left: percentage((11/ $grid-columns)); }
-
-	.Col--large--pull-0 	{ right: auto; }
-	.Col--large--pull-1 	{ right: percentage((1 / $grid-columns)); }
-	.Col--large--pull-2 	{ right: percentage((2 / $grid-columns)); }
-	.Col--large--pull-3 	{ right: percentage((3 / $grid-columns)); }
-	.Col--large--pull-4 	{ right: percentage((4 / $grid-columns)); }
-	.Col--large--pull-5 	{ right: percentage((5 / $grid-columns)); }
-	.Col--large--pull-6 	{ right: percentage((6 / $grid-columns)); }
-	.Col--large--pull-7 	{ right: percentage((7 / $grid-columns)); }
-	.Col--large--pull-8 	{ right: percentage((8 / $grid-columns)); }
-	.Col--large--pull-9 	{ right: percentage((9 / $grid-columns)); }
-	.Col--large--pull-10 	{ right: percentage((10/ $grid-columns)); }
-	.Col--large--pull-11 	{ right: percentage((11/ $grid-columns)); }
-
-	/* Offsets */
-	.Col--large--offset-0    { margin-left: 0; }
-	.Col--large--offset-1    { margin-left: percentage((1 / $grid-columns)); }
-	.Col--large--offset-2    { margin-left: percentage((2 / $grid-columns)); }
-	.Col--large--offset-3    { margin-left: percentage((3 / $grid-columns)); }
-	.Col--large--offset-4    { margin-left: percentage((4 / $grid-columns)); }
-	.Col--large--offset-5    { margin-left: percentage((5 / $grid-columns)); }
-	.Col--large--offset-6    { margin-left: percentage((6 / $grid-columns)); }
-	.Col--large--offset-7    { margin-left: percentage((7 / $grid-columns)); }
-	.Col--large--offset-8    { margin-left: percentage((8 / $grid-columns)); }
-	.Col--large--offset-9    { margin-left: percentage((9 / $grid-columns)); }
-	.Col--large--offset-10 	{ margin-left: percentage((10/ $grid-columns)); }
-	.Col--large--offset-11 	{ margin-left: percentage((11/ $grid-columns)); }
+@media (min-width: $screen--large-min) {
+  @include MakeGrid(nth($grid-breakpoints, 4));
 }

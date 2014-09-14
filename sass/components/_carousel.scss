@@ -24,12 +24,35 @@
 			@include ImageResponsive();
 			line-height: 1;
 		}
+
+		@media all and (transform-3d), (-webkit-transform-3d) {
+			transition: transform .6s ease-in-out;
+			backface-visibility: hidden;
+			perspective: 1000;
+
+			&.is-next,
+			&.is-active.Carousel-control--right {
+				transform: translate3d(100%, 0, 0);
+				left: 0;
+			}
+
+			&.is-previous,
+			&.is-active.Carousel-control--left {
+				transform: translate3d(-100%, 0, 0);
+				left: 0;
+			}
+
+			& .is-next.Carousel-control--left,
+			& .is-previous.Carousel-control--right,
+			&.is-active {
+				transform: translate3d(0, 0, 0);
+				left: 0;
+			}
+		}
 	}
 
 	> .is-active,
-	> .next,
 	> .is-next,
-	> .prev,
 	> .is-previous {
 		display: block;
 	}
@@ -38,8 +61,6 @@
 		left: 0;
 	}
 
-	> .next,
-	> .prev,
 	> .is-next,
 	> .is-previous {
 		position: absolute;
@@ -47,12 +68,10 @@
 		width: 100%;
 	}
 
-	> .next,
 	> .is-next {
 		left: 100%;
 	}
 
-	> .prev,
 	> .is-previous {
 		left: -100%;
 	}
@@ -104,6 +123,7 @@
 	/* Hover/focus state */
 	&:hover,
 	&:focus {
+		outline: 0;
 		color: $carousel-control-color;
 		text-decoration: none;
 		opacity: .9;
@@ -123,16 +143,18 @@
 	.Icon--previous,
 	.Glyphicon--chevronLeft {
 		left: 50%;
+		margin-left: -10px;
 	}
 
 	.Icon--next,
 	.Glyphicon--chevronRight {
 		right: 50%;
+		margin-right: -10px;
 	}
 
 	.Icon--previous,
 	.Icon--next {
-		width:    20px;
+		width: 20px;
 		height: 20px;
 		margin-top: -10px;
 		margin-left: -10px;
@@ -173,21 +195,36 @@
 
 	li {
 		display: inline-block;
-		width:    10px;
-		height: 10px;
+		@include Square(10px);
 		margin: 1px;
 		text-indent: -999px;
 		border: 1px solid $carousel-indicator-border-color;
 		border-radius: 10px;
 		cursor: pointer;
+
+		/**
+		 * IE8-9 hack for event handling
+		 *
+		 * Internet Explorer 8-9 does not support clicks on elements without a set
+		 * `background-color`. We cannot use `filter` since that's not viewed as a
+		 * background color by the browser. Thus, a hack is needed.
+		 *
+		 * For IE8, we set solid black as it doesn't support `rgba()`. For IE9, we
+		 * set alpha transparency for the best results possible.
+		 */
+
+		background-color: #000 \9; // IE8
+		background-color: rgba(0,0,0,0); // IE9
 	}
+
 	.is-active {
 		margin: 0;
-		width:    12px;
-		height: 12px;
+		@include Square(12px);
 		background-color: $carousel-indicator-active-bg;
 	}
 }
+
+
 
 /* Optional captions
 ========================================================================== */
@@ -222,9 +259,17 @@
 			width: 30px;
 			height: 30px;
 			margin-top: -15px;
-			margin-left: -15px;
 			font-size: 30px;
 		}
+
+		.Glyphicons-chevronLeft{
+			margin-left: -15px;
+		}
+
+		.Glyphicons-chevronRight{
+			margin-right: -15px;
+		}
+
 	}
 
 	/* Show and left align the captions */
