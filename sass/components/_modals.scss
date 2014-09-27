@@ -17,32 +17,42 @@
 /* Container that the modal scrolls within */
 .Modal {
 	display: none;
-	overflow: auto;
-	overflow-y: scroll;
+	overflow: hidden;
 	position: fixed;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
 	z-index: $zindex-modal-background;
+	-webkit-overflow-scrolling: touch;
+
+	/**
+	 * Prevent Chrome on Windows from adding a focus outline. For details, see
+	 * https://github.com/twbs/bootstrap/pull/10951.
+	 */
+	outline: 0;
 
 	/* When fading in the modal, animate it to slide down */
 	&.Animation--fade .Modal-dialog {
 		transform: translate( 0, -25%);
 		transition: transform 0.3s ease-out;
 	}
+
 	&.is-in .Modal-dialog {
 		transform: translate( 0, 0);
+	}
+
+	.has-openModal & {
+		overflow-x: hidden;
+		overflow-y: auto;
 	}
 }
 
 /* Shell div to position the modal with bottom padding */
 .Modal-dialog {
-	margin-left: auto;
-	margin-right: auto;
+	position: relative;
 	width: auto;
-	padding: 10px;
-	z-index: ($zindex-modal-background + 10);
+	margin: 10px;
 }
 
 /* Actual modal */
@@ -71,7 +81,7 @@
 
 	/* Fade for backdrop */
 	&.Animation--fade { opacity: 0; }
-	&.is-in { opacity: .5; }
+	&.is-in { opacity: $modal-backdrop-opacity; }
 }
 
 /**
@@ -107,7 +117,6 @@
 
 /* Footer (for actions) */
 .Modal-footer {
-	margin-top: 15px;
 	padding: ($modal-inner-padding - 1) $modal-inner-padding $modal-inner-padding;
 	text-align: right; /* right align buttons */
 	border-top: 1px solid $modal-footer-border-color;
@@ -134,13 +143,19 @@
 @media screen and (min-width: $screen--small-min) {
 
 	.Modal-dialog {
-		width: 600px;
-		padding-top: 30px;
-		padding-bottom: 30px;
+		width: $modal-md;
+		margin: 30px auto;
+	}
+
+	.Modal--small {
+		width: $modal-sm;
 	}
 
 	.Modal-content {
 		box-shadow: 0 5px 15px rgba(0,0,0,.5);
 	}
+}
 
+@media screen and (min-width: $screen--medium-min) {
+	.Modal--large { width: $modal-lg; }
 }

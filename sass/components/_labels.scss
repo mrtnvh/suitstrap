@@ -3,31 +3,37 @@
    ========================================================================== */
 
 .Label {
-    display: inline;
-    padding: .2em .6em .3em;
-    font-size: 75%;
-    font-weight: bold;
-    line-height: 1;
-    color: $label-color;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: .25em;
+	display: inline;
+	padding: .2em .6em .3em;
+	font-size: 75%;
+	font-weight: bold;
+	line-height: 1;
+	color: $label-color;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	border-radius: .25em;
 
-    /* Add hover effects, but only for links */
-    &[href] {
-        &:hover,
-        &:focus {
-            color: $label-link-hover-color;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    }
+	/* Empty labels collapse automatically (not available in IE8) */
+	&:empty {
+		display: none;
+	}
 
-    /* Empty labels collapse automatically (not available in IE8) */
-    &:empty {
-        display: none;
-    }
+	/* Quick fix for labels in buttons */
+	.Button & {
+		position: relative;
+		top: -1px;
+	}
+}
+
+/* Add hover effects, but only for links */
+a.Label {
+	&:hover,
+	&:focus {
+		color: $label-link-hover-color;
+		text-decoration: none;
+		cursor: pointer;
+	}
 }
 
 /* Colors
@@ -35,25 +41,25 @@
 /* Contextual variations (linked labels get darker on :hover) */
 
 .Label--default {
-    @include LabelVariant($label-default-bg);
+	@include LabelVariant($label-default-bg);
 }
 
 .Label--primary {
-    @include LabelVariant($label-primary-bg);
+	@include LabelVariant($label-primary-bg);
 }
 
 .Label--success {
-    @include LabelVariant($label-success-bg);
+	@include LabelVariant($label-success-bg);
 }
 
 .Label--info {
-    @include LabelVariant($label-info-bg);
+	@include LabelVariant($label-info-bg);
 }
 
 .Label--warning {
-    @include LabelVariant($label-warning-bg);
+	@include LabelVariant($label-warning-bg);
 }
 
 .Label--danger {
-    @include LabelVariant($label-danger-bg);
+	@include LabelVariant($label-danger-bg);
 }

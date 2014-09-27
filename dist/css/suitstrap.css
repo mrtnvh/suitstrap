@@ -3512,11 +3512,14 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
   border-collapse: separate;
   /* prevent input groups from inheriting border styles from table cells when placed within a table */
   /* Undo padding and float of grid classes */ }
-  .InputGroup.col {
+  .InputGroup[class*="Col-"] {
     float: none;
     padding-left: 0;
     padding-right: 0; }
   .InputGroup .Form-control {
+    position: relative;
+    z-index: 2;
+    float: left;
     width: 100%;
     margin-bottom: 0; }
 
@@ -3566,14 +3569,15 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
     margin-top: 0; }
 
 /* Reset rounded corners */
-.InputGroup .Form-control:first-child, .InputGroup-addon:first-child, .InputGroup-button:first-child > .Button, .InputGroup-button:first-child > .Dropdown-toggle, .InputGroup-button:last-child > .Button:not(:last-child):not(.Dropdown-toggle) {
+.InputGroup .Form-control:first-child, .InputGroup-addon:first-child, .InputGroup-button:first-child > .Button, .InputGroup-button:first-child > .ButtonGroup > .Button, .InputGroup-button:first-child > .Dropdown-toggle, .InputGroup-button:last-child > .Button:not(:last-child):not(.Dropdown-toggle), .InputGroup-button:last-child > .ButtonGroup:not(:last-child) > .Button {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0; }
 
 .InputGroup-addon:first-child {
   border-right: 0; }
 
-.InputGroup .Form-control:last-child, .InputGroup-addon:last-child, .InputGroup-button:last-child > .Button, .InputGroup-button:last-child > .Dropdown-toggle, .InputGroup-button:first-child > .Button:not(:first-child) {
+/* Reset rounded corners */
+.InputGroup .Form-control:last-child, .InputGroup-addon:last-child, .InputGroup-button:last-child > .Button, .InputGroup-button:last-child > .ButtonGroup > .Button, .InputGroup-button:last-child > .Dropdown-toggle, .InputGroup-button:first-child > .Button:not(:first-child):not(.Dropdown-toggle), .InputGroup-button:first-child > .ButtonGroup:not(:first-child) > .Button {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
 
@@ -3584,21 +3588,32 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
    ========================================================================== */
 .InputGroup-button {
   position: relative;
+  /**
+	 * Jankily prevent input button groups from wrapping with `white-space` and
+	 * `font-size` in combination with `inline-block` on buttons.
+	 */
+  font-size: 0;
   white-space: nowrap;
-  /* Negative margin to only have a 1px border between the two */ }
-  .InputGroup-button:first-child > .Button {
+  /**
+	 * Negative margin for spacing, position for bringing hovered/focused/actived
+	 * element above the siblings.
+	 */
+  /**
+	 * Negative margin to only have a 1px border between the two
+	 */ }
+  .InputGroup-button > .Button {
+    position: relative;
+    /**
+		 * Bring the "active" button to the front
+		 */ }
+    .InputGroup-button > .Button + .Button {
+      margin-left: -1px; }
+    .InputGroup-button > .Button:hover, .InputGroup-button > .Button:focus, .InputGroup-button > .Button:active {
+      z-index: 2; }
+  .InputGroup-button:first-child > .Button, .InputGroup-button:first-child > .ButtonGroup {
     margin-right: -1px; }
-  .InputGroup-button:last-child > .Button {
+  .InputGroup-button:last-child > .Button, .InputGroup-button:last-child > .ButtonGroup {
     margin-left: -1px; }
-
-.InputGroup-button > .Button {
-  position: relative;
-  /* Jankily prevent input button groups from wrapping */
-  /* Bring the "active" button to the front */ }
-  .InputGroup-button > .Button + .Button {
-    margin-left: -4px; }
-  .InputGroup-button > .Button:hover, .InputGroup-button > .Button:active {
-    z-index: 2; }
 
 /* ==========================================================================
    Navs
@@ -3793,7 +3808,6 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
  */
 .Navbar {
   position: relative;
-  z-index: 1000;
   min-height: 50px;
   /* Ensure a navbar always shows (e.g., without a .Navbar-brand in collapsed mode) */
   margin-bottom: 21px;
@@ -3839,7 +3853,6 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
  * content for the user's viewport.
  */
 .Navbar-collapse {
-  max-height: 340px;
   overflow-x: visible;
   padding-right: 15px;
   padding-left: 15px;
@@ -3859,8 +3872,7 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
     .Navbar-collapse {
       width: auto;
       border-top: 0;
-      box-shadow: none;
-      /* Account for first and last children spacing */ }
+      box-shadow: none; }
       .Navbar-collapse.Animation--collapse {
         display: block !important;
         height: auto !important;
@@ -3869,12 +3881,14 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
         overflow: visible !important; }
       .Navbar-collapse.is-in {
         overflow-y: visible; }
-      .Navbar-collapse .Navbar-nav.Navbar-left:first-child {
-        margin-left: -15px; }
-      .Navbar-collapse .Navbar-nav.Navbar--right:last-child {
-        margin-right: -15px; }
-      .Navbar-collapse .Navbar-text:last-child {
-        margin-right: 0; } }
+      .Navbar--fixed--top .Navbar-collapse, .Navbar--static--top .Navbar-collapse, .Navbar--fixed--bottom .Navbar-collapse {
+        padding-left: 0;
+        padding-right: 0; }
+      .Navbar-collapse .Navbar--fixed--top .Navbar-collapse, .Navbar-collapse .Navbar--fixed--bottom .Navbar-collapse {
+        max-height: 340px; }
+        @media (max-device-width: 480px) and (orientation: landscape) {
+          .Navbar-collapse .Navbar--fixed--top .Navbar-collapse, .Navbar-collapse .Navbar--fixed--bottom .Navbar-collapse {
+            max-height: 200px; } } }
 
 /* Both navbar header and collapse
    ========================================================================== */
@@ -3892,6 +3906,7 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
 /* Display the navbar across the entirity of the page or fixed it to the top or bottom of the page. */
 /* Static top (unfixed, but 100% wide) navbar */
 .Navbar--static--top {
+  z-index: 1000;
   border-width: 0 0 1px; }
   @media (min-width: 768px) {
     .Navbar--static--top {
@@ -3903,6 +3918,7 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
   right: 0;
   left: 0;
   border-width: 0 0 1px;
+  transform: translate3d(0, 0, 0);
   /* Undo the rounded corners */ }
   @media (min-width: 768px) {
     .Navbar--fixed--top, .Navbar--fixed--bottom {
@@ -3910,12 +3926,14 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
 
 .Navbar--fixed--top {
   z-index: 1030;
-  top: 0; }
+  top: 0;
+  border-width: 0 0 1px; }
 
 .Navbar--fixed--bottom {
   bottom: 0;
   margin-bottom: 0;
-  /* override .Navbar defaults */ }
+  /* override .Navbar defaults */
+  border-width: 1px 0 0; }
 
 /* Brand/project name
    ========================================================================== */
@@ -3926,13 +3944,18 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
   line-height: 21px; }
   .Navbar-brand:hover, .Navbar-brand:focus {
     text-decoration: none; }
+  .Navbar-brand > img {
+    display: block; }
   @media (min-width: 768px) {
     .Navbar > .Container .Navbar-brand {
       margin-left: -15px; } }
 
 /* Navbar toggle
    ========================================================================== */
-/* Custom button for toggling the `.Navbar-collapse`, powered by the collapse JavaScript plugin. */
+/**
+ * Custom button for toggling the `.Navbar-collapse`, powered by the collapse
+ * JavaScript plugin.
+ */
 .Navbar-toggle {
   position: relative;
   float: right;
@@ -3941,9 +3964,16 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
   margin-top: 8px;
   margin-bottom: 8px;
   background-color: transparent;
+  background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  /**
+	 * We remove the `outline` here, but later compensate by attaching `:hover`
+	 * styles to `:focus`.
+	 */
   /* Bars */ }
+  .Navbar-toggle:focus {
+    outline: 0; }
   .Navbar-toggle .Icon--bar {
     display: block;
     width: 22px;
@@ -4006,7 +4036,10 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
   .Navbar--left {
     float: left !important; }
   .Navbar--right {
-    float: right !important; } }
+    float: right !important;
+    margin-right: -15px; }
+    .Navbar--right ~ .Navbar--right {
+      margin-right: 0; } }
 
 /* Navbar form
    ========================================================================== */
@@ -4060,16 +4093,22 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
 .Navbar-button {
   margin-top: 7.5px;
   margin-bottom: 7.5px; }
+  .Navbar-button.Button--small, .ButtonGroup--small > .Navbar-button.Button {
+    margin-top: 10px;
+    margin-bottom: 10px; }
+  .Navbar-button.Button-extraSmall {
+    margin-top: 14px;
+    margin-bottom: 14px; }
 
 /* Text in navbars
    ========================================================================== */
 /* Add a class to make any element properly align itself vertically within the navbars. */
 .Navbar-text {
-  float: left;
   margin-top: 14.5px;
   margin-bottom: 14.5px; }
   @media (min-width: 768px) {
     .Navbar-text {
+      float: left;
       margin-left: 15px;
       margin-right: 15px; } }
 
@@ -4111,20 +4150,10 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
   .Navbar--default .Navbar-collapse, .Navbar--default .Navbar-form {
     border-color: #e7e7e7; }
   .Navbar--default .Navbar-nav {
-    /* Caret should match text color on hover */
     /* Remove background color from open dropdown */ }
-    .Navbar--default .Navbar-nav > .Dropdown > a:hover .Caret, .Navbar--default .Navbar-nav > .Dropdown > a:focus .Caret {
-      border-top-color: #333;
-      border-bottom-color: #333; }
     .Navbar--default .Navbar-nav > .is-open > a, .Navbar--default .Navbar-nav > .is-open > a:hover, .Navbar--default .Navbar-nav > .is-open > a:focus {
       background-color: #e7e7e7;
       color: #555; }
-      .Navbar--default .Navbar-nav > .is-open > a .Caret, .Navbar--default .Navbar-nav > .is-open > a:hover .Caret, .Navbar--default .Navbar-nav > .is-open > a:focus .Caret {
-        border-top-color: #555;
-        border-bottom-color: #555; }
-    .Navbar--default .Navbar-nav > .Dropdown > a .Caret {
-      border-top-color: #777;
-      border-bottom-color: #777; }
     @media (max-width: 767px) {
       .Navbar--default .Navbar-nav {
         /* Dropdowns get custom display when collapsed */ }
@@ -4143,6 +4172,12 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
     color: #777; }
     .Navbar--default .Navbar-link:hover {
       color: #333; }
+  .Navbar--default .Button-link {
+    color: #777; }
+    .Navbar--default .Button-link:hover, .Navbar--default .Button-link:focus {
+      color: #333; }
+    .Navbar--default .Button-link[disabled]:hover, .Navbar--default .Button-link[disabled]:focus, fieldset[disabled] .Navbar--default .Button-link:hover, fieldset[disabled] .Navbar--default .Button-link:focus {
+      color: #ccc; }
 
 /* Inverse navbar
    ========================================================================== */
@@ -4180,15 +4215,6 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
   .Navbar--inverse .Navbar-nav > .is-open > a, .Navbar--inverse .Navbar-nav > .is-open > a:hover, .Navbar--inverse .Navbar-nav > .is-open > a:focus {
     background-color: #090909;
     color: #fff; }
-  .Navbar--inverse .Navbar-nav > .Dropdown > a:hover .Caret {
-    border-top-color: #fff;
-    border-bottom-color: #fff; }
-  .Navbar--inverse .Navbar-nav > .Dropdown > a .Caret {
-    border-top-color: #777777;
-    border-bottom-color: #777777; }
-  .Navbar--inverse .Navbar-nav > .is-open > a .Caret, .Navbar--inverse .Navbar-nav > .is-open > a:hover .Caret, .Navbar--inverse .Navbar-nav > .is-open > a:focus .Caret {
-    border-top-color: #fff;
-    border-bottom-color: #fff; }
   @media (max-width: 767px) {
     .Navbar--inverse .Navbar-nav {
       /* Dropdowns get custom display */ }
@@ -4209,6 +4235,12 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
     color: #777777; }
     .Navbar--inverse .Navbar-link:hover {
       color: #fff; }
+  .Navbar--inverse .Button-link {
+    color: #777777; }
+    .Navbar--inverse .Button-link:hover, .Navbar--inverse .Button-link:focus {
+      color: #fff; }
+    .Navbar--inverse .Button-link[disabled]:hover, .Navbar--inverse .Button-link[disabled]:focus, fieldset[disabled] .Navbar--inverse .Button-link:hover, fieldset[disabled] .Navbar--inverse .Button-link:focus {
+      color: #444; }
 
 /* ==========================================================================
    Breadcrumb
@@ -4344,14 +4376,19 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: 0.25em;
-  /* Add hover effects, but only for links */
-  /* Empty labels collapse automatically (not available in IE8) */ }
-  .Label[href]:hover, .Label[href]:focus {
-    color: #fff;
-    text-decoration: none;
-    cursor: pointer; }
+  /* Empty labels collapse automatically (not available in IE8) */
+  /* Quick fix for labels in buttons */ }
   .Label:empty {
     display: none; }
+  .Button .Label {
+    position: relative;
+    top: -1px; }
+
+/* Add hover effects, but only for links */
+a.Label:hover, a.Label:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer; }
 
 /* Colors
    ========================================================================== */
@@ -4436,12 +4473,14 @@ a.Badge:hover, a.Badge:focus {
   line-height: 2.25;
   color: inherit;
   background-color: #eeeeee; }
-  .Jumbotron h1 {
+  .Jumbotron h1, .Jumbotron .u-h1 {
     line-height: 1;
     color: inherit; }
   .Jumbotron p {
     line-height: 1.4; }
-  .Container .Jumbotron {
+  .Jumbotron > hr {
+    border-top-color: #d5d5d5; }
+  .Container .Jumbotron, .Container--fixed .Jumbotron {
     border-radius: 6px;
     /* Only round corners at higher resolutions if contained in a container */ }
   @media screen and (min-width: 768px) {
@@ -4451,7 +4490,7 @@ a.Badge:hover, a.Badge:focus {
       .Container .Jumbotron {
         padding-left: 60px;
         padding-right: 60px; }
-      .Jumbotron h1 {
+      .Jumbotron h1, .Jumbotron .u-h1 {
         font-size: 63px; } }
 
 /* ==========================================================================
@@ -4686,6 +4725,7 @@ keyframes(progress-bar-stripes) to {
   border: 1px solid #ddd;
   /* Round the first and last items */
   /* Align badges within list items */
+  /* Disabled state */
   /* Active class on item itself, not parent */ }
   .ListGroup-item:first-child {
     border-top-right-radius: 4px;
@@ -4698,6 +4738,15 @@ keyframes(progress-bar-stripes) to {
     float: right; }
   .ListGroup-item > .Badge + .Badge {
     margin-right: 5px; }
+  .ListGroup-item.disabled, .ListGroup-item.disabled:hover, .ListGroup-item.disabled:focus {
+    background-color: #eeeeee;
+    color: #777777;
+    cursor: not-allowed;
+    /* Force color to inherit for custom content */ }
+    .ListGroup-item.disabled .list-group-item-heading, .ListGroup-item.disabled:hover .list-group-item-heading, .ListGroup-item.disabled:focus .list-group-item-heading {
+      color: inherit; }
+    .ListGroup-item.disabled .list-group-item-text, .ListGroup-item.disabled:hover .list-group-item-text, .ListGroup-item.disabled:focus .list-group-item-text {
+      color: #777777; }
   .ListGroup-item.is-active, .ListGroup-item.is-active:hover, .ListGroup-item.is-active:focus {
     z-index: 2;
     /* Place active items above their siblings for proper border styling */
@@ -4705,12 +4754,16 @@ keyframes(progress-bar-stripes) to {
     background-color: #86b35f;
     border-color: #86b35f;
     /* Force color to inherit for custom content */ }
-    .ListGroup-item.is-active .ListGroup-item-heading, .ListGroup-item.is-active:hover .ListGroup-item-heading, .ListGroup-item.is-active:focus .ListGroup-item-heading {
+    .ListGroup-item.is-active .ListGroup-item-heading, .ListGroup-item.is-active .ListGroup-item-heading > small, .ListGroup-item.is-active .ListGroup-item-heading > .small, .ListGroup-item.is-active:hover .ListGroup-item-heading, .ListGroup-item.is-active:hover .ListGroup-item-heading > small, .ListGroup-item.is-active:hover .ListGroup-item-heading > .small, .ListGroup-item.is-active:focus .ListGroup-item-heading, .ListGroup-item.is-active:focus .ListGroup-item-heading > small, .ListGroup-item.is-active:focus .ListGroup-item-heading > .small {
       color: inherit; }
     .ListGroup-item.is-active .ListGroup-item-text, .ListGroup-item.is-active:hover .ListGroup-item-text, .ListGroup-item.is-active:focus .ListGroup-item-text {
       color: #eff5e9; }
 
-/* Linked list items */
+/**
+ * Linked list items
+ * Use anchor elements instead of `li`s or `div`s to create linked list items.
+ * Includes an extra `.active` modifier class for showing selected items.
+ */
 a.ListGroup-item {
   color: #555;
   /* Hover state */ }
@@ -4719,6 +4772,75 @@ a.ListGroup-item {
   a.ListGroup-item:hover, a.ListGroup-item:focus {
     text-decoration: none;
     background-color: #f5f5f5; }
+
+/**
+ * Contextual variants
+ * Add modifier classes to change text and background color on individual items.
+ * Organizationally, this must come after the `:hover` states.
+ */
+.ListGroup-item--success {
+  color: #468847;
+  background-color: #dff0d8; }
+
+a.ListGroup-item--success {
+  color: #468847; }
+  a.ListGroup-item--success .ListGroup-item-heading {
+    color: inherit; }
+  a.ListGroup-item--success:hover, a.ListGroup-item--success:focus {
+    color: #468847;
+    background-color: #d0e9c6; }
+  a.ListGroup-item--success.is-active, a.ListGroup-item--success.is-active:hover, a.ListGroup-item--success.is-active:focus {
+    color: #fff;
+    background-color: #468847;
+    border-color: #468847; }
+
+.ListGroup-item--info {
+  color: #3a87ad;
+  background-color: #d9edf7; }
+
+a.ListGroup-item--info {
+  color: #3a87ad; }
+  a.ListGroup-item--info .ListGroup-item-heading {
+    color: inherit; }
+  a.ListGroup-item--info:hover, a.ListGroup-item--info:focus {
+    color: #3a87ad;
+    background-color: #c4e4f3; }
+  a.ListGroup-item--info.is-active, a.ListGroup-item--info.is-active:hover, a.ListGroup-item--info.is-active:focus {
+    color: #fff;
+    background-color: #3a87ad;
+    border-color: #3a87ad; }
+
+.ListGroup-item--warning {
+  color: #c09853;
+  background-color: #fcf8e3; }
+
+a.ListGroup-item--warning {
+  color: #c09853; }
+  a.ListGroup-item--warning .ListGroup-item-heading {
+    color: inherit; }
+  a.ListGroup-item--warning:hover, a.ListGroup-item--warning:focus {
+    color: #c09853;
+    background-color: #faf2cc; }
+  a.ListGroup-item--warning.is-active, a.ListGroup-item--warning.is-active:hover, a.ListGroup-item--warning.is-active:focus {
+    color: #fff;
+    background-color: #c09853;
+    border-color: #c09853; }
+
+.ListGroup-item--danger {
+  color: #b94a48;
+  background-color: #f2dede; }
+
+a.ListGroup-item--danger {
+  color: #b94a48; }
+  a.ListGroup-item--danger .ListGroup-item-heading {
+    color: inherit; }
+  a.ListGroup-item--danger:hover, a.ListGroup-item--danger:focus {
+    color: #b94a48;
+    background-color: #ebcccc; }
+  a.ListGroup-item--danger.is-active, a.ListGroup-item--danger.is-active:hover, a.ListGroup-item--danger.is-active:focus {
+    color: #fff;
+    background-color: #b94a48;
+    border-color: #b94a48; }
 
 /* Custom content options
    ========================================================================== */
@@ -4988,28 +5110,34 @@ button.Close {
 /* Container that the modal scrolls within */
 .Modal {
   display: none;
-  overflow: auto;
-  overflow-y: scroll;
+  overflow: hidden;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 1040;
+  -webkit-overflow-scrolling: touch;
+  /**
+	 * Prevent Chrome on Windows from adding a focus outline. For details, see
+	 * https://github.com/twbs/bootstrap/pull/10951.
+	 */
+  outline: 0;
   /* When fading in the modal, animate it to slide down */ }
   .Modal.Animation--fade .Modal-dialog {
     transform: translate(0, -25%);
     transition: transform 0.3s ease-out; }
   .Modal.is-in .Modal-dialog {
     transform: translate(0, 0); }
+  .has-openModal .Modal {
+    overflow-x: hidden;
+    overflow-y: auto; }
 
 /* Shell div to position the modal with bottom padding */
 .Modal-dialog {
-  margin-left: auto;
-  margin-right: auto;
+  position: relative;
   width: auto;
-  padding: 10px;
-  z-index: 1050; }
+  margin: 10px; }
 
 /* Actual modal */
 .Modal-content {
@@ -5067,7 +5195,6 @@ button.Close {
 
 /* Footer (for actions) */
 .Modal-footer {
-  margin-top: 15px;
   padding: 14px 15px 15px;
   text-align: right;
   /* right align buttons */
@@ -5096,10 +5223,15 @@ button.Close {
 @media screen and (min-width: 768px) {
   .Modal-dialog {
     width: 600px;
-    padding-top: 30px;
-    padding-bottom: 30px; }
+    margin: 30px auto; }
+  .Modal--small {
+    width: 300px; }
   .Modal-content {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); } }
+
+@media screen and (min-width: 992px) {
+  .Modal--large {
+    width: 900px; } }
 
 /* ==========================================================================
    Tooltips

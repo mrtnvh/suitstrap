@@ -3,12 +3,12 @@
    ========================================================================== */
 
 @mixin ListGroupItemVariant($state, $background, $color) {
-	.ListGroup-item-#{$state} {
+	.ListGroup-item--#{$state} {
 		color: $color;
 		background-color: $background;
 	}
 
-	a.ListGroup-item-#{$state} {
+	a.ListGroup-item--#{$state} {
 		color: $color;
 
 		.ListGroup-item-heading {

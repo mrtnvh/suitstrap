@@ -54,7 +54,7 @@
  */
 
 @media (min-width: $screen--small-min) {
-  @include MakeGrid(nth($grid-breakpoints, 2));
+	@include MakeGrid(nth($grid-breakpoints, 2));
 }
 
 /**
@@ -63,7 +63,7 @@
  */
 
 @media (min-width: $screen--medium-min) {
-  @include MakeGrid(nth($grid-breakpoints, 3));
+	@include MakeGrid(nth($grid-breakpoints, 3));
 }
 
 /**
@@ -72,5 +72,5 @@
  */
 
 @media (min-width: $screen--large-min) {
-  @include MakeGrid(nth($grid-breakpoints, 4));
+	@include MakeGrid(nth($grid-breakpoints, 4));
 }
