@@ -851,7 +851,7 @@ img {
 /* Image thumbnails
    Heads up! This is mixin-ed into _Thumbnails.scss for `.Thumbnail`.
    ========================================================================== */
-.Image--thumbnail, .Thumbnail {
+.Image--thumbnail {
   padding: 4px;
   line-height: 1.5;
   background-color: #fff;
@@ -4504,28 +4504,28 @@ a.Badge:hover, a.Badge:focus {
    ========================================================================== */
 /* Mixin and adjust the regular image class */
 .Thumbnail {
-  display: block;
-  /* Override the inline-block from `.img-thumbnail` */
-  margin-bottom: 21px; }
-  .Thumbnail > img {
+  padding: 4px;
+  margin-bottom: 21px;
+  line-height: 1.5;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border 0.2s ease-in-out; }
+  .Thumbnail > img, .Thumbnail a > img {
     display: block;
     max-width: 100%;
     /* Part 1: Set a maximum relative to the parent */
     height: auto;
-    /* Part 2: Scale the height according to the width, otherwise you get stretching */ }
+    /* Part 2: Scale the height according to the width, otherwise you get stretching */
+    margin-left: auto;
+    margin-right: auto; }
+  .Thumbnail .Caption {
+    padding: 9px;
+    color: #555555; }
 
 /* Add a hover state for linked versions only */
-a.Thumbnail:hover, a.Thumbnail:focus {
+a.Thumbnail:hover, a.Thumbnail:focus, a.Thumbnail.is-active {
   border-color: #86b35f; }
-
-/* Images and captions */
-.Thumbnail > img {
-  margin-left: auto;
-  margin-right: auto; }
-
-.Thumbnail .Caption {
-  padding: 9px;
-  color: #555555; }
 
 /* ==========================================================================
    Alerts
@@ -4607,10 +4607,12 @@ a.Thumbnail:hover, a.Thumbnail:focus {
    ========================================================================== */
 /* Bar animations
    ========================================================================== */
-keyframes(progress-bar-stripes) from {
-  background-position: 40px 0; }
-keyframes(progress-bar-stripes) to {
-  background-position: 0 0; }
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0; }
+
+  to {
+    background-position: 0 0; } }
 
 /* Bar itself
    ========================================================================== */
@@ -4637,13 +4639,20 @@ keyframes(progress-bar-stripes) to {
   transition: width 0.6s ease; }
 
 /* Striped bars */
-.Progress--striped .Progress-bar {
+.Progress--striped .Progress-bar, .Progress--striped {
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-size: 40px 40px; }
 
 /* Call animation for the active one */
-.Progress.is-active .Progress-bar {
+.Progress.is-active .Progress-bar, .Progress-bar.is-active {
   animation: progress-bar-stripes 2s linear infinite; }
+
+.Progress-bar[aria-valuenow="0"] {
+  color: #777777;
+  min-width: 30px;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none; }
 
 /* Variations
    ========================================================================== */
@@ -4880,47 +4889,14 @@ a.ListGroup-item--danger {
   .Panel-body:after {
     clear: both; }
 
-/* List groups in panels
-   ========================================================================== */
-/* By default, space out list group content from panel headings to account for any kind of custom content between the two. */
-.Panel > .ListGroup {
-  margin-bottom: 0; }
-  .Panel > .ListGroup .ListGroup-item {
-    border-width: 1px 0;
-    /* Remove border radius for top one */
-    /* But keep it for the last one */ }
-    .Panel > .ListGroup .ListGroup-item:first-child {
-      border-top-right-radius: 0;
-      border-top-left-radius: 0; }
-    .Panel > .ListGroup .ListGroup-item:last-child {
-      border-bottom: 0; }
-
-/* Collapse space between when there's no additional content. */
-.Panel-heading + .ListGroup .ListGroup-item:first-child {
-  border-top-width: 0; }
-
-/* Tables in panels
-   ========================================================================== */
-/* Place a non-bordered `.Table` within a panel (not within a `.Panel-body`) and watch it go full width. */
-.Panel > .Table, .Panel > .Table--responsive {
-  margin-bottom: 0; }
-.Panel > .Panel-body + .Table, .Panel > .Panel-body + .Table--responsive {
-  border-top: 1px solid #ddd; }
-.Panel > .Table--bordered, .Panel > .Table--responsive > .Table--bordered {
-  border: 0; }
-  .Panel > .Table--bordered > thead > tr > th:first-child, .Panel > .Table--bordered > thead > tr > td:first-child, .Panel > .Table--bordered > tbody > tr > th:first-child, .Panel > .Table--bordered > tbody > tr > td:first-child, .Panel > .Table--bordered > tfoot > tr > th:first-child, .Panel > .Table--bordered > tfoot > tr > td:first-child, .Panel > .Table--responsive > .Table--bordered > thead > tr > th:first-child, .Panel > .Table--responsive > .Table--bordered > thead > tr > td:first-child, .Panel > .Table--responsive > .Table--bordered > tbody > tr > th:first-child, .Panel > .Table--responsive > .Table--bordered > tbody > tr > td:first-child, .Panel > .Table--responsive > .Table--bordered > tfoot > tr > th:first-child, .Panel > .Table--responsive > .Table--bordered > tfoot > tr > td:first-child {
-    border-left: 0; }
-  .Panel > .Table--bordered > thead > tr > th:last-child, .Panel > .Table--bordered > thead > tr > td:last-child, .Panel > .Table--bordered > tbody > tr > th:last-child, .Panel > .Table--bordered > tbody > tr > td:last-child, .Panel > .Table--bordered > tfoot > tr > th:last-child, .Panel > .Table--bordered > tfoot > tr > td:last-child, .Panel > .Table--responsive > .Table--bordered > thead > tr > th:last-child, .Panel > .Table--responsive > .Table--bordered > thead > tr > td:last-child, .Panel > .Table--responsive > .Table--bordered > tbody > tr > th:last-child, .Panel > .Table--responsive > .Table--bordered > tbody > tr > td:last-child, .Panel > .Table--responsive > .Table--bordered > tfoot > tr > th:last-child, .Panel > .Table--responsive > .Table--bordered > tfoot > tr > td:last-child {
-    border-right: 0; }
-  .Panel > .Table--bordered > thead > tr:last-child > th, .Panel > .Table--bordered > thead > tr:last-child > td, .Panel > .Table--bordered > tbody > tr:last-child > th, .Panel > .Table--bordered > tbody > tr:last-child > td, .Panel > .Table--bordered > tfoot > tr:last-child > th, .Panel > .Table--bordered > tfoot > tr:last-child > td, .Panel > .Table--responsive > .Table--bordered > thead > tr:last-child > th, .Panel > .Table--responsive > .Table--bordered > thead > tr:last-child > td, .Panel > .Table--responsive > .Table--bordered > tbody > tr:last-child > th, .Panel > .Table--responsive > .Table--bordered > tbody > tr:last-child > td, .Panel > .Table--responsive > .Table--bordered > tfoot > tr:last-child > th, .Panel > .Table--responsive > .Table--bordered > tfoot > tr:last-child > td {
-    border-bottom: 0; }
-
 /* Optional heading */
 .Panel-heading {
   padding: 10px 15px;
   border-bottom: 1px solid transparent;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px; }
+  .Panel-heading > .Dropdown .Dropdown-toggle {
+    color: inherit; }
 
 /* Within heading, strip any `h*` tag of it's default margins for spacing. */
 .Panel-title {
@@ -4937,6 +4913,87 @@ a.ListGroup-item--danger {
   border-top: 1px solid #ddd;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px; }
+
+/* List groups in panels
+   ========================================================================== */
+/* By default, space out list group content from panel headings to account for any kind of custom content between the two. */
+.Panel > .ListGroup, .Panel > .Panel-collapse > .ListGroup {
+  margin-bottom: 0; }
+  .Panel > .ListGroup .ListGroup-item, .Panel > .Panel-collapse > .ListGroup .ListGroup-item {
+    border-width: 1px 0;
+    border-radius: 0;
+    /* Remove border radius for top one */
+    /* But keep it for the last one */ }
+    .Panel > .ListGroup .ListGroup-item:first-child, .Panel > .Panel-collapse > .ListGroup .ListGroup-item:first-child {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0; }
+      .Panel > .ListGroup .ListGroup-item:first-child .ListGroup-item:first-child, .Panel > .Panel-collapse > .ListGroup .ListGroup-item:first-child .ListGroup-item:first-child {
+        border-top: 0;
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px; }
+    .Panel > .ListGroup .ListGroup-item:last-child .ListGroup-item:last-child, .Panel > .Panel-collapse > .ListGroup .ListGroup-item:last-child .ListGroup-item:last-child {
+      border-bottom: 0;
+      border-bottom-right-radius: 3px;
+      border-bottom-left-radius: 3px; }
+
+/* Collapse space between when there's no additional content. */
+.Panel-heading + .ListGroup .ListGroup-item:first-child {
+  border-top-width: 0; }
+
+.ListGroup + .Panel-footer {
+  border-top-width: 0; }
+
+/* Tables in panels
+   ========================================================================== */
+/**
+ * Place a non-bordered `.Table` within a panel (not within a `.Panel-body`)
+ * and watch it go full width.
+ */
+.Panel {
+  /* Add border top radius for first one */
+  /* Add border bottom radius for last one */ }
+  .Panel > .Table, .Panel > .Table--responsive > .Table, .Panel > .Panel-collapse > .Table {
+    margin-bottom: 0; }
+    .Panel > .Table caption, .Panel > .Table--responsive > .Table caption, .Panel > .Panel-collapse > .Table caption {
+      padding-left: 15px;
+      padding-right: 15px; }
+  .Panel > .Table:first-child, .Panel > .Table--responsive:first-child > .Table:first-child {
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px; }
+    .Panel > .Table:first-child > thead:first-child > tr:first-child, .Panel > .Table:first-child > tbody:first-child > tr:first-child, .Panel > .Table--responsive:first-child > .Table:first-child > thead:first-child > tr:first-child, .Panel > .Table--responsive:first-child > .Table:first-child > tbody:first-child > tr:first-child {
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px; }
+      .Panel > .Table:first-child > thead:first-child > tr:first-child td:first-child, .Panel > .Table:first-child > thead:first-child > tr:first-child th:first-child, .Panel > .Table:first-child > tbody:first-child > tr:first-child td:first-child, .Panel > .Table:first-child > tbody:first-child > tr:first-child th:first-child, .Panel > .Table--responsive:first-child > .Table:first-child > thead:first-child > tr:first-child td:first-child, .Panel > .Table--responsive:first-child > .Table:first-child > thead:first-child > tr:first-child th:first-child, .Panel > .Table--responsive:first-child > .Table:first-child > tbody:first-child > tr:first-child td:first-child, .Panel > .Table--responsive:first-child > .Table:first-child > tbody:first-child > tr:first-child th:first-child {
+        border-top-left-radius: 3px; }
+      .Panel > .Table:first-child > thead:first-child > tr:first-child td:last-child, .Panel > .Table:first-child > thead:first-child > tr:first-child th:last-child, .Panel > .Table:first-child > tbody:first-child > tr:first-child td:last-child, .Panel > .Table:first-child > tbody:first-child > tr:first-child th:last-child, .Panel > .Table--responsive:first-child > .Table:first-child > thead:first-child > tr:first-child td:last-child, .Panel > .Table--responsive:first-child > .Table:first-child > thead:first-child > tr:first-child th:last-child, .Panel > .Table--responsive:first-child > .Table:first-child > tbody:first-child > tr:first-child td:last-child, .Panel > .Table--responsive:first-child > .Table:first-child > tbody:first-child > tr:first-child th:last-child {
+        border-top-right-radius: 3px; }
+  .Panel > .Table:last-child, .Panel > .Table--responsive:last-child > .Table:last-child {
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px; }
+    .Panel > .Table:last-child > tbody:last-child > tr:last-child, .Panel > .Table:last-child > tfoot:last-child > tr:last-child, .Panel > .Table--responsive:last-child > .Table:last-child > tbody:last-child > tr:last-child, .Panel > .Table--responsive:last-child > .Table:last-child > tfoot:last-child > tr:last-child {
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px; }
+      .Panel > .Table:last-child > tbody:last-child > tr:last-child td:first-child, .Panel > .Table:last-child > tbody:last-child > tr:last-child th:first-child, .Panel > .Table:last-child > tfoot:last-child > tr:last-child td:first-child, .Panel > .Table:last-child > tfoot:last-child > tr:last-child th:first-child, .Panel > .Table--responsive:last-child > .Table:last-child > tbody:last-child > tr:last-child td:first-child, .Panel > .Table--responsive:last-child > .Table:last-child > tbody:last-child > tr:last-child th:first-child, .Panel > .Table--responsive:last-child > .Table:last-child > tfoot:last-child > tr:last-child td:first-child, .Panel > .Table--responsive:last-child > .Table:last-child > tfoot:last-child > tr:last-child th:first-child {
+        border-bottom-left-radius: 3px; }
+      .Panel > .Table:last-child > tbody:last-child > tr:last-child td:last-child, .Panel > .Table:last-child > tbody:last-child > tr:last-child th:last-child, .Panel > .Table:last-child > tfoot:last-child > tr:last-child td:last-child, .Panel > .Table:last-child > tfoot:last-child > tr:last-child th:last-child, .Panel > .Table--responsive:last-child > .Table:last-child > tbody:last-child > tr:last-child td:last-child, .Panel > .Table--responsive:last-child > .Table:last-child > tbody:last-child > tr:last-child th:last-child, .Panel > .Table--responsive:last-child > .Table:last-child > tfoot:last-child > tr:last-child td:last-child, .Panel > .Table--responsive:last-child > .Table:last-child > tfoot:last-child > tr:last-child th:last-child {
+        border-bottom-right-radius: 3px; }
+  .Panel > .Panel-body + .Table, .Panel > .Panel-body + .Table--responsive, .Panel > .Table + .Panel-body, .Panel > .Table--responsive + .Panel-body {
+    border-top: 1px solid #ddd; }
+  .Panel > .Table > tbody:first-child > tr:first-child th, .Panel > .Table > tbody:first-child > tr:first-child td {
+    border-top: 0; }
+  .Panel > .Table-bordered, .Panel > .Table--responsive > .Table-bordered {
+    border: 0; }
+    .Panel > .Table-bordered > thead > tr > th:first-child, .Panel > .Table-bordered > thead > tr > td:first-child, .Panel > .Table-bordered > tbody > tr > th:first-child, .Panel > .Table-bordered > tbody > tr > td:first-child, .Panel > .Table-bordered > tfoot > tr > th:first-child, .Panel > .Table-bordered > tfoot > tr > td:first-child, .Panel > .Table--responsive > .Table-bordered > thead > tr > th:first-child, .Panel > .Table--responsive > .Table-bordered > thead > tr > td:first-child, .Panel > .Table--responsive > .Table-bordered > tbody > tr > th:first-child, .Panel > .Table--responsive > .Table-bordered > tbody > tr > td:first-child, .Panel > .Table--responsive > .Table-bordered > tfoot > tr > th:first-child, .Panel > .Table--responsive > .Table-bordered > tfoot > tr > td:first-child {
+      border-left: 0; }
+    .Panel > .Table-bordered > thead > tr > th:last-child, .Panel > .Table-bordered > thead > tr > td:last-child, .Panel > .Table-bordered > tbody > tr > th:last-child, .Panel > .Table-bordered > tbody > tr > td:last-child, .Panel > .Table-bordered > tfoot > tr > th:last-child, .Panel > .Table-bordered > tfoot > tr > td:last-child, .Panel > .Table--responsive > .Table-bordered > thead > tr > th:last-child, .Panel > .Table--responsive > .Table-bordered > thead > tr > td:last-child, .Panel > .Table--responsive > .Table-bordered > tbody > tr > th:last-child, .Panel > .Table--responsive > .Table-bordered > tbody > tr > td:last-child, .Panel > .Table--responsive > .Table-bordered > tfoot > tr > th:last-child, .Panel > .Table--responsive > .Table-bordered > tfoot > tr > td:last-child {
+      border-right: 0; }
+    .Panel > .Table-bordered > thead > tr:first-child > td, .Panel > .Table-bordered > thead > tr:first-child > th, .Panel > .Table-bordered > tbody > tr:first-child > td, .Panel > .Table-bordered > tbody > tr:first-child > th, .Panel > .Table--responsive > .Table-bordered > thead > tr:first-child > td, .Panel > .Table--responsive > .Table-bordered > thead > tr:first-child > th, .Panel > .Table--responsive > .Table-bordered > tbody > tr:first-child > td, .Panel > .Table--responsive > .Table-bordered > tbody > tr:first-child > th {
+      border-bottom: 0; }
+    .Panel > .Table-bordered > tbody > tr:last-child > td, .Panel > .Table-bordered > tbody > tr:last-child > th, .Panel > .Table-bordered > tfoot > tr:last-child > td, .Panel > .Table-bordered > tfoot > tr:last-child > th, .Panel > .Table--responsive > .Table-bordered > tbody > tr:last-child > td, .Panel > .Table--responsive > .Table-bordered > tbody > tr:last-child > th, .Panel > .Table--responsive > .Table-bordered > tfoot > tr:last-child > td, .Panel > .Table--responsive > .Table-bordered > tfoot > tr:last-child > th {
+      border-bottom: 0; }
+  .Panel > .Table--responsive {
+    border: 0;
+    margin-bottom: 0; }
 
 /* Collapsable panels (aka, accordion)
    ========================================================================== */
@@ -5283,46 +5340,46 @@ button.Close {
   height: 0;
   border-color: transparent;
   border-style: solid; }
-  .Tooltip--top .Arrow {
+  .Tooltip.Tooltip--top .Arrow {
     bottom: 0;
     left: 50%;
     margin-left: -5px;
     border-width: 5px 5px 0;
     border-top-color: #000; }
-  .Tooltip--topLeft .Arrow {
+  .Tooltip.Tooltip--topLeft .Arrow {
     bottom: 0;
     left: 5px;
     border-width: 5px 5px 0;
     border-top-color: #000; }
-  .Tooltip--topRight .Arrow {
+  .Tooltip.Tooltip--topRight .Arrow {
     bottom: 0;
     right: 5px;
     border-width: 5px 5px 0;
     border-top-color: #000; }
-  .Tooltip--right .Arrow {
+  .Tooltip.Tooltip--right .Arrow {
     top: 50%;
     left: 0;
     margin-top: -5px;
     border-width: 5px 5px 5px 0;
     border-right-color: #000; }
-  .Tooltip--left .Arrow {
+  .Tooltip.Tooltip--left .Arrow {
     top: 50%;
     right: 0;
     margin-top: -5px;
     border-width: 5px 0 5px 5px;
     border-left-color: #000; }
-  .Tooltip--bottom .Arrow {
+  .Tooltip.Tooltip--bottom .Arrow {
     top: 0;
     left: 50%;
     margin-left: -5px;
     border-width: 0 5px 5px;
     border-bottom-color: #000; }
-  .Tooltip--bottomLeft .Arrow {
+  .Tooltip.Tooltip--bottomLeft .Arrow {
     top: 0;
     left: 5px;
     border-width: 0 5px 5px;
     border-bottom-color: #000; }
-  .Tooltip--bottomRight .Arrow {
+  .Tooltip.Tooltip--bottomRight .Arrow {
     top: 0;
     right: 5px;
     border-width: 0 5px 5px;
@@ -5339,8 +5396,11 @@ button.Close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  text-align: left;
   /* Reset given new insertion method */
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.5;
+  text-align: left;
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ccc;
@@ -5351,21 +5411,19 @@ button.Close {
   white-space: normal;
   /* Offset the popover to account for the popover arrow */ }
   .Popover.Popover--top {
-    margin-top: -10px; }
+    margin-top: 10px; }
   .Popover.Popover--right {
     margin-left: 10px; }
   .Popover.Popover--bottom {
     margin-top: 10px; }
   .Popover.Popover--left {
-    margin-left: -10px; }
+    margin-left: 10px; }
 
 .Popover-title {
   margin: 0;
   /* reset heading margin */
   padding: 8px 14px;
   font-size: 14px;
-  font-weight: normal;
-  line-height: 18px;
   background-color: #f7f7f7;
   border-bottom: 1px solid #ebebeb;
   border-radius: 5px 5px 0 0; }
@@ -5376,7 +5434,7 @@ button.Close {
 /* Arrows
    .Arrow is outer, .Arrow:after is inner
    ========================================================================== */
-.Popover .Arrow, .Popover .Arrow:after {
+.Popover > .Arrow, .Popover > .Arrow:after {
   position: absolute;
   display: block;
   width: 0;
@@ -5384,14 +5442,14 @@ button.Close {
   border-color: transparent;
   border-style: solid; }
 
-.Popover .Arrow {
+.Popover > .Arrow {
   border-width: 11px; }
 
-.Popover .Arrow:after {
+.Popover > .Arrow:after {
   border-width: 10px;
   content: ""; }
 
-.Popover.Popover--top .Arrow, .Popover.Tooltip--top .Arrow {
+.Popover.Popover--top > .Arrow, .Popover.Tooltip--top > .Arrow {
   left: 50%;
   margin-left: -11px;
   border-bottom-width: 0;
@@ -5399,7 +5457,7 @@ button.Close {
   /* IE8 fallback */
   border-top-color: fadein(rgba(0, 0, 0, 0.2), 5%);
   bottom: -11px; }
-  .Popover.Popover--top .Arrow:after, .Popover.Tooltip--top .Arrow:after {
+  .Popover.Popover--top > .Arrow:after, .Popover.Tooltip--top > .Arrow:after {
     content: " ";
     bottom: 1px;
     margin-left: -10px;

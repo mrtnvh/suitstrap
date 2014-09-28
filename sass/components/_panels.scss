@@ -17,29 +17,71 @@
 	@include MicroClearfix();
 }
 
+/* Optional heading */
+.Panel-heading {
+	padding: 10px 15px;
+	border-bottom: 1px solid transparent;
+	@include BorderTopRadius($panel-border-radius - 1);
+
+	> .Dropdown .Dropdown-toggle {
+		color: inherit;
+	}
+}
+
+/* Within heading, strip any `h*` tag of it's default margins for spacing. */
+.Panel-title {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: ceil(($font-size-base * 1.125));
+
+	> a {
+		color: inherit;
+	}
+}
+
+/* Optional footer (stays gray in every modifier class) */
+.Panel-footer {
+	padding: 10px 15px;
+	background-color: $panel-footer-bg;
+	border-top: 1px solid $panel-inner-border;
+	@include BorderBottomRadius($panel-border-radius - 1);
+}
+
 
 /* List groups in panels
    ========================================================================== */
 /* By default, space out list group content from panel headings to account for any kind of custom content between the two. */
 
 .Panel {
-	> .ListGroup {
+	> .ListGroup,
+	> .Panel-collapse > .ListGroup {
 		margin-bottom: 0;
 
 		.ListGroup-item {
 			border-width: 1px 0;
+			border-radius: 0;
 
 			/* Remove border radius for top one */
 			&:first-child {
 				@include BorderTopRadius(0);
+
+				.ListGroup-item:first-child {
+					border-top: 0;
+					@include BorderTopRadius(($panel-border-radius - 1));
+				}
 			}
+
 			/* But keep it for the last one */
 			&:last-child {
-				border-bottom: 0;
+				.ListGroup-item:last-child {
+					border-bottom: 0;
+					@include BorderBottomRadius(($panel-border-radius - 1));
+				}
 			}
 		}
 	}
 }
+
 /* Collapse space between when there's no additional content. */
 .Panel-heading + .ListGroup {
 	.ListGroup-item:first-child {
@@ -47,26 +89,92 @@
 	}
 }
 
+.ListGroup + .Panel-footer {
+  border-top-width: 0;
+}
+
+
 
 /* Tables in panels
    ========================================================================== */
-/* Place a non-bordered `.Table` within a panel (not within a `.Panel-body`) and watch it go full width. */
+/**
+ * Place a non-bordered `.Table` within a panel (not within a `.Panel-body`)
+ * and watch it go full width.
+ */
 
 .Panel {
 	> .Table,
-	> .Table--responsive {
+	> .Table--responsive > .Table,
+	> .Panel-collapse > .Table {
 		margin-bottom: 0;
+
+		caption {
+			padding-left: $panel-body-padding;
+			padding-right: $panel-body-padding;
+		}
+	}
+
+	/* Add border top radius for first one */
+	> .Table:first-child,
+	> .Table--responsive:first-child > .Table:first-child {
+		@include BorderTopRadius(($panel-border-radius - 1));
+
+		> thead:first-child,
+		> tbody:first-child {
+			> tr:first-child {
+				border-top-left-radius: ($panel-border-radius - 1);
+				border-top-right-radius: ($panel-border-radius - 1);
+
+				td:first-child,
+				th:first-child {
+					border-top-left-radius: ($panel-border-radius - 1);
+				}
+				td:last-child,
+				th:last-child {
+					border-top-right-radius: ($panel-border-radius - 1);
+				}
+			}
+		}
+	}
+
+	/* Add border bottom radius for last one */
+	> .Table:last-child,
+	> .Table--responsive:last-child > .Table:last-child {
+		@include BorderBottomRadius(($panel-border-radius - 1));
+
+		> tbody:last-child,
+		> tfoot:last-child {
+			> tr:last-child {
+				border-bottom-left-radius: ($panel-border-radius - 1);
+				border-bottom-right-radius: ($panel-border-radius - 1);
+
+				td:first-child,
+				th:first-child {
+					border-bottom-left-radius: ($panel-border-radius - 1);
+				}
+				td:last-child,
+				th:last-child {
+					border-bottom-right-radius: ($panel-border-radius - 1);
+				}
+			}
+		}
 	}
 
 	> .Panel-body + .Table,
-	> .Panel-body + .Table--responsive {
+	> .Panel-body + .Table--responsive,
+	> .Table + .Panel-body,
+	> .Table--responsive + .Panel-body {
 		border-top: 1px solid $table-border-color;
 	}
 
-	> .Table--bordered,
-	> .Table--responsive > .Table--bordered {
-		border: 0;
+	> .Table > tbody:first-child > tr:first-child th,
+	> .Table > tbody:first-child > tr:first-child td {
+		border-top: 0;
+	}
 
+	> .Table-bordered,
+	> .Table--responsive > .Table-bordered {
+		border: 0;
 		> thead,
 		> tbody,
 		> tfoot {
@@ -79,40 +187,32 @@
 				> td:last-child {
 					border-right: 0;
 				}
-
-				&:last-child > th,
-				&:last-child > td {
+			}
+		}
+		> thead,
+		> tbody {
+			> tr:first-child {
+				> td,
+				> th {
+					border-bottom: 0;
+				}
+			}
+		}
+		> tbody,
+		> tfoot {
+			> tr:last-child {
+				> td,
+				> th {
 					border-bottom: 0;
 				}
 			}
 		}
 	}
-}
 
-
-/* Optional heading */
-.Panel-heading {
-	padding: 10px 15px;
-	border-bottom: 1px solid transparent;
-	@include BorderTopRadius($panel-border-radius - 1);
-}
-
-/* Within heading, strip any `h*` tag of it's default margins for spacing. */
-.Panel-title {
-	margin-top: 0;
-	margin-bottom: 0;
-	font-size: ceil(($font-size-base * 1.125));
-	> a {
-		color: inherit;
+	> .Table--responsive {
+		border: 0;
+		margin-bottom: 0;
 	}
-}
-
-/* Optional footer (stays gray in every modifier class) */
-.Panel-footer {
-	padding: 10px 15px;
-	background-color: $panel-footer-bg;
-	border-top: 1px solid $panel-inner-border;
-	@include BorderBottomRadius($panel-border-radius - 1);
 }
 
 

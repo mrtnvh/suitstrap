@@ -6,9 +6,9 @@
 /* Bar animations
    ========================================================================== */
 
-keyframes(progress-bar-stripes) {
-	from { background-position: 40px 0; }
-	to   { background-position: 0 0; }
+@keyframes progress-bar-stripes {
+	from  { background-position: 40px 0; }
+	to    { background-position: 0 0; }
 }
 
 
@@ -41,14 +41,27 @@ keyframes(progress-bar-stripes) {
 }
 
 /* Striped bars */
-.Progress--striped .Progress-bar {
+.Progress--striped .Progress-bar,
+.Progress--striped {
 	@include Gradient--striped();
 	background-size: 40px 40px;
 }
 
 /* Call animation for the active one */
-.Progress.is-active .Progress-bar {
+.Progress.is-active .Progress-bar,
+.Progress-bar.is-active {
 	animation: progress-bar-stripes 2s linear infinite;
+}
+
+// Account for lower percentages
+.Progress-bar {
+	&[aria-valuenow="0"] {
+		color: $gray-light;
+		min-width: 30px;
+		background-color: transparent;
+		background-image: none;
+		box-shadow: none;
+	}
 }
 
 
