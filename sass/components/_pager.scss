@@ -8,6 +8,7 @@
 	list-style: none;
 	text-align: center;
 	@include MicroClearfix();
+
 	li {
 		display: inline;
 

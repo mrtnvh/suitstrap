@@ -355,6 +355,11 @@
  */
 /* Placeholder text */
 /* ==========================================================================
+   Navs
+   ========================================================================== */
+/* Nav variations
+  ========================================================================== */
+/* ==========================================================================
    Horizontal dividers
    ========================================================================== */
 /* Dividers (basically an hr) within dropdowns and nav lists */
@@ -3665,9 +3670,6 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
   .Nav .is-open > a, .Nav .is-open > a:hover, .Nav .is-open > a:focus {
     background-color: #eeeeee;
     border-color: #86b35f; }
-    .Nav .is-open > a .Caret, .Nav .is-open > a:hover .Caret, .Nav .is-open > a:focus .Caret {
-      border-top-color: #608640;
-      border-bottom-color: #608640; }
   .Nav .Nav-divider {
     height: 1px;
     margin: 9.5px 0;
@@ -3701,6 +3703,32 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
       border: 1px solid #ddd;
       border-bottom-color: transparent;
       cursor: default; }
+  .Nav--tabs.Nav--justified {
+    width: 100%;
+    border-bottom: 0; }
+    .Nav--tabs.Nav--justified > li {
+      float: none; }
+      .Nav--tabs.Nav--justified > li > a {
+        text-align: center;
+        margin-bottom: 5px; }
+    @media (min-width: 768px) {
+      .Nav--tabs.Nav--justified > li {
+        display: table-cell;
+        width: 1%; }
+        .Nav--tabs.Nav--justified > li > a {
+          margin-bottom: 0; } }
+    .Nav--tabs.Nav--justified > li > a {
+      /* Override margin from .Nav-tabs */
+      margin-right: 0;
+      border-radius: 4px; }
+    .Nav--tabs.Nav--justified > .is-active > a, .Nav--tabs.Nav--justified > .is-active > a:hover, .Nav--tabs.Nav--justified > .is-active > a:focus {
+      border: 1px solid #ddd; }
+    @media (min-width: 768px) {
+      .Nav--tabs.Nav--justified > li > a {
+        border-bottom: 1px solid #ddd;
+        border-radius: 4px 4px 0 0; }
+      .Nav--tabs.Nav--justified > .is-active > a, .Nav--tabs.Nav--justified > .is-active > a:hover, .Nav--tabs.Nav--justified > .is-active > a:focus {
+        border-bottom-color: #fff; } }
 
 /* Pills
    ========================================================================== */
@@ -3715,9 +3743,6 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
   .Nav--pills > li.is-active > a, .Nav--pills > li.is-active > a:hover, .Nav--pills > li.is-active > a:focus {
     color: #fff;
     background-color: #86b35f; }
-    .Nav--pills > li.is-active > a .Caret, .Nav--pills > li.is-active > a:hover .Caret, .Nav--pills > li.is-active > a:focus .Caret {
-      border-top-color: #fff;
-      border-bottom-color: #fff; }
 
 /* Stacked pills */
 .Nav--stacked > li {
@@ -3730,65 +3755,46 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
 /* Nav variations
    ========================================================================== */
 /* Justified nav links */
-.Nav--justified, .Nav--tabs.Nav--justified {
+.Nav--justified {
   width: 100%; }
-  .Nav--justified > li, .Nav--justified > .Nav--tabs.Nav--justified {
+  .Nav--justified > li {
     float: none; }
-    .Nav--justified > li > a, .Nav--justified > li > .Nav--tabs.Nav--justified {
+    .Nav--justified > li > a {
       text-align: center;
       margin-bottom: 5px; }
   @media (min-width: 768px) {
-    .Nav--justified > li, .Nav--justified > .Nav--tabs.Nav--justified {
+    .Nav--justified > li {
       display: table-cell;
       width: 1%; }
-      .Nav--justified > li > a, .Nav--justified > li > .Nav--tabs.Nav--justified {
+      .Nav--justified > li > a {
         margin-bottom: 0; } }
 
 /* Move borders to anchors instead of bottom of list */
-.Nav--tabs--justified, .Nav--tabs.Nav--justified, .Nav--tabs.Nav--justified {
+.Nav--tabs--justified {
   border-bottom: 0; }
-  .Nav--tabs--justified > li > a, .Nav--tabs--justified > li > .Nav--tabs.Nav--justified, .Nav--tabs--justified > li > .Nav--tabs.Nav--justified {
+  .Nav--tabs--justified > li > a {
     /* Override margin from .Nav-tabs */
     margin-right: 0;
     border-radius: 4px; }
-  .Nav--tabs--justified > .is-active > a, .Nav--tabs--justified > .is-active > .Nav--tabs.Nav--justified, .Nav--tabs--justified > .is-active > .Nav--tabs.Nav--justified, .Nav--tabs--justified > .is-active > a:hover, .Nav--tabs--justified > .is-active > .Nav--tabs.Nav--justified, .Nav--tabs--justified > .is-active > .Nav--tabs.Nav--justified, .Nav--tabs--justified > .is-active > a:focus, .Nav--tabs--justified > .is-active > .Nav--tabs.Nav--justified, .Nav--tabs--justified > .is-active > .Nav--tabs.Nav--justified {
+  .Nav--tabs--justified > .is-active > a, .Nav--tabs--justified > .is-active > a:hover, .Nav--tabs--justified > .is-active > a:focus {
     border: 1px solid #ddd; }
   @media (min-width: 768px) {
-    .Nav--tabs--justified > li > a, .Nav--tabs--justified > li > .Nav--tabs.Nav--justified, .Nav--tabs--justified > li > .Nav--tabs.Nav--justified {
+    .Nav--tabs--justified > li > a {
       border-bottom: 1px solid #ddd;
       border-radius: 4px 4px 0 0; }
-    .Nav--tabs--justified > .is-active > a, .Nav--tabs--justified > .is-active > .Nav--tabs.Nav--justified, .Nav--tabs--justified > .is-active > .Nav--tabs.Nav--justified, .Nav--tabs--justified > .is-active > a:hover, .Nav--tabs--justified > .is-active > .Nav--tabs.Nav--justified, .Nav--tabs--justified > .is-active > .Nav--tabs.Nav--justified, .Nav--tabs--justified > .is-active > a:focus, .Nav--tabs--justified > .is-active > .Nav--tabs.Nav--justified, .Nav--tabs--justified > .is-active > .Nav--tabs.Nav--justified {
+    .Nav--tabs--justified > .is-active > a, .Nav--tabs--justified > .is-active > a:hover, .Nav--tabs--justified > .is-active > a:focus {
       border-bottom-color: #fff; } }
 
 /* Tabbable tabs
    ========================================================================== */
-/* Clear any floats */
-.is-tabbable:before, .is-tabbable:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */ }
-.is-tabbable:after {
-  clear: both; }
-
 /* Show/hide tabbable areas */
-.Tab-content > .Tab-pane, .Pill-content > .Pill-pane {
+.Tab-content > .Tab-pane {
   display: none; }
-
-.Tab-content > .is-active, .Pill-content > .is-active {
+.Tab-content > .is-active {
   display: block; }
 
 /* Dropdowns
   ========================================================================== */
-/* Make dropdown carets use link color in navs */
-.Nav .Caret {
-  border-top-color: #86b35f;
-  border-bottom-color: #86b35f; }
-
-.Nav a:hover .Caret {
-  border-top-color: #608640;
-  border-bottom-color: #608640; }
-
 /* Specific dropdowns */
 .Nav--tabs .Dropdown-menu {
   /* make dropdown border overlap tab border */

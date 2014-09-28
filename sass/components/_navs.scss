@@ -20,6 +20,7 @@
 			position: relative;
 			display: block;
 			padding: $nav-link-padding;
+
 			&:hover,
 			&:focus {
 				text-decoration: none;
@@ -48,11 +49,6 @@
 		&:focus {
 			background-color: $nav-link-hover-bg;
 			border-color: $link-color;
-
-			.Caret {
-				border-top-color: $link-hover-color;
-				border-bottom-color: $link-hover-color;
-			}
 		}
 	}
 
@@ -84,8 +80,10 @@
 /* Give the tabs something to sit on */
 .Nav--tabs {
 	border-bottom: 1px solid $nav-tabs-border-color;
+
 	> li {
 		float: left;
+
 		/* Make the list-items overlay the bottom border */
 		margin-bottom: -1px;
 
@@ -95,6 +93,7 @@
 			line-height: $line-height-base;
 			border: 1px solid transparent;
 			border-radius: $border-radius-base $border-radius-base 0 0;
+
 			&:hover {
 				border-color: $nav-tabs-link-hover-border-color $nav-tabs-link-hover-border-color $nav-tabs-border-color;
 			}
@@ -116,8 +115,8 @@
 
 	/* pulling this in mainly for less shorthand */
 	&.Nav--justified {
-		@extend .Nav--justified;
-		@extend .Nav--tabs--justified;
+		@include NavJustified;
+		@include NavTabsJustified;
 	}
 }
 
@@ -146,11 +145,6 @@
 			&:focus {
 				color: $nav-pills-active-link-hover-color;
 				background-color: $nav-pills-active-link-hover-bg;
-
-				.Caret {
-					border-top-color: $nav-pills-active-link-hover-color;
-					border-bottom-color: $nav-pills-active-link-hover-color;
-				}
 			}
 		}
 	}
@@ -168,80 +162,31 @@
 }
 
 
+
 /* Nav variations
    ========================================================================== */
 
 /* Justified nav links */
 .Nav--justified {
-	width: 100%;
-
-	> li {
-		float: none;
-		 > a {
-			text-align: center;
-			margin-bottom: 5px;
-		}
-	}
-
-	@media (min-width: $screen--small-min) {
-		> li {
-			display: table-cell;
-			width: 1%;
-
-			> a {
-				margin-bottom: 0;
-			}
-		}
-	}
+	@include NavJustified;
 }
 
 /* Move borders to anchors instead of bottom of list */
 .Nav--tabs--justified {
-	border-bottom: 0;
-
-	> li > a {
-		/* Override margin from .Nav-tabs */
-		margin-right: 0;
-		border-radius: $border-radius-base;
-	}
-
-	> .is-active > a,
-	> .is-active > a:hover,
-	> .is-active > a:focus {
-		border: 1px solid $nav-tabs-justified-link-border-color;
-	}
-
-	@media (min-width: $screen--small-min) {
-		> li > a {
-			border-bottom: 1px solid $nav-tabs-justified-link-border-color;
-			border-radius: $border-radius-base $border-radius-base 0 0;
-		}
-
-		> .is-active > a,
-		> .is-active > a:hover,
-		> .is-active > a:focus {
-			border-bottom-color: $nav-tabs-justified-active-link-border-color;
-		}
-	}
+	@include NavTabsJustified();
 }
+
 
 
 /* Tabbable tabs
    ========================================================================== */
 
-/* Clear any floats */
-.is-tabbable {
-	@include MicroClearfix();
-}
-
 /* Show/hide tabbable areas */
-.Tab-content > .Tab-pane,
-.Pill-content > .Pill-pane {
-	display: none;
-}
+.Tab-content{
+	> .Tab-pane{
+		display: none;
+	}
 
-.Tab-content,
-.Pill-content {
 	> .is-active {
 		display: block;
 	}
@@ -251,17 +196,6 @@
 
 /* Dropdowns
   ========================================================================== */
-
-/* Make dropdown carets use link color in navs */
-.Nav .Caret {
-	border-top-color: $link-color;
-	border-bottom-color: $link-color;
-}
-
-.Nav a:hover .Caret {
-	border-top-color: $link-hover-color;
-	border-bottom-color: $link-hover-color;
-}
 
 /* Specific dropdowns */
 .Nav--tabs .Dropdown-menu {
