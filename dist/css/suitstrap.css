@@ -883,11 +883,15 @@ hr {
 /* ==========================================================================
    Abbreviations and acronyms
    ========================================================================== */
+/**
+ * Added data-* attribute to help out our tooltip plugin,
+ * per https://github.com/twbs/bootstrap/issues/5257
+ */
 abbr[title], abbr[data-original-title] {
   cursor: help;
   border-bottom: 1px dotted #777777; }
 
-abbr.Initialism {
+.Initialism {
   font-size: 90%;
   text-transform: uppercase; }
 
@@ -905,31 +909,36 @@ address {
 blockquote {
   padding: 10.5px 21px;
   margin: 0 0 21px;
+  font-size: 17.5px;
   border-left: 5px solid #eeeeee;
+  /**
+	 * Note: Deprecated small and .small as of v3.1.0
+	 * Context: https://github.com/twbs/bootstrap/issues/11660
+	 */
   /* Float right with text-align: right */ }
   blockquote p {
     font-size: 17.5px;
     font-weight: 300;
     line-height: 1.25; }
-  blockquote p:last-child {
+  blockquote p:last-child, blockquote ul:last-child, blockquote ol:last-child {
     margin-bottom: 0; }
-  blockquote small {
+  blockquote footer, blockquote small, blockquote .u-small {
     display: block;
     line-height: 1.5;
     color: #777777; }
-    blockquote small:before {
+    blockquote footer:before, blockquote small:before, blockquote .u-small:before {
       content: '\2014 \00A0';
       /* EM DASH, NBSP */ }
-  blockquote.u-pull--right {
+  blockquote .Blockquote--reverse, blockquote.u-pull--right {
     padding-right: 15px;
     padding-left: 0;
     border-right: 5px solid #eeeeee;
-    border-left: 0; }
-    blockquote.u-pull--right p, blockquote.u-pull--right small {
-      text-align: right; }
-    blockquote.u-pull--right small:before {
+    border-left: 0;
+    text-align: right;
+    /* Account for citation */ }
+    blockquote .Blockquote--reverse footer:before, blockquote .Blockquote--reverse small:before, blockquote .Blockquote--reverse .u-small:before, blockquote.u-pull--right footer:before, blockquote.u-pull--right small:before, blockquote.u-pull--right .u-small:before {
       content: ''; }
-    blockquote.u-pull--right small:after {
+    blockquote .Blockquote--reverse footer:after, blockquote .Blockquote--reverse small:after, blockquote .Blockquote--reverse .u-small:after, blockquote.u-pull--right footer:after, blockquote.u-pull--right small:after, blockquote.u-pull--right .u-small:after {
       content: '\00A0 \2014';
       /* NBSP, EM DASH */ }
 
@@ -1007,9 +1016,35 @@ pre {
 small, .u-small {
   font-size: 85%; }
 
-/* Undo browser default styling */
-cite {
-  font-style: normal; }
+mark, .u-mark {
+  background-color: #fcf8e3;
+  padding: 0.2em; }
+
+/* Alignment */
+.Text-left {
+  text-align: left; }
+
+.Text-right {
+  text-align: right; }
+
+.Text-center {
+  text-align: center; }
+
+.Text-justify {
+  text-align: justify; }
+
+.Text-nowrap {
+  white-space: nowrap; }
+
+/* Transformation */
+.Text-lowercase {
+  text-transform: lowercase; }
+
+.Text-uppercase {
+  text-transform: uppercase; }
+
+.Text-capitalize {
+  text-transform: capitalize; }
 
 /* Contextual emphasis */
 .Text--muted {
@@ -1017,38 +1052,55 @@ cite {
 
 .Text--primary {
   color: #86b35f; }
-  .Text--primary:hover {
+  .Text--primary a.Text--primary:hover {
     color: #6d9748; }
-
-.Text--warning {
-  color: #c09853; }
-  .Text--warning:hover {
-    color: #a47c3c; }
-
-.Text--danger {
-  color: #b94a48; }
-  .Text--danger:hover {
-    color: #953b39; }
 
 .Text--success {
   color: #468847; }
-  .Text--success:hover {
+  .Text--success a.Text--success:hover {
     color: #356635; }
 
 .Text--info {
   color: #3a87ad; }
-  .Text--info:hover {
+  .Text--info a.Text--info:hover {
     color: #2d6a87; }
 
-/* Alignment */
-.Text--left {
-  text-align: left; }
+.Text--warning {
+  color: #c09853; }
+  .Text--warning a.Text--warning:hover {
+    color: #a47c3c; }
 
-.Text--right {
-  text-align: right; }
+.Text--danger {
+  color: #b94a48; }
+  .Text--danger a.Text--danger:hover {
+    color: #953b39; }
 
-.Text--center {
-  text-align: center; }
+/* ==========================================================================
+   Contextual backgrounds
+   ========================================================================== */
+/** Contextual backgrounds
+ * For now we'll leave these alongside the text classes until v4 when we can
+ * safely shift things around (per SemVer rules).
+ */
+.Background--primary {
+  /**
+	 * Given the contrast here, this is the only class to have its color inverted
+	 * automatically.
+	 */
+  color: #fff;
+  background-color: #86b35f; }
+
+.Background--success {
+  background-color: #dff0d8; }
+
+.Background--info {
+  background-color: #d9edf7; }
+
+.Background--warning {
+  background-color: #fcf8e3; }
+
+.Background--danger {
+  background-color: #f2dede; }
 
 /* ==========================================================================
    Forms
@@ -1059,7 +1111,13 @@ cite {
 fieldset {
   padding: 0;
   margin: 0;
-  border: 0; }
+  border: 0;
+  /**
+	 * Chrome and Firefox set a `min-width: min-content;` on fieldsets,
+	 * so we reset that to ensure it behaves more like a standard block element.
+	 * See https://github.com/twbs/bootstrap/issues/12359.
+	 */
+  min-width: 0; }
 
 legend {
   display: block;
@@ -1074,6 +1132,8 @@ legend {
 
 label {
   display: inline-block;
+  max-width: 100%;
+  /* Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141) */
   margin-bottom: 5px;
   font-weight: bold; }
 
@@ -1098,12 +1158,6 @@ input[type="file"] {
 select[multiple], select[size] {
   height: auto; }
 
-/* Fix optgroup Firefox bug per https://github.com/twbs/bootstrap/issues/7611 */
-select optgroup {
-  font-size: inherit;
-  font-style: inherit;
-  font-family: inherit; }
-
 /* Focus for select, file, radio, and checkbox */
 input[type="file"]:focus, input[type="radio"]:focus, input[type="checkbox"]:focus {
   /* Default */
@@ -1112,41 +1166,13 @@ input[type="file"]:focus, input[type="radio"]:focus, input[type="checkbox"]:focu
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px; }
 
-/**
- * Fix for Chrome number input
- * Setting certain font-sizes causes the `I` bar to appear on hover of the bottom increment button.
- * See https://github.com/twbs/bootstrap/issues/8350 for more.
- */
-input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
-  height: auto; }
-
 /* Adjust output element */
 output {
   display: block;
   padding-top: 7px;
   font-size: 14px;
   line-height: 1.5;
-  color: #555555;
-  vertical-align: middle; }
-
-/*
- * Placeholder
- *
- * Placeholder text gets special styles because when browsers invalidate entire lines if it doesn't understand a selector
- */
-.Form-control {
-  /* Firefox 4-18 */
-  /* Firefox 19+ */
-  /* Internet Explorer 10+ */
-  /* Safari and Chrome */ }
-  .Form-control:-moz-placeholder {
-    color: #999; }
-  .Form-control::-moz-placeholder {
-    color: #999; }
-  .Form-control:-ms-input-placeholder {
-    color: #999; }
-  .Form-control::-webkit-input-placeholder {
-    color: #999; }
+  color: #555555; }
 
 /**
  * Common form controls
@@ -1189,6 +1215,11 @@ output {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   /* Customize the `:focus` state to imitate native WebKit styles. */
+  /* Placeholder */
+  /* Firefox 4-18 */
+  /* Firefox 19+ */
+  /* Internet Explorer 10+ */
+  /* Safari and Chrome */
   /**
 	 * Disabled and read-only inputs
 	 * Note: HTML5 says that controls under a fieldset > legend:first-child won't
@@ -1199,6 +1230,14 @@ output {
     border-color: #66afe9;
     outline: 0;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
+  .Form-control:-moz-placeholder {
+    color: #999; }
+  .Form-control::-moz-placeholder {
+    color: #999; }
+  .Form-control:-ms-input-placeholder {
+    color: #999; }
+  .Form-control::-webkit-input-placeholder {
+    color: #999; }
   .Form-control[disabled], .Form-control[readonly] {
     cursor: not-allowed;
     background-color: #eeeeee; }
@@ -1210,6 +1249,43 @@ fieldset[disabled].Form-control {
 /* Reset height for `textarea`s */
 textarea.Form-control {
   height: auto; }
+
+/*
+ * Search inputs in iOS
+ *
+ * This overrides the extra rounded corners on search inputs in iOS so that our
+ * `.form-control` class can properly style them. Note that this cannot simply
+ * be added to `.form-control` as it's not specific enough. For details, see
+ * https://github.com/twbs/bootstrap/issues/11586.
+ */
+input[type="search"] {
+  -webkit-appearance: none; }
+
+/**
+ * Special styles for iOS temporal inputs
+ *
+ * In Mobile Safari, setting `display: block` on temporal inputs causes the
+ * text within the input to become vertically misaligned.
+ * As a workaround, we set a pixel line-height that matches the
+ * given height of the input. Since this fucks up everything else, we have to
+ * appropriately reset it for Internet Explorer and the size variations.
+ */
+input[type="date"], input[type="time"], input[type="datetime-local"], input[type="month"] {
+  line-height: 35px;
+  line-height: $line-height-base ~\0; }
+  input[type="date"].Input--small, .InputGroup--small > input[type="date"].Form-control, .InputGroup--small > input[type="date"].InputGroup-addon, .InputGroup--small > .InputGroup-button > input[type="date"].Button, input[type="time"].Input--small, .InputGroup--small > input[type="time"].Form-control, .InputGroup--small > input[type="time"].InputGroup-addon, .InputGroup--small > .InputGroup-button > input[type="time"].Button, input[type="datetime-local"].Input--small, .InputGroup--small > input[type="datetime-local"].Form-control, .InputGroup--small > input[type="datetime-local"].InputGroup-addon, .InputGroup--small > .InputGroup-button > input[type="datetime-local"].Button, input[type="month"].Input--small, .InputGroup--small > input[type="month"].Form-control, .InputGroup--small > input[type="month"].InputGroup-addon, .InputGroup--small > .InputGroup-button > input[type="month"].Button {
+    line-height: 30px;
+    line-height: $line-height-small ~\0; }
+  input[type="date"].Input--large, .InputGroup--large > input[type="date"].Form-control, .InputGroup--large > input[type="date"].InputGroup-addon, .InputGroup--large > .InputGroup-button > input[type="date"].Button, input[type="time"].Input--large, .InputGroup--large > input[type="time"].Form-control, .InputGroup--large > input[type="time"].InputGroup-addon, .InputGroup--large > .InputGroup-button > input[type="time"].Button, input[type="datetime-local"].Input--large, .InputGroup--large > input[type="datetime-local"].Form-control, .InputGroup--large > input[type="datetime-local"].InputGroup-addon, .InputGroup--large > .InputGroup-button > input[type="datetime-local"].Button, input[type="month"].Input--large, .InputGroup--large > input[type="month"].Form-control, .InputGroup--large > input[type="month"].InputGroup-addon, .InputGroup--large > .InputGroup-button > input[type="month"].Button {
+    line-height: 46px;
+    line-height: $line-height-large ~\0; }
+
+_:-ms-fullscreen, :root input[type="date"], _:-ms-fullscreen, :root input[type="time"], _:-ms-fullscreen, :root input[type="datetime-local"], _:-ms-fullscreen, :root input[type="month"] {
+  line-height: 1.5; }
+  _:-ms-fullscreen.Input--small, .InputGroup--small > _.Form-control:-ms-fullscreen, .InputGroup--small > _.InputGroup-addon:-ms-fullscreen, .InputGroup--small > .InputGroup-button > _.Button:-ms-fullscreen, :root input[type="date"].Input--small, :root .InputGroup--small > input[type="date"].Form-control, .InputGroup--small > :root input[type="date"].Form-control, :root .InputGroup--small > input[type="date"].InputGroup-addon, .InputGroup--small > :root input[type="date"].InputGroup-addon, :root .InputGroup--small > .InputGroup-button > input[type="date"].Button, .InputGroup--small > .InputGroup-button > :root input[type="date"].Button, _:-ms-fullscreen.Input--small, .InputGroup--small > _.Form-control:-ms-fullscreen, .InputGroup--small > _.InputGroup-addon:-ms-fullscreen, .InputGroup--small > .InputGroup-button > _.Button:-ms-fullscreen, :root input[type="time"].Input--small, :root .InputGroup--small > input[type="time"].Form-control, .InputGroup--small > :root input[type="time"].Form-control, :root .InputGroup--small > input[type="time"].InputGroup-addon, .InputGroup--small > :root input[type="time"].InputGroup-addon, :root .InputGroup--small > .InputGroup-button > input[type="time"].Button, .InputGroup--small > .InputGroup-button > :root input[type="time"].Button, _:-ms-fullscreen.Input--small, .InputGroup--small > _.Form-control:-ms-fullscreen, .InputGroup--small > _.InputGroup-addon:-ms-fullscreen, .InputGroup--small > .InputGroup-button > _.Button:-ms-fullscreen, :root input[type="datetime-local"].Input--small, :root .InputGroup--small > input[type="datetime-local"].Form-control, .InputGroup--small > :root input[type="datetime-local"].Form-control, :root .InputGroup--small > input[type="datetime-local"].InputGroup-addon, .InputGroup--small > :root input[type="datetime-local"].InputGroup-addon, :root .InputGroup--small > .InputGroup-button > input[type="datetime-local"].Button, .InputGroup--small > .InputGroup-button > :root input[type="datetime-local"].Button, _:-ms-fullscreen.Input--small, .InputGroup--small > _.Form-control:-ms-fullscreen, .InputGroup--small > _.InputGroup-addon:-ms-fullscreen, .InputGroup--small > .InputGroup-button > _.Button:-ms-fullscreen, :root input[type="month"].Input--small, :root .InputGroup--small > input[type="month"].Form-control, .InputGroup--small > :root input[type="month"].Form-control, :root .InputGroup--small > input[type="month"].InputGroup-addon, .InputGroup--small > :root input[type="month"].InputGroup-addon, :root .InputGroup--small > .InputGroup-button > input[type="month"].Button, .InputGroup--small > .InputGroup-button > :root input[type="month"].Button {
+    line-height: 1.5; }
+  _:-ms-fullscreen.Input--large, .InputGroup--large > _.Form-control:-ms-fullscreen, .InputGroup--large > _.InputGroup-addon:-ms-fullscreen, .InputGroup--large > .InputGroup-button > _.Button:-ms-fullscreen, :root input[type="date"].Input--large, :root .InputGroup--large > input[type="date"].Form-control, .InputGroup--large > :root input[type="date"].Form-control, :root .InputGroup--large > input[type="date"].InputGroup-addon, .InputGroup--large > :root input[type="date"].InputGroup-addon, :root .InputGroup--large > .InputGroup-button > input[type="date"].Button, .InputGroup--large > .InputGroup-button > :root input[type="date"].Button, _:-ms-fullscreen.Input--large, .InputGroup--large > _.Form-control:-ms-fullscreen, .InputGroup--large > _.InputGroup-addon:-ms-fullscreen, .InputGroup--large > .InputGroup-button > _.Button:-ms-fullscreen, :root input[type="time"].Input--large, :root .InputGroup--large > input[type="time"].Form-control, .InputGroup--large > :root input[type="time"].Form-control, :root .InputGroup--large > input[type="time"].InputGroup-addon, .InputGroup--large > :root input[type="time"].InputGroup-addon, :root .InputGroup--large > .InputGroup-button > input[type="time"].Button, .InputGroup--large > .InputGroup-button > :root input[type="time"].Button, _:-ms-fullscreen.Input--large, .InputGroup--large > _.Form-control:-ms-fullscreen, .InputGroup--large > _.InputGroup-addon:-ms-fullscreen, .InputGroup--large > .InputGroup-button > _.Button:-ms-fullscreen, :root input[type="datetime-local"].Input--large, :root .InputGroup--large > input[type="datetime-local"].Form-control, .InputGroup--large > :root input[type="datetime-local"].Form-control, :root .InputGroup--large > input[type="datetime-local"].InputGroup-addon, .InputGroup--large > :root input[type="datetime-local"].InputGroup-addon, :root .InputGroup--large > .InputGroup-button > input[type="datetime-local"].Button, .InputGroup--large > .InputGroup-button > :root input[type="datetime-local"].Button, _:-ms-fullscreen.Input--large, .InputGroup--large > _.Form-control:-ms-fullscreen, .InputGroup--large > _.InputGroup-addon:-ms-fullscreen, .InputGroup--large > .InputGroup-button > _.Button:-ms-fullscreen, :root input[type="month"].Input--large, :root .InputGroup--large > input[type="month"].Form-control, .InputGroup--large > :root input[type="month"].Form-control, :root .InputGroup--large > input[type="month"].InputGroup-addon, .InputGroup--large > :root input[type="month"].InputGroup-addon, :root .InputGroup--large > .InputGroup-button > input[type="month"].Button, .InputGroup--large > .InputGroup-button > :root input[type="month"].Button {
+    line-height: 1.33; }
 
 /**
  * Form groups
@@ -1226,22 +1302,22 @@ textarea.Form-control {
  * Indent the labels to position radios/checkboxes as hanging controls.
  */
 .Radio, .Checkbox {
+  position: relative;
   display: block;
-  min-height: 21px;
-  /* clear the floating input if there is no label text */
   margin-top: 10px;
-  margin-bottom: 10px;
-  padding-left: 20px;
-  vertical-align: middle; }
+  margin-bottom: 10px; }
   .Radio label, .Checkbox label {
-    display: inline;
+    min-height: 21px;
+    /* clear the floating input if there is no label text */
+    padding-left: 20px;
     margin-bottom: 0;
     font-weight: normal;
     cursor: pointer; }
 
 .Radio input[type="radio"], .Radio--inline input[type="radio"], .Checkbox input[type="checkbox"], .Checkbox--inline input[type="checkbox"] {
-  float: left;
-  margin-left: -20px; }
+  position: absolute;
+  margin-left: -20px;
+  margin-top: 4px \9; }
 
 .Radio + .Radio, .Checkbox + .Checkbox {
   margin-top: -5px;
@@ -1265,7 +1341,15 @@ textarea.Form-control {
  * Apply same disabled cursor tweak as for inputs
  * Note: Neither radios nor checkboxes can be readonly.
  */
-input[type="radio"][disabled], fieldset[disabled] input[type="radio"], input[type="checkbox"][disabled], fieldset[disabled] input[type="checkbox"], .Radio[disabled], fieldset[disabled] .Radio, .Radio--inline[disabled], fieldset[disabled] .Radio--inline, .Checkbox[disabled], fieldset[disabled] .Checkbox, .Checkbox--inline[disabled], fieldset[disabled] .Checkbox--inline {
+input[type="radio"][disabled], input[type="radio"].is-disabled, fieldset[disabled] input[type="radio"], input[type="checkbox"][disabled], input[type="checkbox"].is-disabled, fieldset[disabled] input[type="checkbox"] {
+  cursor: not-allowed; }
+
+/* These classes are used directly on <label>s */
+.Radio--inline.is-disabled, fieldset[disabled] .Radio--inline, .Checkbox--inline.is-disabled, fieldset[disabled] .Checkbox--inline {
+  cursor: not-allowed; }
+
+/* These classes are used on elements with <label> descendants */
+.Radio.is-disabled label, fieldset[disabled] .Radio label, .Checkbox.is-disabled label, fieldset[disabled] .Checkbox label {
   cursor: not-allowed; }
 
 /* Form control sizing */
@@ -1297,6 +1381,35 @@ input[type="radio"][disabled], fieldset[disabled] input[type="radio"], input[typ
  * Form control feedback states
  * Apply contextual and semantic states to individual form controls.
  */
+.has-feedback {
+  /* Enable absolute positioning */
+  position: relative;
+  /* Ensure icons don't overlap text */ }
+  .has-feedback .Form-control {
+    padding-right: 43.75px; }
+
+.Form-control-feedback {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  display: block;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  pointer-events: none; }
+
+.Input--large + .Form-control-feedback, .Input--large + .InputGroup--large > .Form-control, .InputGroup--large > .Input--large + .Form-control, .Input--large + .InputGroup--large > .InputGroup-addon, .InputGroup--large > .Input--large + .InputGroup-addon, .Input--large + .InputGroup--large > .InputGroup-button > .Button, .InputGroup--large > .InputGroup-button > .Input--large + .Button {
+  width: 46px;
+  height: 46px;
+  line-height: 46px; }
+
+.Input--small + .Form-control-feedback, .Input--small + .InputGroup--small > .Form-control, .InputGroup--small > .Input--small + .Form-control, .Input--small + .InputGroup--small > .InputGroup-addon, .InputGroup--small > .Input--small + .InputGroup-addon, .Input--small + .InputGroup--small > .InputGroup-button > .Button, .InputGroup--small > .InputGroup-button > .Input--small + .Button {
+  width: 30px;
+  height: 30px;
+  line-height: 30px; }
+
 /* Warning */
 .has-Warning {
   /* Color the label and help text */
@@ -1360,16 +1473,26 @@ input[type="radio"][disabled], fieldset[disabled] input[type="radio"], input[typ
   .has-Success .Form-control-feedback {
     color: #468847; }
 
+/* Reposition feedback icon if input has visible label above */
+.has-feedback label ~ .Form-control-feedback {
+  top: 26px;
+  /* Height of the `label` and its margin */ }
+.has-feedback label.sr-only ~ .Form-control-feedback {
+  top: 0; }
+
 /**
  * Static form control text
  *
  * Apply class to a `p` element to make any string of text align with labels in
  * a horizontal form layout.
  */
-.Form-controlStatic {
-  margin-bottom: 0;
-  /* Remove default margin from `p` */
-  padding-top: 7px; }
+.Form-control--static {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin-bottom: 0; }
+  .Form-control--static .Input--small, .Form-control--static .InputGroup--small > .Form-control, .InputGroup--small > .Form-control--static .Form-control, .Form-control--static .InputGroup--small > .InputGroup-addon, .InputGroup--small > .Form-control--static .InputGroup-addon, .Form-control--static .InputGroup--small > .InputGroup-button > .Button, .InputGroup--small > .InputGroup-button > .Form-control--static .Button, .Form-control--static .Input--large, .Form-control--static .InputGroup--large > .Form-control, .InputGroup--large > .Form-control--static .Form-control, .Form-control--static .InputGroup--large > .InputGroup-addon, .InputGroup--large > .Form-control--static .InputGroup-addon, .Form-control--static .InputGroup--large > .InputGroup-button > .Button, .InputGroup--large > .InputGroup-button > .Form-control--static .Button {
+    padding-left: 0;
+    padding-right: 0; }
 
 /**
  * Help text
@@ -1403,25 +1526,46 @@ input[type="radio"][disabled], fieldset[disabled] input[type="radio"], input[typ
     .Form--inline {
       /* Inline-block all the things for "inline" */
       /* In navbar-form, allow folks to *not* use `.Form-group` */
+      /* Make static controls behave like regular ones */
       /**
 		 * Remove default margin on radios/checkboxes that were used for stacking, and
 		 * then undo the floating of radios and checkboxes to match (which also avoids
 		 * a bug in WebKit: https://github.com/twbs/bootstrap/issues/1969).
-		 */ }
+		 */
+      /* Re-override the feedback icon. */ }
       .Form--inline .Form-group, .Form--inline .Navbar-form {
         display: inline-block;
         margin-bottom: 0;
         vertical-align: middle; }
       .Form--inline .Form-control, .Form--inline .Navbar-form {
+        display: inline-block;
+        width: auto;
+        /* Prevent labels from stacking above inputs in `.Form-group` */
+        vertical-align: middle; }
+      .Form--inline .Form-control--static, .Form--inline .Navbar-form {
         display: inline-block; }
+      .Form--inline .input-group, .Form--inline .Navbar-form {
+        display: inline-table;
+        vertical-align: middle; }
+        .Form--inline .input-group .InputGroup-addon, .Form--inline .input-group .Navbar-form, .Form--inline .input-group .InputGroup-button, .Form--inline .input-group .Navbar-form, .Form--inline .input-group .Form-control, .Form--inline .input-group .Navbar-form {
+          width: auto; }
+      .Form--inline .InputGroup > .Form-control, .Form--inline .InputGroup > .Navbar-form {
+        width: 100%; }
+      .Form--inline .ControlLabel, .Form--inline .Navbar-form {
+        margin-bottom: 0;
+        vertical-align: middle; }
       .Form--inline .Radio, .Form--inline .Navbar-form, .Form--inline .Checkbox, .Form--inline .Navbar-form {
         display: inline-block;
         margin-top: 0;
         margin-bottom: 0;
-        padding-left: 0; }
+        vertical-align: middle; }
+        .Form--inline .Radio label, .Form--inline .Radio .Navbar-form, .Form--inline .Checkbox label, .Form--inline .Checkbox .Navbar-form {
+          padding-left: 0; }
       .Form--inline .Radio input[type="radio"], .Form--inline .Radio .Navbar-form, .Form--inline .Checkbox input[type="checkbox"], .Form--inline .Checkbox .Navbar-form {
-        float: none;
-        margin-left: 0; } }
+        position: relative;
+        margin-left: 0; }
+      .Form--inline .has-feedback .Form-control-feedback, .Form--inline .has-feedback .Navbar-form {
+        top: 0; } }
 
 /**
  * Horizontal forms
@@ -1430,14 +1574,37 @@ input[type="radio"][disabled], fieldset[disabled] input[type="radio"], input[typ
  * labels on the left and inputs on the right.
  */
 .Form--horizontal {
-  /* Consistent vertical alignment of labels, radios, and checkboxes */
+  /**
+	 * Consistent vertical alignment of radios and checkboxes
+	 * Labels also get some reset styles, but that is scoped to a media query below.
+	 */
+  /**
+	 * Account for padding we're adding to ensure the alignment and of help text
+	 * and other content below items
+	 */
   /* Make form groups behave like rows */
-  /* Only right align form labels here when the columns stop stacking */ }
-  .Form--horizontal .ControlLabel, .Form--horizontal .Radio, .Form--horizontal .Checkbox, .Form--horizontal .Radio--inline, .Form--horizontal .Checkbox--inline {
+  /**
+	 * Reset spacing and right align labels, but scope to media queries so that
+	 * labels on narrow viewports stack the same as a default form example.
+	 */
+  /**
+	 * Validation states
+	 *
+	 * Reposition the icon because it's now within a grid column and columns have
+	 * `position: relative;` on them. Also accounts for the grid gutter padding.
+	 */
+  /**
+	 * Form group sizes
+	 *
+	 * Quick utility class for applying `.input-lg` and `.input-sm` styles to the
+	 * inputs and labels within a `.form-group`.
+	 */ }
+  .Form--horizontal .Radio, .Form--horizontal .Checkbox, .Form--horizontal .Radio-inline, .Form--horizontal .Checkbox-inline {
     margin-top: 0;
     margin-bottom: 0;
-    padding-top: 7px;
-    /* Default padding plus a border */ }
+    padding-top: 7px; }
+  .Form--horizontal .Radio, .Form--horizontal .Checkbox {
+    min-height: 28px; }
   .Form--horizontal .Form-group {
     margin-left: -15px;
     margin-right: -15px; }
@@ -1450,7 +1617,17 @@ input[type="radio"][disabled], fieldset[disabled] input[type="radio"], input[typ
       clear: both; }
   @media (min-width: 768px) {
     .Form--horizontal .ControlLabel {
-      text-align: right; } }
+      text-align: right;
+      margin-bottom: 0;
+      padding-top: 7px; } }
+  .Form--horizontal .has-feedback .Form-control-feedback {
+    right: 15px; }
+  @media (min-width: 768px) {
+    .Form--horizontal .Form-group--large .ControlLabel {
+      padding-top: 14.3px; } }
+  @media (min-width: 768px) {
+    .Form--horizontal .Form-group--small .ControlLabel {
+      padding-top: 6px; } }
 
 /* ==========================================================================
    Headings
@@ -1460,21 +1637,21 @@ h1, h2, h3, h4, h5, h6, .u-h1, .u-h2, .u-h3, .u-h4, .u-h5, .u-h6 {
   font-weight: 500;
   line-height: 1.1;
   color: inherit; }
-  h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .u-h1 small, .u-h2 small, .u-h3 small, .u-h4 small, .u-h5 small, .u-h6 small {
+  h1 small, h1 .u-small, h2 small, h2 .u-small, h3 small, h3 .u-small, h4 small, h4 .u-small, h5 small, h5 .u-small, h6 small, h6 .u-small, .u-h1 small, .u-h1 .u-small, .u-h2 small, .u-h2 .u-small, .u-h3 small, .u-h3 .u-small, .u-h4 small, .u-h4 .u-small, .u-h5 small, .u-h5 .u-small, .u-h6 small, .u-h6 .u-small {
     font-weight: normal;
     line-height: 1;
     color: #777777; }
 
-h1, h2, h3 {
+h1, .u-h1, h2, .u-h2, h3, .u-h3 {
   margin-top: 21px;
   margin-bottom: 10.5px; }
-  h1 small, h2 small, h3 small {
+  h1 small, h1 .u-small, .u-h1 small, .u-h1 .u-small, h2 small, h2 .u-small, .u-h2 small, .u-h2 .u-small, h3 small, h3 .u-small, .u-h3 small, .u-h3 .u-small {
     font-size: 65%; }
 
-h4, h5, h6 {
+h4, .u-h4, h5, .u-h5, h6, .u-h6 {
   margin-top: 10.5px;
   margin-bottom: 10.5px; }
-  h4 small, h5 small, h6 small {
+  h4 small, .u-h4 small, h5 small, .u-h5 small, h6 small, .u-h6 small {
     font-size: 75%; }
 
 h1, .u-h1 {
@@ -1495,7 +1672,7 @@ h5, .u-h5 {
 h6, .u-h6 {
   font-size: 12px; }
 
-/* PageHeader
+/* Page-header
    ========================================================================== */
 .Page-header {
   padding-bottom: 9.5px;
@@ -1516,15 +1693,18 @@ ul, ol {
 /* List options
    ========================================================================== */
 /* Unstyled keeps list items block level, just removes default browser padding and list-style */
-.List--unstyled, .List--inline {
+.List--unstyled {
   padding-left: 0;
   list-style: none; }
 
 /* Inline turns list items into inline-block */
-.List--inline > li {
-  display: inline-block;
-  padding-left: 5px;
-  padding-right: 5px; }
+.List--inline {
+  padding-left: 0;
+  list-style: none; }
+  .List--inline > li {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px; }
 
 /* Description Lists
    ========================================================================== */
@@ -1545,6 +1725,15 @@ dd {
    ========================================================================== */
 /* Defaults to being stacked without any of the below styles applied, until the
    grid breakpoint is reached (default of ~768px). */
+.Dl--horizontal dd {
+  /* Clear the floated `dt` if an empty `dd` is present */ }
+  .Dl--horizontal dd:before, .Dl--horizontal dd:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */ }
+  .Dl--horizontal dd:after {
+    clear: both; }
 @media (min-width: 768px) {
   .Dl--horizontal dt {
     float: left;
@@ -1555,15 +1744,7 @@ dd {
     text-overflow: ellipsis;
     white-space: nowrap; }
   .Dl--horizontal dd {
-    margin-left: 180px;
-    /* Clear the floated `dt` if an empty `dd` is present */ }
-    .Dl--horizontal dd:before, .Dl--horizontal dd:after {
-      content: " ";
-      /* 1 */
-      display: table;
-      /* 2 */ }
-    .Dl--horizontal dd:after {
-      clear: both; } }
+    margin-left: 180px; } }
 
 /* ==========================================================================
    Paragraphs
@@ -1576,7 +1757,7 @@ p {
 .Lead {
   margin-bottom: 21px;
   font-size: 16px;
-  font-weight: 200;
+  font-weight: 300;
   line-height: 1.4; }
   @media (min-width: 768px) {
     .Lead {

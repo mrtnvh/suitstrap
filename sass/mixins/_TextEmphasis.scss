@@ -2,7 +2,7 @@
    Text emphasis
    ========================================================================== */
 
-@mixin TextEmphasisVariant($parent: null) {
+@mixin TextEmphasisVariant($color, $parent: null) {
 	color: $color;
 
 	@if ($parent = null){

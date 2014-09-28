@@ -5,6 +5,7 @@
 blockquote {
 	padding: ($line-height-computed / 2) $line-height-computed;
 	margin: 0 0 $line-height-computed;
+	font-size: $blockquote-font-size;
 	border-left: 5px solid $blockquote-border-color;
 
 	p {
@@ -13,11 +14,21 @@ blockquote {
 		line-height: 1.25;
 	}
 
-	p:last-child {
-		margin-bottom: 0;
+	p,
+	ul,
+	ol {
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 
-	small {
+	/**
+	 * Note: Deprecated small and .small as of v3.1.0
+	 * Context: https://github.com/twbs/bootstrap/issues/11660
+	 */
+	footer,
+	small,
+	.u-small{
 		display: block;
 		line-height: $line-height-base;
 		color: $blockquote-small-color;
@@ -27,18 +38,18 @@ blockquote {
 	}
 
 	/* Float right with text-align: right */
+	.Blockquote--reverse,
 	&.u-pull--right {
 		padding-right: 15px;
 		padding-left: 0;
 		border-right: 5px solid $blockquote-border-color;
 		border-left: 0;
+		text-align: right;
 
-		p,
-		small {
-			text-align: right;
-		}
-
-		small {
+		/* Account for citation */
+		footer,
+		small,
+		.u-small{
 			&:before {
 				content: '';
 			}

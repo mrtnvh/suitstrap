@@ -1,0 +1,23 @@
+/* ==========================================================================
+   Contextual backgrounds
+   ========================================================================== */
+
+/** Contextual backgrounds
+ * For now we'll leave these alongside the text classes until v4 when we can
+ * safely shift things around (per SemVer rules).
+ */
+
+.Background--primary {
+	/**
+	 * Given the contrast here, this is the only class to have its color inverted
+	 * automatically.
+	 */
+
+	color: #fff;
+	@include BackgroundVariant($brand-primary);
+}
+
+.Background--success { @include BackgroundVariant($state-success-bg); }
+.Background--info {    @include BackgroundVariant($state-info-bg);    }
+.Background--warning { @include BackgroundVariant($state-warning-bg); }
+.Background--danger {  @include BackgroundVariant($state-danger-bg);  }
