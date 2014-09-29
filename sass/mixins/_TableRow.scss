@@ -2,7 +2,7 @@
    Tables
    ========================================================================== */
 
-@mixin TableRowVariant($state, $background, $border) {
+@mixin TableRowVariant($state, $background) {
 	/* Exact selectors below required to override `.Table-striped` and prevent inheritance to nested tables. */
 	.Table > thead > tr,
 	.Table > tbody > tr,
@@ -12,7 +12,6 @@
 		&.#{$state} > td,
 		&.#{$state} > th {
 			background-color: $background;
-			border-color: $border;
 		}
 	}
 
@@ -24,7 +23,6 @@
 		&.#{$state}:hover > td,
 		&.#{$state}:hover > th {
 			background-color: darken($background, 5%);
-			border-color: darken($border, 5%);
 		}
 	}
 }

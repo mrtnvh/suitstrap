@@ -2,14 +2,21 @@
    Tables
    ========================================================================== */
 
-
 table {
-	max-width: 100%;
 	background-color: $table-bg;
 }
+
+caption {
+	padding-top: $table-cell-padding;
+	padding-bottom: $table-cell-padding;
+	color: $text-muted;
+	text-align: left;
+}
+
 th {
 	text-align: left;
 }
+
 
 
 /* Baseline styles
@@ -17,7 +24,9 @@ th {
 
 .Table {
 	width: 100%;
+	max-width: 100%;
 	margin-bottom: $line-height-computed;
+
 	/* Cells */
 	> thead,
 	> tbody,
@@ -62,6 +71,7 @@ th {
 }
 
 
+
 /* Condensed table w/ half padding
    ========================================================================== */
 
@@ -79,12 +89,14 @@ th {
 }
 
 
+
 /* Bordered version
    ========================================================================== */
 /* Add borders all around the table and between all the columns. */
 
 .Table--bordered {
 	border: 1px solid $table-border-color;
+
 	> thead,
 	> tbody,
 	> tfoot {
@@ -104,28 +116,29 @@ th {
 }
 
 
+
 /* Zebra-striping
    ========================================================================== */
 /* Default zebra-stripe styles (alternating gray and transparent backgrounds) */
 
-.Table--striped > tbody > tr:nth-child(odd) {
-	> td,
-	> th {
+.Table--striped{
+	> tbody > tr:nth-child(odd) {
 		background-color: $table-bg-accent;
 	}
 }
+
 
 
 /* Hover effect
    ========================================================================== */
 /* Placed here since it has to come after the potential zebra striping */
 
-.Table--hover > tbody > tr:hover {
-	> td,
-	> th {
+.Table--hover{
+	> tbody > tr:hover {
 		background-color: $table-bg-hover;
 	}
 }
+
 
 
 /* Table cell sizing
@@ -133,6 +146,7 @@ th {
 /* Reset default table behavior */
 
 table col[class*="col-"] {
+	position: static; /* Prevent border hiding in Firefox and IE9/10 (see https://github.com/twbs/bootstrap/issues/11623) */
 	float: none;
 	display: table-column;
 }
@@ -141,11 +155,13 @@ table {
 	td,
 	th {
 		&[class*="col-"] {
+			position: static; /* Prevent border hiding in Firefox and IE9/10 (see https://github.com/twbs/bootstrap/issues/11623) */
 			float: none;
 			display: table-cell;
 		}
 	}
 }
+
 
 
 /* Table backgrounds
@@ -163,28 +179,35 @@ table {
 	}
 }
 
+
+
 /* Generate the contextual variants
    ========================================================================== */
-@include TableRowVariant(isSuccess, $state-success-bg, $state-success-border);
-@include TableRowVariant(isDanger, $state-danger-bg, $state-danger-border);
-@include TableRowVariant(isWarning, $state-warning-bg, $state-warning-border);
+@include TableRowVariant(is-active, $state-success-bg);
+@include TableRowVariant(is-success, $state-success-bg);
+@include TableRowVariant(is-info, $state-info-bg);
+@include TableRowVariant(is-danger, $state-danger-bg);
+@include TableRowVariant(is-warning, $state-warning-bg);
+
 
 
 /* Responsive tables
    ========================================================================== */
-/* Wrap your tables in `.Table--responsive` and we'll make them mobile friendly
-   by enabling horizontal scrolling. Only applies <768px.
-   Everything above that will display normally. */
+/**
+ * Wrap your tables in `.Table--responsive` and we'll make them mobile friendly
+ * by enabling horizontal scrolling. Only applies <768px.
+ * Everything above that will display normally.
+ */
 
 @media (max-width: $screen--small-min) {
+	overflow-x: auto;
+
 	.Table--responsive {
 		width: 100%;
-		margin-bottom: 15px;
+		margin-bottom: ($line-height-computed * 0.75);
 		overflow-y: hidden;
-		overflow-x: scroll;
 		-ms-overflow-style: -ms-autohiding-scrollbar;
 		border: 1px solid $table-border-color;
-		-webkit-overflow-scrolling: touch;
 
 		/* Tighten up spacing */
 		> .Table {
@@ -223,9 +246,11 @@ table {
 				}
 			}
 
-			/* Only nuke the last row's bottom-border in `tbody` and `tfoot` since
-			   chances are there will be only one `tr` in a `thead` and that would
-			   remove the border altogether. */
+			/**
+			 * Only nuke the last row's bottom-border in `tbody` and `tfoot` since
+			 * chances are there will be only one `tr` in a `thead` and that would
+			 * remove the border altogether.
+			 */
 			> tbody,
 			> tfoot {
 				> tr:last-child {

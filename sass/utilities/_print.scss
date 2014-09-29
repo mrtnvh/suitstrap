@@ -26,7 +26,6 @@
     }
 
     /* Don't show links for images, or javascript/internal links */
-    .ir a:after,
     a[href^="javascript:"]:after,
     a[href^="#"]:after {
         content: "";
@@ -71,18 +70,21 @@
     .Navbar {
         display: none;
     }
+
     .Table {
         td,
         th {
             background-color: #fff !important;
         }
     }
+
     .Button,
     .Dropup > .Button {
         > .Caret {
             border-top-color: #000 !important;
         }
     }
+
     .Label {
         border: 1px solid #000;
     }
@@ -90,6 +92,7 @@
     .Table {
         border-collapse: collapse !important;
     }
+
     .Table--bordered {
         th,
         td {

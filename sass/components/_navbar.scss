@@ -307,12 +307,11 @@
 
 @media (min-width: $grid-float-breakpoint) {
 	.Navbar--left {
-		@include PullLeft();
+		float: left;
 	}
 
 	.Navbar--right {
-		@include PullRight();
-
+		float: right;
 		margin-right: -$navbar-padding-horizontal;
 
 		~ .Navbar--right {
