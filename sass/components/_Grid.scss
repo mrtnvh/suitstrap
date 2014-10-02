@@ -9,6 +9,7 @@
 
 .Container {
 	@include ContainerFixed();
+	max-width: $container--large;
 
 	&.Container--fixed{
 		@media (min-width: $screen--small-min) {
