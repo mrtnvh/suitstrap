@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Button</title>
+	<link rel="stylesheet" type="text/css" href="../../../dist/css/suitstrap.min.css">
+</head>
+<body>
+
+<div class="Container">
+
+	<div class="Page-header">
+		<h1>Button <small>Bootstrap Visual Test</small></h1>
+	</div>
+
+	<button type="button" data-loading-text="Loading for 3 seconds..." class="Button Button--primary js-loading-button">
+		Loading state
+	</button>
+
+	<button type="button" class="Button Button--primary" data-toggle="button">Single toggle</button>
+
+	<div class="Button--group" data-toggle="buttons">
+		<label class="Button Button--primary">
+			<input type="checkbox"> checkbox 1
+		</label>
+		<label class="Button Button--primary">
+			<input type="checkbox"> checkbox 2
+		</label>
+		<label class="Button Button--primary">
+			<input type="checkbox"> checkbox 3
+		</label>
+	</div>
+
+	<div class="Button--group" data-toggle="buttons">
+		<label class="Button Button--primary">
+			<input type="radio" name="options" id="option1"> Radio 1
+		</label>
+		<label class="Button Button--primary">
+			<input type="radio" name="options" id="option2"> Radio 2
+		</label>
+		<label class="Button Button--primary">
+			<input type="radio" name="options" id="option3"> Radio 3
+		</label>
+	</div>
+
+</div>
+
+<!-- JavaScript Includes -->
+<script src="../vendor/jquery.min.js"></script>
+<script src="../../transition.js"></script>
+<script src="../../button.js"></script>
+
+<!-- JavaScript Test -->
+<script>
+$(function () {
+	$('.js-loading-button').on('click', function () {
+		var Button = $(this).button('loading')
+		setTimeout(function (){
+			Button.button('reset')
+		}, 3000)
+	})
+})
+</script>
+</body>
+</html>
