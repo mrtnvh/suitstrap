@@ -149,7 +149,7 @@
 				relatedTarget: relatedTarget,
 				direction: direction
 			}) // yes, "slid"
-		if ($.support.transition && this.$element.hasClass('slide')) {
+		if ($.support.transition && this.$element.hasClass('Slide')) {
 			$next.addClass(type)
 			$next[0].offsetWidth // force reflow
 			$active.addClass(direction)
