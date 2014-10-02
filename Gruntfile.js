@@ -185,7 +185,7 @@ module.exports = function(grunt) {
 					//sourceMap: true
 				},
 				src: 'sass/suitstrap.scss',
-				dest: 'dist/css/<%= pkg.name %>.css'
+				dest: 'dist/css/<%= pkg.slug %>.css'
 			},
 			// compileTheme: {
 			// 	options: {
@@ -220,12 +220,12 @@ module.exports = function(grunt) {
 				},
 				src: 'dist/css/<%= pkg.slug %>.css'
 			},
-			theme: {
-				options: {
-					map: true
-				},
-				src: 'dist/css/<%= pkg.slug %>-theme.css'
-			},
+			// theme: {
+			// 	options: {
+			// 		map: true
+			// 	},
+			// 	src: 'dist/css/<%= pkg.slug %>-theme.css'
+			// },
 			docs: {
 				src: 'docs/assets/css/src/docs.css'
 			},
@@ -248,7 +248,7 @@ module.exports = function(grunt) {
 			},
 			dist: [
 				'dist/css/<%= pkg.slug %>.css',
-				'dist/css/<%= pkg.slug %>-theme.css'
+				//'dist/css/<%= pkg.slug %>-theme.css'
 			],
 			examples: [
 				'docs/examples/**/*.css'
@@ -278,10 +278,10 @@ module.exports = function(grunt) {
 				src: 'dist/css/<%= pkg.slug %>.css',
 				dest: 'dist/css/<%= pkg.slug %>.min.css'
 			},
-			minifyTheme: {
-				src: 'dist/css/<%= pkg.slug %>-theme.css',
-				dest: 'dist/css/<%= pkg.slug %>-theme.min.css'
-			},
+			// minifyTheme: {
+			// 	src: 'dist/css/<%= pkg.slug %>-theme.css',
+			// 	dest: 'dist/css/<%= pkg.slug %>-theme.min.css'
+			// },
 			docs: {
 				src: [
 					'docs/assets/css/src/docs.css',
@@ -469,8 +469,11 @@ module.exports = function(grunt) {
 	grunt.registerTask('dist-js', ['concat', 'uglify:core']);
 
 	// CSS distribution task.
-	grunt.registerTask('sass-compile', ['sass:compileCore', 'sass:compileTheme']);
-	grunt.registerTask('dist-css', ['sass-compile', 'autoprefixer:core', 'autoprefixer:theme', 'csscomb:dist', 'cssmin:minifyCore', 'cssmin:minifyTheme']);
+	// grunt.registerTask('sass-compile', ['sass:compileCore', 'sass:compileTheme']);
+	// grunt.registerTask('dist-css', ['sass-compile', 'autoprefixer:core', 'autoprefixer:theme', 'csscomb:dist', 'cssmin:minifyCore', 'cssmin:minifyTheme']);
+
+	grunt.registerTask('sass-compile', ['sass:compileCore']);
+	grunt.registerTask('dist-css', ['sass-compile', 'autoprefixer:core', 'csscomb:dist', 'cssmin:minifyCore']);
 
 	// Full distribution task.
 	grunt.registerTask('dist', ['clean:dist', 'dist-css', 'copy:fonts', 'dist-js']);

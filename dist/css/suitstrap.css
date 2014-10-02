@@ -569,7 +569,8 @@ figure {
  */
 hr {
   -moz-box-sizing: content-box;
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   height: 0; }
 
 /**
@@ -661,7 +662,9 @@ input {
  * 2. Remove excess padding in IE 8/9/10.
  */
 input[type="checkbox"], input[type="radio"] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */ }
@@ -753,7 +756,8 @@ td, th {
     color: #000 !important;
     /* Black prints faster: h5bp.com/s */
     background: transparent !important;
-    box-shadow: none !important; }
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important; }
   a, a:visited {
     text-decoration: underline; }
   a[href]:after {
@@ -804,10 +808,14 @@ td, th {
  * http://getbootstrap.com/getting-started/#third-box-sizing
  */
 * {
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box; }
 
 *:before, *:after {
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box; }
 
 /* Body reset
    ========================================================================== */
@@ -874,7 +882,9 @@ img {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+       -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
   /* Keep them at most 100% wide */
   display: inline-block;
   max-width: 100%;
@@ -989,12 +999,14 @@ kbd {
   color: #fff;
   background-color: #333;
   border-radius: 3px;
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25); }
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25); }
   kbd kbd {
     padding: 0;
     font-size: 100%;
     font-weight: bold;
-    box-shadow: none; }
+    -webkit-box-shadow: none;
+            box-shadow: none; }
 
 /* Blocks of code
    ========================================================================== */
@@ -1158,7 +1170,9 @@ label {
 ========================================================================== */
 /* Override content-box in Normalize (* isn't specific enough) */
 input[type="search"] {
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box; }
 
 /* Position radios and checkboxes better */
 input[type="radio"], input[type="checkbox"] {
@@ -1229,8 +1243,11 @@ output {
   /* Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214 */
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+       -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+          transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   /* Customize the `:focus` state to imitate native WebKit styles. */
   /* Placeholder */
   /* Firefox 4-18 */
@@ -1246,7 +1263,8 @@ output {
   .Form-control:focus {
     border-color: #66afe9;
     outline: 0;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
   .Form-control:-moz-placeholder {
     color: #999; }
   .Form-control::-moz-placeholder {
@@ -1436,11 +1454,13 @@ input[type="radio"][disabled], input[type="radio"].is-disabled, fieldset[disable
     color: #c09853; }
   .has-Warning .Form-control {
     border-color: #c09853;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     /* Redeclare so transitions work */ }
     .has-Warning .Form-control:focus {
       border-color: #a47c3c;
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc49e; }
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc49e;
+              box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc49e; }
   .has-Warning .InputGroup-addon {
     color: #c09853;
     border-color: #c09853;
@@ -1457,11 +1477,13 @@ input[type="radio"][disabled], input[type="radio"].is-disabled, fieldset[disable
     color: #b94a48; }
   .has-Error .Form-control {
     border-color: #b94a48;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     /* Redeclare so transitions work */ }
     .has-Error .Form-control:focus {
       border-color: #953b39;
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392; }
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
+              box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392; }
   .has-Error .InputGroup-addon {
     color: #b94a48;
     border-color: #b94a48;
@@ -1478,11 +1500,13 @@ input[type="radio"][disabled], input[type="radio"].is-disabled, fieldset[disable
     color: #468847; }
   .has-Success .Form-control {
     border-color: #468847;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     /* Redeclare so transitions work */ }
     .has-Success .Form-control:focus {
       border-color: #356635;
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7a; }
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7a;
+              box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7a; }
   .has-Success .InputGroup-addon {
     color: #468847;
     border-color: #468847;
@@ -1966,7 +1990,8 @@ table td[class*="col-"], table th[class*="col-"] {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
-  padding-right: 15px; }
+  padding-right: 15px;
+  max-width: 1170px; }
   .Container:before, .Container:after {
     content: " ";
     /* 1 */
@@ -2485,7 +2510,9 @@ table td[class*="col-"], table th[class*="col-"] {
  */
 .Animation--fade {
   opacity: 0;
-  transition: opacity 0.15s linear; }
+  -webkit-transition: opacity 0.15s linear;
+       -o-transition: opacity 0.15s linear;
+          transition: opacity 0.15s linear; }
   .Animation--fade.is-in {
     opacity: 1; }
 
@@ -2504,7 +2531,9 @@ tbody.Animation--collapse.is-in {
   position: relative;
   height: 0;
   overflow: hidden;
-  transition: height 0.35s ease; }
+  -webkit-transition: height 0.35s ease;
+       -o-transition: height 0.35s ease;
+          transition: height 0.35s ease; }
 
 /**
  * Glyphicons for Bootstrap
@@ -3178,8 +3207,10 @@ tbody.Animation--collapse.is-in {
   /* IE8 fallback */
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  background-clip: padding-box;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
   /* Aligns the dropdown menu to right */
   /* Deprecated as of 3.1.0 in favor of `.dropdown-menu-[dir]` */
   /* Dividers (basically an hr) within the dropdown */
@@ -3327,7 +3358,8 @@ tbody.Animation--collapse.is-in {
   font-weight: normal;
   text-align: center;
   vertical-align: middle;
-  touch-action: manipulation;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
   cursor: pointer;
   background-image: none;
   /* Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214 */
@@ -3338,7 +3370,10 @@ tbody.Animation--collapse.is-in {
   font-size: 14px;
   line-height: 1.5;
   border-radius: 4px;
-  user-select: none; }
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
   .Button:focus, .Button.focus, .Button:active:focus, .Button:active.focus, .Button.is-active:focus, .Button.is-active.focus {
     /* Default */
     outline: thin dotted #333;
@@ -3351,13 +3386,15 @@ tbody.Animation--collapse.is-in {
   .Button:active, .Button.is-active {
     outline: 0;
     background-image: none;
-    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+            box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
   .Button.is-disabled, .Button[disabled], fieldset[disabled] .Button {
     cursor: not-allowed;
     pointer-events: none;
     /* Future-proof disabling of clicks */
     opacity: 0.65;
-    box-shadow: none; }
+    -webkit-box-shadow: none;
+            box-shadow: none; }
 
 /* Alternate buttons
    ========================================================================== */
@@ -3476,7 +3513,8 @@ tbody.Animation--collapse.is-in {
   border-radius: 0; }
   .Button--link, .Button--link:active, .Button--link.is-active, .Button--link[disabled], fieldset[disabled] .Button--link {
     background-color: transparent;
-    box-shadow: none; }
+    -webkit-box-shadow: none;
+            box-shadow: none; }
   .Button--link, .Button--link:hover, .Button--link:focus, .Button--link:active {
     border-color: transparent; }
   .Button--link:hover, .Button--link:focus {
@@ -3602,9 +3640,11 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
 * Remove the gradient and set the same inset shadow as the :active state
 */
 .ButtonGroup.is-open .Dropdown-toggle {
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+          box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
   .ButtonGroup.is-open .Dropdown-toggle.Button-link {
-    box-shadow: none; }
+    -webkit-box-shadow: none;
+            box-shadow: none; }
 
 /* Reposition the caret */
 .Button .Caret {
@@ -4086,7 +4126,8 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
   padding-right: 15px;
   padding-left: 15px;
   border-top: 1px solid transparent;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   -webkit-overflow-scrolling: touch; }
   .Navbar-collapse:before, .Navbar-collapse:after {
     content: " ";
@@ -4101,7 +4142,8 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
     .Navbar-collapse {
       width: auto;
       border-top: 0;
-      box-shadow: none; }
+      -webkit-box-shadow: none;
+              box-shadow: none; }
       .Navbar-collapse.Animation--collapse {
         display: block !important;
         height: auto !important;
@@ -4147,7 +4189,8 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
   right: 0;
   left: 0;
   border-width: 0 0 1px;
-  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
   /* Undo the rounded corners */ }
   @media (min-width: 768px) {
     .Navbar--fixed--top, .Navbar--fixed--bottom {
@@ -4237,7 +4280,8 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
         margin-top: 0;
         background-color: transparent;
         border: 0;
-        box-shadow: none; }
+        -webkit-box-shadow: none;
+                box-shadow: none; }
         .Navbar-nav .is-open .Dropdown-menu > li > a, .Navbar-nav .is-open .Dropdown-menu .Dropdown-header {
           padding: 5px 15px 5px 25px; }
         .Navbar-nav .is-open .Dropdown-menu > li > a {
@@ -4279,7 +4323,8 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
   padding: 10px 15px;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
   /* Mixin behavior for optimum display */
   /* Vertically center in expanded, horizontal navbar */
   margin-top: 7.5px;
@@ -4296,7 +4341,8 @@ input[type="submit"].Button--block, input[type="reset"].Button--block, input[typ
       margin-right: 0;
       padding-top: 0;
       padding-bottom: 0;
-      box-shadow: none; } }
+      -webkit-box-shadow: none;
+              box-shadow: none; } }
 
 /* Dropdown menus
    ========================================================================== */
@@ -4733,7 +4779,9 @@ a.Badge:hover, a.Badge:focus {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
-  transition: border 0.2s ease-in-out; }
+  -webkit-transition: border 0.2s ease-in-out;
+       -o-transition: border 0.2s ease-in-out;
+          transition: border 0.2s ease-in-out; }
   .Thumbnail > img, .Thumbnail a > img {
     display: block;
     max-width: 100%;
@@ -4830,6 +4878,18 @@ a.Thumbnail:hover, a.Thumbnail:focus, a.Thumbnail.is-active {
    ========================================================================== */
 /* Bar animations
    ========================================================================== */
+@-webkit-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0; }
+
+  to {
+    background-position: 0 0; } }
+@-o-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0; }
+
+  to {
+    background-position: 0 0; } }
 @keyframes progress-bar-stripes {
   from {
     background-position: 40px 0; }
@@ -4846,7 +4906,8 @@ a.Thumbnail:hover, a.Thumbnail:focus, a.Thumbnail.is-active {
   margin-bottom: 21px;
   background-color: #f5f5f5;
   border-radius: 4px;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); }
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); }
 
 /* Bar of progress */
 .Progress-bar {
@@ -4858,45 +4919,62 @@ a.Thumbnail:hover, a.Thumbnail:focus, a.Thumbnail.is-active {
   color: #fff;
   text-align: center;
   background-color: #86b35f;
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-  transition: width 0.6s ease; }
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  -webkit-transition: width 0.6s ease;
+       -o-transition: width 0.6s ease;
+          transition: width 0.6s ease; }
 
 /* Striped bars */
 .Progress--striped .Progress-bar, .Progress--striped {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-size: 40px 40px; }
+  -webkit-background-size: 40px 40px;
+          background-size: 40px 40px; }
 
 /* Call animation for the active one */
 .Progress.is-active .Progress-bar, .Progress-bar.is-active {
-  animation: progress-bar-stripes 2s linear infinite; }
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+       -o-animation: progress-bar-stripes 2s linear infinite;
+          animation: progress-bar-stripes 2s linear infinite; }
 
 .Progress-bar[aria-valuenow="0"] {
   color: #777777;
   min-width: 30px;
   background-color: transparent;
   background-image: none;
-  box-shadow: none; }
+  -webkit-box-shadow: none;
+          box-shadow: none; }
 
 /* Variations
    ========================================================================== */
 .Progress-bar--success {
   background-color: #5cb85c; }
   .Progress--striped .Progress-bar--success {
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
 
 .Progress-bar--info {
   background-color: #5bc0de; }
   .Progress--striped .Progress-bar--info {
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
 
 .Progress-bar--warning {
   background-color: #f0ad4e; }
   .Progress--striped .Progress-bar--warning {
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
 
 .Progress-bar--danger {
   background-color: #d9534f; }
   .Progress--striped .Progress-bar--danger {
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
 
 /* ==========================================================================
@@ -5099,7 +5177,8 @@ a.ListGroup-item--danger {
   background-color: #fff;
   border: 1px solid transparent;
   border-radius: 4px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); }
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); }
 
 /* Panel contents */
 .Panel-body {
@@ -5335,7 +5414,8 @@ a.ListGroup-item--danger {
   background-color: #f5f5f5;
   border: 1px solid #e3e3e3;
   border-radius: 4px;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05); }
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05); }
   .Well blockquote {
     border-color: #ddd;
     border-color: rgba(0, 0, 0, 0.15); }
@@ -5411,10 +5491,18 @@ button.Close {
   outline: 0;
   /* When fading in the modal, animate it to slide down */ }
   .Modal.Animation--fade .Modal-dialog {
-    transform: translate(0, -25%);
-    transition: transform 0.3s ease-out; }
+    -webkit-transform: translate(0, -25%);
+        -ms-transform: translate(0, -25%);
+         -o-transform: translate(0, -25%);
+            transform: translate(0, -25%);
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+         -o-transition: -o-transform 0.3s ease-out;
+            transition: transform 0.3s ease-out; }
   .Modal.is-in .Modal-dialog {
-    transform: translate(0, 0); }
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+         -o-transform: translate(0, 0);
+            transform: translate(0, 0); }
   .has-openModal .Modal {
     overflow-x: hidden;
     overflow-y: auto; }
@@ -5433,8 +5521,10 @@ button.Close {
   /*old browsers fallback (ie8 etc) */
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 6px;
-  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
-  background-clip: padding-box;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
   /* Remove focus outline from opened modal */
   outline: none; }
 
@@ -5513,7 +5603,8 @@ button.Close {
   .Modal--small {
     width: 300px; }
   .Modal-content {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); } }
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); } }
 
 @media screen and (min-width: 992px) {
   .Modal--large {
@@ -5625,11 +5716,13 @@ button.Close {
   line-height: 1.5;
   text-align: left;
   background-color: #fff;
-  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 6px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   /* Overrides for proper insertion */
   white-space: normal;
   /* Offset the popover to account for the popover arrow */ }
@@ -5743,7 +5836,9 @@ button.Close {
   .Carousel-inner > .Carousel-item {
     display: none;
     position: relative;
-    transition: 0.6s ease-in-out left;
+    -webkit-transition: 0.6s ease-in-out left;
+         -o-transition: 0.6s ease-in-out left;
+            transition: 0.6s ease-in-out left;
     /* Account for jankitude on images */ }
     .Carousel-inner > .Carousel-item > img, .Carousel-inner > .Carousel-item > a > img {
       display: block;
@@ -5754,17 +5849,24 @@ button.Close {
       line-height: 1; }
     @media all and (transform-3d), (-webkit-transform-3d) {
       .Carousel-inner > .Carousel-item {
-        transition: transform 0.6s ease-in-out;
-        backface-visibility: hidden;
-        perspective: 1000; }
+        -webkit-transition: -webkit-transform 0.6s ease-in-out;
+             -o-transition: -o-transform 0.6s ease-in-out;
+                transition: transform 0.6s ease-in-out;
+        -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+        -webkit-perspective: 1000;
+                perspective: 1000; }
         .Carousel-inner > .Carousel-item.is-next, .Carousel-inner > .Carousel-item.is-active.Carousel-control--right {
-          transform: translate3d(100%, 0, 0);
+          -webkit-transform: translate3d(100%, 0, 0);
+                  transform: translate3d(100%, 0, 0);
           left: 0; }
         .Carousel-inner > .Carousel-item.is-previous, .Carousel-inner > .Carousel-item.is-active.Carousel-control--left {
-          transform: translate3d(-100%, 0, 0);
+          -webkit-transform: translate3d(-100%, 0, 0);
+                  transform: translate3d(-100%, 0, 0);
           left: 0; }
         .Carousel-inner > .Carousel-item .is-next.Carousel-control--left, .Carousel-inner > .Carousel-item .is-previous.Carousel-control--right, .Carousel-inner > .Carousel-item.is-active {
-          transform: translate3d(0, 0, 0);
+          -webkit-transform: translate3d(0, 0, 0);
+                  transform: translate3d(0, 0, 0);
           left: 0; } }
   .Carousel-inner > .is-active, .Carousel-inner > .is-next, .Carousel-inner > .is-previous {
     display: block; }
@@ -5804,6 +5906,9 @@ button.Close {
   /* Hover/focus state */
   /* Toggles */ }
   .Carousel-control.Carousel-control--left {
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.0001)));
+    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
+    background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1),argb($start-color),argb($end-color);
@@ -5811,6 +5916,9 @@ button.Close {
   .Carousel-control.Carousel-control--right {
     left: auto;
     right: 0;
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.0001)), to(rgba(0, 0, 0, 0.5)));
+    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
+    background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1),argb($start-color),argb($end-color);
@@ -6155,3 +6263,5 @@ button.Close {
 @media print {
   .u-hidden-print {
     display: none !important; } }
+
+/*# sourceMappingURL=suitstrap.css.map */
