@@ -43,7 +43,7 @@
 
 		if (e.isDefaultPrevented()) return
 
-		$parent.removeClass('in')
+		$parent.removeClass('is-in')
 
 		function removeElement() {
 			// detach from parent, fire event then clean up data

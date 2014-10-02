@@ -30,7 +30,7 @@
 
 	Affix.VERSION = '3.2.0'
 
-	Affix.RESET = 'u-affix u-affix-top u-affix-bottom'
+	Affix.RESET = 'u-affix u-affix--top u-affix--bottom'
 
 	Affix.DEFAULTS = {
 		offset: 0,
@@ -89,7 +89,7 @@
 		if (this.affixed != affix) {
 			if (this.unpin != null) this.$element.css('top', '')
 
-			var affixType = 'u-affix' + (affix ? '-' + affix : '')
+			var affixType = 'u-affix' + (affix ? '--' + affix : '')
 			var e = $.Event(affixType + '.bs.affix')
 
 			this.$element.trigger(e)

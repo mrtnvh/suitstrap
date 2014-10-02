@@ -1,20 +1,9 @@
 /* ========================================================================
- * Bootstrap: tab.js v3.0.0
- * http://twbs.github.com/bootstrap/javascript.html#tabs
+ * Bootstrap: tab.js v3.2.0
+ * http://getbootstrap.com/javascript/#tabs
  * ========================================================================
- * Copyright 2014 Twitter, Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * Copyright 2011-2014 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
 
@@ -28,14 +17,18 @@
 		this.element = $(element)
 	}
 
+	Tab.VERSION = '3.2.0'
+
+	Tab.TRANSITION_DURATION = 150
+
 	Tab.prototype.show = function() {
 		var $this = this.element
-		var $ul = $this.closest('ul:not(.Dropdown-menu)')
-		var selector = $this.attr('data-target')
+		var $ul = $this.closest('ul:not(.dropdown-menu)')
+		var selector = $this.data('target')
 
 		if (!selector) {
 			selector = $this.attr('href')
-			selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') //strip for ie7
+			selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
 		}
 
 		if ($this.parent('li').hasClass('is-active')) return
@@ -51,7 +44,7 @@
 
 		var $target = $(selector)
 
-		this.activate($this.parent('li'), $ul)
+		this.activate($this.closest('li'), $ul)
 		this.activate($target, $target.parent(), function() {
 			$this.trigger({
 				type: 'shown.bs.tab',
@@ -62,34 +55,34 @@
 
 	Tab.prototype.activate = function(element, container, callback) {
 		var $active = container.find('> .is-active')
-		var transition = callback && $.support.transition && $active.hasClass('Animation--fade')
+		var transition = callback && $.support.transition && (($active.length && $active.hasClass('fade')) || !!container.find('> .fade').length)
 
-			function next() {
-				$active
-					.removeClass('is-active')
-					.find('> .Dropdown-menu > .is-active')
-					.removeClass('is-active')
+		function next() {
+			$active
+				.removeClass('is-active')
+				.find('> .Dropdown-menu > .is-active')
+				.removeClass('is-active')
 
-				element.addClass('is-active')
+			element.addClass('is-active')
 
-				if (transition) {
-					element[0].offsetWidth // reflow for transition
-					element.addClass('is-in')
-				} else {
-					element.removeClass('Animation--fade')
-				}
-
-				if (element.parent('.Dropdown-menu')) {
-					element.closest('li.Dropdown').addClass('is-active')
-				}
-
-				callback && callback()
+			if (transition) {
+				element[0].offsetWidth // reflow for transition
+				element.addClass('is-in')
+			} else {
+				element.removeClass('Animation--fade')
 			}
 
-		transition ?
+			if (element.parent('.Dropdown-menu')) {
+				element.closest('li.Dropdown').addClass('is-active')
+			}
+
+			callback && callback()
+		}
+
+		$active.length && transition ?
 			$active
-			.one($.support.transition.end, next)
-			.emulateTransitionEnd(150) :
+			.one('bsTransitionEnd', next)
+			.emulateTransitionEnd(Tab.TRANSITION_DURATION) :
 			next()
 
 		$active.removeClass('is-in')
@@ -99,9 +92,7 @@
 	// TAB PLUGIN DEFINITION
 	// =====================
 
-	var old = $.fn.tab
-
-	$.fn.tab = function(option) {
+	function Plugin(option) {
 		return this.each(function() {
 			var $this = $(this)
 			var data = $this.data('bs.tab')
@@ -111,6 +102,9 @@
 		})
 	}
 
+	var old = $.fn.tab
+
+	$.fn.tab = Plugin
 	$.fn.tab.Constructor = Tab
 
 
@@ -128,7 +122,7 @@
 
 	$(document).on('click.bs.tab.data-api', '[data-toggle="tab"], [data-toggle="pill"]', function(e) {
 		e.preventDefault()
-		$(this).tab('show')
+		Plugin.call($(this), 'show')
 	})
 
-}(window.jQuery);
+}(jQuery);
