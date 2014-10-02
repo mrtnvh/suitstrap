@@ -18,7 +18,7 @@
 
 	<button type="button" class="Button Button--primary" data-toggle="button">Single toggle</button>
 
-	<div class="Button--group" data-toggle="buttons">
+	<div class="ButtonGroup" data-toggle="buttons">
 		<label class="Button Button--primary">
 			<input type="checkbox"> checkbox 1
 		</label>
@@ -30,7 +30,7 @@
 		</label>
 	</div>
 
-	<div class="Button--group" data-toggle="buttons">
+	<div class="ButtonGroup" data-toggle="buttons">
 		<label class="Button Button--primary">
 			<input type="radio" name="options" id="option1"> Radio 1
 		</label>
@@ -51,14 +51,14 @@
 
 <!-- JavaScript Test -->
 <script>
-$(function () {
-	$('.js-loading-button').on('click', function () {
-		var Button = $(this).button('loading')
-		setTimeout(function (){
-			Button.button('reset')
-		}, 3000)
+	$(function () {
+		$('.js-loading-button').on('click', function () {
+			var Button = $(this).button('loading')
+			setTimeout(function (){
+				Button.button('reset')
+			}, 3000)
+		})
 	})
-})
 </script>
 </body>
 </html>
