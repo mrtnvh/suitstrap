@@ -1,6 +1,6 @@
 # [Suitstrap](http://suitstrap.maartenvanhoof.be)
 
-A [Bootstrap](http://suitstrap.maartenvanhoof.be) clone aiming for a more modular and semantically framework.
+A [Bootstrap](http://suitstrap.maartenvanhoof.be) clone aiming for a more modular and semantic framework.
 
 
 It's a combination of:
