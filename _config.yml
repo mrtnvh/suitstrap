@@ -6,9 +6,13 @@ highlighter:      rouge
 permalink:        pretty
 
 # Server
-destination:      ./_gh_pages
-exclude:          [".editorconfig", ".gitignore", "bower.json", "CONTRIBUTING.md", "CNAME", "LICENSE", "Gruntfile.js", "package.json", "node_modules", "README.md", "sass"]
+source:           docs
+destination:      _gh_pages
+host:             0.0.0.0
 port:             9001
+baseurl:          /
+url:              http://suitstrap.maartenvanhoof.be
+encoding:         UTF-8
 
 # Custom vars
 current_version:  0.1.0

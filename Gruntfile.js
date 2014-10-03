@@ -16,7 +16,14 @@ module.exports = function(grunt) {
 		return string.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
 	};
 
-	/* Project configuration. */
+	var fs = require('fs');
+	var path = require('path');
+	var BsLessdocParser = require('./grunt/bs-lessdoc-parser.js');
+	var generateRawFiles = require('./grunt/bs-raw-files-generator.js');
+
+
+
+  	/* Project configuration. */
 	grunt.initConfig({
 
 		/* ==========================================================================
@@ -182,7 +189,7 @@ module.exports = function(grunt) {
 		sass: {
 			compileCore: {
 				options: {
-					//sourceMap: true
+					sourceMap: true
 				},
 				src: 'sass/suitstrap.scss',
 				dest: 'dist/css/<%= pkg.slug %>.css'
