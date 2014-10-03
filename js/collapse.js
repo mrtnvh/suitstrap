@@ -62,7 +62,7 @@
 		var complete = function() {
 			this.$element
 				.removeClass('Animation--collapsing')
-				.addClass('is-in')[dimension]('')
+				.addClass('Animation--collapse is-in')[dimension]('')
 			this.transitioning = 0
 			this.$element
 				.trigger('shown.bs.collapse')
@@ -90,7 +90,7 @@
 
 		this.$element
 			.addClass('Animation--collapsing')
-			.removeClass('Animation--collapse')
+			.removeClass('Animation--collapse is-in')
 
 		this.transitioning = 1
 
