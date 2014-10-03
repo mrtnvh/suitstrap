@@ -23,7 +23,7 @@
 
 		if (this.options.remote) {
 			this.$element
-				.find('.modal-content')
+				.find('.Modal-content')
 				.load(this.options.remote, $.proxy(function() {
 					this.$element.trigger('loaded.bs.modal')
 				}, this))
@@ -58,7 +58,7 @@
 		this.isShown = true
 
 		this.checkScrollbar()
-		this.$body.addClass('modal-open')
+		this.$body.addClass('Modal-open')
 
 		this.setScrollbar()
 		this.escape()
@@ -111,7 +111,7 @@
 
 		this.isShown = false
 
-		this.$body.removeClass('modal-open')
+		this.$body.removeClass('Modal-open')
 
 		this.resetScrollbar()
 		this.escape()
@@ -224,7 +224,7 @@
 
 	Modal.prototype.measureScrollbar = function() { // thx walsh
 		var scrollDiv = document.createElement('div')
-		scrollDiv.className = 'modal-scrollbar-measure'
+		scrollDiv.className = 'Modal-scrollbar-measure'
 		this.$body.append(scrollDiv)
 		var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth
 		this.$body[0].removeChild(scrollDiv)

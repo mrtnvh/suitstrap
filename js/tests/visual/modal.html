@@ -12,23 +12,23 @@
 		<h1>Modal <small>Suitstrap Visual Test</small></h1>
 	</div>
 
-	<div id="myModal" class="modal Animation--fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
+	<div id="myModal" class="Modal Animation--fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="Modal-dialog">
+			<div class="Modal-content">
 
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title" id="myModalLabel">Modal Heading</h4>
+				<div class="Modal-header">
+					<button type="button" class="Close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="Modal-title" id="myModalLabel">Modal Heading</h4>
 				</div>
-				<div class="modal-body">
-					<h4>Text in a modal</h4>
+				<div class="Modal-body">
+					<h4>Text in a Modal</h4>
 					<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
 
-					<h4>Popover in a modal</h4>
+					<h4>Popover in a Modal</h4>
 					<p>This <a href="#" role="button" class="Button Button--default js-popover" title="" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="A Title">button</a> should trigger a popover on click.</p>
 
-					<h4>Tooltips in a modal</h4>
-					<p><a href="#" class="js-Tooltip" title="" data-original-title="Tooltip">This link</a> and <a href="#" class="js-Tooltip" title="" data-original-title="Tooltip">that link</a> should have Tooltips on hover.</p>
+					<h4>Tooltips in a Modal</h4>
+					<p><a href="#" class="js-tooltip" title="" data-original-title="Tooltip">This link</a> and <a href="#" class="js-tooltip" title="" data-original-title="Tooltip">that link</a> should have tooltips on hover.</p>
 
 					<hr>
 
@@ -43,7 +43,7 @@
 					<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
 					<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
 				</div>
-				<div class="modal-footer">
+				<div class="Modal-footer">
 					<button type="button" class="Button Button--default" data-dismiss="modal">Close</button>
 					<button type="button" class="Button Button--primary">Save changes</button>
 				</div>
@@ -52,8 +52,8 @@
 		</div>
 	</div>
 
-	<button class="Button Button--primary Button--lg" data-toggle="modal" data-target="#myModal">
-		Launch demo modal
+	<button class="Button Button--primary Button--large" data-toggle="modal" data-target="#myModal">
+		Launch demo Modal
 	</button>
 
 </div>
@@ -62,14 +62,14 @@
 <script src="../vendor/jquery.min.js"></script>
 <script src="../../transition.js"></script>
 <script src="../../modal.js"></script>
-<script src="../../Tooltip.js"></script>
+<script src="../../tooltip.js"></script>
 <script src="../../popover.js"></script>
 
 <!-- JavaScript Test -->
 <script>
 $(function () {
 	$('.js-popover').popover()
-	$('.js-Tooltip').Tooltip()
+	$('.js-tooltip').tooltip()
 })
 </script>
 
