@@ -179,7 +179,7 @@
 					left: 0,
 					display: 'block'
 				})
-				.addClass(placement)
+				.addClass("Tooltip--" + placement)
 				.data('bs.' + this.type, this)
 
 			this.options.container ? $tip.appendTo(this.options.container) : $tip.insertAfter(this.$element)
@@ -189,7 +189,7 @@
 			var actualHeight = $tip[0].offsetHeight
 
 			if (autoPlace) {
-				var orgPlacement = placement
+				var orgPlacement = "Tooltip--" + placement
 				var $parent = this.$element.parent()
 				var parentDim = this.getPosition($parent)
 
@@ -201,7 +201,7 @@
 
 				$tip
 					.removeClass(orgPlacement)
-					.addClass(placement)
+					.addClass("Tooltip--" + placement)
 			}
 
 			var calculatedOffset = this.getCalculatedOffset(placement, pos, actualWidth, actualHeight)
@@ -452,7 +452,7 @@
 			}
 		}
 
-		self.tip().hasClass('in') ? self.leave(self) : self.enter(self)
+		self.tip().hasClass('is-in') ? self.leave(self) : self.enter(self)
 	}
 
 	Tooltip.prototype.destroy = function() {
