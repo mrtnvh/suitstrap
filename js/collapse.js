@@ -158,8 +158,8 @@
 		var $parent = parent && $(parent)
 
 		if (!data || !data.transitioning) {
-			if ($parent) $parent.find('[data-toggle="collapse"][data-parent="' + parent + '"]').not($this).addClass('Animation--collapsed')
-			$this.toggleClass('collapsed', $target.hasClass('in'))
+			if ($parent) $parent.find('[data-toggle="collapse"][data-parent="' + parent + '"]').not($this).addClass('collapsed')
+			$this.toggleClass('collapsed', $target.hasClass('is-in'))
 		}
 
 		Plugin.call($target, option)
