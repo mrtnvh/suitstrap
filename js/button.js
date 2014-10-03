@@ -27,6 +27,7 @@
 
 	Button.prototype.setState = function(state) {
 		var d = 'disabled'
+		var c = 'is-disabled'
 		var $el = this.$element
 		var val = $el.is('input') ? 'val' : 'html'
 		var data = $el.data()
@@ -41,10 +42,10 @@
 		setTimeout($.proxy(function() {
 			if (state == 'loadingText') {
 				this.isLoading = true
-				$el.addClass(d).attr(d, d)
+				$el.addClass(c).attr(d, d)
 			} else if (this.isLoading) {
 				this.isLoading = false
-				$el.removeClass(d).removeAttr(d)
+				$el.removeClass(c).removeAttr(d)
 			}
 		}, this), 0)
 	}
