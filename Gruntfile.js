@@ -59,6 +59,12 @@ module.exports = function(grunt) {
 			options: {
 				jshintrc: 'js/.jshintrc'
 			},
+			config: {
+				options: {
+					jshintrc: 'grunt/.jshintrc'
+				},
+				src: ['package.json', 'bower.json']
+			},
 			grunt: {
 				options: {
 					jshintrc: 'grunt/.jshintrc'
@@ -409,6 +415,10 @@ module.exports = function(grunt) {
 		 * Watch
 		 * ======================================================================== */
 		watch: {
+			config : {
+				files: '<%= jshint.config.src %>',
+				tasks: ['jshint:config']
+			},
 			grunt : {
 				files: '<%= jshint.grunt.src %>',
 				tasks: ['jshint:grunt']
