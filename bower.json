@@ -15,7 +15,7 @@
 	],
 	"homepage": "http://suitstrap.maartenvanhoof.be",
 	"ignore": [
-		"**/.*"
+		"**/.*",
 		"_config.yml",
 		"CNAME",
 		"composer.json",
