@@ -15,16 +15,16 @@ mark,
 }
 
 /* Alignment */
-.Text-left           { text-align: left; }
-.Text-right          { text-align: right; }
-.Text-center         { text-align: center; }
-.Text-justify        { text-align: justify; }
-.Text-nowrap         { white-space: nowrap; }
+.Text--left           { text-align: left; }
+.Text--right          { text-align: right; }
+.Text--center         { text-align: center; }
+.Text--justify        { text-align: justify; }
+.Text--nowrap         { white-space: nowrap; }
 
 /* Transformation */
-.Text-lowercase      { text-transform: lowercase; }
-.Text-uppercase      { text-transform: uppercase; }
-.Text-capitalize     { text-transform: capitalize; }
+.Text--lowercase      { text-transform: lowercase; }
+.Text--uppercase      { text-transform: uppercase; }
+.Text--capitalize     { text-transform: capitalize; }
 
 /* Contextual emphasis */
 .Text--muted { color: $text-muted; }
