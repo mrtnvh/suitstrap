@@ -386,17 +386,17 @@ position: relative;
 }
 
 /* Warning */
-.has-Warning {
+.has-warning {
 	@include FormControlValidation($state-warning-text, $state-warning-text, $state-warning-bg);
 }
 
 /* Error */
-.has-Error {
+.has-error {
 	@include FormControlValidation($state-danger-text, $state-danger-text, $state-danger-bg);
 }
 
 /* Success */
-.has-Success {
+.has-success {
 	@include FormControlValidation($state-success-text, $state-success-text, $state-success-bg);
 }
 
