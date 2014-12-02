@@ -1050,29 +1050,29 @@ mark, .u-mark {
   padding: 0.2em; }
 
 /* Alignment */
-.Text-left {
+.Text--left {
   text-align: left; }
 
-.Text-right {
+.Text--right {
   text-align: right; }
 
-.Text-center {
+.Text--center {
   text-align: center; }
 
-.Text-justify {
+.Text--justify {
   text-align: justify; }
 
-.Text-nowrap {
+.Text--nowrap {
   white-space: nowrap; }
 
 /* Transformation */
-.Text-lowercase {
+.Text--lowercase {
   text-transform: lowercase; }
 
-.Text-uppercase {
+.Text--uppercase {
   text-transform: uppercase; }
 
-.Text-capitalize {
+.Text--capitalize {
   text-transform: capitalize; }
 
 /* Contextual emphasis */
@@ -1446,72 +1446,72 @@ input[type="radio"][disabled], input[type="radio"].is-disabled, fieldset[disable
   line-height: 30px; }
 
 /* Warning */
-.has-Warning {
+.has-warning {
   /* Color the label and help text */
   /* Set the border and box shadow on specific inputs to match */
   /* Set validation states also for addons */ }
-  .has-Warning .HelpBlock, .has-Warning .ControlLabel, .has-Warning .Radio, .has-Warning .Checkbox, .has-Warning .Radio--inline, .has-Warning .Checkbox--inline, .has-Warning.Radio label, .has-Warning.Checkbox label, .has-Warning.Radio--inline label, .has-Warning.Checkbox--inline label {
+  .has-warning .HelpBlock, .has-warning .ControlLabel, .has-warning .Radio, .has-warning .Checkbox, .has-warning .Radio--inline, .has-warning .Checkbox--inline, .has-warning.Radio label, .has-warning.Checkbox label, .has-warning.Radio--inline label, .has-warning.Checkbox--inline label {
     color: #c09853; }
-  .has-Warning .Form-control {
+  .has-warning .Form-control {
     border-color: #c09853;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
             box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     /* Redeclare so transitions work */ }
-    .has-Warning .Form-control:focus {
+    .has-warning .Form-control:focus {
       border-color: #a47c3c;
       -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc49e;
               box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc49e; }
-  .has-Warning .InputGroup-addon {
+  .has-warning .InputGroup-addon {
     color: #c09853;
     border-color: #c09853;
     background-color: #fcf8e3; }
-  .has-Warning .Form-control-feedback {
+  .has-warning .Form-control-feedback {
     color: #c09853; }
 
 /* Error */
-.has-Error {
+.has-error {
   /* Color the label and help text */
   /* Set the border and box shadow on specific inputs to match */
   /* Set validation states also for addons */ }
-  .has-Error .HelpBlock, .has-Error .ControlLabel, .has-Error .Radio, .has-Error .Checkbox, .has-Error .Radio--inline, .has-Error .Checkbox--inline, .has-Error.Radio label, .has-Error.Checkbox label, .has-Error.Radio--inline label, .has-Error.Checkbox--inline label {
+  .has-error .HelpBlock, .has-error .ControlLabel, .has-error .Radio, .has-error .Checkbox, .has-error .Radio--inline, .has-error .Checkbox--inline, .has-error.Radio label, .has-error.Checkbox label, .has-error.Radio--inline label, .has-error.Checkbox--inline label {
     color: #b94a48; }
-  .has-Error .Form-control {
+  .has-error .Form-control {
     border-color: #b94a48;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
             box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     /* Redeclare so transitions work */ }
-    .has-Error .Form-control:focus {
+    .has-error .Form-control:focus {
       border-color: #953b39;
       -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
               box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392; }
-  .has-Error .InputGroup-addon {
+  .has-error .InputGroup-addon {
     color: #b94a48;
     border-color: #b94a48;
     background-color: #f2dede; }
-  .has-Error .Form-control-feedback {
+  .has-error .Form-control-feedback {
     color: #b94a48; }
 
 /* Success */
-.has-Success {
+.has-success {
   /* Color the label and help text */
   /* Set the border and box shadow on specific inputs to match */
   /* Set validation states also for addons */ }
-  .has-Success .HelpBlock, .has-Success .ControlLabel, .has-Success .Radio, .has-Success .Checkbox, .has-Success .Radio--inline, .has-Success .Checkbox--inline, .has-Success.Radio label, .has-Success.Checkbox label, .has-Success.Radio--inline label, .has-Success.Checkbox--inline label {
+  .has-success .HelpBlock, .has-success .ControlLabel, .has-success .Radio, .has-success .Checkbox, .has-success .Radio--inline, .has-success .Checkbox--inline, .has-success.Radio label, .has-success.Checkbox label, .has-success.Radio--inline label, .has-success.Checkbox--inline label {
     color: #468847; }
-  .has-Success .Form-control {
+  .has-success .Form-control {
     border-color: #468847;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
             box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     /* Redeclare so transitions work */ }
-    .has-Success .Form-control:focus {
+    .has-success .Form-control:focus {
       border-color: #356635;
       -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7a;
               box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7a; }
-  .has-Success .InputGroup-addon {
+  .has-success .InputGroup-addon {
     color: #468847;
     border-color: #468847;
     background-color: #dff0d8; }
-  .has-Success .Form-control-feedback {
+  .has-success .Form-control-feedback {
     color: #468847; }
 
 /* Reposition feedback icon if input has visible label above */
@@ -4821,7 +4821,7 @@ a.Thumbnail:hover, a.Thumbnail:focus, a.Thumbnail.is-active {
     margin-top: 5px; }
 
 /**
- * Dismissable alerts
+ * Dismissible alerts
  * Expand the right padding and account for the close button's positioning.
  */
 .Alert--dismissible {
