@@ -5,7 +5,7 @@
 
 @mixin MakeGridColumns() {
 	// Common styles for all sizes of grid columns, widths 1-12
-	$col-classes: null;
+	$col-classes: "";
 	$delimiter: ", ";
 
 	@for $i from 1 through length($grid-breakpoints) {
@@ -33,7 +33,7 @@
 
 @mixin FloatGridColumns($class) {
 	// Common styles for all sizes of grid columns, widths 1-12
-	$col-classes: null;
+	$col-classes: "";
 	$delimiter: ", ";
 
 	@for $j from 1 through $grid-columns {
