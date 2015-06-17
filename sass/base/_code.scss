@@ -76,7 +76,7 @@ pre {
 
 /* Enable scrollable blocks of code
    ========================================================================== */
-.PreScrollable {
+.Pre--scrollable {
 	max-height: $pre-scrollable-max-height;
 	overflow-y: scroll;
 }

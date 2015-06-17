@@ -227,11 +227,11 @@ suitstrap/
 
 		<h3>Internet Explorer 10 in Windows 8 and Windows Phone 8</h3>
 		<p>Internet Explorer 10 doesn't differentiate <strong>device width</strong> from <strong>viewport width</strong>, and thus doesn't properly apply the media queries in Suitstrap's CSS. Normally you'd just add a quick snippet of CSS to fix this:</p>
-{% highlight css %}
+{% highlight scss %}
 @-ms-viewport { width: device-width; }
 {% endhighlight %}
 		<p>However, this doesn't work as it causes Windows Phone 8 devices to show a mostly desktop view instead of narrow "phone" view. To address this, you'll need to <strong>include the following CSS and JavaScript to work around the bug until Microsoft issues a fix</strong>.</p>
-{% highlight css %}
+{% highlight scss %}
 @-webkit-viewport   { width: device-width; }
 @-moz-viewport      { width: device-width; }
 @-ms-viewport       { width: device-width; }
@@ -283,7 +283,7 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
 		<h3>Box-sizing</h3>
 		<p>Some third party software, including Google Maps and Google Custom Search Engine, conflict with Suitstrap due to <code>* { box-sizing: border-box; }</code>, a rule which makes it so <code>padding</code> does not affect the final computed width of an element. Learn more about <a href="http://css-tricks.com/box-sizing/">box model and sizing at CSS Tricks</a>.</p>
 		<p>Depending on the context, you may override as-needed (Option 1) or reset the box-sizing for entire regions (Option 2).</p>
-{% highlight css %}
+{% highlight scss %}
 /* Box-sizing resets
 *
 * Reset individual elements or override regions to avoid conflicts due to
@@ -371,14 +371,14 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
 		<p class="Lead">Suitstrap is released under the Apache 2 license and is copyright {{ site.time | date: "%Y" }} Twitter. Boiled down to smaller chunks, it can be described with the following conditions.</p>
 
 		<div class="Row">
-			<div class="col-12 Col--large-6">
+			<div class="col-12 Col--large--6">
 				<h4>It allows you to:</h4>
 				<ul>
 					<li>Freely download and use Suitstrap, in whole or in part, for personal, company internal or commercial purposes</li>
 					<li>Use Suitstrap in packages or distributions that you create</li>
 				</ul>
 			</div>
-			<div class="col-12 Col--large-6">
+			<div class="col-12 Col--large--6">
 				<h4>It forbids you to:</h4>
 				<ul>
 					<li>Redistribute any piece of Suitstrap without proper attribution of Twitter and Bootstrap</li>
@@ -388,14 +388,14 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
 			</div>
 		</div>
 		<div class="Row">
-			<div class="col-12 Col--large-6">
+			<div class="col-12 Col--large--6">
 				<h4>It requires you to:</h4>
 				<ul>
 					<li>Include a copy of the license in any redistribution you may make that includes Suitstrap</li>
 					<li>Provide clear attribution to Twitter for any distributions that include Suitstrap</li>
 				</ul>
 			</div>
-			<div class="col-12 Col--large-6">
+			<div class="col-12 Col--large--6">
 				<h4>It does not require you to:</h4>
 				<ul>
 					<li>Include the source of Suitstrap itself, or of any modifications you may have made to it, in any redistribution you may assemble that includes it</li>
@@ -434,7 +434,7 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
 
 		<p>To implement this, in the custom stylesheet, add the following CSS:</p>
 
-{% highlight css %}
+{% highlight scss %}
 /* Custom button
 -------------------------------------------------- */
 

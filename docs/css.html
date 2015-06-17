@@ -81,7 +81,7 @@ base_url: "../"
 
 		<h3 id="grid-media-queries">Media queries</h3>
 		<p>We use the following media queries in our Sass files to create the key breakpoints in our grid system.</p>
-{% highlight css %}
+{% highlight scss %}
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Suitstrap */
 
@@ -95,7 +95,7 @@ base_url: "../"
 @media (min-width: $screen--large-min) { ... }
 {% endhighlight %}
 		<p>We occasionally expand on these media queries to include a <code>max-width</code> to limit CSS to a narrower set of devices.</p>
-{% highlight css %}
+{% highlight scss %}
 @media (max-width: $screen--extraSmall-max) { ... }
 @media (min-width: $screen--small-min) and (max-width: $screen-small-max) { ... }
 @media (min-width: $screen--medium-min) and (max-width: $screen-medium-max) { ... }
@@ -142,10 +142,10 @@ base_url: "../"
 					</tr>
 					<tr>
 						<th>Class prefix</th>
-						<td><code>.Col--extraSmall-</code></td>
-						<td><code>.Col--small-</code></td>
-						<td><code>.Col--Medium-</code></td>
-						<td><code>.Col--large-</code></td>
+						<td><code>.Col--extraSmall--</code></td>
+						<td><code>.Col--small--</code></td>
+						<td><code>.Col--medium--</code></td>
+						<td><code>.Col--large--</code></td>
 					</tr>
 					<tr>
 						<th># of columns</th>
@@ -179,135 +179,135 @@ base_url: "../"
 				</tbody>
 			</table>
 		</div>
-		<p>Grid classes apply to devices with screen widths greater than or equal to the breakpoint sizes, and override grid classes targeted at smaller devices. Therefore, applying any <code>.Col--medium-</code> class to an element will not only affect its styling on medium devices but also on large devices if a <code>.Col--large-</code> class is not present.</p>
+		<p>Grid classes apply to devices with screen widths greater than or equal to the breakpoint sizes, and override grid classes targeted at smaller devices. Therefore, applying any <code>.Col--medium--</code> class to an element will not only affect its styling on medium devices but also on large devices if a <code>.Col--large--</code> class is not present.</p>
 
 		<h3 id="grid-example-basic">Example: Stacked-to-horizontal</h3>
-		<p>Using a single set of <code>.Col--medium-*</code> grid classes, you can create a basic grid system that starts out stacked on mobile devices and tablet devices (the extra small to small range) before becoming horizontal on desktop (medium) devices.</p>
+		<p>Using a single set of <code>.Col--medium--*</code> grid classes, you can create a basic grid system that starts out stacked on mobile devices and tablet devices (the extra small to small range) before becoming horizontal on desktop (medium) devices.</p>
 		<div class="bs-docs-grid">
 			<div class="Row show-grid">
-				<div class="Col--medium-1">.Col--medium-1</div>
-				<div class="Col--medium-1">.Col--medium-1</div>
-				<div class="Col--medium-1">.Col--medium-1</div>
-				<div class="Col--medium-1">.Col--medium-1</div>
-				<div class="Col--medium-1">.Col--medium-1</div>
-				<div class="Col--medium-1">.Col--medium-1</div>
-				<div class="Col--medium-1">.Col--medium-1</div>
-				<div class="Col--medium-1">.Col--medium-1</div>
-				<div class="Col--medium-1">.Col--medium-1</div>
-				<div class="Col--medium-1">.Col--medium-1</div>
-				<div class="Col--medium-1">.Col--medium-1</div>
-				<div class="Col--medium-1">.Col--medium-1</div>
+				<div class="Col--medium--1">.Col--medium--1</div>
+				<div class="Col--medium--1">.Col--medium--1</div>
+				<div class="Col--medium--1">.Col--medium--1</div>
+				<div class="Col--medium--1">.Col--medium--1</div>
+				<div class="Col--medium--1">.Col--medium--1</div>
+				<div class="Col--medium--1">.Col--medium--1</div>
+				<div class="Col--medium--1">.Col--medium--1</div>
+				<div class="Col--medium--1">.Col--medium--1</div>
+				<div class="Col--medium--1">.Col--medium--1</div>
+				<div class="Col--medium--1">.Col--medium--1</div>
+				<div class="Col--medium--1">.Col--medium--1</div>
+				<div class="Col--medium--1">.Col--medium--1</div>
 			</div>
 			<div class="Row show-grid">
-				<div class="Col--medium-8">.Col--medium-8</div>
-				<div class="Col--medium-4">.Col--medium-4</div>
+				<div class="Col--medium--8">.Col--medium--8</div>
+				<div class="Col--medium--4">.Col--medium--4</div>
 			</div>
 			<div class="Row show-grid">
-				<div class="Col--medium-4">.Col--medium-4</div>
-				<div class="Col--medium-4">.Col--medium-4</div>
-				<div class="Col--medium-4">.Col--medium-4</div>
+				<div class="Col--medium--4">.Col--medium--4</div>
+				<div class="Col--medium--4">.Col--medium--4</div>
+				<div class="Col--medium--4">.Col--medium--4</div>
 			</div>
 			<div class="Row show-grid">
-				<div class="Col--medium-6">.Col--medium-6</div>
-				<div class="Col--medium-6">.Col--medium-6</div>
+				<div class="Col--medium--6">.Col--medium--6</div>
+				<div class="Col--medium--6">.Col--medium--6</div>
 			</div>
 		</div>
 {% highlight html %}
 <div class="Row">
-	<div class="Col--medium-1">.Col--medium-1</div>
-	<div class="Col--medium-1">.Col--medium-1</div>
-	<div class="Col--medium-1">.Col--medium-1</div>
-	<div class="Col--medium-1">.Col--medium-1</div>
-	<div class="Col--medium-1">.Col--medium-1</div>
-	<div class="Col--medium-1">.Col--medium-1</div>
-	<div class="Col--medium-1">.Col--medium-1</div>
-	<div class="Col--medium-1">.Col--medium-1</div>
-	<div class="Col--medium-1">.Col--medium-1</div>
-	<div class="Col--medium-1">.Col--medium-1</div>
-	<div class="Col--medium-1">.Col--medium-1</div>
-	<div class="Col--medium-1">.Col--medium-1</div>
+	<div class="Col--medium--1">.Col--medium--1</div>
+	<div class="Col--medium--1">.Col--medium--1</div>
+	<div class="Col--medium--1">.Col--medium--1</div>
+	<div class="Col--medium--1">.Col--medium--1</div>
+	<div class="Col--medium--1">.Col--medium--1</div>
+	<div class="Col--medium--1">.Col--medium--1</div>
+	<div class="Col--medium--1">.Col--medium--1</div>
+	<div class="Col--medium--1">.Col--medium--1</div>
+	<div class="Col--medium--1">.Col--medium--1</div>
+	<div class="Col--medium--1">.Col--medium--1</div>
+	<div class="Col--medium--1">.Col--medium--1</div>
+	<div class="Col--medium--1">.Col--medium--1</div>
 </div>
 <div class="Row">
-	<div class="Col--medium-8">.Col--medium-8</div>
-	<div class="Col--medium-4">.Col--medium-4</div>
+	<div class="Col--medium--8">.Col--medium--8</div>
+	<div class="Col--medium--4">.Col--medium--4</div>
 </div>
 <div class="Row">
-	<div class="Col--medium-4">.Col--medium-4</div>
-	<div class="Col--medium-4">.Col--medium-4</div>
-	<div class="Col--medium-4">.Col--medium-4</div>
+	<div class="Col--medium--4">.Col--medium--4</div>
+	<div class="Col--medium--4">.Col--medium--4</div>
+	<div class="Col--medium--4">.Col--medium--4</div>
 </div>
 <div class="Row">
-	<div class="Col--medium-6">.Col--medium-6</div>
-	<div class="Col--medium-6">.Col--medium-6</div>
+	<div class="Col--medium--6">.Col--medium--6</div>
+	<div class="Col--medium--6">.Col--medium--6</div>
 </div>
 {% endhighlight %}
 
 		<h3 id="grid-example-mixed">Example: Mobile and desktop</h3>
-		<p>Don't want your columns to simply stack in smaller devices? Use the extra small and medium device grid classes by adding <code>.Col--extraSmall-*</code> <code>.Col--medium-*</code> to your columns. See the example below for a better idea of how it all works.</p>
+		<p>Don't want your columns to simply stack in smaller devices? Use the extra small and medium device grid classes by adding <code>.Col--extraSmall--*</code> <code>.Col--medium--*</code> to your columns. See the example below for a better idea of how it all works.</p>
 		<div class="bs-docs-grid">
 			<div class="Row show-grid">
-				<div class="Col--extraSmall-12 Col--medium-8">.Col--extraSmall-12 .Col--medium-8</div>
-				<div class="Col--extraSmall-6 Col--medium-4">.Col--extraSmall-6 .Col--medium-4</div>
+				<div class="Col--extraSmall--12 Col--medium--8">.Col--extraSmall--12 .Col--medium--8</div>
+				<div class="Col--extraSmall--6 Col--medium--4">.Col--extraSmall--6 .Col--medium--4</div>
 			</div>
 			<div class="Row show-grid">
-				<div class="Col--extraSmall-6 Col--medium-4">.Col--extraSmall-6 .Col--medium-4</div>
-				<div class="Col--extraSmall-6 Col--medium-4">.Col--extraSmall-6 .Col--medium-4</div>
-				<div class="Col--extraSmall-6 Col--medium-4">.Col--extraSmall-6 .Col--medium-4</div>
+				<div class="Col--extraSmall--6 Col--medium--4">.Col--extraSmall--6 .Col--medium--4</div>
+				<div class="Col--extraSmall--6 Col--medium--4">.Col--extraSmall--6 .Col--medium--4</div>
+				<div class="Col--extraSmall--6 Col--medium--4">.Col--extraSmall--6 .Col--medium--4</div>
 			</div>
 			<div class="Row show-grid">
-				<div class="Col--extraSmall-6">.Col--extraSmall-6</div>
-				<div class="Col--extraSmall-6">.Col--extraSmall-6</div>
+				<div class="Col--extraSmall--6">.Col--extraSmall--6</div>
+				<div class="Col--extraSmall--6">.Col--extraSmall--6</div>
 			</div>
 		</div>
 
 {% highlight html %}
 <!-- Stack the columns on mobile by making one full-width and the other half-width -->
 <div class="Row">
-	<div class="Col--extraSmall-12 Col--medium-8">.Col--extraSmall-12 .Col--medium-8</div>
-	<div class="Col--extraSmall-6 Col--medium-4">.Col--extraSmall-6 .Col--medium-4</div>
+	<div class="Col--extraSmall--12 Col--medium--8">.Col--extraSmall--12 .Col--medium--8</div>
+	<div class="Col--extraSmall--6 Col--medium--4">.Col--extraSmall--6 .Col--medium--4</div>
 </div>
 
 <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
 <div class="Row">
-	<div class="Col--extraSmall-6 Col--medium-4">.Col--extraSmall-6 .Col--medium-4</div>
-	<div class="Col--extraSmall-6 Col--medium-4">.Col--extraSmall-6 .Col--medium-4</div>
-	<div class="Col--extraSmall-6 Col--medium-4">.Col--extraSmall-6 .Col--medium-4</div>
+	<div class="Col--extraSmall--6 Col--medium--4">.Col--extraSmall--6 .Col--medium--4</div>
+	<div class="Col--extraSmall--6 Col--medium--4">.Col--extraSmall--6 .Col--medium--4</div>
+	<div class="Col--extraSmall--6 Col--medium--4">.Col--extraSmall--6 .Col--medium--4</div>
 </div>
 
 <!-- Columns are always 50% wide, on mobile and desktop -->
 <div class="Row">
-	<div class="Col--extraSmall-6">.Col--extraSmall-6</div>
-	<div class="Col--extraSmall-6">.Col--extraSmall-6</div>
+	<div class="Col--extraSmall--6">.Col--extraSmall--6</div>
+	<div class="Col--extraSmall--6">.Col--extraSmall--6</div>
 </div>
 {% endhighlight %}
 
 		<h3 id="grid-example-mixed-complete">Example: Mobile, tablet, desktops</h3>
-		<p>Build on the previous example by creating even more dynamic and powerful layouts with tablet <code>.Col--small-*</code> classes.</p>
+		<p>Build on the previous example by creating even more dynamic and powerful layouts with tablet <code>.Col--small--*</code> classes.</p>
 		<div class="bs-docs-grid">
 			<div class="Row show-grid">
-				<div class="Col--extraSmall-12 Col--small-6 Col--medium-8">.Col--extraSmall-12 .Col--small-6 .Col--medium-8</div>
-				<div class="Col--extraSmall-6 Col--medium-4">.Col--extraSmall-6 .Col--medium-4</div>
+				<div class="Col--extraSmall--12 Col--small--6 Col--medium--8">.Col--extraSmall--12 .Col--small--6 .Col--medium--8</div>
+				<div class="Col--extraSmall--6 Col--medium--4">.Col--extraSmall--6 .Col--medium--4</div>
 			</div>
 			<div class="Row show-grid">
-				<div class="Col--extraSmall-6 Col--small-4">.Col--extraSmall-6 .Col--small-4</div>
-				<div class="Col--extraSmall-6 Col--small-4">.Col--extraSmall-6 .Col--small-4</div>
+				<div class="Col--extraSmall--6 Col--small--4">.Col--extraSmall--6 .Col--small--4</div>
+				<div class="Col--extraSmall--6 Col--small--4">.Col--extraSmall--6 .Col--small--4</div>
 				<!-- Optional: clear the XS cols if their content doesn't match in height -->
 				<div class="u-clearfix u-visible--extraSmall"></div>
-				<div class="Col--extraSmall-6 Col--small-4">.Col--extraSmall-6 .Col--small-4</div>
+				<div class="Col--extraSmall--6 Col--small--4">.Col--extraSmall--6 .Col--small--4</div>
 			</div>
 		</div>
 
 {% highlight html %}
 <div class="Row">
-	<div class="Col--extraSmall-12 Col--small-6 Col--medium-8">.Col--extraSmall-12 .Col--small-6 .Col--medium-8</div>
-	<div class="Col--extraSmall-6 Col--medium-4">.Col--extraSmall-6 .Col--medium-4</div>
+	<div class="Col--extraSmall--12 Col--small--6 Col--medium--8">.Col--extraSmall--12 .Col--small--6 .Col--medium--8</div>
+	<div class="Col--extraSmall--6 Col--medium--4">.Col--extraSmall--6 .Col--medium--4</div>
 </div>
 <div class="Row">
-	<div class="Col--extraSmall-6 Col--small-4">.Col--extraSmall-6 .Col--small-4</div>
-	<div class="Col--extraSmall-6 Col--small-4">.Col--extraSmall-6 .Col--small-4</div>
+	<div class="Col--extraSmall--6 Col--small--4">.Col--extraSmall--6 .Col--small--4</div>
+	<div class="Col--extraSmall--6 Col--small--4">.Col--extraSmall--6 .Col--small--4</div>
 	<!-- Optional: clear the XS cols if their content doesn't match in height -->
 	<div class="u-clearfix u-visible--extraSmall"></div>
-	<div class="Col--extraSmall-6 Col--small-4">.Col--extraSmall-6 .Col--small-4</div>
+	<div class="Col--extraSmall--6 Col--small--4">.Col--extraSmall--6 .Col--small--4</div>
 </div>
 {% endhighlight %}
 
@@ -316,14 +316,14 @@ base_url: "../"
 
 {% highlight html %}
 <div class="Row">
-	<div class="Col--extraSmall-6 Col--small-3">.Col--extraSmall-6 .Col--small-3</div>
-	<div class="Col--extraSmall-6 Col--small-3">.Col--extraSmall-6 .Col--small-3</div>
+	<div class="Col--extraSmall--6 Col--small--3">.Col--extraSmall--6 .Col--small--3</div>
+	<div class="Col--extraSmall--6 Col--small--3">.Col--extraSmall--6 .Col--small--3</div>
 
 	<!-- Add the extra u-clearfix for only the required viewport -->
 	<div class="u-clearfix u-visible--extraSmall"></div>
 
-	<div class="Col--extraSmall-6 Col--small-3">.Col--extraSmall-6 .Col--small-3</div>
-	<div class="Col--extraSmall-6 Col--small-3">.Col--extraSmall-6 .Col--small-3</div>
+	<div class="Col--extraSmall--6 Col--small--3">.Col--extraSmall--6 .Col--small--3</div>
+	<div class="Col--extraSmall--6 Col--small--3">.Col--extraSmall--6 .Col--small--3</div>
 </div>
 {% endhighlight %}
 
@@ -331,58 +331,58 @@ base_url: "../"
 
 {% highlight html %}
 <div class="Row">
-	<div class="Col--small-5 Col--medium-6">.Col--small-5 .Col--medium-6</div>
-	<div class="Col--small-5 Col--small--offset-2 Col--medium-6 Col--medium--offset-0">.Col--small-5 .Col--small--offset-2 .Col--medium-6 .Col--medium--offset-0</div>
+	<div class="Col--small--5 Col--medium--6">.Col--small--5 .Col--medium--6</div>
+	<div class="Col--small--5 Col--small---offset-2 Col--medium--6 Col--medium---offset-0">.Col--small--5 .Col--small---offset-2 .Col--medium--6 .Col--medium---offset-0</div>
 </div>
 
 <div class="Row">
-	<div class="Col--small-6 Col--medium-5 Col--large-6">.Col--small-6 .Col--medium-5 .Col--large-6</div>
-	<div class="Col--small-6 Col--medium-5 Col--medium--offset-2 Col--large-6 Col--large-offset-0">.Col--small-6 .Col--medium-5 .Col--medium--offset-2 .Col--large-6 .Col--large-offset-0</div>
+	<div class="Col--small--6 Col--medium--5 Col--large--6">.Col--small--6 .Col--medium--5 .Col--large--6</div>
+	<div class="Col--small--6 Col--medium--5 Col--medium---offset-2 Col--large--6 Col--large--offset-0">.Col--small--6 .Col--medium--5 .Col--medium---offset-2 .Col--large--6 .Col--large--offset-0</div>
 </div>
 {% endhighlight %}
 
 		<h3 id="grid-offsetting">Offsetting columns</h3>
-		<p>Move columns to the right using <code>.Col--medium--offset-*</code> classes. These classes increase the left margin of a column by <code>*</code> columns. For example, <code>.Col--medium--offset-4</code> moves <code>.Col--medium-4</code> over four columns.</p>
+		<p>Move columns to the right using <code>.Col--medium---offset-*</code> classes. These classes increase the left margin of a column by <code>*</code> columns. For example, <code>.Col--medium---offset-4</code> moves <code>.Col--medium--4</code> over four columns.</p>
 		<div class="bs-docs-grid">
 			<div class="Row show-grid">
-				<div class="Col--medium-4">.Col--medium-4</div>
-				<div class="Col--medium-4 Col--medium--offset-4">.Col--medium-4 .Col--medium--offset-4</div>
+				<div class="Col--medium--4">.Col--medium--4</div>
+				<div class="Col--medium--4 Col--medium---offset-4">.Col--medium--4 .Col--medium---offset-4</div>
 			</div>
 			<div class="Row show-grid">
-				<div class="Col--medium-3 Col--medium--offset-3">.Col--medium-3 .Col--medium--offset-3</div>
-				<div class="Col--medium-3 Col--medium--offset-3">.Col--medium-3 .Col--medium--offset-3</div>
+				<div class="Col--medium--3 Col--medium---offset-3">.Col--medium--3 .Col--medium---offset-3</div>
+				<div class="Col--medium--3 Col--medium---offset-3">.Col--medium--3 .Col--medium---offset-3</div>
 			</div>
 			<div class="Row show-grid">
-				<div class="Col--medium-6 Col--medium--offset-3">.Col--medium-6 .Col--medium--offset-3</div>
+				<div class="Col--medium--6 Col--medium---offset-3">.Col--medium--6 .Col--medium---offset-3</div>
 			</div>
 		</div>
 
 {% highlight html %}
 <div class="Row">
-	<div class="Col--medium-4">.Col--medium-4</div>
-	<div class="Col--medium-4 Col--medium--offset-4">.Col--medium-4 .Col--medium--offset-4</div>
+	<div class="Col--medium--4">.Col--medium--4</div>
+	<div class="Col--medium--4 Col--medium---offset-4">.Col--medium--4 .Col--medium---offset-4</div>
 </div>
 <div class="Row">
-	<div class="Col--medium-3 Col--medium--offset-3">.Col--medium-3 .Col--medium--offset-3</div>
-	<div class="Col--medium-3 Col--medium--offset-3">.Col--medium-3 .Col--medium--offset-3</div>
+	<div class="Col--medium--3 Col--medium---offset-3">.Col--medium--3 .Col--medium---offset-3</div>
+	<div class="Col--medium--3 Col--medium---offset-3">.Col--medium--3 .Col--medium---offset-3</div>
 </div>
 <div class="Row">
-	<div class="Col--medium-6 Col--medium--offset-3">.Col--medium-6 .Col--medium--offset-3</div>
+	<div class="Col--medium--6 Col--medium---offset-3">.Col--medium--6 .Col--medium---offset-3</div>
 </div>
 {% endhighlight %}
 
 
 		<h3 id="grid-nesting">Nesting columns</h3>
-		<p>To nest your content with the default grid, add a new <code>.Row</code> and set of <code>.Col--medium-*</code> columns within an existing <code>.Col--medium-*</code> column. Nested rows should include a set of columns that add up to 12.</p>
+		<p>To nest your content with the default grid, add a new <code>.Row</code> and set of <code>.Col--medium--*</code> columns within an existing <code>.Col--medium--*</code> column. Nested rows should include a set of columns that add up to 12.</p>
 		<div class="Row show-grid">
-			<div class="Col--medium-9">
-				Level 1: .Col--medium-9
+			<div class="Col--medium--9">
+				Level 1: .Col--medium--9
 				<div class="Row show-grid">
-					<div class="Col--medium-6">
-						Level 2: .Col--medium-6
+					<div class="Col--medium--6">
+						Level 2: .Col--medium--6
 					</div>
-					<div class="Col--medium-6">
-						Level 2: .Col--medium-6
+					<div class="Col--medium--6">
+						Level 2: .Col--medium--6
 					</div>
 				</div>
 			</div>
@@ -390,14 +390,14 @@ base_url: "../"
 
 {% highlight html %}
 <div class="Row">
-	<div class="Col--medium-9">
-		Level 1: .Col--medium-9
+	<div class="Col--medium--9">
+		Level 1: .Col--medium--9
 		<div class="Row">
-			<div class="Col--medium-6">
-				Level 2: .Col--medium-6
+			<div class="Col--medium--6">
+				Level 2: .Col--medium--6
 			</div>
-			<div class="Col--medium-6">
-				Level 2: .Col--medium-6
+			<div class="Col--medium--6">
+				Level 2: .Col--medium--6
 			</div>
 		</div>
 	</div>
@@ -405,16 +405,16 @@ base_url: "../"
 {% endhighlight %}
 
 		<h3 id="grid-column-ordering">Column ordering</h3>
-		<p>Easily change the order of our built-in grid columns with <code>.Col--medium--push-*</code> and <code>.Col--medium-u-pull--*</code> modifier classes.</p>
+		<p>Easily change the order of our built-in grid columns with <code>.Col--medium---push-*</code> and <code>.Col--medium--u-pull--*</code> modifier classes.</p>
 		<div class="Row show-grid">
-			<div class="Col--medium-9 Col--medium--push-3">.Col--medium-9 .Col--medium--push-3</div>
-			<div class="Col--medium-3 Col--medium-u-pull--9">.Col--medium-3 .Col--medium-u-pull--9</div>
+			<div class="Col--medium--9 Col--medium---push-3">.Col--medium--9 .Col--medium---push-3</div>
+			<div class="Col--medium--3 Col--medium--u-pull--9">.Col--medium--3 .Col--medium--u-pull--9</div>
 		</div>
 
 {% highlight html %}
 <div class="Row">
-	<div class="Col--medium-9 Col--medium--push-3">.Col--medium-9 .Col--medium--push-3</div>
-	<div class="Col--medium-3 Col--medium-u-pull--9">.Col--medium-3 .Col--medium-u-pull--9</div>
+	<div class="Col--medium--9 Col--medium---push-3">.Col--medium--9 .Col--medium---push-3</div>
+	<div class="Col--medium--3 Col--medium--u-pull--9">.Col--medium--3 .Col--medium--u-pull--9</div>
 </div>
 {% endhighlight %}
 
@@ -424,7 +424,7 @@ base_url: "../"
 		<h4>Variables</h4>
 		<p>Variables determine the number of columns, the gutter width, and the media query point at which to begin floating columns. We use these to generate the predefined grid classes documented above, as well as for the custom mixins listed below.</p>
 
-{% highlight css %}
+{% highlight scss %}
 $grid-columns:              12;
 $grid-gutter-width:         30px;
 $grid-float-breakpoint:     768px;
@@ -433,7 +433,7 @@ $grid-float-breakpoint:     768px;
 		<h4>Mixins</h4>
 		<p>Mixins are used in conjunction with the grid variables to generate semantic CSS for individual grid columns.</p>
 
-{% highlight css %}
+{% highlight scss %}
 /* Creates a wrapper for a series of columns */
 @mixin MakeRow($gutter: $grid-gutter-width) {
 	// Then clear the floated columns
@@ -570,7 +570,7 @@ $grid-float-breakpoint:     768px;
 	<h4>Example usage</h4>
 	<p>You can modify the variables to your own custom values, or just use the mixins with their default values. Here's an example of using the default settings to create a two-column layout with a gap between.</p>
 
-{% highlight css %}
+{% highlight scss %}
 .Wrapper {
 	@include MakeRow();
 }
@@ -1051,7 +1051,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 <pre>&lt;p&gt;Sample text here...&lt;/p&gt;</pre>
 {% endhighlight %}
 
-		<p>You may optionally add the <code>.pre-scrollable</code> class, which will set a max-height of 350px and provide a y-axis scrollbar.</p>
+		<p>You may optionally add the <code>.Pre--scrollable</code> class, which will set a max-height of 350px and provide a y-axis scrollbar.</p>
 	</div>
 
 
@@ -1279,8 +1279,8 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 		<div class="Table--responsive">
 			<table class="Table Table--bordered Table--striped">
 				<colgroup>
-				<col class="Col--extraSmall-1">
-				<col class="Col--extraSmall-7">
+				<col class="Col--extraSmall--1">
+				<col class="Col--extraSmall--7">
 			</colgroup>
 			<thead>
 				<tr>
@@ -1609,19 +1609,19 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 		<div class="bs-example">
 			<form class="Form--horizontal">
 				<div class="Form-group">
-					<label for="inputEmail3" class="Col--small-2 ControlLabel">Email</label>
-					<div class="Col--small-10">
+					<label for="inputEmail3" class="Col--small--2 ControlLabel">Email</label>
+					<div class="Col--small--10">
 						<input type="email" class="Form-control" id="inputEmail3" placeholder="Email">
 					</div>
 				</div>
 				<div class="Form-group">
-					<label for="inputPassword3" class="Col--small-2 ControlLabel">Password</label>
-					<div class="Col--small-10">
+					<label for="inputPassword3" class="Col--small--2 ControlLabel">Password</label>
+					<div class="Col--small--10">
 						<input type="password" class="Form-control" id="inputPassword3" placeholder="Password">
 					</div>
 				</div>
 				<div class="Form-group">
-					<div class="Col--small--offset-2 Col--small-10">
+					<div class="Col--small---offset-2 Col--small--10">
 						<div class="Checkbox">
 							<label>
 								<input type="checkbox"> Remember me
@@ -1630,7 +1630,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 					</div>
 				</div>
 				<div class="Form-group">
-					<div class="Col--small--offset-2 Col--small-10">
+					<div class="Col--small---offset-2 Col--small--10">
 						<button type="submit" class="Button Button--default">Sign in</button>
 					</div>
 				</div>
@@ -1640,19 +1640,19 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 {% highlight html %}
 <form class="Form--horizontal" role="form">
 	<div class="Form-group">
-		<label for="inputEmail3" class="Col--small-2 ControlLabel">Email</label>
-		<div class="Col--small-10">
+		<label for="inputEmail3" class="Col--small--2 ControlLabel">Email</label>
+		<div class="Col--small--10">
 			<input type="email" class="Form-control" id="inputEmail3" placeholder="Email">
 		</div>
 	</div>
 	<div class="Form-group">
-		<label for="inputPassword3" class="Col--small-2 ControlLabel">Password</label>
-		<div class="Col--small-10">
+		<label for="inputPassword3" class="Col--small--2 ControlLabel">Password</label>
+		<div class="Col--small--10">
 			<input type="password" class="Form-control" id="inputPassword3" placeholder="Password">
 		</div>
 	</div>
 	<div class="Form-group">
-		<div class="Col--small--offset-2 Col--small-10">
+		<div class="Col--small---offset-2 Col--small--10">
 			<div class="Checkbox">
 				<label>
 					<input type="checkbox"> Remember me
@@ -1661,7 +1661,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 		</div>
 	</div>
 	<div class="Form-group">
-		<div class="Col--small--offset-2 Col--small-10">
+		<div class="Col--small---offset-2 Col--small--10">
 			<button type="submit" class="Button Button--default">Sign in</button>
 		</div>
 	</div>
@@ -1822,14 +1822,14 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 		<div class="bs-example">
 			<form class="Form--horizontal" role="form">
 				<div class="Form-group">
-					<label class="Col--small-2 ControlLabel">Email</label>
-					<div class="Col--small-10">
+					<label class="Col--small--2 ControlLabel">Email</label>
+					<div class="Col--small--10">
 						<p class="Form-control-static">email$example.com</p>
 					</div>
 				</div>
 				<div class="Form-group">
-					<label for="inputPassword" class="Col--small-2 ControlLabel">Password</label>
-					<div class="Col--small-10">
+					<label for="inputPassword" class="Col--small--2 ControlLabel">Password</label>
+					<div class="Col--small--10">
 						<input type="password" class="Form-control" id="inputPassword" placeholder="Password">
 					</div>
 				</div>
@@ -1838,14 +1838,14 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 {% highlight html %}
 <form class="Form--horizontal" role="form">
 	<div class="Form-group">
-		<label class="Col--small-2 ControlLabel">Email</label>
-		<div class="Col--small-10">
+		<label class="Col--small--2 ControlLabel">Email</label>
+		<div class="Col--small--10">
 			<p class="Form-control-static">email$example.com</p>
 		</div>
 	</div>
 	<div class="Form-group">
-		<label for="inputPassword" class="Col--small-2 ControlLabel">Password</label>
-		<div class="Col--small-10">
+		<label for="inputPassword" class="Col--small--2 ControlLabel">Password</label>
+		<div class="Col--small--10">
 			<input type="password" class="Form-control" id="inputPassword" placeholder="Password">
 		</div>
 	</div>
@@ -1973,7 +1973,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 
 
 		<h2 id="forms-control-sizes">Control sizing</h2>
-		<p>Set heights using classes like <code>.Input--large</code>, and set widths using grid column classes like <code>.Col--large-*</code>.</p>
+		<p>Set heights using classes like <code>.Input--large</code>, and set widths using grid column classes like <code>.Col--large--*</code>.</p>
 
 		<h3>Height sizing</h3>
 		<p>Create larger or smaller form controls that match button sizes.</p>
@@ -2011,28 +2011,28 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 		<div class="bs-example">
 			<form role="form">
 				<div class="Row">
-					<div class="Col--extraSmall-2">
-						<input type="text" class="Form-control" placeholder=".Col--extraSmall-2">
+					<div class="Col--extraSmall--2">
+						<input type="text" class="Form-control" placeholder=".Col--extraSmall--2">
 					</div>
-					<div class="Col--extraSmall-3">
-						<input type="text" class="Form-control" placeholder=".Col--extraSmall-3">
+					<div class="Col--extraSmall--3">
+						<input type="text" class="Form-control" placeholder=".Col--extraSmall--3">
 					</div>
-					<div class="Col--extraSmall-4">
-						<input type="text" class="Form-control" placeholder=".Col--extraSmall-4">
+					<div class="Col--extraSmall--4">
+						<input type="text" class="Form-control" placeholder=".Col--extraSmall--4">
 					</div>
 				</div>
 			</form>
 		</div><!-- /.bs-example -->
 {% highlight html %}
 <div class="Row">
-	<div class="Col--extraSmall-2">
-		<input type="text" class="Form-control" placeholder=".Col--extraSmall-2">
+	<div class="Col--extraSmall--2">
+		<input type="text" class="Form-control" placeholder=".Col--extraSmall--2">
 	</div>
-	<div class="Col--extraSmall-3">
-		<input type="text" class="Form-control" placeholder=".Col--extraSmall-3">
+	<div class="Col--extraSmall--3">
+		<input type="text" class="Form-control" placeholder=".Col--extraSmall--3">
 	</div>
-	<div class="Col--extraSmall-4">
-		<input type="text" class="Form-control" placeholder=".Col--extraSmall-4">
+	<div class="Col--extraSmall--4">
+		<input type="text" class="Form-control" placeholder=".Col--extraSmall--4">
 	</div>
 </div>
 {% endhighlight %}
@@ -2304,7 +2304,7 @@ mage--rounded" alt="A generic square placeholder image with rounded corners">
 <div class="u-pull--left">...</div>
 <div class="u-pull--right">...</div>
 {% endhighlight %}
-{% highlight css %}
+{% highlight scss %}
 // Classes
 .u-pull--left {
 	float: left !important;
@@ -2334,7 +2334,7 @@ mage--rounded" alt="A generic square placeholder image with rounded corners">
 {% highlight html %}
 <div class="u-centerBlock">...</div>
 {% endhighlight %}
-{% highlight css %}
+{% highlight scss %}
 // Classes
 .u-centerBlock {
 	display: block;
@@ -2356,7 +2356,7 @@ mage--rounded" alt="A generic square placeholder image with rounded corners">
 <!-- Usage as a class -->
 <div class="u-clearfix">...</div>
 {% endhighlight %}
-{% highlight css %}
+{% highlight scss %}
 // Mixin itself
 @mixin MicroClearfix {
 	&:before,
@@ -2388,7 +2388,7 @@ mage--rounded" alt="A generic square placeholder image with rounded corners">
 <div class="u-show">...</div>
 <div class="u-hidden">...</div>
 {% endhighlight %}
-{% highlight css %}
+{% highlight scss %}
 // Classes
 .u-show {
 	display: block !important;
@@ -2404,7 +2404,7 @@ mage--rounded" alt="A generic square placeholder image with rounded corners">
 {% highlight html %}
 <a class="u-screenReaderOnly" href="#content">Skip to main content</a>
 {% endhighlight %}
-{% highlight css %}
+{% highlight scss %}
 // Usage as a Mixin
 .skip-navigation {
 	.u-screenReaderOnly();
@@ -2417,7 +2417,7 @@ mage--rounded" alt="A generic square placeholder image with rounded corners">
 {% highlight html %}
 <h1 class="u-text--hide">Custom heading</h1>
 {% endhighlight %}
-{% highlight css %}
+{% highlight scss %}
 // Usage as a Mixin
 .heading {
 	.TextHide();
@@ -2559,48 +2559,48 @@ mage--rounded" alt="A generic square placeholder image with rounded corners">
 		<h3>Visible on...</h3>
 		<p>Green checkmarks indicate the element <strong>is visible</strong> in your current viewport.</p>
 		<div class="Row responsive-utilities-test visible-on">
-			<div class="Col--extraSmall-6 Col--small-3">
+			<div class="Col--extraSmall--6 Col--small--3">
 				<span class="u-hidden--extraSmall">Extra small</span>
 				<span class="u-visible--extraSmall">&#10004; Visible on x-small</span>
 			</div>
-			<div class="Col--extraSmall-6 Col--small-3">
+			<div class="Col--extraSmall--6 Col--small--3">
 				<span class="u-hidden--small">Small</span>
 				<span class="u-visible--small">&#10004; Visible on small</span>
 			</div>
 			<div class="u-clearfix u-visible--extraSmall"></div>
-			<div class="Col--extraSmall-6 Col--small-3">
+			<div class="Col--extraSmall--6 Col--small--3">
 				<span class="u-hidden--medium">Medium</span>
 				<span class="u-visible--medium">&#10004; Visible on medium</span>
 			</div>
-			<div class="Col--extraSmall-6 Col--small-3">
+			<div class="Col--extraSmall--6 Col--small--3">
 				<span class="u-hidden--large">Large</span>
 				<span class="u-visible--large">&#10004; Visible on large</span>
 			</div>
 		</div>
 		<div class="Row responsive-utilities-test visible-on">
-			<div class="Col--extraSmall-6 Col--small-6">
+			<div class="Col--extraSmall--6 Col--small--6">
 				<span class="u-hidden--extraSmall u-hidden--small">Extra small and small</span>
 				<span class="u-visible--extraSmall u-visible--small">&#10004; Visible on x-small and small</span>
 			</div>
-			<div class="Col--extraSmall-6 Col--small-6">
+			<div class="Col--extraSmall--6 Col--small--6">
 				<span class="u-hidden--medium u-hidden--large">Medium and large</span>
 				<span class="u-visible--medium u-visible--large">&#10004; Visible on medium and large</span>
 			</div>
 			<div class="u-clearfix u-visible--extraSmall"></div>
-			<div class="Col--extraSmall-6 Col--small-6">
+			<div class="Col--extraSmall--6 Col--small--6">
 				<span class="u-hidden--extraSmall u-hidden--medium">Extra small and medium</span>
 				<span class="u-visible--extraSmall u-visible--medium">&#10004; Visible on x-small and medium</span>
 			</div>
-			<div class="Col--extraSmall-6 Col--small-6">
+			<div class="Col--extraSmall--6 Col--small--6">
 				<span class="u-hidden--small u-hidden--large">Small and large</span>
 				<span class="u-visible--small u-visible--large">&#10004; Visible on small and large</span>
 			</div>
 			<div class="u-clearfix u-visible--extraSmall"></div>
-			<div class="Col--extraSmall-6 Col--small-6">
+			<div class="Col--extraSmall--6 Col--small--6">
 				<span class="u-hidden--extraSmall u-hidden--large">Extra small and large</span>
 				<span class="u-visible--extraSmall u-visible--large">&#10004; Visible on x-small and large</span>
 			</div>
-			<div class="Col--extraSmall-6 Col--small-6">
+			<div class="Col--extraSmall--6 Col--small--6">
 				<span class="u-hidden--small u-hidden--medium">Small and medium</span>
 				<span class="u-visible--small u-visible--medium">&#10004; Visible on small and medium</span>
 			</div>
@@ -2609,48 +2609,48 @@ mage--rounded" alt="A generic square placeholder image with rounded corners">
 		<h3>Hidden on...</h3>
 		<p>Here, green checkmarks also indicate the element <strong>is hidden</strong> in your current viewport.</p>
 		<div class="Row responsive-utilities-test hidden-on">
-			<div class="Col--extraSmall-6 Col--small-3">
+			<div class="Col--extraSmall--6 Col--small--3">
 				<span class="u-hidden--extraSmall">Extra small</span>
 				<span class="u-visible--extraSmall">&#10004; Hidden on x-small</span>
 			</div>
-			<div class="Col--extraSmall-6 Col--small-3">
+			<div class="Col--extraSmall--6 Col--small--3">
 				<span class="u-hidden--small">Small</span>
 				<span class="u-visible--small">&#10004; Hidden on small</span>
 			</div>
 			<div class="u-clearfix u-visible--extraSmall"></div>
-			<div class="Col--extraSmall-6 Col--small-3">
+			<div class="Col--extraSmall--6 Col--small--3">
 				<span class="u-hidden--medium">Medium</span>
 				<span class="u-visible--medium">&#10004; Hidden on medium</span>
 			</div>
-			<div class="Col--extraSmall-6 Col--small-3">
+			<div class="Col--extraSmall--6 Col--small--3">
 				<span class="u-hidden--large">Large</span>
 				<span class="u-visible--large">&#10004; Hidden on large</span>
 			</div>
 		</div>
 		<div class="Row responsive-utilities-test hidden-on">
-			<div class="Col--extraSmall-6 Col--small-6">
+			<div class="Col--extraSmall--6 Col--small--6">
 				<span class="u-hidden--extraSmall u-hidden--small">Extra small and small</span>
 				<span class="u-visible--extraSmall u-visible--small">&#10004; Hidden on x-small and small</span>
 			</div>
-			<div class="Col--extraSmall-6 Col--small-6">
+			<div class="Col--extraSmall--6 Col--small--6">
 				<span class="u-hidden--medium u-hidden--large">Medium and large</span>
 				<span class="u-visible--medium u-visible--large">&#10004; Hidden on medium and large</span>
 			</div>
 			<div class="u-clearfix u-visible--extraSmall"></div>
-			<div class="Col--extraSmall-6 Col--small-6">
+			<div class="Col--extraSmall--6 Col--small--6">
 				<span class="u-hidden--extraSmall u-hidden--medium">Extra small and medium</span>
 				<span class="u-visible--extraSmall u-visible--medium">&#10004; Hidden on x-small and medium</span>
 			</div>
-			<div class="Col--extraSmall-6 Col--small-6">
+			<div class="Col--extraSmall--6 Col--small--6">
 				<span class="u-hidden--small u-hidden--large">Small and large</span>
 				<span class="u-visible--small u-visible--large">&#10004; Hidden on small and large</span>
 			</div>
 			<div class="u-clearfix u-visible--extraSmall"></div>
-			<div class="Col--extraSmall-6 Col--small-6">
+			<div class="Col--extraSmall--6 Col--small--6">
 				<span class="u-hidden--extraSmall u-hidden--large">Extra small and large</span>
 				<span class="u-visible--extraSmall u-visible--large">&#10004; Hidden on x-small and large</span>
 			</div>
-			<div class="Col--extraSmall-6 Col--small-6">
+			<div class="Col--extraSmall--6 Col--small--6">
 				<span class="u-hidden--small u-hidden--medium">Small and medium</span>
 				<span class="u-visible--small u-visible--medium">&#10004; Hidden on small and medium</span>
 			</div>

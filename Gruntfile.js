@@ -240,7 +240,7 @@ module.exports = function(grunt) {
 			// 	src: 'dist/css/<%= pkg.slug %>-theme.css'
 			// },
 			docs: {
-				src: 'docs/assets/css/src/docs.css'
+				src: 'docs/assets/css/docs.css'
 			},
 			examples: {
 				expand: true,
@@ -367,7 +367,39 @@ module.exports = function(grunt) {
 		 * Jekyll
 		 * ======================================================================== */
 		jekyll: {
+			options: {
+				config: '_config.yml'
+			},
 			docs: {},
+			github: {
+				options: {
+					raw: 'github: true'
+				}
+			}
+		},
+
+
+		/* ==========================================================================
+		 * Minify HTML
+		 * ======================================================================== */
+		htmlmin: {
+			dist: {
+				options: {
+					collapseWhitespace: true,
+					conservativeCollapse: true,
+					minifyCSS: true,
+					minifyJS: true,
+					removeAttributeQuotes: true,
+					removeComments: true
+				},
+				expand: true,
+				cwd: '_gh_pages',
+				dest: '_gh_pages',
+				src: [
+					'**/*.html',
+					'!examples/**/*.html'
+				]
+			}
 		},
 
 
@@ -516,5 +548,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('lint-docs-css', ['csslint:docs', 'csslint:examples']);
 	grunt.registerTask('docs-js', ['uglify:docsJs', 'uglify:customize']);
 	grunt.registerTask('lint-docs-js', ['jshint:assets', 'jscs:assets']);
-	grunt.registerTask('docs', ['docs-css', 'lint-docs-css', 'docs-js', 'lint-docs-js', 'clean:docs', 'copy:docs', 'build-customizer']);
+	grunt.registerTask('docs', ['docs-css', 'lint-docs-css', 'docs-js', 'clean:docs', 'copy:docs']);
+
+	grunt.registerTask('prep-release', ['dist', 'docs', 'jekyll:github', 'htmlmin', 'compress']);
 };

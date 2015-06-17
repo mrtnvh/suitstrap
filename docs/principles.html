@@ -195,7 +195,7 @@ base_url: "../"
 	<p>If necessary, components can be prefixed with a namespace. For example, you may
 	wish to avoid the potential for collisions between libraries and your custom
 	components by prefixing all your components with a namespace.</p>
-{% highlight css %}
+{% highlight scss %}
 .twt-Button { /* … */ }
 .twt-Tabs { /* … */ }
 {% endhighlight %}
@@ -209,7 +209,7 @@ base_url: "../"
 	<p>The component's name must be written in pascal case. Nothing else in the
 	HTML/CSS uses pascal case.</p>
 
-{% highlight css %}
+{% highlight scss %}
 .MyComponent { /* … */ }
 {% endhighlight %}
 
@@ -227,7 +227,7 @@ base_url: "../"
 	and be separated from the component name by two hyphens. The class should be
 	included in the HTML <em>in addition</em> to the base component class.</p>
 
-{% highlight css %}
+{% highlight scss %}
 /* Core button */
 .Button { /* … */ }
 /* Default button theme */
@@ -271,7 +271,7 @@ base_url: "../"
 	used in multiple contexts, but every component must define its own styles for
 	the state (as they are scoped to the component).</p>
 
-{% highlight css %}
+{% highlight scss %}
 .Tweet { /* … */ }
 .Tweet.is-expanded { /* … */ }
 {% endhighlight %}
@@ -378,7 +378,7 @@ base_url: "../"
 	color value is set for <code>a:hover</code>, it will override the text's muted color on
 	hover. This is because <code>a:hover</code> has a higher CSS specificity than <code>.class</code>:</p>
 
-{% highlight css %}
+{% highlight scss %}
 	a { color: black; }
 	a:hover { color: red; }
 
@@ -483,7 +483,7 @@ base_url: "../"
 	namespace</strong>. For example, a component called <code>Grid</code> could have CSS like this,
 	where every selector starts with the string <code>Grid</code>.</p>
 
-{% highlight css %}
+{% highlight scss %}
 .Grid {}
 .Grid-cell {}
 .Grid--withGutter > .Grid-cell {}
@@ -513,7 +513,7 @@ base_url: "../"
 
 	<p>…is styled by this component CSS.</p>
 
-{% highlight css %}
+{% highlight scss %}
 .Excerpt {}
 .Excerpt-title {}
 .Excerpt-image {}
@@ -542,7 +542,7 @@ base_url: "../"
 	authoring a component to be full-width or inline, it can better adapt to the
 	dimensions of an ancestral context.</p>
 
-{% highlight css %}
+{% highlight scss %}
 .Button {
     border: 1px solid black;
     box-sizing: border-box;
@@ -560,7 +560,7 @@ base_url: "../"
 	nested component without directly modifying it. Inheritable styles can also be
 	applied to this wrapper.</p>
 
-{% highlight css %}
+{% highlight scss %}
 /* Excerpt */
 
 .Excerpt {
@@ -627,7 +627,7 @@ base_url: "../"
 	below. It scopes the changes to affect only <code>Icon</code> components within the
 	<code>Excerpt-wrapButton</code> part of the <code>Excerpt</code> component.</p>
 
-{% highlight css %}
+{% highlight scss %}
 /* in component file for `Excerpt` */
 
 .Excerpt-wrapButton .Icon {
@@ -697,7 +697,7 @@ base_url: "../"
 	main stylesheets. It also provides an interface to specify Media Queries
 	outside of your component's CSS code:</p>
 
-{% highlight css %}
+{% highlight scss %}
 /* …other CSS imports … */
 
 @import "core/component/button.css";
