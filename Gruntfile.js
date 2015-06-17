@@ -135,7 +135,7 @@ module.exports = function(grunt) {
 					'js/tab.js',
 					'js/affix.js'
 				],
-				dest: 'dist/js/<%= pkg.slug %>.js'
+				dest: 'dist/js/<%= pkg.name %>.js'
 			}
 		},
 
@@ -151,7 +151,7 @@ module.exports = function(grunt) {
 			},
 			core: {
 				src: '<%= concat.bootstrap.dest %>',
-				dest: 'dist/js/<%= pkg.slug %>.min.js'
+				dest: 'dist/js/<%= pkg.name %>.min.js'
 			},
 			customize: {
 				src: [
@@ -198,7 +198,7 @@ module.exports = function(grunt) {
 					sourceMap: true
 				},
 				src: 'sass/suitstrap.scss',
-				dest: 'dist/css/<%= pkg.slug %>.css'
+				dest: 'dist/css/<%= pkg.name %>.css'
 			},
 			// compileTheme: {
 			// 	options: {
@@ -231,13 +231,13 @@ module.exports = function(grunt) {
 				options: {
 					map: true
 				},
-				src: 'dist/css/<%= pkg.slug %>.css'
+				src: 'dist/css/<%= pkg.name %>.css'
 			},
 			// theme: {
 			// 	options: {
 			// 		map: true
 			// 	},
-			// 	src: 'dist/css/<%= pkg.slug %>-theme.css'
+			// 	src: 'dist/css/<%= pkg.name %>-theme.css'
 			// },
 			docs: {
 				src: 'docs/assets/css/docs.css'
@@ -260,8 +260,8 @@ module.exports = function(grunt) {
 				csslintrc: 'sass/.csslintrc'
 			},
 			dist: [
-				'dist/css/<%= pkg.slug %>.css',
-				//'dist/css/<%= pkg.slug %>-theme.css'
+				'dist/css/<%= pkg.name %>.css',
+				//'dist/css/<%= pkg.name %>-theme.css'
 			],
 			examples: [
 				'docs/examples/**/*.css'
@@ -288,12 +288,12 @@ module.exports = function(grunt) {
 				banner: '<%= banner %>',
 			},
 			minifyCore: {
-				src: 'dist/css/<%= pkg.slug %>.css',
-				dest: 'dist/css/<%= pkg.slug %>.min.css'
+				src: 'dist/css/<%= pkg.name %>.css',
+				dest: 'dist/css/<%= pkg.name %>.min.css'
 			},
 			// minifyTheme: {
-			// 	src: 'dist/css/<%= pkg.slug %>-theme.css',
-			// 	dest: 'dist/css/<%= pkg.slug %>-theme.min.css'
+			// 	src: 'dist/css/<%= pkg.name %>-theme.css',
+			// 	dest: 'dist/css/<%= pkg.name %>-theme.min.css'
 			// },
 			docs: {
 				src: [
@@ -422,6 +422,27 @@ module.exports = function(grunt) {
 			},
 			files: {
 				src: '_gh_pages/**/*.html'
+			}
+		},
+
+
+		/* ==========================================================================
+		 * Make a zip
+		 * ======================================================================== */
+		compress: {
+			main: {
+				options: {
+					archive: '<%= pkg.name %>-<%= pkg.version %>-dist.zip',
+					mode: 'zip',
+					level: 9,
+					pretty: true
+				},
+				files: [{
+					expand: true,
+					cwd: 'dist/',
+					src: ['**'],
+					dest: '<%= pkg.name %>-<%= pkg.version %>-dist'
+				}]
 			}
 		},
 

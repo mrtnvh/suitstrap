@@ -1,7 +1,7 @@
 /*!
  * Suitstrap 0.2.0-rc2 by @vanhoofmaarten
  *
- * Copyright 2014 Maarten Van Hoof
+ * Copyright 2015 Maarten Van Hoof
  * Licensed under https://github.com/vanhoofmaarten/suitstrap/blob/master/LICENSE
  *
  * Forked from Bootstrap v3.0.0, designed and built with all the love in the world by @mdo and @fat.
