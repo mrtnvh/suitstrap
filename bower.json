@@ -1,7 +1,7 @@
 {
   "name": "suitstrap",
   "description": "Bootstrap fork aiming for a more modular and semantically framework. With the help of SUIT CSS conventions and Sass.",
-  "version": "0.2.0-rc2",
+  "version": "0.2.1",
   "keywords": [
     "suitstrap",
     "bootstrap",

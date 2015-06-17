@@ -15,7 +15,7 @@ url:              http://suitstrap.maartenvanhoof.be
 encoding:         UTF-8
 
 # Custom vars
-current_version:  0.2.0-rc2
+current_version:  0.2.1
 repo:             https://github.com/vanhoofmaarten/suitstrap
 
 download_source:  https://github.com/vanhoofmaarten/vanhoofmaarten/archive/master.zip

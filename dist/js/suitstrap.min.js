@@ -1,5 +1,5 @@
 /*!
- * Suitstrap 0.2.0-rc2 by @vanhoofmaarten
+ * Suitstrap 0.2.1 by @vanhoofmaarten
  *
  * Copyright 2015 Maarten Van Hoof
  * Licensed under https://github.com/vanhoofmaarten/suitstrap/blob/master/LICENSE
