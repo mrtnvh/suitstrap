@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://suitstrap.maartenvanhoof.be/</loc>
+    <lastmod>2015-06-17T08:52:15+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  
+  <url>
+    <loc>http://suitstrap.maartenvanhoof.be/about/</loc>
+    <lastmod>2015-06-17T08:52:15+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://suitstrap.maartenvanhoof.be/components/</loc>
+    <lastmod>2015-06-17T08:52:15+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://suitstrap.maartenvanhoof.be/css/</loc>
+    <lastmod>2015-06-17T08:52:15+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://suitstrap.maartenvanhoof.be/getting-started/</loc>
+    <lastmod>2015-06-17T08:52:15+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>http://suitstrap.maartenvanhoof.be/javascript/</loc>
+    <lastmod>2015-06-17T08:52:15+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://suitstrap.maartenvanhoof.be/principles/</loc>
+    <lastmod>2015-06-17T08:52:15+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+</urlset>
