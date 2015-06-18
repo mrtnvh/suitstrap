@@ -10,11 +10,11 @@ $(function () {
 	module('tabs', {
 		setup: function () {
 			// Run all tests in noConflict mode -- it's the only way to ensure that the plugin works in noConflict mode
-			$.fn.bootstrapTab = $.fn.tab.noConflict()
+			$.fn.suitstrapTab = $.fn.tab.noConflict()
 		},
 		teardown: function () {
-			$.fn.tab = $.fn.bootstrapTab
-			delete $.fn.bootstrapTab
+			$.fn.tab = $.fn.suitstrapTab
+			delete $.fn.suitstrapTab
 		}
 	})
 
@@ -24,7 +24,7 @@ $(function () {
 
 	test('should return jquery collection containing the element', function () {
 		var $el = $('<div/>')
-		var $tab = $el.bootstrapTab()
+		var $tab = $el.suitstrapTab()
 		ok($tab instanceof $, 'returns jquery collection')
 		strictEqual($tab[0], $el[0], 'collection contains element')
 	})
@@ -37,10 +37,10 @@ $(function () {
 
 		$('<ul><li id="home"/><li id="profile"/></ul>').appendTo('#qunit-fixture')
 
-		$(tabsHTML).find('li:last a').bootstrapTab('show')
+		$(tabsHTML).find('li:last a').suitstrapTab('show')
 		equal($('#qunit-fixture').find('.is-active').attr('id'), 'profile')
 
-		$(tabsHTML).find('li:first a').bootstrapTab('show')
+		$(tabsHTML).find('li:first a').suitstrapTab('show')
 		equal($('#qunit-fixture').find('.is-active').attr('id'), 'home')
 	})
 
@@ -52,10 +52,10 @@ $(function () {
 
 		$('<ul><li id="home"/><li id="profile"/></ul>').appendTo('#qunit-fixture')
 
-		$(pillsHTML).find('li:last a').bootstrapTab('show')
+		$(pillsHTML).find('li:last a').suitstrapTab('show')
 		equal($('#qunit-fixture').find('.is-active').attr('id'), 'profile')
 
-		$(pillsHTML).find('li:first a').bootstrapTab('show')
+		$(pillsHTML).find('li:first a').suitstrapTab('show')
 		equal($('#qunit-fixture').find('.is-active').attr('id'), 'home')
 	})
 
@@ -71,7 +71,7 @@ $(function () {
 			.on('shown.bs.tab', function () {
 				ok(false, 'shown event fired')
 			})
-			.bootstrapTab('show')
+			.suitstrapTab('show')
 	})
 
 	test('show and shown events should reference correct relatedTarget', function () {
@@ -88,7 +88,7 @@ $(function () {
 
 		$(dropHTML)
 			.find('ul > li:first a')
-				.bootstrapTab('show')
+				.suitstrapTab('show')
 			.end()
 			.find('ul > li:last a')
 				.on('show.bs.tab', function (e) {
@@ -98,7 +98,7 @@ $(function () {
 				.on('shown.bs.tab', function (e) {
 					equal(e.relatedTarget.hash, '#1-1', 'references correct element as relatedTarget')
 				})
-				.bootstrapTab('show')
+				.suitstrapTab('show')
 	})
 
 })

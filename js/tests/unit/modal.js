@@ -10,11 +10,11 @@ $(function () {
   module('modal', {
     setup: function () {
       // Run all tests in noConflict mode -- it's the only way to ensure that the plugin works in noConflict mode
-      $.fn.bootstrapModal = $.fn.modal.noConflict()
+      $.fn.suitstrapModal = $.fn.modal.noConflict()
     },
     teardown: function () {
-      $.fn.modal = $.fn.bootstrapModal
-      delete $.fn.bootstrapModal
+      $.fn.modal = $.fn.suitstrapModal
+      delete $.fn.suitstrapModal
     }
   })
 
@@ -24,13 +24,13 @@ $(function () {
 
   test('should return jquery collection containing the element', function () {
     var $el = $('<div id="modal-test"/>')
-    var $modal = $el.bootstrapModal()
+    var $modal = $el.suitstrapModal()
     ok($modal instanceof $, 'returns jquery collection')
     strictEqual($modal[0], $el[0], 'collection contains element')
   })
 
   test('should expose defaults var for settings', function () {
-    ok($.fn.bootstrapModal.Constructor.DEFAULTS, 'default object exposed')
+    ok($.fn.suitstrapModal.Constructor.DEFAULTS, 'default object exposed')
   })
 
   test('should insert into dom when show method is called', function () {
@@ -41,7 +41,7 @@ $(function () {
         notEqual($('#modal-test').length, 0, 'modal inserted into dom')
         start()
       })
-      .bootstrapModal('show')
+      .suitstrapModal('show')
   })
 
   test('should fire show event', function () {
@@ -52,7 +52,7 @@ $(function () {
         ok(true, 'show event fired')
         start()
       })
-      .bootstrapModal('show')
+      .suitstrapModal('show')
   })
 
   test('should not fire shown when show was prevented', function () {
@@ -67,7 +67,7 @@ $(function () {
       .on('shown.bs.modal', function () {
         ok(false, 'shown event fired')
       })
-      .bootstrapModal('show')
+      .suitstrapModal('show')
   })
 
   test('should hide modal when hide is called', function () {
@@ -77,13 +77,13 @@ $(function () {
       .on('shown.bs.modal', function () {
         ok($('#modal-test').is(':visible'), 'modal visible')
         notEqual($('#modal-test').length, 0, 'modal inserted into dom')
-        $(this).bootstrapModal('hide')
+        $(this).suitstrapModal('hide')
       })
       .on('hidden.bs.modal', function () {
         ok(!$('#modal-test').is(':visible'), 'modal hidden')
         start()
       })
-      .bootstrapModal('show')
+      .suitstrapModal('show')
   })
 
   test('should toggle when toggle is called', function () {
@@ -93,13 +93,13 @@ $(function () {
       .on('shown.bs.modal', function () {
         ok($('#modal-test').is(':visible'), 'modal visible')
         notEqual($('#modal-test').length, 0, 'modal inserted into dom')
-        $(this).bootstrapModal('toggle')
+        $(this).suitstrapModal('toggle')
       })
       .on('hidden.bs.modal', function () {
         ok(!$('#modal-test').is(':visible'), 'modal hidden')
         start()
       })
-      .bootstrapModal('toggle')
+      .suitstrapModal('toggle')
   })
 
   test('should remove from dom when click [data-dismiss="modal"]', function () {
@@ -115,7 +115,7 @@ $(function () {
         ok(!$('#modal-test').is(':visible'), 'modal hidden')
         start()
       })
-      .bootstrapModal('toggle')
+      .suitstrapModal('toggle')
   })
 
   test('should allow modal close with "backdrop:false"', function () {
@@ -124,13 +124,13 @@ $(function () {
     $('<div id="modal-test" data-backdrop="false"/>')
       .on('shown.bs.modal', function () {
         ok($('#modal-test').is(':visible'), 'modal visible')
-        $(this).bootstrapModal('hide')
+        $(this).suitstrapModal('hide')
       })
       .on('hidden.bs.modal', function () {
         ok(!$('#modal-test').is(':visible'), 'modal hidden')
         start()
       })
-      .bootstrapModal('show')
+      .suitstrapModal('show')
   })
 
   test('should close modal when clicking outside of modal-content', function () {
@@ -147,7 +147,7 @@ $(function () {
         ok(!$('#modal-test').is(':visible'), 'modal hidden')
         start()
       })
-      .bootstrapModal('show')
+      .suitstrapModal('show')
   })
 
   test('should close modal when escape key is pressed via keydown', function () {
@@ -166,7 +166,7 @@ $(function () {
           start()
         }, 0)
       })
-      .bootstrapModal('show')
+      .suitstrapModal('show')
   })
 
   test('should not close modal when escape key is pressed via keyup', function () {
@@ -185,7 +185,7 @@ $(function () {
           start()
         }, 0)
       })
-      .bootstrapModal('show')
+      .suitstrapModal('show')
   })
 
   test('should trigger hide event once when clicking outside of modal-content', function () {
@@ -203,7 +203,7 @@ $(function () {
         strictEqual(triggered, 1, 'modal hide triggered once')
         start()
       })
-      .bootstrapModal('show')
+      .suitstrapModal('show')
   })
 
   test('should close reopened modal with [data-dismiss="modal"] click', function () {
@@ -219,9 +219,9 @@ $(function () {
           .one('hidden.bs.modal', function () {
             start()
           })
-          .bootstrapModal('show')
+          .suitstrapModal('show')
       })
-      .bootstrapModal('show')
+      .suitstrapModal('show')
   })
 
   test('should restore focus to toggling element when modal is hidden after having been opened via data-api', function () {
@@ -254,7 +254,7 @@ $(function () {
         e.preventDefault()
         $otherBtn.focus()
         setTimeout($.proxy(function () {
-          $(this).bootstrapModal('show')
+          $(this).suitstrapModal('show')
         }, this), 0)
       })
       .on('hidden.bs.modal', function () {

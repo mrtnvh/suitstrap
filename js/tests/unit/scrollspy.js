@@ -10,11 +10,11 @@ $(function () {
 	module('scrollspy', {
 		setup: function () {
 			// Run all tests in noConflict mode -- it's the only way to ensure that the plugin works in noConflict mode
-			$.fn.bootstrapScrollspy = $.fn.scrollspy.noConflict()
+			$.fn.suitstrapScrollspy = $.fn.scrollspy.noConflict()
 		},
 		teardown: function () {
-			$.fn.scrollspy = $.fn.bootstrapScrollspy
-			delete $.fn.bootstrapScrollspy
+			$.fn.scrollspy = $.fn.suitstrapScrollspy
+			delete $.fn.suitstrapScrollspy
 		}
 	})
 
@@ -24,7 +24,7 @@ $(function () {
 
 	test('should return jquery collection containing the element', function () {
 		var $el = $('<div/>')
-		var $scrollspy = $el.bootstrapScrollspy()
+		var $scrollspy = $el.suitstrapScrollspy()
 		ok($scrollspy instanceof $, 'returns jquery collection')
 		strictEqual($scrollspy[0], $el[0], 'collection contains element')
 	})
@@ -41,7 +41,7 @@ $(function () {
 					+ '</div>'
 				+ '</div>'
 			+ '</div>'
-		var $topbar = $(topbarHTML).bootstrapScrollspy()
+		var $topbar = $(topbarHTML).suitstrapScrollspy()
 
 		ok($topbar.find('.is-active', true))
 	})
@@ -80,7 +80,7 @@ $(function () {
 		var $scrollspy = $section
 				.show()
 				.find('#scrollspy-example')
-				.bootstrapScrollspy({ target: '#ss-target' })
+				.suitstrapScrollspy({ target: '#ss-target' })
 
 		$scrollspy.on('scroll.bs.scrollspy', function () {
 			ok($section.hasClass('is-active'), '"is-active" class still on root node')
@@ -111,7 +111,7 @@ $(function () {
 				.show()
 				.filter('#content')
 
-		$scrollspy.bootstrapScrollspy({ target: '#Navigation', offset: $scrollspy.position().top })
+		$scrollspy.suitstrapScrollspy({ target: '#Navigation', offset: $scrollspy.position().top })
 
 		$scrollspy.on('scroll.bs.scrollspy', function () {
 			ok(!$section.find('#one-link').parent().hasClass('is-active'), '"is-active" class removed from first section')
@@ -138,7 +138,7 @@ $(function () {
 		$(NavbarHtml).appendTo('#qunit-fixture')
 		var $content = $(contentHtml)
 			.appendTo('#qunit-fixture')
-			.bootstrapScrollspy({ offset: 0, target: '.Navbar' })
+			.suitstrapScrollspy({ offset: 0, target: '.Navbar' })
 
 		var testElementIsActiveAfterScroll = function (element, target) {
 			var deferred = $.Deferred()

@@ -1,4 +1,10 @@
 /* ========================================================================
+ * Suitstrap: modal.js v0.2.1
+ * http://suitstrap.maartenvanhoof.be/javascript/#modals
+ * Licensed under MIT (https://github.com/vanhoofmaarten/suitstrap/blob/master/LICENSE)
+ * ========================================================================
+ *
+ * Forked from:
  * Bootstrap: modal.js v3.2.0
  * http://getbootstrap.com/javascript/#modals
  * ========================================================================

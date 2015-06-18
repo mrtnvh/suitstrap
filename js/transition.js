@@ -1,4 +1,10 @@
 /* ========================================================================
+ * Suitstrap: transition.js v0.2.1
+ * http://suitstrap.maartenvanhoof.be/javascript/#transitions
+ * Licensed under MIT (https://github.com/vanhoofmaarten/suitstrap/blob/master/LICENSE)
+ * ========================================================================
+ *
+ * Forked from:
  * Bootstrap: transition.js v3.2.0
  * http://getbootstrap.com/javascript/#transitions
  * ========================================================================

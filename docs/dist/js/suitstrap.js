@@ -7,9 +7,15 @@
  * Forked from Bootstrap v3.0.0, designed and built with all the love in the world by @mdo and @fat.
  */
 
-if (typeof jQuery === 'undefined') { throw new Error('Suitstrap\'s JavaScript requires jQuery') }
+if (typeof jQuery === "undefined") { throw new Error("Suitstrap\"s JavaScript requires jQuery") }
 
 /* ========================================================================
+ * Suitstrap: transition.js v0.2.1
+ * http://suitstrap.maartenvanhoof.be/javascript/#transitions
+ * Licensed under MIT (https://github.com/vanhoofmaarten/suitstrap/blob/master/LICENSE)
+ * ========================================================================
+ *
+ * Forked from:
  * Bootstrap: transition.js v3.2.0
  * http://getbootstrap.com/javascript/#transitions
  * ========================================================================
@@ -76,6 +82,12 @@ if (typeof jQuery === 'undefined') { throw new Error('Suitstrap\'s JavaScript re
 }(jQuery);
 
 /* ========================================================================
+ * Suitstrap: alert.js v0.2.1
+ * http://suitstrap.maartenvanhoof.be/javascript/#alert
+ * Licensed under MIT (https://github.com/vanhoofmaarten/suitstrap/blob/master/LICENSE)
+ * ========================================================================
+ *
+ * Forked from:
  * Bootstrap: alert.js v3.2.0
  * http://getbootstrap.com/javascript/#alerts
  * ========================================================================
@@ -171,6 +183,12 @@ if (typeof jQuery === 'undefined') { throw new Error('Suitstrap\'s JavaScript re
 }(jQuery);
 
 /* ========================================================================
+ * Suitstrap: buttons.js v0.2.1
+ * http://suitstrap.maartenvanhoof.be/javascript/#buttons
+ * Licensed under MIT (https://github.com/vanhoofmaarten/suitstrap/blob/master/LICENSE)
+ * ========================================================================
+ *
+ * Forked from:
  * Bootstrap: button.js v3.2.0
  * http://getbootstrap.com/javascript/#buttons
  * ========================================================================
@@ -287,6 +305,12 @@ if (typeof jQuery === 'undefined') { throw new Error('Suitstrap\'s JavaScript re
 }(jQuery);
 
 /* ========================================================================
+ * Suitstrap: carousel.js v0.2.1
+ * http://suitstrap.maartenvanhoof.be/javascript/#carousel
+ * Licensed under MIT (https://github.com/vanhoofmaarten/suitstrap/blob/master/LICENSE)
+ * ========================================================================
+ *
+ * Forked from:
  * Bootstrap: carousel.js v3.2.0
  * http://getbootstrap.com/javascript/#carousel
  * ========================================================================
@@ -528,6 +552,12 @@ if (typeof jQuery === 'undefined') { throw new Error('Suitstrap\'s JavaScript re
 }(jQuery);
 
 /* ========================================================================
+ * Suitstrap: collapse.js v0.2.1
+ * http://suitstrap.maartenvanhoof.be/javascript/#collapse
+ * Licensed under MIT (https://github.com/vanhoofmaarten/suitstrap/blob/master/LICENSE)
+ * ========================================================================
+ *
+ * Forked from:
  * Bootstrap: collapse.js v3.2.0
  * http://getbootstrap.com/javascript/#collapse
  * ========================================================================
@@ -697,8 +727,14 @@ if (typeof jQuery === 'undefined') { throw new Error('Suitstrap\'s JavaScript re
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: dropdown.js v3.2.0
- * http://getbootstrap.com/javascript/#dropdowns
+ * Suitstrap: dropdown.js v0.2.1
+ * http://suitstrap.maartenvanhoof.be/javascript/#dropdown
+ * Licensed under MIT (https://github.com/vanhoofmaarten/suitstrap/blob/master/LICENSE)
+ * ========================================================================
+ *
+ * Forked from:
+ * Suitstrap: dropdown.js v3.2.0
+ * http://suitstrap.maartenvanhoof.be/javascript/#dropdowns
  * ========================================================================
  * Copyright 2011-2014 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -863,6 +899,12 @@ if (typeof jQuery === 'undefined') { throw new Error('Suitstrap\'s JavaScript re
 }(jQuery);
 
 /* ========================================================================
+ * Suitstrap: modal.js v0.2.1
+ * http://suitstrap.maartenvanhoof.be/javascript/#modals
+ * Licensed under MIT (https://github.com/vanhoofmaarten/suitstrap/blob/master/LICENSE)
+ * ========================================================================
+ *
+ * Forked from:
  * Bootstrap: modal.js v3.2.0
  * http://getbootstrap.com/javascript/#modals
  * ========================================================================
@@ -1151,6 +1193,12 @@ if (typeof jQuery === 'undefined') { throw new Error('Suitstrap\'s JavaScript re
 }(jQuery);
 
 /* ========================================================================
+ * Suitstrap: tooltip.js v0.2.1
+ * http://suitstrap.maartenvanhoof.be/javascript/#tooltip
+ * Licensed under MIT (https://github.com/vanhoofmaarten/suitstrap/blob/master/LICENSE)
+ * ========================================================================
+ *
+ * Forked from:
  * Bootstrap: tooltip.js v3.2.0
  * http://getbootstrap.com/javascript/#tooltip
  * Inspired by the original jQuery.tipsy by Jason Frame
@@ -1645,6 +1693,12 @@ if (typeof jQuery === 'undefined') { throw new Error('Suitstrap\'s JavaScript re
 }(jQuery);
 
 /* ========================================================================
+ * Suitstrap: popover.js v0.2.1
+ * http://suitstrap.maartenvanhoof.be/javascript/#popovers
+ * Licensed under MIT (https://github.com/vanhoofmaarten/suitstrap/blob/master/LICENSE)
+ * ========================================================================
+ *
+ * Forked from:
  * Bootstrap: popover.js v3.2.0
  * http://getbootstrap.com/javascript/#popovers
  * ========================================================================
@@ -1758,6 +1812,12 @@ if (typeof jQuery === 'undefined') { throw new Error('Suitstrap\'s JavaScript re
 }(jQuery);
 
 /* ========================================================================
+ * Suitstrap: scrollspy.js v0.2.1
+ * http://suitstrap.maartenvanhoof.be/javascript/#scrollspy
+ * Licensed under MIT (https://github.com/vanhoofmaarten/suitstrap/blob/master/LICENSE)
+ * ========================================================================
+ *
+ * Forked from:
  * Bootstrap: scrollspy.js v3.2.0
  * http://getbootstrap.com/javascript/#scrollspy
  * ========================================================================
@@ -1927,6 +1987,12 @@ if (typeof jQuery === 'undefined') { throw new Error('Suitstrap\'s JavaScript re
 }(jQuery);
 
 /* ========================================================================
+ * Suitstrap: tab.js v0.2.1
+ * http://suitstrap.maartenvanhoof.be/javascript/#tab
+ * Licensed under MIT (https://github.com/vanhoofmaarten/suitstrap/blob/master/LICENSE)
+ * ========================================================================
+ *
+ * Forked from:
  * Bootstrap: tab.js v3.2.0
  * http://getbootstrap.com/javascript/#tabs
  * ========================================================================
@@ -2056,6 +2122,12 @@ if (typeof jQuery === 'undefined') { throw new Error('Suitstrap\'s JavaScript re
 }(jQuery);
 
 /* ========================================================================
+ * Suitstrap: affix.js v0.2.1
+ * http://suitstrap.maartenvanhoof.be/javascript/#affix
+ * Licensed under MIT(https://github.com/vanhoofmaarten/suitstrap/blob/master/LICENSE)
+ * ========================================================================
+ *
+ * Forked from:
  * Bootstrap: affix.js v3.2.0
  * http://getbootstrap.com/javascript/#affix
  * ========================================================================

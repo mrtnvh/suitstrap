@@ -10,11 +10,11 @@ $(function() {
 	module('alert', {
 		setup: function() {
 			// Run all tests in noConflict mode -- it's the only way to ensure that the plugin works in noConflict mode
-			$.fn.bootstrapAlert = $.fn.alert.noConflict()
+			$.fn.suitstrapAlert = $.fn.alert.noConflict()
 		},
 		teardown: function() {
-			$.fn.alert = $.fn.bootstrapAlert
-			delete $.fn.bootstrapAlert
+			$.fn.alert = $.fn.suitstrapAlert
+			delete $.fn.suitstrapAlert
 		}
 	})
 
@@ -24,14 +24,14 @@ $(function() {
 
 	test('should return jquery collection containing the element', function() {
 		var $el = $('<div/>')
-		var $alert = $el.bootstrapAlert()
+		var $alert = $el.suitstrapAlert()
 		ok($alert instanceof $, 'returns jquery collection')
 		strictEqual($alert[0], $el[0], 'collection contains element')
 	})
 
 	test('should fade element out on clicking .close', function() {
 		var alertHTML = '<div class="Alert Alert--danger Animation--fade is-in">' + '<a class="Close" href="#" data-dismiss="alert">×</a>' + '<p><strong>Holy guacamole!</strong> Best check yo self, you\'re not looking too good.</p>' + '</div>'
-		var $alert = $(alertHTML).bootstrapAlert()
+		var $alert = $(alertHTML).suitstrapAlert()
 
 		$alert.find('.Close').click()
 
@@ -40,7 +40,7 @@ $(function() {
 
 	test('should remove element when clicking .close', function() {
 		var alertHTML = '<div class="Alert Alert--danger Animation--fade is-in">' + '<a class="Close" href="#" data-dismiss="alert">×</a>' + '<p><strong>Holy guacamole!</strong> Best check yo self, you\'re not looking too good.</p>' + '</div>'
-		var $alert = $(alertHTML).appendTo('#qunit-fixture').bootstrapAlert()
+		var $alert = $(alertHTML).appendTo('#qunit-fixture').suitstrapAlert()
 
 		notEqual($('#qunit-fixture').find('.Alert').length, 0, 'element added to dom')
 
@@ -60,7 +60,7 @@ $(function() {
 			.on('closed.bs.alert', function() {
 				ok(false, 'closed event fired')
 			})
-			.bootstrapAlert('close')
+			.suitstrapAlert('close')
 	})
 
 })

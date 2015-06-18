@@ -1,4 +1,10 @@
 /* ========================================================================
+ * Suitstrap: scrollspy.js v0.2.1
+ * http://suitstrap.maartenvanhoof.be/javascript/#scrollspy
+ * Licensed under MIT (https://github.com/vanhoofmaarten/suitstrap/blob/master/LICENSE)
+ * ========================================================================
+ *
+ * Forked from:
  * Bootstrap: scrollspy.js v3.2.0
  * http://getbootstrap.com/javascript/#scrollspy
  * ========================================================================

@@ -1,6 +1,12 @@
 /* ========================================================================
- * Bootstrap: dropdown.js v3.2.0
- * http://getbootstrap.com/javascript/#dropdowns
+ * Suitstrap: dropdown.js v0.2.1
+ * http://suitstrap.maartenvanhoof.be/javascript/#dropdown
+ * Licensed under MIT (https://github.com/vanhoofmaarten/suitstrap/blob/master/LICENSE)
+ * ========================================================================
+ *
+ * Forked from:
+ * Suitstrap: dropdown.js v3.2.0
+ * http://suitstrap.maartenvanhoof.be/javascript/#dropdowns
  * ========================================================================
  * Copyright 2011-2014 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)

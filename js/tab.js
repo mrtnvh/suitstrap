@@ -1,4 +1,10 @@
 /* ========================================================================
+ * Suitstrap: tab.js v0.2.1
+ * http://suitstrap.maartenvanhoof.be/javascript/#tab
+ * Licensed under MIT (https://github.com/vanhoofmaarten/suitstrap/blob/master/LICENSE)
+ * ========================================================================
+ *
+ * Forked from:
  * Bootstrap: tab.js v3.2.0
  * http://getbootstrap.com/javascript/#tabs
  * ========================================================================

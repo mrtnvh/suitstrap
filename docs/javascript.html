@@ -15,11 +15,11 @@ base_url: "../"
 		</div>
 
 		<h3 id="js-individual-compiled">Individual or compiled</h3>
-		<p>Plugins can be included individually (using Suitstrap's individual <code>*.js</code> files), or all at once (using <code>bootstrap.js</code> or the minified <code>bootstrap.min.js</code>).</p>
+		<p>Plugins can be included individually (using Suitstrap's individual <code>*.js</code> files), or all at once (using <code>suitstrap.js</code> or the minified <code>suitstrap.min.js</code>).</p>
 
 		<div class="bs-callout bs-callout-danger">
 			<h4>Do not attempt to include both.</h4>
-			<p>Both <code>bootstrap.js</code> and <code>bootstrap.min.js</code> contain all plugins in a single file.</p>
+			<p>Both <code>suitstrap.js</code> and <code>suitstrap.min.js</code> contain all plugins in a single file.</p>
 		</div>
 
 		<div class="bs-callout bs-callout-danger">
@@ -58,8 +58,8 @@ $("#myModal").modal('show')// initializes and invokes show immediately</p>
 			<h3 id="js-noconflict">No conflict</h3>
 			<p>Sometimes it is necessary to use Suitstrap plugins with other UI frameworks. In these circumstances, namespace collisions can occasionally occur. If this happens, you may call <code>.noConflict</code> on the plugin you wish to revert the value of.</p>
 {% highlight js %}
-var bootstrapButton = $.fn.button.noConflict() // return $.fn.button to previously assigned value
-$.fn.bootstrapButton = bootstrapButton// give $().bootstrapButton the Suitstrap functionality
+var suitstrapButton = $.fn.button.noConflict() // return $.fn.button to previously assigned value
+$.fn.suitstrapButton = suitstrapButton// give $().suitstrapButton the Suitstrap functionality
 {% endhighlight %}
 
 			<h3 id="js-events">Events</h3>
@@ -74,7 +74,7 @@ $('#myModal').on('show.bs.modal', function (e) {
 
 		<div class="bs-callout bs-callout-warning" id="callout-third-party-libs">
 			<h4>Third-party libraries</h4>
-			<p><strong>Suitstrap does not officially support third-party JavaScript libraries</strong> like Prototype or jQuery UI. Despite <code>.noConflict</code> and namespaced events, there may be compatibility problems that you need to fix on your own. Ask on the <a href="http://groups.google.com/group/twitter-bootstrap">Bootstrap mailing list</a> if you need help.</p>
+			<p><strong>Suitstrap does not officially support third-party JavaScript libraries</strong> like Prototype or jQuery UI. Despite <code>.noConflict</code> and namespaced events, there may be compatibility problems that you need to fix on your own.
 		</div>
 	</div>
 
@@ -87,7 +87,7 @@ $('#myModal').on('show.bs.modal', function (e) {
 		<h1 id="transitions">Transitions <small>transition.js</small></h1>
 	</div>
 	<h3>About transitions</h3>
-	<p>For simple transition effects, include <code>transition.js</code> once alongside the other JS files. If you're using the compiled (or minified) <code>bootstrap.js</code>, there is no need to include this&mdash;it's already there.</p>
+	<p>For simple transition effects, include <code>transition.js</code> once alongside the other JS files. If you're using the compiled (or minified) <code>suitstrap.js</code>, there is no need to include this&mdash;it's already there.</p>
 	<h3>What's inside</h3>
 	<p>Transition.js is a basic helper for <code>transitionEnd</code> events as well as a CSS transition emulator. It's used by the other plugins to check for CSS transition support and to catch hanging transitions.</p>
 </div>

@@ -14,12 +14,8 @@ patches and features.
 ## Using the issue tracker
 
 The [issue tracker](https://github.com/vanhoofmaarten/suitstrap/issues) is
-the preferred channel for [bug reports](#bug-reports), [features requests](#feature-requests)
-and [submitting pull requests](#pull-requests), but please respect the following
+the preferred channel for [bug reports](#bug-reports), [features requests](#feature-requests) and [submitting pull requests](#pull-requests), but please respect the following
 restrictions:
-
-<!-- * Please **do not** use the issue tracker for personal support requests.  Stack
-  Overflow ([`twitter-bootstrap-3`](http://stackoverflow.com/questions/tagged/twitter-bootstrap-3) tag) or [IRC](https://github.com/vanhoofmaarten/suitstrap/blob/master/README.md#community) are better places to get help. -->
 
 * Please **do not** derail or troll issues. Keep the discussion on topic and
   respect the opinions of others.
@@ -185,6 +181,6 @@ Run `grunt test` before committing to ensure your changes follow our coding stan
 
 By contributing your code, you agree to license your contribution under the [MIT license](https://github.com/vanhoofmaarten/suitstrap/blob/master/LICENSE).
 
-Prior to v3.1.0, Bootstrap was released under the Apache License v2.0.
 Prior to v0.1.0, Suitstrap was released under the Apache License v2.0.
+Prior to v3.1.0, Bootstrap was released under the Apache License v2.0.
 

@@ -10,11 +10,11 @@ $(function () {
 	module('dropdowns', {
 		setup: function () {
 			// Run all tests in noConflict mode -- it's the only way to ensure that the plugin works in noConflict mode
-			$.fn.bootstrapDropdown = $.fn.dropdown.noConflict()
+			$.fn.suitstrapDropdown = $.fn.dropdown.noConflict()
 		},
 		teardown: function () {
-			$.fn.dropdown = $.fn.bootstrapDropdown
-			delete $.fn.bootstrapDropdown
+			$.fn.dropdown = $.fn.suitstrapDropdown
+			delete $.fn.suitstrapDropdown
 		}
 	})
 
@@ -24,7 +24,7 @@ $(function () {
 
 	test('should return jquery collection containing the element', function () {
 		var $el = $('<div/>')
-		var $dropdown = $el.bootstrapDropdown()
+		var $dropdown = $el.suitstrapDropdown()
 		ok($dropdown instanceof $, 'returns jquery collection')
 		strictEqual($dropdown[0], $el[0], 'collection contains element')
 	})
@@ -41,7 +41,7 @@ $(function () {
 					+ '</ul>'
 				+ '</li>'
 			+ '</ul>'
-		var $dropdown = $(dropdownHTML).find('[data-toggle="dropdown"]').bootstrapDropdown().click()
+		var $dropdown = $(dropdownHTML).find('[data-toggle="dropdown"]').suitstrapDropdown().click()
 
 		ok(!$dropdown.parent('.Dropdown').hasClass('is-open'), '"is-open" class added on click')
 	})
@@ -58,7 +58,7 @@ $(function () {
 						+ '</ul>'
 					+ '</li>'
 				+ '</ul>'
-		var $dropdown = $(dropdownHTML).find('[data-toggle="dropdown"]').bootstrapDropdown().click()
+		var $dropdown = $(dropdownHTML).find('[data-toggle="dropdown"]').suitstrapDropdown().click()
 
 		ok(!$dropdown.parent('.Dropdown').hasClass('is-open'), '"is-open" class added on click')
 	})
@@ -75,7 +75,7 @@ $(function () {
 					+ '</ul>'
 				+ '</li>'
 			+ '</ul>'
-		var $dropdown = $(dropdownHTML).find('[data-toggle="dropdown"]').bootstrapDropdown().click()
+		var $dropdown = $(dropdownHTML).find('[data-toggle="dropdown"]').suitstrapDropdown().click()
 
 		ok($dropdown.parent('.Dropdown').hasClass('is-open'), '"is-open" class added on click')
 	})
@@ -92,7 +92,7 @@ $(function () {
 					+ '</ul>'
 				+ '</li>'
 			+ '</ul>'
-		var $dropdown = $(dropdownHTML).find('[data-toggle="dropdown"]').bootstrapDropdown().click()
+		var $dropdown = $(dropdownHTML).find('[data-toggle="dropdown"]').suitstrapDropdown().click()
 
 		ok($dropdown.parent('.Dropdown').hasClass('is-open'), '"is-open" class added on click')
 	})
@@ -113,7 +113,7 @@ $(function () {
 		var $dropdown = $(dropdownHTML)
 			.appendTo('#qunit-fixture')
 			.find('[data-toggle="dropdown"]')
-			.bootstrapDropdown()
+			.suitstrapDropdown()
 			.click()
 
 		ok($dropdown.parent('.Dropdown').hasClass('is-open'), '"is-open" class added on click')
@@ -172,7 +172,7 @@ $(function () {
 		var $dropdown = $(dropdownHTML)
 			.appendTo('#qunit-fixture')
 			.find('[data-toggle="dropdown"]')
-			.bootstrapDropdown()
+			.suitstrapDropdown()
 
 		stop()
 
@@ -206,7 +206,7 @@ $(function () {
 		var $dropdown = $(dropdownHTML)
 			.appendTo('#qunit-fixture')
 			.find('[data-toggle="dropdown"]')
-			.bootstrapDropdown()
+			.suitstrapDropdown()
 
 		stop()
 

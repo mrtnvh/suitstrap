@@ -10,11 +10,11 @@ $(function() {
 	module('collapse', {
 		setup: function() {
 			// Run all tests in noConflict mode -- it's the only way to ensure that the plugin works in noConflict mode
-			$.fn.bootstrapCollapse = $.fn.collapse.noConflict()
+			$.fn.suitstrapCollapse = $.fn.collapse.noConflict()
 		},
 		teardown: function() {
-			$.fn.collapse = $.fn.bootstrapCollapse
-			delete $.fn.bootstrapCollapse
+			$.fn.collapse = $.fn.suitstrapCollapse
+			delete $.fn.suitstrapCollapse
 		}
 	})
 
@@ -24,20 +24,20 @@ $(function() {
 
 	test('should return jquery collection containing the element', function() {
 		var $el = $('<div/>')
-		var $collapse = $el.bootstrapCollapse()
+		var $collapse = $el.suitstrapCollapse()
 		ok($collapse instanceof $, 'returns jquery collection')
 		strictEqual($collapse[0], $el[0], 'collection contains element')
 	})
 
 	test('should show a collapsed element', function() {
-		var $el = $('<div class="Animation--collapse"/>').bootstrapCollapse('show')
+		var $el = $('<div class="Animation--collapse"/>').suitstrapCollapse('show')
 
 		ok($el.hasClass('is-in'), 'has class "in"')
 		ok(!/height/i.test($el.attr('style')), 'has height reset')
 	})
 
 	test('should hide a collapsed element', function() {
-		var $el = $('<div class="Animation--collapse"/>').bootstrapCollapse('hide')
+		var $el = $('<div class="Animation--collapse"/>').suitstrapCollapse('hide')
 
 		ok(!$el.hasClass('is-in'), 'does not have class "in"')
 		ok(/height/i.test($el.attr('style')), 'has height set')
@@ -55,7 +55,7 @@ $(function() {
 			.on('shown.bs.collapse', function() {
 				ok(false, 'shown event fired')
 			})
-			.bootstrapCollapse('show')
+			.suitstrapCollapse('show')
 	})
 
 	test('should reset style to auto after finishing opening collapse', function() {
@@ -69,7 +69,7 @@ $(function() {
 				strictEqual(this.style.height, '', 'height is auto')
 				start()
 			})
-			.bootstrapCollapse('show')
+			.suitstrapCollapse('show')
 	})
 
 	test('should remove "collapsed" class from target when collapse is shown', function() {
@@ -113,7 +113,7 @@ $(function() {
 				ok(false)
 			})
 
-		$test.bootstrapCollapse('show')
+		$test.suitstrapCollapse('show')
 
 		setTimeout(start, 0)
 	})
@@ -129,7 +129,7 @@ $(function() {
 				ok(true)
 			})
 
-		$test.bootstrapCollapse('show')
+		$test.suitstrapCollapse('show')
 
 		setTimeout(start, 0)
 	})

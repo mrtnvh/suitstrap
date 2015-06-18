@@ -10,11 +10,11 @@ $(function() {
 	module('button', {
 		setup: function() {
 			// Run all tests in noConflict mode -- it's the only way to ensure that the plugin works in noConflict mode
-			$.fn.bootstrapButton = $.fn.button.noConflict()
+			$.fn.suitstrapButton = $.fn.button.noConflict()
 		},
 		teardown: function() {
-			$.fn.button = $.fn.bootstrapButton
-			delete $.fn.bootstrapButton
+			$.fn.button = $.fn.suitstrapButton
+			delete $.fn.suitstrapButton
 		}
 	})
 
@@ -24,7 +24,7 @@ $(function() {
 
 	test('should return jquery collection containing the element', function() {
 		var $el = $('<div/>')
-		var $button = $el.bootstrapButton()
+		var $button = $el.suitstrapButton()
 		ok($button instanceof $, 'returns jquery collection')
 		strictEqual($button[0], $el[0], 'collection contains element')
 	})
@@ -32,7 +32,7 @@ $(function() {
 	test('should return set state to loading', function() {
 		var $btn = $('<button class="Button" data-loading-text="fat">mdo</button>')
 		equal($btn.html(), 'mdo', 'btn text equals mdo')
-		$btn.bootstrapButton('loading')
+		$btn.suitstrapButton('loading')
 		equal($btn.html(), 'fat', 'btn text equals fat')
 		stop()
 		setTimeout(function() {
@@ -45,7 +45,7 @@ $(function() {
 	test('should return reset state', function() {
 		var $btn = $('<button class="Button" data-loading-text="fat">mdo</button>')
 		equal($btn.html(), 'mdo', 'btn text equals mdo')
-		$btn.bootstrapButton('loading')
+		$btn.suitstrapButton('loading')
 		equal($btn.html(), 'fat', 'btn text equals fat')
 		stop()
 		setTimeout(function() {
@@ -53,7 +53,7 @@ $(function() {
 			ok($btn.hasClass('is-disabled'), 'btn has disabled class')
 			start()
 			stop()
-			$btn.bootstrapButton('reset')
+			$btn.suitstrapButton('reset')
 			equal($btn.html(), 'mdo', 'btn text equals mdo')
 			setTimeout(function() {
 				ok(!$btn[0].hasAttribute('disabled'), 'btn is not disabled')
@@ -66,7 +66,7 @@ $(function() {
 	test('should work with an empty string as reset state', function() {
 		var $btn = $('<button class="Button" data-loading-text="fat"/>')
 		equal($btn.html(), '', 'btn text equals ""')
-		$btn.bootstrapButton('loading')
+		$btn.suitstrapButton('loading')
 		equal($btn.html(), 'fat', 'btn text equals fat')
 		stop()
 		setTimeout(function() {
@@ -74,7 +74,7 @@ $(function() {
 			ok($btn.hasClass('is-disabled'), 'btn has disabled class')
 			start()
 			stop()
-			$btn.bootstrapButton('reset')
+			$btn.suitstrapButton('reset')
 			equal($btn.html(), '', 'btn text equals ""')
 			setTimeout(function() {
 				ok(!$btn[0].hasAttribute('disabled'), 'btn is not disabled')
@@ -87,7 +87,7 @@ $(function() {
 	test('should toggle active', function() {
 		var $btn = $('<button class="Button">mdo</button>')
 		ok(!$btn.hasClass('is-active'), 'btn does not have active class')
-		$btn.bootstrapButton('toggle')
+		$btn.suitstrapButton('toggle')
 		ok($btn.hasClass('is-active'), 'btn has class active')
 	})
 

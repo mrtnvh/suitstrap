@@ -1,4 +1,10 @@
 /* ========================================================================
+ * Suitstrap: buttons.js v0.2.1
+ * http://suitstrap.maartenvanhoof.be/javascript/#buttons
+ * Licensed under MIT (https://github.com/vanhoofmaarten/suitstrap/blob/master/LICENSE)
+ * ========================================================================
+ *
+ * Forked from:
  * Bootstrap: button.js v3.2.0
  * http://getbootstrap.com/javascript/#buttons
  * ========================================================================

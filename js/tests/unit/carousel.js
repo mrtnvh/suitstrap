@@ -10,11 +10,11 @@ $(function() {
 	module('carousel', {
 		setup: function() {
 			// Run all tests in noConflict mode -- it's the only way to ensure that the plugin works in noConflict mode
-			$.fn.bootstrapCarousel = $.fn.carousel.noConflict()
+			$.fn.suitstrapCarousel = $.fn.carousel.noConflict()
 		},
 		teardown: function() {
-			$.fn.carousel = $.fn.bootstrapCarousel
-			delete $.fn.bootstrapCarousel
+			$.fn.carousel = $.fn.suitstrapCarousel
+			delete $.fn.suitstrapCarousel
 		}
 	})
 
@@ -24,7 +24,7 @@ $(function() {
 
 	test('should return jquery collection containing the element', function() {
 		var $el = $('<div/>')
-		var $carousel = $el.bootstrapCarousel()
+		var $carousel = $el.suitstrapCarousel()
 		ok($carousel instanceof $, 'returns jquery collection')
 		strictEqual($carousel[0], $el[0], 'collection contains element')
 	})
@@ -40,7 +40,7 @@ $(function() {
 			.on('slid.bs.carousel', function() {
 				ok(false, 'slid event fired')
 			})
-			.bootstrapCarousel('next')
+			.suitstrapCarousel('next')
 	})
 
 	test('should reset when slide is prevented', function() {
@@ -73,7 +73,7 @@ $(function() {
 				setTimeout(function() {
 					ok($carousel.find('.Carousel-item:eq(0)').is('.is-active'), 'first item still is-active')
 					ok($carousel.find('.Carousel-indicators li:eq(0)').is('.is-active'), 'first indicator still is-active')
-					$carousel.bootstrapCarousel('next')
+					$carousel.suitstrapCarousel('next')
 				}, 0)
 			})
 			.one('slid.bs.carousel', function() {
@@ -85,7 +85,7 @@ $(function() {
 					start()
 				}, 0)
 			})
-			.bootstrapCarousel('next')
+			.suitstrapCarousel('next')
 	})
 
 	test('should fire slide event with direction', function() {
@@ -137,9 +137,9 @@ $(function() {
 						strictEqual(e.direction, 'right', 'direction is right on prev')
 						start()
 					})
-					.bootstrapCarousel('prev')
+					.suitstrapCarousel('prev')
 			})
-			.bootstrapCarousel('next')
+			.suitstrapCarousel('next')
 	})
 
 	test('should fire slid event with direction', function() {
@@ -159,9 +159,9 @@ $(function() {
 						strictEqual(e.direction, 'right', 'direction is right on prev')
 						start()
 					})
-					.bootstrapCarousel('prev')
+					.suitstrapCarousel('prev')
 			})
-			.bootstrapCarousel('next')
+			.suitstrapCarousel('next')
 	})
 
 	test('should fire slide event with relatedTarget', function() {
@@ -207,7 +207,7 @@ $(function() {
 				ok($(e.relatedTarget).hasClass('Carousel-item'), 'relatedTarget has class "item"')
 				start()
 			})
-			.bootstrapCarousel('next')
+			.suitstrapCarousel('next')
 	})
 
 	test('should fire slid event with relatedTarget', function() {
@@ -253,7 +253,7 @@ $(function() {
 				ok($(e.relatedTarget).hasClass('Carousel-item'), 'relatedTarget has class "item"')
 				start()
 			})
-			.bootstrapCarousel('next')
+			.suitstrapCarousel('next')
 	})
 
 	test('should set interval from data attribute', function() {
@@ -280,7 +280,7 @@ $(function() {
 
 		$carousel.attr('data-interval', false)
 		$carousel.appendTo('body')
-		$carousel.bootstrapCarousel(1)
+		$carousel.suitstrapCarousel(1)
 		strictEqual($carousel.data('bs.carousel').options.interval, false, 'data attribute has higher priority than default options')
 		$carousel.remove()
 	})
@@ -289,11 +289,11 @@ $(function() {
 		var templateHTML = '<div id="myCarousel" class="Carousel" data-interval="1814">' + '<div class="Carousel-inner">' + '<div class="Carousel-item is-active">' + '<img alt="">' + '</div>' + '<script type="text/x-metamorph" id="thingy"/>' + '<div class="Carousel-item">' + '<img alt="">' + '</div>' + '<div class="Carousel-item">' + '</div>' + '</div>' + '</div>'
 		var $template = $(templateHTML)
 
-		$template.bootstrapCarousel()
+		$template.suitstrapCarousel()
 
 		strictEqual($template.find('.Carousel-item')[0], $template.find('.is-active')[0], 'first Carousel-item is-active')
 
-		$template.bootstrapCarousel(1)
+		$template.suitstrapCarousel(1)
 
 		strictEqual($template.find('.Carousel-item')[1], $template.find('.is-active')[0], 'second Carousel-item is-active')
 	})
@@ -302,11 +302,11 @@ $(function() {
 		var templateHTML = '<div id="myCarousel" class="Carousel" data-interval="1814">' + '<div class="Carousel-inner">' + '<div class="Carousel-item is-active">' + '<img alt="">' + '</div>' + '<script type="text/x-metamorph" id="thingy"/>' + '<div class="Carousel-item">' + '<img alt="">' + '</div>' + '<div class="Carousel-item">' + '</div>' + '</div>' + '</div>'
 		var $template = $(templateHTML)
 
-		$template.bootstrapCarousel()
+		$template.suitstrapCarousel()
 
 		strictEqual($template.find('.Carousel-item')[0], $template.find('.is-active')[0], 'first Carousel-item is-active')
 
-		$template.bootstrapCarousel('next')
+		$template.suitstrapCarousel('next')
 
 		strictEqual($template.find('.Carousel-item')[1], $template.find('.is-active')[0], 'second Carousel-item is-active')
 	})

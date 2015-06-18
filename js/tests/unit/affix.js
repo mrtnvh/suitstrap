@@ -10,11 +10,11 @@ $(function () {
 	module('affix', {
 		setup: function () {
 			// Run all tests in noConflict mode -- it's the only way to ensure that the plugin works in noConflict mode
-			$.fn.bootstrapAffix = $.fn.affix.noConflict()
+			$.fn.suitstrapAffix = $.fn.affix.noConflict()
 		},
 		teardown: function () {
-			$.fn.affix = $.fn.bootstrapAffix
-			delete $.fn.bootstrapAffix
+			$.fn.affix = $.fn.suitstrapAffix
+			delete $.fn.suitstrapAffix
 		}
 	})
 
@@ -24,13 +24,13 @@ $(function () {
 
 	test('should return jquery collection containing the element', function () {
 		var $el = $('<div/>')
-		var $affix = $el.bootstrapAffix()
+		var $affix = $el.suitstrapAffix()
 		ok($affix instanceof $, 'returns jquery collection')
 		strictEqual($affix[0], $el[0], 'collection contains element')
 	})
 
 	test('should exit early if element is not visible', function () {
-		var $affix = $('<div style="display: none"/>').bootstrapAffix()
+		var $affix = $('<div style="display: none"/>').suitstrapAffix()
 		$affix.data('bs.affix').checkPosition()
 		ok(!$affix.hasClass('u-affix'), 'affix class was not added')
 	})
@@ -47,7 +47,7 @@ $(function () {
 	// 		+ '<div id="affixAfter" style="height: 20000px; display: block;"/>'
 	// 	$(templateHTML).appendTo(document.body)
 
-	// 	$('#affixTarget').bootstrapAffix({
+	// 	$('#affixTarget').suitstrapAffix({
 	// 		offset: $('#affixTarget ul').position()
 	// 	})
 

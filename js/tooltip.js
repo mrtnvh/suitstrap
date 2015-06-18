@@ -1,4 +1,10 @@
 /* ========================================================================
+ * Suitstrap: tooltip.js v0.2.1
+ * http://suitstrap.maartenvanhoof.be/javascript/#tooltip
+ * Licensed under MIT (https://github.com/vanhoofmaarten/suitstrap/blob/master/LICENSE)
+ * ========================================================================
+ *
+ * Forked from:
  * Bootstrap: tooltip.js v3.2.0
  * http://getbootstrap.com/javascript/#tooltip
  * Inspired by the original jQuery.tipsy by Jason Frame
