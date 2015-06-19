@@ -464,7 +464,7 @@ position: relative;
 .Form--inline {
 
 	/* Kick in the inline */
-	@media (min-width: $screen--small) {
+	@media (min-width: $screen-small) {
 
 		/* Inline-block all the things for "inline" */
 		.Form-group {
@@ -576,7 +576,7 @@ position: relative;
 	 * Reset spacing and right align labels, but scope to media queries so that
 	 * labels on narrow viewports stack the same as a default form example.
 	 */
-	@media (min-width: $screen--small-min) {
+	@media (min-width: $screen-small-min) {
 		.ControlLabel {
 			text-align: right;
 			margin-bottom: 0;
@@ -601,14 +601,14 @@ position: relative;
 	 * inputs and labels within a `.form-group`.
 	 */
 	.Form-group--large {
-		@media (min-width: $screen--small-min) {
+		@media (min-width: $screen-small-min) {
 			.ControlLabel {
 				padding-top: (($padding-large-vertical * $line-height-large) + 1);
 			}
 		}
 	}
 	.Form-group--small {
-		@media (min-width: $screen--small-min) {
+		@media (min-width: $screen-small-min) {
 			.ControlLabel {
 				padding-top: ($padding-small-vertical + 1);
 			}

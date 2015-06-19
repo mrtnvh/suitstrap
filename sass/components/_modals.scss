@@ -140,7 +140,7 @@
 }
 
 /* Scale up the modal */
-@media screen and (min-width: $screen--small-min) {
+@media screen and (min-width: $screen-small-min) {
 
 	.Modal-dialog {
 		width: $modal-md;
@@ -156,6 +156,6 @@
 	}
 }
 
-@media screen and (min-width: $screen--medium-min) {
+@media screen and (min-width: $screen-medium-min) {
 	.Modal--large { width: $modal-lg; }
 }

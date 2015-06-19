@@ -44,7 +44,7 @@
 	padding-right: ($gutter / 2);
 
 	/* Calculate width based on number of columns available */
-	@media (min-width: $screen--small-min) {
+	@media (min-width: $screen-small-min) {
 		float: left;
 		width: percentage(($columns / $grid-columns));
 	}
@@ -52,17 +52,17 @@
 
 /* Generate the small column offsets */
 @mixin MakeSmallColumnOffset($columns) {
-	@media (min-width: $screen--small-min) {
+	@media (min-width: $screen-small-min) {
 		margin-left: percentage(($columns / $grid-columns));
 	}
 }
 @mixin MakeSmallColumnnPush($columns) {
-	@media (min-width: $screen--small-min) {
+	@media (min-width: $screen-small-min) {
 		left: percentage(($columns / $grid-columns));
 	}
 }
 @mixin MakeSmallColumnPull($columns) {
-	@media (min-width: $screen--small-min) {
+	@media (min-width: $screen-small-min) {
 		right: percentage(($columns / $grid-columns));
 	}
 }
@@ -79,7 +79,7 @@
 	padding-right: ($gutter / 2);
 
 	/* Calculate width based on number of columns available */
-	@media (min-width: $screen--medium-min) {
+	@media (min-width: $screen-medium-min) {
 		float: left;
 		width: percentage(($columns / $grid-columns));
 	}
@@ -87,17 +87,17 @@
 
 /* Generate the medium column offsets */
 @mixin MakeMediumColumnOffset($columns) {
-	@media (min-width: $screen--medium-min) {
+	@media (min-width: $screen-medium-min) {
 		margin-left: percentage(($columns / $grid-columns));
 	}
 }
 @mixin MakeMediumColumnPush($columns) {
-	@media (min-width: $screen--medium) {
+	@media (min-width: $screen-medium) {
 		left: percentage(($columns / $grid-columns));
 	}
 }
 @mixin MakeMediumColumnPull($columns) {
-	@media (min-width: $screen--medium-min) {
+	@media (min-width: $screen-medium-min) {
 		right: percentage(($columns / $grid-columns));
 	}
 }
@@ -112,7 +112,7 @@
 	padding-right: ($gutter / 2);
 
 	/* Calculate width based on number of columns available */
-	@media (min-width: $screen--large-min) {
+	@media (min-width: $screen-large-min) {
 		float: left;
 		width: percentage(($columns / $grid-columns));
 	}
@@ -120,17 +120,17 @@
 
 /* Generate the large column offsets */
 @mixin MakeLargeColumnOffset($columns) {
-	@media (min-width: $screen--large-min) {
+	@media (min-width: $screen-large-min) {
 		margin-left: percentage(($columns / $grid-columns));
 	}
 }
 @mixin MakeLargeColumnPush($columns) {
-	@media (min-width: $screen--large-min) {
+	@media (min-width: $screen-large-min) {
 		left: percentage(($columns / $grid-columns));
 	}
 }
 @mixin MakeLargeColumnPull($columns) {
-	@media (min-width: $screen--large-min) {
+	@media (min-width: $screen-large-min) {
 		right: percentage(($columns / $grid-columns));
 	}
 }

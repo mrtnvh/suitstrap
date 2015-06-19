@@ -199,7 +199,7 @@ table {
  * Everything above that will display normally.
  */
 
-@media (max-width: $screen--small-min) {
+@media (max-width: $screen-small-min) {
 	overflow-x: auto;
 
 	.Table--responsive {

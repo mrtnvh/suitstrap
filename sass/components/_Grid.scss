@@ -12,13 +12,13 @@
 	max-width: $container--large;
 
 	&.Container--fixed{
-		@media (min-width: $screen--small-min) {
+		@media (min-width: $screen-small-min) {
 			width: $container--small;
 		}
-		@media (min-width: $screen--medium-min) {
+		@media (min-width: $screen-medium-min) {
 			width: $container--medium;
 		}
-		@media (min-width: $screen--large-min) {
+		@media (min-width: $screen-large-min) {
 			width: $container--large;
 		}
 	}
@@ -54,7 +54,7 @@
  * to tablets.
  */
 
-@media (min-width: $screen--small-min) {
+@media (min-width: $screen-small-min) {
 	@include MakeGrid(nth($grid-breakpoints, 2));
 }
 
@@ -63,7 +63,7 @@
  * Columns, offsets, pushes, and pulls for the desktop device range.
  */
 
-@media (min-width: $screen--medium-min) {
+@media (min-width: $screen-medium-min) {
 	@include MakeGrid(nth($grid-breakpoints, 3));
 }
 
@@ -72,6 +72,6 @@
  * Columns, offsets, pushes, and pulls for the large desktop device range.
  */
 
-@media (min-width: $screen--large-min) {
+@media (min-width: $screen-large-min) {
 	@include MakeGrid(nth($grid-breakpoints, 4));
 }

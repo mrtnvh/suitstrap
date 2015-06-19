@@ -17,7 +17,7 @@ p {
 	font-weight: 300;
 	line-height: 1.4;
 
-	@media (min-width: $screen--small-min) {
+	@media (min-width: $screen-small-min) {
 		font-size: ($font-size-base * 1.5);
 	}
 }

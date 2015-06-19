@@ -97,7 +97,7 @@
 			.Navbar-collapse {
 				max-height: $navbar-collapse-max-height;
 
-				@media (max-device-width: $screen--extraSmall-min) and (orientation: landscape) {
+				@media (max-device-width: $screen-extra-small-min) and (orientation: landscape) {
 					max-height: 200px;
 				}
 			}
@@ -253,7 +253,7 @@
 		line-height: $line-height-computed;
 	}
 
-	@media (max-width: $screen--extraSmall-max) {
+	@media (max-width: $screen-extra-small-max) {
 		/* Dropdowns get custom display when collapsed */
 		.is-open .Dropdown-menu {
 			position: static;
@@ -496,7 +496,7 @@
 			}
 		}
 
-		@media (max-width: $screen--extraSmall-max) {
+		@media (max-width: $screen-extra-small-max) {
 			/* Dropdowns get custom display when collapsed */
 			.is-open .Dropdown-menu {
 				> li > a {
@@ -641,7 +641,7 @@
 			}
 		}
 
-		@media (max-width: $screen--extraSmall-max) {
+		@media (max-width: $screen-extra-small-max) {
 			/* Dropdowns get custom display */
 			.is-open .Dropdown-menu {
 				> .Dropdown-header {
