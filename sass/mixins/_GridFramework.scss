@@ -53,6 +53,19 @@
 
 
 @mixin CalcGridColumn($index, $class, $type) {
+	@if ($index == 1) {
+		@if ($type == push) {
+			.Col--#{$class + "--push--0"} {
+				left: auto;
+			}
+		}
+
+		@if ($type == pull){
+			.Col--#{$class + "--pull--0"} {
+				right: auto;
+			}
+		}
+	}
 
 	@if ($type == width) {
 		.Col--#{$class + "--" + $index} {
@@ -62,17 +75,9 @@
 		.Col--#{$class + "--push--" + $index} {
 			left: percentage(($index / $grid-columns));
 		}
-	} @else if ($type == push) {
-		.Col--#{$class}-push-0 {
-			left: auto;
-		}
 	} @else if ($type == pull) {
 		.Col--#{$class + "--pull--" + $index} {
 			right: percentage(($index / $grid-columns));
-		}
-	} @else if ($type == pull){
-		.Col--#{$class}-pull-0 {
-			right: auto;
 		}
 	} @else if ($type == offset) {
 		.Col--#{$class + "--offset--" + $index} {
@@ -80,6 +85,7 @@
 		}
 	}
 }
+
 
 
 
