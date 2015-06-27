@@ -28,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/vanhoofmaarten/suitstrap/issues"
   },
-  "licenses": [
+  "license": [
     {
       "type": "MIT",
       "url": "https://github.com/vanhoofmaarten/suitstrap/blob/master/LICENSE"

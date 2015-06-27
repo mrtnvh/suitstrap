@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 			" * Suitstrap <%= pkg.version %> by @vanhoofmaarten\n" +
 			" *\n" +
 			" * Copyright <%= grunt.template.today('yyyy') %> <%= pkg.author.name %>\n" +
-			" * Licensed under <%= _.pluck(pkg.licenses, 'url').join(', ') %>\n" +
+			" * Licensed under <%= _.pluck(pkg.license, 'url').join(', ') %>\n" +
 			" *\n" +
 			" * Forked from Bootstrap v3.0.0, designed and built with all the love in the world by @mdo and @fat.\n" +
 			" */\n",
@@ -195,7 +195,8 @@ module.exports = function(grunt) {
 		sass: {
 			compileCore: {
 				options: {
-					sourceMap: true
+					sourceMap: true,
+					outputStyle: "expanded"
 				},
 				src: "sass/suitstrap.scss",
 				dest: "dist/css/<%= pkg.name %>.css"
