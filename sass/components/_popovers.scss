@@ -11,11 +11,15 @@
 	display: none;
 	max-width: $popover-max-width;
 	padding: 1px;
-	/* Reset given new insertion method */
+	/**
+	 * Our parent element can be arbitrary since popovers are by default inserted
+	 * as a sibling of their target element.
+	 * So reset our font and text properties to avoid inheriting weird values.
+	 */
+
+	@include ResetText;
 	font-size: $font-size-base;
-	font-weight: normal;
-	line-height: $line-height-base;
-	text-align: left;
+
 	background-color: $popover-bg;
 	background-clip: padding-box;
 	border: 1px solid $popover-fallback-border-color;
@@ -23,14 +27,11 @@
 	border-radius: $border-radius-large;
 	box-shadow: 0 5px 10px rgba(0,0,0,.2);
 
-	/* Overrides for proper insertion */
-	white-space: normal;
-
 	/* Offset the popover to account for the popover arrow */
-	&.Popover--top    { margin-top:  $popover-arrow-width; }
+	&.Popover--top    { margin-top:  -($popover-arrow-width); }
 	&.Popover--right  { margin-left: $popover-arrow-width; }
 	&.Popover--bottom { margin-top:  $popover-arrow-width; }
-	&.Popover--left   { margin-left: $popover-arrow-width; }
+	&.Popover--left   { margin-left: -($popover-arrow-width); }
 }
 
 .Popover-title {
@@ -39,7 +40,7 @@
 	font-size: $font-size-base;
 	background-color: $popover-title-bg;
 	border-bottom: 1px solid darken($popover-title-bg, 5%);
-	border-radius: 5px 5px 0 0;
+	border-radius: ($border-radius-large - 1) ($border-radius-large - 1) 0 0;
 }
 
 .Popover-content {
@@ -73,9 +74,8 @@
 	content: "";
 }
 
-.Popover {
-	&.Popover--top > .Arrow,
-	&.Tooltip--top > .Arrow {
+.Arrow {
+	.Popover.Popover--top > & {
 		left: 50%;
 		margin-left: -$popover-arrow-outer-width;
 		border-bottom-width: 0;
@@ -92,8 +92,7 @@
 		}
 	}
 
-	&.Popover--right .Arrow,
-	&.Tooltip--right .Arrow {
+	.Popover.Popover--right & {
 		top: 50%;
 		left: -$popover-arrow-outer-width;
 		margin-top: -$popover-arrow-outer-width;
@@ -110,8 +109,7 @@
 		}
 	}
 
-	&.Popover--bottom .Arrow,
-	&.Tooltip--bottom .Arrow {
+	.Popover.Popover--bottom & {
 		left: 50%;
 		margin-left: -$popover-arrow-outer-width;
 		border-top-width: 0;
@@ -127,8 +125,7 @@
 		}
 	}
 
-	&.Popover--left .Arrow,
-	&.Tooltip--left .Arrow {
+	.Popover.Popover--left & {
 		top: 50%;
 		right: -$popover-arrow-outer-width;
 		margin-top: -$popover-arrow-outer-width;

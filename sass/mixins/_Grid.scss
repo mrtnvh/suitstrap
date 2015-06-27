@@ -92,7 +92,7 @@
 	}
 }
 @mixin MakeMediumColumnPush($columns) {
-	@media (min-width: $screen-medium) {
+	@media (min-width: $screen-medium-min) {
 		left: percentage(($columns / $grid-columns));
 	}
 }

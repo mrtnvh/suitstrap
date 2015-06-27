@@ -21,22 +21,31 @@
 		display: none;
 	}
 
-	/* Quick fix for labels/badges in buttons */
+	/* Quick fix for badges in buttons */
 	.Button & {
 		position: relative;
 		top: -1px;
 	}
 
-	.Button-extraSmall & {
+	.Button--extraSmall & {
+	.ButtonGroup--extraSmall > .Button & {
 		top: 0;
 		padding: 1px 5px;
 	}
 
 	/* Account for counters in navs */
-	a.ListGroup-item.is-active > &,
+	.ListGroup-item.is-active > &,
 	.Nav--pills > .is-active > a > & {
 		color: $badge-active-color;
 		background-color: $badge-active-bg;
+	}
+
+	.ListGroup-item > & {
+		float: right;
+	}
+
+	.ListGroup-item > & > & {
+		margin-right: 5px;
 	}
 
 	.Nav--pills > li > a > & {

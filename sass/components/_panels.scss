@@ -13,15 +13,15 @@
 
 /* Panel contents */
 .Panel-body {
-	padding: 15px;
+	padding: $panel-body-padding;
 	@include MicroClearfix();
 }
 
 /* Optional heading */
 .Panel-heading {
-	padding: 10px 15px;
+	padding: $panel-heading-padding;
 	border-bottom: 1px solid transparent;
-	@include BorderTopRadius($panel-border-radius - 1);
+	@include BorderTopRadius(($panel-border-radius - 1));
 
 	> .Dropdown .Dropdown-toggle {
 		color: inherit;
@@ -33,24 +33,32 @@
 	margin-top: 0;
 	margin-bottom: 0;
 	font-size: ceil(($font-size-base * 1.125));
+	color: inherit;
 
-	> a {
+	> a,
+	> small,
+	> .small,
+	> small > a,
+	> .small > a {
 		color: inherit;
 	}
 }
 
 /* Optional footer (stays gray in every modifier class) */
 .Panel-footer {
-	padding: 10px 15px;
+	padding: $panel-footer-padding;
 	background-color: $panel-footer-bg;
 	border-top: 1px solid $panel-inner-border;
-	@include BorderBottomRadius($panel-border-radius - 1);
+	@include BorderBottomRadius(($panel-border-radius - 1));
 }
 
 
 /* List groups in panels
    ========================================================================== */
-/* By default, space out list group content from panel headings to account for any kind of custom content between the two. */
+/**
+ * By default, space out list group content from panel headings to account
+ * for any kind of custom content between the two.
+ */
 
 .Panel {
 	> .ListGroup,
@@ -79,6 +87,11 @@
 				}
 			}
 		}
+
+		> .Panel-heading + .Panel-collapse > .ListGroup {
+	    .ListGroup-item:first-child {
+	    	@include border-top-radius(0);
+	    }
 	}
 }
 
@@ -90,7 +103,7 @@
 }
 
 .ListGroup + .Panel-footer {
-  border-top-width: 0;
+	border-top-width: 0;
 }
 
 
@@ -175,6 +188,7 @@
 	> .Table-bordered,
 	> .Table--responsive > .Table-bordered {
 		border: 0;
+
 		> thead,
 		> tbody,
 		> tfoot {
@@ -221,11 +235,14 @@
 /* Wrap a series of panels in `.Panel-group` to turn them into an accordion with the help of our collapse JavaScript plugin. */
 
 .Panel-group {
+	margin-bottom: $line-height-computed;
+
 	/* Tighten up margin so it's only between panels */
 	.Panel {
 		margin-bottom: 0;
 		border-radius: $panel-border-radius;
 		overflow: hidden; /* crop contents when collapsed */
+
 		+ .Panel {
 			margin-top: 5px;
 		}
@@ -233,6 +250,7 @@
 
 	.Panel-heading {
 		border-bottom: 0;
+
 		+ .Panel-collapse .Panel-body {
 			border-top: 1px solid $panel-inner-border;
 		}
@@ -240,6 +258,7 @@
 
 	.Panel-footer {
 		border-top: 0;
+
 		+ .Panel-collapse .Panel-body {
 			border-bottom: 1px solid $panel-inner-border;
 		}
@@ -249,25 +268,55 @@
 
 /* Contextual variations */
 .Panel--default {
-	@include PanelVariant($panel-default-border, $panel-default-text, $panel-default-heading-bg, $panel-default-border);
+	@include PanelVariant(
+		$panel-default-border,
+		$panel-default-text,
+		$panel-default-heading-bg,
+		$panel-default-border
+	);
 }
 
 .Panel--primary {
-	@include PanelVariant($panel-primary-border, $panel-primary-text, $panel-primary-heading-bg, $panel-primary-border);
+	@include PanelVariant(
+		$panel-primary-border,
+		$panel-primary-text,
+		$panel-primary-heading-bg,
+		$panel-primary-border
+	);
 }
 
 .Panel--success {
-	@include PanelVariant($panel-success-border, $panel-success-text, $panel-success-heading-bg, $panel-success-border);
+	@include PanelVariant(
+		$panel-success-border,
+		$panel-success-text,
+		$panel-success-heading-bg,
+		$panel-success-border
+	);
 }
 
 .Panel--warning {
-	@include PanelVariant($panel-warning-border, $panel-warning-text, $panel-warning-heading-bg, $panel-warning-border);
+	@include PanelVariant(
+		$panel-warning-border,
+		$panel-warning-text,
+		$panel-warning-heading-bg,
+		$panel-warning-border
+	);
 }
 
 .Panel--danger {
-	@include PanelVariant($panel-danger-border, $panel-danger-text, $panel-danger-heading-bg, $panel-danger-border);
+	@include PanelVariant(
+		$panel-danger-border,
+		$panel-danger-text,
+		$panel-danger-heading-bg,
+		$panel-danger-border
+	);
 }
 
 .Panel--info {
-	@include PanelVariant($panel-info-border, $panel-info-text, $panel-info-heading-bg, $panel-info-border);
+	@include PanelVariant(
+		$panel-info-border,
+		$panel-info-text,
+		$panel-info-heading-bg,
+		$panel-info-border
+	);
 }

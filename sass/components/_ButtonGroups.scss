@@ -20,11 +20,6 @@
 		&.is-active {
 			z-index: 2;
 		}
-
-		&:focus {
-			/* Remove focus outline when dropdown JS adds it after closing the menu */
-			outline: 0;
-		}
 	}
 }
 
@@ -35,6 +30,24 @@
 	.ButtonGroup + .Button,
 	.ButtonGroup + .ButtonGroup {
 		margin-left: -1px;
+	}
+}
+
+// Optional: Group multiple button groups together for a toolbar
+.ButtonToolbar {
+	margin-left: -5px; // Offset the first child's margin
+	@include MicroClearfix;
+
+	.Button,
+	.ButtonGroup,
+	.InputGroup {
+		float: left;
+	}
+
+	> .Button,
+	> .ButtonGroup,
+	> .InputGroup {
+		margin-left: 5px;
 	}
 }
 
@@ -65,14 +78,14 @@
 	border-radius: 0;
 }
 
-.ButtonGroup > .ButtonGroup:first-child {
+.ButtonGroup > .ButtonGroup:first-child:not(:last-child) {
 	> .Button:last-child,
 	> .Dropdown-toggle {
 		@include BorderRightRadius(0);
 	}
 }
 
-.ButtonGroup > .ButtonGroup:last-child > .Button:first-child {
+.ButtonGroup > .ButtonGroup:last-child:not(:first-child) > .Button:first-child {
 	@include BorderLeftRadius(0);
 }
 
@@ -83,8 +96,8 @@
 }
 
 /**
-/* Sizing
-/* Remix the default button sizing classes into new ones for easier manipulation.
+ * Sizing
+ * Remix the default button sizing classes into new ones for easier manipulation.
  */
 
 .ButtonGroup--extraSmall > .Button {
@@ -102,7 +115,7 @@
 
 
 /* Split button dropdowns
-   ========================================================================== */
+	 ========================================================================== */
 
 /* Give the line between buttons some depth*/
 .ButtonGroup > .Button + .Dropdown-toggle {
@@ -116,9 +129,9 @@
 }
 
 /**
-* The clickable button for toggling the menu
-* Remove the gradient and set the same inset shadow as the :active state
-*/
+ * The clickable button for toggling the menu
+ * Remove the gradient and set the same inset shadow as the :active state
+ */
 .ButtonGroup.is-open .Dropdown-toggle {
 	box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
 
@@ -253,9 +266,8 @@
 		input[type="radio"],
 		input[type="checkbox"] {
 			position: absolute;
-			z-index: -1;
-			opacity: 0;
+			clip: rect(0,0,0,0);
+			pointer-events: none;
 		}
 	}
 }
-

@@ -1,11 +1,19 @@
 /* ==========================================================================
    Media objects
-   Source: http://stubbornella.org/content/?p=497
    ========================================================================== */
 
 
 /* Common styles
    ========================================================================== */
+
+/* Proper spacing between instances of .Media */
+.Media {
+   margin-top: 15px;
+
+   &:first-child {
+       margin-top: 0;
+   }
+}
 
 /* Clear the floats */
 .Media,
@@ -14,19 +22,13 @@
     zoom: 1;
 }
 
-/* Proper spacing between instances of .Media */
-.Media,
-.Media .Media {
-    margin-top: 15px;
-}
-
-.Media:first-child {
-    margin-top: 0;
-}
-
 /* For images and videos, set to block */
 .Media-object {
     display: block;
+
+    &.Image--thumbnail{
+        max-width: none;
+    }
 }
 
 /* Reset margins on headings for tighter default spacing */
@@ -38,13 +40,29 @@
 /* Media image alignment
    ========================================================================== */
 
-.Media {
-    > .u-pull--left {
-        margin-right: 10px;
-    }
-    > .u-pull--right {
-        margin-left: 10px;
-    }
+.Media-left,
+.Media > .u-pull--left {
+    margin-right: 10px;
+}
+
+.Media-right,
+.Media > .u-pull--right {
+    margin-left: 10px;
+}
+
+.Media-left,
+.Media-right,
+.Media-body {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.Media-middle {
+  vertical-align: middle;
+}
+
+.Media-bottom {
+  vertical-align: bottom;
 }
 
 

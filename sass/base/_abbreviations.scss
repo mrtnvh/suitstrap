@@ -8,7 +8,7 @@
  */
 
 abbr[title],
-abbr[data-original-title] {
+abbr[data-original-title] { /* Add data-* attribute to help out our tooltip plugin, per https://github.com/twbs/bootstrap/issues/5257 */
 	cursor: help;
 	border-bottom: 1px dotted $abbr-border-color;
 }

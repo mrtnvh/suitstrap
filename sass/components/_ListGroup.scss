@@ -16,6 +16,7 @@
 
 /* Individual list items
    ========================================================================== */
+/* Use on `li`s or `div`s within the `.list-group` parent. */
 
 .ListGroup-item {
 	position: relative;
@@ -51,7 +52,7 @@
 	&.is-disabled:focus {
 		background-color: $list-group-disabled-bg;
 		color: $list-group-disabled-color;
-		cursor: not-allowed;
+		cursor: $cursor-disabled;
 
 		/* Force color to inherit for custom content */
 		.ListGroup-item-heading {
@@ -100,8 +101,14 @@ a.ListGroup-item {
 	&:hover,
 	&:focus {
 		text-decoration: none;
+		color: $list-group-link-hover-color;
 		background-color: $list-group-hover-bg;
 	}
+}
+
+button.ListGroup-item {
+	width: 100%;
+	text-align: left;
 }
 
 
@@ -121,6 +128,7 @@ a.ListGroup-item {
 
 /* Custom content options
    ========================================================================== */
+/* Extra classes for creating well-formatted content within `.list-group-item`s. */
 
 .ListGroup-item-heading {
 	margin-top: 0;

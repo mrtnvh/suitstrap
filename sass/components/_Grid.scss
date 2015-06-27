@@ -7,6 +7,16 @@
  * Set the container width, and override it for fixed navbars in media queries
  */
 
+
+/**
+ * IMPORTANT CHANGE TOWARDS BOOTSTRAP
+ *
+ * I chose to use a fluid container as default.
+ * HTML without CSS is fluid by default (http://motherfuckingwebsite.com/)
+ * Because of the cascading properties of CSS, it is easier and
+ * less code to add a few properties than to override them.
+ */
+
 .Container {
 	@include ContainerFixed();
 	max-width: $container--large;

@@ -5,7 +5,7 @@
 /* Ex: 14px base font * 85% = about 12px */
 small,
 .u-small{
-	font-size: 85%;
+	font-size: floor((100% * $font-size-small / $font-size-base));
 }
 
 mark,
@@ -27,9 +27,9 @@ mark,
 .Text--capitalize     { text-transform: capitalize; }
 
 /* Contextual emphasis */
-.Text--muted { color: $text-muted; }
+.Text--muted   { color: $text-muted; }
 .Text--primary { @include TextEmphasisVariant($brand-primary,      ".Text--primary"); }
 .Text--success { @include TextEmphasisVariant($state-success-text, ".Text--success"); }
-.Text--info {    @include TextEmphasisVariant($state-info-text,    ".Text--info"   ); }
+.Text--info    { @include TextEmphasisVariant($state-info-text,    ".Text--info"   ); }
 .Text--warning { @include TextEmphasisVariant($state-warning-text, ".Text--warning"); }
-.Text--danger {  @include TextEmphasisVariant($state-danger-text,  ".Text--danger" ); }
+.Text--danger  { @include TextEmphasisVariant($state-danger-text,  ".Text--danger" ); }

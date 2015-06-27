@@ -167,23 +167,13 @@ table {
 /* Table backgrounds
    ========================================================================== */
 
-/* Exact selectors below required to override `.Table-striped` and prevent inheritance to nested tables. */
-.Table > thead > tr,
-.Table > tbody > tr,
-.Table > tfoot > tr {
-	> td.is-active,
-	> th.is-active,
-	&.is-active > td,
-	&.is-active > th    {
-		background-color: $table-bg-active;
-	}
-}
+/**
+ * Exact selectors below required to override `.Table-striped` and
+ * prevent inheritance to nested tables.
+ */
 
-
-
-/* Generate the contextual variants
-   ========================================================================== */
-@include TableRowVariant(is-active, $state-success-bg);
+/* Generate the contextual variants */
+@include TableRowVariant(is-active, $table-bg-active);
 @include TableRowVariant(is-success, $state-success-bg);
 @include TableRowVariant(is-info, $state-info-bg);
 @include TableRowVariant(is-danger, $state-danger-bg);
@@ -201,6 +191,7 @@ table {
 
 @media (max-width: $screen-small-min) {
 	overflow-x: auto;
+	min-height: 0.01%; /* Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837) */
 
 	.Table--responsive {
 		width: 100%;

@@ -23,7 +23,7 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
-	z-index: $zindex-modal-background;
+	z-index: $zindex-modal;
 	-webkit-overflow-scrolling: touch;
 
 	/**
@@ -59,7 +59,7 @@
 .Modal-content {
 	position: relative;
 	background-color: $modal-content-bg;
-	border: 1px solid $modal-content-fallback-border-color; /*old browsers fallback (ie8 etc) */
+	border: 1px solid $modal-content-fallback-border-color; /* old browsers fallback (ie8 etc) */
 	border: 1px solid $modal-content-border-color;
 	border-radius: $border-radius-large;
 	box-shadow: 0 3px 9px rgba(0,0,0,.5);
@@ -76,7 +76,7 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
-	z-index: ($zindex-modal-background - 10);
+	z-index: $zindex-modal-background;
 	background-color: $modal-backdrop-bg;
 
 	/* Fade for backdrop */
@@ -117,7 +117,7 @@
 
 /* Footer (for actions) */
 .Modal-footer {
-	padding: ($modal-inner-padding - 1) $modal-inner-padding $modal-inner-padding;
+	padding: $modal-inner-padding;
 	text-align: right; /* right align buttons */
 	border-top: 1px solid $modal-footer-border-color;
 	@include MicroClearfix(); /* clear it in case folks use .pull-* classes on buttons */
@@ -139,16 +139,25 @@
 	}
 }
 
+/* Measure scrollbar width for padding body during modal show/hide */
+.Modal-scrollbar-measure {
+	position: absolute;
+	top: -9999px;
+	width: 50px;
+	height: 50px;
+	overflow: scroll;
+}
+
 /* Scale up the modal */
 @media screen and (min-width: $screen-small-min) {
 
 	.Modal-dialog {
-		width: $modal-md;
+		width: $modal-medium;
 		margin: 30px auto;
 	}
 
 	.Modal--small {
-		width: $modal-sm;
+		width: $modal-small;
 	}
 
 	.Modal-content {
@@ -157,5 +166,7 @@
 }
 
 @media screen and (min-width: $screen-medium-min) {
-	.Modal--large { width: $modal-lg; }
+	.Modal--large {
+		width: $modal-large;
+	}
 }

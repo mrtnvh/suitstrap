@@ -1,6 +1,17 @@
 /* ==========================================================================
    Buttons
    ========================================================================== */
+/**
+ * iOS "clickable elements" fix for role="button"
+ *
+ * Fixes "clickability" issue (and more generally, the firing of events such as focus as well)
+ * for traditionally non-focusable elements with role="button"
+ * see https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+ */
+
+[role="button"] {
+	cursor: pointer;
+}
 
 
 /* Base styles
@@ -54,13 +65,19 @@
 	&.is-disabled,
 	&[disabled],
 	fieldset[disabled] & {
-		cursor: not-allowed;
-		pointer-events: none; /* Future-proof disabling of clicks */
+		cursor: $cursor-disabled;
 		opacity: .65;
 		box-shadow: none;
 	}
-
 }
+
+a.btn {
+	&.is-disabled,
+	fieldset[disabled] & {
+		pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
+	}
+}
+
 
 
 /* Alternate buttons
@@ -73,6 +90,7 @@
 		$btn-default-border
 	);
 }
+
 .Button--primary {
 	@include ButtonVariant(
 		$btn-primary-color,
@@ -80,6 +98,7 @@
 		$btn-primary-border
 	);
 }
+
 /* Warning appears as orange */
 .Button--warning {
 	@include ButtonVariant(
@@ -88,6 +107,7 @@
 		$btn-warning-border
 	);
 }
+
 /* Danger and error appear as red */
 .Button--danger {
 	@include ButtonVariant(
@@ -96,6 +116,7 @@
 		$btn-danger-border
 	);
 }
+
 /* Success appears as green */
 .Button--success {
 	@include ButtonVariant(
@@ -104,6 +125,7 @@
 		$btn-success-border
 	);
 }
+
 /* Info appears as blue-green */
 .Button--info {
 	@include ButtonVariant(
@@ -200,8 +222,6 @@
 .Button--block {
 	display: block;
 	width: 100%;
-	padding-left: 0;
-	padding-right: 0;
 }
 
 /* Vertically space out multiple block buttons */

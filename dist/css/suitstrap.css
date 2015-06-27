@@ -1352,11 +1352,11 @@ output {
     color: #999; }
   .Form-control[disabled],
   .Form-control[readonly] {
-    cursor: not-allowed;
+    cursor: $cursor-disabled;
     background-color: #eeeeee; }
 
 fieldset[disabled].Form-control {
-  cursor: not-allowed;
+  cursor: $cursor-disabled;
   background-color: #eeeeee; }
 
 /* Reset height for `textarea`s */
@@ -1542,21 +1542,21 @@ fieldset[disabled] input[type="radio"],
 input[type="checkbox"][disabled],
 input[type="checkbox"].is-disabled,
 fieldset[disabled] input[type="checkbox"] {
-  cursor: not-allowed; }
+  cursor: $cursor-disabled; }
 
 /* These classes are used directly on <label>s */
 .Radio--inline.is-disabled,
 fieldset[disabled] .Radio--inline,
 .Checkbox--inline.is-disabled,
 fieldset[disabled] .Checkbox--inline {
-  cursor: not-allowed; }
+  cursor: $cursor-disabled; }
 
 /* These classes are used on elements with <label> descendants */
 .Radio.is-disabled label,
 fieldset[disabled] .Radio label,
 .Checkbox.is-disabled label,
 fieldset[disabled] .Checkbox label {
-  cursor: not-allowed; }
+  cursor: $cursor-disabled; }
 
 /* Form control sizing */
 .Input--small, .InputGroup--small > .Form-control,
@@ -3708,7 +3708,7 @@ tbody.Animation--collapse.is-in {
       background-image: none;
       /* Remove CSS gradient */
       filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-      cursor: not-allowed; }
+      cursor: $cursor-disabled; }
 
 /* Open state for the dropdown
    ========================================================================== */
@@ -3857,7 +3857,7 @@ tbody.Animation--collapse.is-in {
   .Button.is-disabled,
   .Button[disabled],
   fieldset[disabled] .Button {
-    cursor: not-allowed;
+    cursor: $cursor-disabled;
     pointer-events: none;
     /* Future-proof disabling of clicks */
     opacity: .65;
@@ -4624,7 +4624,7 @@ input[type="button"].Button--block {
         color: #777777;
         text-decoration: none;
         background-color: transparent;
-        cursor: not-allowed; }
+        cursor: $cursor-disabled; }
   .Nav .is-open > a,
   .Nav .is-open > a:hover,
   .Nav .is-open > a:focus {
@@ -5357,7 +5357,7 @@ input[type="button"].Button--block {
     color: #777777;
     background-color: #fff;
     border-color: #ddd;
-    cursor: not-allowed; }
+    cursor: $cursor-disabled; }
 
 /* Sizing
    ========================================================================== */
@@ -5434,7 +5434,7 @@ input[type="button"].Button--block {
   .Pager .is-disabled > span {
     color: #777777;
     background-color: #fff;
-    cursor: not-allowed; }
+    cursor: $cursor-disabled; }
 
 /* ==========================================================================
    Labels
@@ -5876,7 +5876,7 @@ a.Thumbnail.is-active {
   .ListGroup-item.is-disabled:focus {
     background-color: #eeeeee;
     color: #777777;
-    cursor: not-allowed;
+    cursor: $cursor-disabled;
     /* Force color to inherit for custom content */ }
     .ListGroup-item.is-disabled .ListGroup-item-heading,
     .ListGroup-item.is-disabled:hover .ListGroup-item-heading,
@@ -7107,18 +7107,18 @@ button.Close {
 .u-visible--large {
   display: none !important; }
 
-.u-visible--extraSmall-block,
+.u-visible--extra--inlineBlock,
 .u-visible--extraSmall-inline,
-.u-visible--extraSmall-inline-block,
-.u-visible--small-block,
+.u-visible--extraSmall-inlineBlock,
+.u-visible----inlineBlock,
 .u-visible--small-inline,
-.u-visible--small-inline-block,
+.u-visible--small-inlineBlock,
 .u-visible--medium-block,
 .u-visible--medium-inline,
-.u-visible--medium-inline-block,
+.u-visible--medium-inlineBlock,
 .u-visible--large-block,
 .u-visible--large-inline,
-.u-visible--large-inline-block {
+.u-visible--large-inlineBlock {
   display: none !important; }
 
 @media (max-width: 767px) {
@@ -7129,7 +7129,7 @@ button.Close {
     display: table-cell !important; } }
 
 @media (max-width: 767px) {
-  .u-visible--extraSmall-block {
+  .u-visible--extra--inlineBlock {
     display: block !important; } }
 
 @media (max-width: 767px) {
@@ -7137,7 +7137,7 @@ button.Close {
     display: inline !important; } }
 
 @media (max-width: 767px) {
-  .u-visible--extraSmall-inline-block {
+  .u-visible--extraSmall-inlineBlock {
     display: inline-block !important; } }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -7148,7 +7148,7 @@ button.Close {
     display: table-cell !important; } }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .u-visible--small-block {
+  .u-visible----inlineBlock {
     display: block !important; } }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -7156,7 +7156,7 @@ button.Close {
     display: inline !important; } }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .u-visible--small-inline-block {
+  .u-visible--small-inlineBlock {
     display: inline-block !important; } }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -7175,7 +7175,7 @@ button.Close {
     display: inline !important; } }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-  .u-visible--medium-inline-block {
+  .u-visible--medium-inlineBlock {
     display: inline-block !important; } }
 
 @media (min-width: 1200px) {
@@ -7194,7 +7194,7 @@ button.Close {
     display: inline !important; } }
 
 @media (min-width: 1200px) {
-  .u-visible--large-inline-block {
+  .u-visible--large-inlineBlock {
     display: inline-block !important; } }
 
 @media (max-width: 767px) {
@@ -7239,10 +7239,10 @@ button.Close {
     .u-visible--print-inline {
       display: inline !important; } }
 
-.u-visible--print-inline-block {
+.u-visible--print-inlineBlock {
   display: none !important; }
   @media print {
-    .u-visible--print-inline-block {
+    .u-visible--print-inlineBlock {
       display: inline-block !important; } }
 
 @media print {

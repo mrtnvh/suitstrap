@@ -8,12 +8,16 @@
 	position: absolute;
 	z-index: $zindex-tooltip;
 	display: block;
-	visibility: visible;
+	/**
+	 * Our parent element can be arbitrary since tooltips are by default
+	 * inserted as a sibling of their target element.
+	 * So reset our font and text properties to avoid inheriting weird values.
+	 */
+	@include ResetText;
 	font-size: $font-size-small;
-	line-height: 1.4;
 	opacity: 0;
 
-	&.Tooltip--in     { opacity: .9; }
+	&.Tooltip--in     { opacity: $tooltip-opacity; }
 	&.Tooltip--top    { margin-top:  -3px; padding: $tooltip-arrow-width 0; }
 	&.Tooltip--right  { margin-left:  3px; padding: 0 $tooltip-arrow-width; }
 	&.Tooltip--bottom { margin-top:   3px; padding: $tooltip-arrow-width 0; }
@@ -26,7 +30,6 @@
 	padding: 3px 8px;
 	color: $tooltip-color;
 	text-align: center;
-	text-decoration: none;
 	background-color: $tooltip-bg;
 	border-radius: $border-radius-base;
 }

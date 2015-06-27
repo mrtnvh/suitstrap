@@ -3,28 +3,22 @@
    ========================================================================== */
 
 /**
- * More easily include all the states for responsive-utilities.less.
- */
+* More easily include all the states for responsive-utilities.less.
+*/
 
-@mixin ResponsiveVisibility($type: "block") {
-
-	@if ($type = block) {
+@mixin ResponsiveVisibility($parent) {
+	#{$parent} {
 		display: block !important;
 	}
 
-	@if ($type = table) {
-		display: table;
-	}
-
-	@if ($type = table-row) {
-		display: table-row !important;
-	}
-
-	@if ($type = table-cell) {
-		display: table-cell !important;
-	}
+	table#{$parent}  { display: table !important; }
+	tr#{$parent}     { display: table-row !important; }
+	th#{$parent},
+	td#{$parent}     { display: table-cell !important; }
 }
 
-@mixin ResponsiveInvisibility() {
-	display: none !important;
+@mixin ResponsiveInvisibility($parent) {
+	#{$parent} {
+		display: none !important;
+	}
 }

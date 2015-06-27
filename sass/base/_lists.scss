@@ -15,6 +15,7 @@ ol {
 	}
 }
 
+
 /* List options
    ========================================================================== */
 
@@ -26,8 +27,8 @@ ol {
 
 /* Inline turns list items into inline-block */
 .List--inline {
-	padding-left: 0;
-	list-style: none;
+	@extend .List--unstyled;
+	margin-left: -5px;
 
 	> li {
 		display: inline-block;
@@ -35,6 +36,7 @@ ol {
 		padding-right: 5px;
 	}
 }
+
 
 /* Description Lists
    ========================================================================== */
@@ -55,12 +57,13 @@ dd {
 	margin-left: 0; /* Undo browser default */
 }
 
+
 /* Horizontal description lists
    ========================================================================== */
 /* Defaults to being stacked without any of the below styles applied, until the
    grid breakpoint is reached (default of ~768px). */
 
-.Dl--horizontal {
+.DescriptionList--horizontal {
 
 	dd{
 		@include MicroClearfix(); /* Clear the floated `dt` if an empty `dd` is present */

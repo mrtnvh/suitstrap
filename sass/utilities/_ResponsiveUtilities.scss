@@ -18,31 +18,35 @@
  * Source: http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
  */
 
-@-ms-viewport {
-	width: device-width;
+@at-root {
+	@-ms-viewport {
+		width: device-width;
+	}
 }
 
-// Visibility utilities
-// Note: Deprecated .u-visible--extraSmall, .u-visible--small, .u-visible--medium, and .u-visible--large as of v3.2.0
-.u-visible--extraSmall,
-.u-visible--small,
-.u-visible--medium,
-.u-visible--large {
-	@include ResponsiveInvisibility();
-}
+/**
+ * Visibility utilities
+ * Note: Deprecated .u-visible--extraSmall, .u-visible--small,
+ * .u-visible--medium,and .u-visible--large as of v3.2.0
+ */
 
-.u-visible--extraSmall-block,
-.u-visible--extraSmall-inline,
-.u-visible--extraSmall-inline-block,
-.u-visible--small-block,
-.u-visible--small-inline,
-.u-visible--small-inline-block,
-.u-visible--medium-block,
-.u-visible--medium-inline,
-.u-visible--medium-inline-block,
-.u-visible--large-block,
-.u-visible--large-inline,
-.u-visible--large-inline-block {
+@include ResponsiveInvisibility(".u-visible--extraSmall");
+@include ResponsiveInvisibility(".u-visible--small");
+@include ResponsiveInvisibility(".u-visible--medium");
+@include ResponsiveInvisibility(".u-visible--large ");
+
+.u-visible--extraSmall--block,
+.u-visible--extraSmall--inline,
+.u-visible--extraSmall--inlineBlock,
+.u-visible--small--block,
+.u-visible--small--inline,
+.u-visible--small--inlineBlock,
+.u-visible--medium--block,
+.u-visible--medium--inline,
+.u-visible--medium--inlineBlock,
+.u-visible--large--block,
+.u-visible--large--inline,
+.u-visible--large--inlineBlock {
 	display: none !important;
 }
 
@@ -50,23 +54,23 @@
 
 .u-visible--extraSmall {
 	@media (max-width: $screen-extra-small-max) {
-		@include ResponsiveVisibility();
+		@include ResponsiveVisibility(".u-visible--extraSmall");
 	}
 }
 
-.u-visible--extraSmall-block {
+.u-visible--extrasmall--block {
 	@media (max-width: $screen-extra-small-max) {
 		display: block !important;
 	}
 }
 
-.u-visible--extraSmall-inline {
+.u-visible--extraSmall--inline {
 	@media (max-width: $screen-extra-small-max) {
 		display: inline !important;
 	}
 }
 
-.u-visible--extraSmall-inline-block {
+.u-visible--extraSmall--inlineBlock {
 	@media (max-width: $screen-extra-small-max) {
 		display: inline-block !important;
 	}
@@ -80,19 +84,19 @@
 	}
 }
 
-.u-visible--small-block {
+.u-visible--small--block {
 	@media (min-width: $screen-small-min) and (max-width: $screen-small-max) {
 		display: block !important;
 	}
 }
 
-.u-visible--small-inline {
+.u-visible--small--inline {
 	@media (min-width: $screen-small-min) and (max-width: $screen-small-max) {
 		display: inline !important;
 	}
 }
 
-.u-visible--small-inline-block {
+.u-visible--small--inlineBlock {
 	@media (min-width: $screen-small-min) and (max-width: $screen-small-max) {
 		display: inline-block !important;
 	}
@@ -106,19 +110,19 @@
 	}
 }
 
-.u-visible--medium-block {
+.u-visible--medium--block {
 	@media (min-width: $screen-medium-min) and (max-width: $screen-medium-max) {
 		display: block !important;
 	}
 }
 
-.u-visible--medium-inline {
+.u-visible--medium--inline {
 	@media (min-width: $screen-medium-min) and (max-width: $screen-medium-max) {
 		display: inline !important;
 	}
 }
 
-.u-visible--medium-inline-block {
+.u-visible--medium--inlineBlock {
 	@media (min-width: $screen-medium-min) and (max-width: $screen-medium-max) {
 		display: inline-block !important;
 	}
@@ -132,19 +136,19 @@
 	}
 }
 
-.u-visible--large-block {
+.u-visible--large--block {
 	@media (min-width: $screen-large-min) {
 		display: block !important;
 	}
 }
 
-.u-visible--large-inline {
+.u-visible--large--inline {
 	@media (min-width: $screen-large-min) {
 		display: inline !important;
 	}
 }
 
-.u-visible--large-inline-block {
+.u-visible--large--inlineBlock {
 	@media (min-width: $screen-large-min) {
 		display: inline-block !important;
 	}
@@ -152,28 +156,20 @@
 
 
 
-.u-hidden--extraSmall {
-	@media (max-width: $screen-extra-small-max) {
-		@include ResponsiveInvisibility();
-	}
+@media (max-width: $screen-extra-small-max) {
+	@include ResponsiveInvisibility(".u-hidden--extraSmall");
 }
 
-.u-hidden--small {
-	@media (min-width: $screen-small-min) and (max-width: $screen-small-max) {
-		@include ResponsiveInvisibility();
-	}
+@media (min-width: $screen-small-min) and (max-width: $screen-small-max) {
+	@include ResponsiveInvisibility(".u-hidden--small");
 }
 
-.u-hidden--medium {
-	@media (min-width: $screen-medium-min) and (max-width: $screen-medium-max) {
-		@include ResponsiveInvisibility();
-	}
+@media (min-width: $screen-medium-min) and (max-width: $screen-medium-max) {
+	@include ResponsiveInvisibility(".u-hidden--medium");
 }
 
-.u-hidden--large {
-	@media (min-width: $screen-large-min) {
-		@include ResponsiveInvisibility();
-	}
+@media (min-width: $screen-large-min) {
+	@include ResponsiveInvisibility(".u-hidden--large");
 }
 
 
@@ -184,15 +180,14 @@
  */
 
 /* Note: Deprecated .u-visible--print as of v3.2.0 */
-.u-visible--print {
-	@include ResponsiveInvisibility();
 
-	@media print {
-		@include ResponsiveVisibility();
-	}
+@include ResponsiveInvisibility(".u-visible--print");
+
+@media print {
+	@include ResponsiveVisibility(".u-visible--print");
 }
 
-.u-visible--print-block {
+.u-visible--print--block {
 	display: none !important;
 
 	@media print {
@@ -200,7 +195,7 @@
 	}
 }
 
-.u-visible--print-inline {
+.u-visible--print--inline {
 	display: none !important;
 
 	@media print {
@@ -208,7 +203,7 @@
 	}
 }
 
-.u-visible--print-inline-block {
+.u-visible--print--inlineBlock {
 	display: none !important;
 
 	@media print {

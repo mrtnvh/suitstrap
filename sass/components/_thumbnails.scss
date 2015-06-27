@@ -27,8 +27,10 @@
 }
 
 /* Add a hover state for linked versions only */
-a.Thumbnail:hover,
-a.Thumbnail:focus,
-a.Thumbnail.is-active{
-	border-color: $link-color;
+a.Thumbnail{
+    &:hover,
+    &:focus,
+    &.is-active{
+    	border-color: $link-color;
+    }    
 }

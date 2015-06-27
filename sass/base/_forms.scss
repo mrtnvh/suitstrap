@@ -42,6 +42,12 @@ label {
 /* Normalize form controls
 ========================================================================== */
 
+/**
+ * While most of our form styles require extra classes, some basic normalization
+ * is required to ensure optimum display with or without those classes to better
+ * address browser inconsistencies.
+ */
+
 /* Override content-box in Normalize (* isn't specific enough) */
 input[type="search"] {
 	box-sizing: border-box;
@@ -58,6 +64,12 @@ input[type="checkbox"] {
 /* Set the height of select and file controls to match text inputs */
 input[type="file"] {
 	display: block;
+}
+
+/* Make range inputs behave like textual form controls */
+input[type="range"] {
+	display: block;
+	width: 100%;
 }
 
 /* Make multiple select elements height not fixed */
@@ -114,7 +126,6 @@ output {
 	font-size: $font-size-base;
 	line-height: $line-height-base;
 	color: $input-color;
-	vertical-align: middle;
 	background-color: $input-bg;
 	background-image: none; /* Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214 */
 	border: 1px solid $input-border;
@@ -127,23 +138,25 @@ output {
 
 	/* Placeholder */
 	@include Placeholder();
-
-	/**
-	 * Disabled and read-only inputs
-	 * Note: HTML5 says that controls under a fieldset > legend:first-child won't
-	 * be disabled if the fieldset is disabled. Due to implementation difficulty,
-	 * we don't honor that edge case; we style them as disabled anyway.
-	 */
-	&[disabled],
-	&[readonly] {
-		cursor: not-allowed;
-		background-color: $input-bg-disabled;
-	}
 }
 
+
+/**
+ * Disabled and read-only inputs
+ * Note: HTML5 says that controls under a fieldset > legend:first-child won't
+ * be disabled if the fieldset is disabled. Due to implementation difficulty,
+ * we don't honor that edge case; we style them as disabled anyway.
+ */
+.Form-control[disabled],
+.Form-control[readonly],
 fieldset[disabled].Form-control {
-	cursor: not-allowed;
 	background-color: $input-bg-disabled;
+	opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
+}
+
+.Form-control[disabled],
+fieldset[disabled].Form-control {
+	cursor: $cursor-disabled;
 }
 
 /* Reset height for `textarea`s */
@@ -153,17 +166,17 @@ textarea.Form-control {
 
 
 
-/*
+/**
  * Search inputs in iOS
  *
  * This overrides the extra rounded corners on search inputs in iOS so that our
- * `.form-control` class can properly style them. Note that this cannot simply
- * be added to `.form-control` as it's not specific enough. For details, see
+ * `.Form-control` class can properly style them. Note that this cannot simply
+ * be added to `.Form-control` as it's not specific enough. For details, see
  * https://github.com/twbs/bootstrap/issues/11586.
  */
 
 input[type="search"] {
-  -webkit-appearance: none;
+	-webkit-appearance: none;
 }
 
 
@@ -176,44 +189,30 @@ input[type="search"] {
  * As a workaround, we set a pixel line-height that matches the
  * given height of the input. Since this fucks up everything else, we have to
  * appropriately reset it for Internet Explorer and the size variations.
+ *
+ * Note that as of 8.3, iOS doesn't support `datetime` or `week`.
  */
 
-input[type="date"],
-input[type="time"],
-input[type="datetime-local"],
-input[type="month"] {
-	line-height: $input-height-base;
-	// IE8+ misaligns the text within date inputs, so we reset
-	line-height: #{$line-height-base} #{"~\0"};
+	@media screen and (-webkit-min-device-pixel-ratio: 0) {
+	input[type="date"],
+	input[type="time"],
+	input[type="datetime-local"],
+	input[type="month"] {
+		line-height: $input-height-base;
+		// IE8+ misaligns the text within date inputs, so we reset
+		line-height: #{$line-height-base} #{"~\0"};
 
-	&.Input--small {
-		line-height: $input-height-small;
-		line-height: #{$line-height-small} #{"~\0"};
-	}
+		&.Input--small {
+			line-height: $input-height-small;
+			line-height: #{$line-height-small} #{"~\0"};
+		}
 
-	&.Input--large {
-		line-height: $input-height-large;
-		line-height: #{$line-height-large} #{"~\0"};
-	}
-}
-
-
-// IE 11 hack to reverse the iOS temporal input hack.
-_:-ms-fullscreen, :root input[type="date"],
-_:-ms-fullscreen, :root input[type="time"],
-_:-ms-fullscreen, :root input[type="datetime-local"],
-_:-ms-fullscreen, :root input[type="month"] {
-	line-height: $line-height-base;
-
-	&.Input--small {
-		line-height: $line-height-small;
-	}
-	&.Input--large {
-		line-height: $line-height-large;
+		&.Input--large {
+			line-height: $input-height-large;
+			line-height: #{$line-height-large} #{"~\0"};
+		}
 	}
 }
-
-
 
 /**
  * Form groups
@@ -222,7 +221,7 @@ _:-ms-fullscreen, :root input[type="month"] {
  * horizontal forms, use the predefined grid classes.
  */
 .Form-group {
-	margin-bottom: 15px;
+	margin-bottom: $form-group-margin-bottom;
 }
 
 
@@ -266,6 +265,7 @@ _:-ms-fullscreen, :root input[type="month"] {
 /* Radios and checkboxes on same line */
 .Radio--inline,
 .Checkbox--inline {
+	position: relative;
 	display: inline-block;
 	padding-left: 20px;
 	margin-bottom: 0;
@@ -291,7 +291,7 @@ input[type="checkbox"] {
 	&[disabled],
 	&.is-disabled,
 	fieldset[disabled] & {
-		cursor: not-allowed;
+		cursor: $cursor-disabled;
 	}
 }
 
@@ -300,7 +300,7 @@ input[type="checkbox"] {
 .Checkbox--inline {
 	&.is-disabled,
 	fieldset[disabled] & {
-		cursor: not-allowed;
+		cursor: $cursor-disabled;
 	}
 }
 
@@ -310,108 +310,10 @@ input[type="checkbox"] {
 	&.is-disabled,
 	fieldset[disabled] & {
 		label {
-			cursor: not-allowed;
+			cursor: $cursor-disabled;
 		}
 	}
 }
-
-
-
-/* Form control sizing */
-.Input--small {
-	@include InputSize(
-		$input-height-small,
-		$padding-small-vertical,
-		$padding-small-horizontal,
-		$font-size-small,
-		$line-height-small,
-		$border-radius-small,
-		".Input--small"
-	);
-}
-
-.Input--large {
-	@include InputSize(
-		$input-height-large,
-		$padding-large-vertical,
-		$padding-large-horizontal,
-		$font-size-large,
-		$line-height-large,
-		$border-radius-large,
-		".Input--large"
-	);
-}
-
-
-
-/**
- * Form control feedback states
- * Apply contextual and semantic states to individual form controls.
- */
-
-.has-feedback {
-/* Enable absolute positioning */
-position: relative;
-
-/* Ensure icons don't overlap text */
-	.Form-control {
-		padding-right: ($input-height-base * 1.25);
-	}
-}
-
-// Feedback icon (requires .glyphicon classes)
-.Form-control-feedback {
-	position: absolute;
-	top: 0;
-	right: 0;
-	z-index: 2; // Ensure icon is above input groups
-	display: block;
-	width: $input-height-base;
-	height: $input-height-base;
-	line-height: $input-height-base;
-	text-align: center;
-	pointer-events: none;
-}
-
-.Input--large + .Form-control-feedback {
-	width: $input-height-large;
-	height: $input-height-large;
-	line-height: $input-height-large;
-}
-
-.Input--small + .Form-control-feedback {
-	width: $input-height-small;
-	height: $input-height-small;
-	line-height: $input-height-small;
-}
-
-/* Warning */
-.has-warning {
-	@include FormControlValidation($state-warning-text, $state-warning-text, $state-warning-bg);
-}
-
-/* Error */
-.has-error {
-	@include FormControlValidation($state-danger-text, $state-danger-text, $state-danger-bg);
-}
-
-/* Success */
-.has-success {
-	@include FormControlValidation($state-success-text, $state-success-text, $state-success-bg);
-}
-
-/* Reposition feedback icon if input has visible label above */
-.has-feedback label {
-	& ~ .Form-control-feedback {
-		top: ($line-height-computed + 5); /* Height of the `label` and its margin */
-	}
-
-	&.sr-only ~ .Form-control-feedback {
-		top: 0;
-	}
-}
-
-
 
 /**
  * Static form control text
@@ -435,6 +337,179 @@ position: relative;
 	}
 }
 
+
+
+/**
+ * Form control sizing
+ */
+
+.Input--small {
+	@include InputSize(
+		$input-height-small,
+		$padding-small-vertical,
+		$padding-small-horizontal,
+		$font-size-small,
+		$line-height-small,
+		$border-radius-small,
+		".Input--small"
+	);
+}
+
+.Form-group--small {
+	.Form-control {
+		height: $input-height-small;
+		padding: $padding-small-vertical $padding-small-horizontal;
+		font-size: $font-size-small;
+		line-height: $line-height-small;
+		border-radius: $input-border-radius-small;
+	}
+
+	select.Form-control {
+		height: $input-height-small;
+		line-height: $input-height-small;
+	}
+
+	textarea.Form-control,
+	select[multiple].Form-control {
+		height: auto;
+	}
+
+	.Form-control--static {
+		height: $input-height-small;
+		min-height: ($line-height-computed + $font-size-small);
+		padding: ($padding-small-vertical + 1) $padding-small-horizontal;
+		font-size: $font-size-small;
+		line-height: $line-height-small;
+	}
+}
+
+.Input--large {
+	@include InputSize(
+		$input-height-large,
+		$padding-large-vertical,
+		$padding-large-horizontal,
+		$font-size-large,
+		$line-height-large,
+		$border-radius-large,
+		".Input--large"
+	);
+}
+
+.Form-group--large {
+	.Form-control {
+		height: $input-height-large;
+		padding: $padding-large-vertical $padding-large-horizontal;
+		font-size: $font-size-large;
+		line-height: $line-height-large;
+		border-radius: $input-border-radius-large;
+	}
+
+	select.Form-control {
+		height: $input-height-large;
+		line-height: $input-height-large;
+	}
+
+	textarea.Form-control,
+	select[multiple].Form-control {
+		height: auto;
+	}
+
+	.Form-control--static {
+		height: $input-height-large;
+		min-height: ($line-height-computed + $font-size-large);
+		padding: ($padding-large-vertical + 1) $padding-large-horizontal;
+		font-size: $font-size-large;
+		line-height: $line-height-large;
+	}
+}
+
+
+
+/**
+ * Form control feedback states
+ * Apply contextual and semantic states to individual form controls.
+ */
+
+.has-feedback {
+/* Enable absolute positioning */
+position: relative;
+
+/* Ensure icons don't overlap text */
+	.Form-control {
+		padding-right: ($input-height-base * 1.25);
+	}
+}
+
+/* Feedback icon (requires .glyphicon classes) */
+.Form-control-feedback {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 2; // Ensure icon is above input groups
+	display: block;
+	width: $input-height-base;
+	height: $input-height-base;
+	line-height: $input-height-base;
+	text-align: center;
+	pointer-events: none;
+}
+
+.Input--large + .Form-control-feedback,
+.InputGroup--large + .Form-control-feedback,
+.Form-group--large .Form-control + .Form-control-feedback {
+	width: $input-height-large;
+	height: $input-height-large;
+	line-height: $input-height-large;
+}
+
+.Input--small + .Form-control-feedback,
+.InputGroup--small + .Form-control-feedback,
+.Form-group--small .Form-control + .Form-control-feedback {
+	width: $input-height-small;
+	height: $input-height-small;
+	line-height: $input-height-small;
+}
+
+/* Warning */
+.has-warning {
+	@include FormControlValidation(
+		$state-warning-text,
+		$state-warning-text,
+		$state-warning-bg
+	);
+}
+
+/* Error */
+.has-error {
+	@include FormControlValidation(
+		$state-danger-text,
+		$state-danger-text,
+		$state-danger-bg
+	);
+}
+
+/* Success */
+.has-success {
+	@include FormControlValidation(
+		$state-success-text,
+		$state-success-text,
+		$state-success-bg
+	);
+}
+
+/* Reposition feedback icon if input has visible label above */
+.has-feedback label {
+	& ~ .Form-control-feedback {
+		top: ($line-height-computed + 5); /* Height of the `label` and its margin */
+	}
+
+	&.u-screenReaderOnly ~ .Form-control-feedback {
+		top: 0;
+	}
+}
+
+
+
 /**
  * Help text
  *
@@ -448,6 +523,8 @@ position: relative;
 	margin-bottom: 10px;
 	color: lighten($text-color, 25%); /* lighten the text some for contrast */
 }
+
+
 
 /**
  * Inline forms
@@ -464,7 +541,7 @@ position: relative;
 .Form--inline {
 
 	/* Kick in the inline */
-	@media (min-width: $screen-small) {
+	@media (min-width: $screen-small-min) {
 
 		/* Inline-block all the things for "inline" */
 		.Form-group {
@@ -485,7 +562,7 @@ position: relative;
 			display: inline-block;
 		}
 
-		.input-group {
+		.InputGroup {
 			display: inline-table;
 			vertical-align: middle;
 
@@ -508,8 +585,7 @@ position: relative;
 
 		/**
 		 * Remove default margin on radios/checkboxes that were used for stacking, and
-		 * then undo the floating of radios and checkboxes to match (which also avoids
-		 * a bug in WebKit: https://github.com/twbs/bootstrap/issues/1969).
+		 * then undo the floating of radios and checkboxes to match.
 		 */
 		.Radio,
 		.Checkbox {
@@ -551,8 +627,8 @@ position: relative;
 	 */
 	.Radio,
 	.Checkbox,
-	.Radio-inline,
-	.Checkbox-inline {
+	.Radio--inline,
+	.Checkbox--inline {
 		margin-top: 0;
 		margin-bottom: 0;
 		padding-top: ($padding-base-vertical + 1); // Default padding plus a border
@@ -591,7 +667,7 @@ position: relative;
 	 * `position: relative;` on them. Also accounts for the grid gutter padding.
 	 */
 	.has-feedback .Form-control-feedback {
-		right: ($grid-gutter-width / 2);
+		right: floor(($grid-gutter-width / 2));
 	}
 
 	/**

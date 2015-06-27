@@ -9,114 +9,117 @@
 
 /* Core variables and mixins
    ========================================================================== */
-@import "variables.scss";
-@import "mixins/mixins.scss";
+@import "variables";
+@import "mixins/mixins";
 
 	/* Utilities */
-	@import "mixins/Hide-text.scss";
-	@import "mixins/Image.scss";
-	@import "mixins/Labels.scss";
-	@import "mixins/ResetFilter.scss";
-	@import "mixins/Resize.scss";
-	@import "mixins/ResponsiveVisibility.scss";
-	@import "mixins/Size.scss";
-	@import "mixins/TabFocus.scss";
-	@import "mixins/TableRow.scss";
-	@import "mixins/TextEmphasis.scss";
-	@import "mixins/TextOverflow.scss";
+	@import "mixins/Hide-text";
+	@import "mixins/Image";
+	@import "mixins/Labels";
+	@import "mixins/ResetFilter";
+	@import "mixins/Resize";
+	@import "mixins/ResponsiveVisibility";
+	@import "mixins/Size";
+	@import "mixins/TabFocus";
+	@import "mixins/ResetText";
+	@import "mixins/TextEmphasis";
+	@import "mixins/TextOverflow";
 
 	/* Components */
-	@import "mixins/Alerts.scss";
-	@import "mixins/Buttons.scss";
-	@import "mixins/Panels.scss";
-	@import "mixins/Pagination.scss";
-	@import "mixins/ListGroup.scss";
-	@import "mixins/Forms.scss";
-	@import "mixins/Navs.scss";
-	@import "mixins/NavDivider.scss";
-	@import "mixins/ProgressBar.scss";
+	@import "mixins/Alerts";
+	@import "mixins/Buttons";
+	@import "mixins/Panels";
+	@import "mixins/Pagination";
+	@import "mixins/ListGroup";
+	@import "mixins/Forms";
+	@import "mixins/Navs";
+	@import "mixins/NavDivider";
+	@import "mixins/ProgressBar";
+	@import "mixins/TableRow";
 
 	/* Skins */
-	@import "mixins/BackgroundVariant.scss";
-	@import "mixins/BorderRadius.scss";
-	@import "mixins/Gradients.scss";
+	@import "mixins/BackgroundVariant";
+	@import "mixins/BorderRadius";
+	@import "mixins/Gradients";
 
 	/* Layout */
-	@import "mixins/Clearfix.scss";
-	@import "mixins/CenterBlock.scss";
-	@import "mixins/NavVerticalAlign.scss";
-	@import "mixins/GridFramework.scss";
-	@import "mixins/Grid.scss";
+	@import "mixins/Clearfix";
+	@import "mixins/CenterBlock";
+	@import "mixins/NavVerticalAlign";
+	@import "mixins/GridFramework";
+	@import "mixins/Grid";
 
 
 
 /* Resets
    ========================================================================== */
-@import "utilities/normalize.scss";
-@import "utilities/print.scss";
+@import "utilities/normalize";
+@import "utilities/print";
 
 
 
 /* Base styles
    ========================================================================== */
-@import "base/Scaffolding.scss";
-@import "base/Links.scss";
-@import "base/Images.scss";
-@import "base/Horizontalrules.scss";
-@import "base/Abbreviations.scss";
-@import "base/Address.scss";
-@import "base/Blockquote.scss";
-@import "base/Code.scss";
-@import "base/Emphasis.scss";
-@import "base/Background.scss";
-@import "base/Forms.scss";
-@import "base/Headings.scss";
-@import "base/Lists.scss";
-@import "base/Paragraphs.scss";
-@import "base/Tables.scss";
+@import "base/Scaffolding";
+@import "base/Links";
+@import "base/Images";
+@import "base/Horizontalrules";
+@import "base/Abbreviations";
+@import "base/Address";
+@import "base/Blockquote";
+@import "base/Code";
+@import "base/Emphasis";
+@import "base/Background";
+@import "base/Forms";
+@import "base/Headings";
+@import "base/Lists";
+@import "base/Paragraphs";
+@import "base/Tables";
 
 
 
 /* Components
    ========================================================================== */
-@import "components/Grid.scss";
-@import "components/ComponentAnimations.scss";
-@import "components/Glyphicons.scss";
-@import "components/Dropdowns.scss";
-@import "components/Buttons.scss";
-@import "components/ButtonGroups.scss";
-@import "components/ButtonToolbar.scss";
-@import "components/Caret.scss";
-@import "components/InputGroups.scss";
-@import "components/Navs.scss";
-@import "components/Navbar.scss";
-@import "components/Breadcrumbs.scss";
-@import "components/Pagination.scss";
-@import "components/Pager.scss";
-@import "components/Labels.scss";
-@import "components/Badges.scss";
-@import "components/Jumbotron.scss";
-@import "components/Thumbnails.scss";
-@import "components/Alerts.scss";
-@import "components/ProgressBars.scss";
-@import "components/Media.scss";
-@import "components/ListGroup.scss";
-@import "components/Panels.scss";
-@import "components/Wells.scss";
-@import "components/Close.scss";
+@import "components/Grid";
+@import "components/ComponentAnimations";
+@import "components/Glyphicons";
+@import "components/Dropdowns";
+@import "components/Buttons";
+@import "components/ButtonGroups";
+@import "components/ButtonToolbar";
+@import "components/Caret";
+@import "components/InputGroups";
+@import "components/Navs";
+@import "components/Navbar";
+@import "components/Breadcrumbs";
+@import "components/Pagination";
+@import "components/Pager";
+@import "components/Labels";
+@import "components/Badges";
+@import "components/Jumbotron";
+@import "components/Thumbnails";
+@import "components/Alerts";
+@import "components/ProgressBars";
+@import "components/Media";
+@import "components/ListGroup";
+@import "components/Panels";
+@import "components/ResponsiveEmbed";
+@import "components/Wells";
+@import "components/Close";
+@import "components/Page";
 
 
 
 /* Components w/ JavaScript
    ========================================================================== */
-@import "components/Modals.scss";
-@import "components/Tooltip.scss";
-@import "components/Popovers.scss";
-@import "components/Carousel.scss";
+@import "components/Modals";
+@import "components/Tooltip";
+@import "components/Popovers";
+@import "components/Carousel";
 
 
 
 /* Utilities
    ========================================================================== */
-@import "utilities/Utilities.scss";
-@import "utilities/ResponsiveUtilities.scss";
+@import "utilities/Utilities";
+@import "utilities/ResponsiveUtilities";

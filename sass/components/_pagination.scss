@@ -43,7 +43,10 @@
 	> li > span {
 		&:hover,
 		&:focus {
+			z-index: 3;
+			color: $pagination-hover-color;
 			background-color: $pagination-hover-bg;
+			border-color: $pagination-hover-border;
 		}
 	}
 
@@ -70,7 +73,7 @@
 			color: $pagination-disabled-color;
 			background-color: $pagination-bg;
 			border-color: $pagination-border;
-			cursor: not-allowed;
+			cursor: $cursor-disabled;
 		}
 	}
 }
@@ -80,10 +83,20 @@
 
 /* Large */
 .Pagination--large {
-	@include PaginationSize($padding-large-vertical, $padding-large-horizontal, $font-size-large, $border-radius-large);
+	@include PaginationSize(
+		$padding-large-vertical,
+		$padding-large-horizontal,
+		$font-size-large,
+		$border-radius-large
+	);
 }
 
 /* Small */
 .Pagination--small {
-	@include PaginationSize($padding-small-vertical, $padding-small-horizontal, $font-size-small, $border-radius-small);
+	@include PaginationSize(
+		$padding-small-vertical,
+		$padding-small-horizontal,
+		$font-size-small,
+		$border-radius-small
+	);
 }

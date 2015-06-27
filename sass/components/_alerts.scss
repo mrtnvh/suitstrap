@@ -14,16 +14,17 @@
 		/* Specified for the h4 to prevent conflicts of changing $headings-color */
 		color: inherit;
 	}
+
 	/* Provide class for links that match alerts */
 	.Alert-link {
 		font-weight: $alert-link-font-weight;
 	}
 
-	/* Improve alignment and spacing of inner content */
 	> p,
 	> ul {
 		margin-bottom: 0;
 	}
+
 	> p + p {
 		margin-top: 5px;
 	}

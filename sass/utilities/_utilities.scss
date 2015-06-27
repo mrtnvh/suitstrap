@@ -73,6 +73,15 @@
 	@include TextHide();
 }
 
+/**
+ * Hide from screenreaders and browsers
+ * Credit: HTML5 Boilerplate
+ */
+
+.u-hidden {
+	display: none !important;
+}
+
 
 
 
