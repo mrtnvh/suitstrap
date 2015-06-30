@@ -1,8 +1,8 @@
-/* ==========================================================================
-   Grid
-   ========================================================================== */
+// ==========================================================================
+// Grid
+// ==========================================================================
 
-/* Centered container element */
+// Centered container element
 @mixin ContainerFixed() {
 	margin-right: auto;
 	margin-left: auto;
@@ -11,7 +11,7 @@
 	@include MicroClearfix();
 }
 
-/* Creates a wrapper for a series of columns */
+// Creates a wrapper for a series of columns
 @mixin MakeRow($gutter: $grid-gutter-width) {
 	margin-left:  ($gutter / -2);
 	margin-right: ($gutter / -2);
@@ -20,7 +20,7 @@
 	@include MicroClearfix();
 }
 
-/* Generate the extra small columns */
+// Generate the extra small columns
 @mixin MakeExtraSmallColumn($columns, $gutter: $grid-gutter-width) {
 	position: relative;
 	float: left;
@@ -34,11 +34,13 @@
 	padding-right: ($gutter / 2);
 }
 
-/* Generate the small columns */
+// Generate the small columns
 @mixin MakeSmallColumn($columns, $gutter: $grid-gutter-width) {
 	position: relative;
+
 	/* Prevent columns from collapsing when empty */
 	min-height: 1px;
+
 	/* Inner gutter via padding */
 	padding-left:($gutter / 2);
 	padding-right: ($gutter / 2);
@@ -50,7 +52,7 @@
 	}
 }
 
-/* Generate the small column offsets */
+// Generate the small column offsets
 @mixin MakeSmallColumnOffset($columns) {
 	@media (min-width: $screen-small-min) {
 		margin-left: percentage(($columns / $grid-columns));
@@ -67,7 +69,7 @@
 	}
 }
 
-/* Generate the medium columns */
+// Generate the medium columns
 @mixin MakeMediumColumn($columns, $gutter: $grid-gutter-width) {
 	position: relative;
 
@@ -85,7 +87,7 @@
 	}
 }
 
-/* Generate the medium column offsets */
+// Generate the medium column offsets
 @mixin MakeMediumColumnOffset($columns) {
 	@media (min-width: $screen-medium-min) {
 		margin-left: percentage(($columns / $grid-columns));
@@ -102,11 +104,13 @@
 	}
 }
 
-/* Generate the large columns */
+// Generate the large columns
 @mixin MakeLargeColumn($columns, $gutter: $grid-gutter-width) {
 	position: relative;
+
 	/* Prevent columns from collapsing when empty */
 	min-height: 1px;
+
 	/* Inner gutter via padding */
 	padding-left:($gutter / 2);
 	padding-right: ($gutter / 2);
@@ -118,7 +122,7 @@
 	}
 }
 
-/* Generate the large column offsets */
+// Generate the large column offsets
 @mixin MakeLargeColumnOffset($columns) {
 	@media (min-width: $screen-large-min) {
 		margin-left: percentage(($columns / $grid-columns));

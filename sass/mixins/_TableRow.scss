@@ -1,6 +1,6 @@
-/* ==========================================================================
-   Tables
-   ========================================================================== */
+// ==========================================================================
+// Tables
+// ==========================================================================
 
 @mixin TableRowVariant($state, $background) {
 	/* Exact selectors below required to override `.Table-striped` and prevent inheritance to nested tables. */
@@ -15,8 +15,10 @@
 		}
 	}
 
-	/* Hover states for `.Table--hover`*/
-	/* Note: this is not available for cells or rows within `thead` or `tfoot`.*/
+    /**
+	 * Hover states for `.Table--hover`
+	 * Note: this is not available for cells or rows within `thead` or `tfoot`.
+	 */
 	.Table--hover > tbody > tr {
 		> td.#{$state}:hover,
 		> th.#{$state}:hover,

@@ -1,13 +1,13 @@
-/* ==========================================================================
-   Contextual backgrounds
-   ========================================================================== */
+// ==========================================================================
+// Contextual backgrounds
+// ==========================================================================
 
-@mixin BackgroundVariant($color, $class: null){
-	background-color: $color;
-
-	@if ($class != null){
-		#{"a" + $class}:hover {
-			background-color: darken($color, 10%);
-		}
+@mixin BackgroundVariant($parent, $color) {
+	#{$parent} {
+		background-color: $color;
+	}
+	a#{$parent}:hover,
+	a#{$parent}:focus {
+		background-color: darken($color, 10%);
 	}
 }

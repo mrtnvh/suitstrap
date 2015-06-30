@@ -1,9 +1,9 @@
-/* ==========================================================================
-   Text overflow
-   ========================================================================== */
+// ==========================================================================
+// Text overflow
+// ========================================================================== 
 
-/* Text overflow */
-/* Requires inline-block or block for proper styling */
+// Text overflow
+// Requires inline-block or block for proper styling
 
 @mixin TextOverflow() {
 	overflow: hidden;

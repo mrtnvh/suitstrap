@@ -1,8 +1,13 @@
-/* ==========================================================================
-   Panels
-   ========================================================================== */
+// ==========================================================================
+// Panels
+// ==========================================================================
 
-@mixin PanelVariant($border, $heading-text-color, $heading-bg-color, $heading-border) {
+@mixin PanelVariant(
+    $border,
+    $heading-text-color,
+    $heading-bg-color,
+    $heading-border
+) {
 	border-color: $border;
 
 	& > .Panel-heading {
@@ -19,10 +24,10 @@
 			background-color: $heading-text-color;
 		}
 	}
+
 	& > .Panel-footer {
 		+ .Panel-collapse .Panel-body {
 			border-bottom-color: $border;
 		}
 	}
 }
-

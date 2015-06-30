@@ -1,9 +1,9 @@
-/* ==========================================================================
-   Images
-   ========================================================================== */
+// ==========================================================================
+// Images
+// ==========================================================================
 
-/* Retina images */
-/* Short retina mixin for setting background-image and -size */
+// Retina images
+// Short retina mixin for setting background-image and -size
 @mixin ImageRetina($file-1x, $file-2x, $width-1x, $height-1x) {
 	background-image: url("#{$file-1x}");
 
@@ -19,8 +19,8 @@
 	}
 }
 
-/* Responsive image */
-/* Keep images from scaling beyond the width of their parents. */
+// Responsive image
+// Keep images from scaling beyond the width of their parents.
 @mixin ImageResponsive($display: block) {
 	display: $display;
 	max-width: 100%; /* Part 1: Set a maximum relative to the parent */

@@ -16,8 +16,8 @@
 	color: #fff;
 }
 
-.Background--primary { @include BackgroundVariant($brand-primary);    }
-.Background--success { @include BackgroundVariant($state-success-bg); }
-.Background--info    { @include BackgroundVariant($state-info-bg);    }
-.Background--warning { @include BackgroundVariant($state-warning-bg); }
-.Background--danger  { @include BackgroundVariant($state-danger-bg);  }
+@include BackgroundVariant(".Background--primary", $brand-primary);    }
+@include BackgroundVariant(".Background--success", $state-success-bg); }
+@include BackgroundVariant(".Background--info",    $state-info-bg);    }
+@include BackgroundVariant(".Background--warning", $state-warning-bg); }
+@include BackgroundVariant(".Background--danger",  $state-danger-bg);  }

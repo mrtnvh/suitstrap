@@ -1,8 +1,8 @@
-/* ==========================================================================
-   Horizontal dividers
-   ========================================================================== */
+// ==========================================================================
+// Horizontal dividers
+// ========================================================================== 
 
-/* Dividers (basically an hr) within dropdowns and nav lists */
+// Dividers (basically an hr) within dropdowns and nav lists
 @mixin NavDivider($color: #e5e5e5) {
 	height: 1px;
 	margin: (($line-height-computed / 2) - 1) 0;

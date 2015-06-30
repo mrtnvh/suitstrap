@@ -137,7 +137,10 @@ output {
 	@include FormControlFocus();
 
 	/* Placeholder */
-	@include Placeholder();
+	&::placeholder {
+		color: $input-color-placeholder;
+		opacity: 1;
+	}
 }
 
 
@@ -151,7 +154,7 @@ output {
 .Form-control[readonly],
 fieldset[disabled].Form-control {
 	background-color: $input-bg-disabled;
-	opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
+	opacity: 1; /* iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655 */
 }
 
 .Form-control[disabled],
@@ -193,13 +196,13 @@ input[type="search"] {
  * Note that as of 8.3, iOS doesn't support `datetime` or `week`.
  */
 
-	@media screen and (-webkit-min-device-pixel-ratio: 0) {
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
 	input[type="date"],
 	input[type="time"],
 	input[type="datetime-local"],
 	input[type="month"] {
 		line-height: $input-height-base;
-		// IE8+ misaligns the text within date inputs, so we reset
+		/* IE8+ misaligns the text within date inputs, so we reset */
 		line-height: #{$line-height-base} #{"~\0"};
 
 		&.Input--small {
@@ -323,11 +326,11 @@ input[type="checkbox"] {
  */
 
 .Form-control--static {
-	// Size it appropriately next to real form controls
+	/* Size it appropriately next to real form controls */
 	padding-top: ($padding-base-vertical + 1);
 	padding-bottom: ($padding-base-vertical + 1);
 
-	// Remove default margin from `p`
+	/* Remove default margin from `p` */
 	margin-bottom: 0;
 
 	.Input--small,
@@ -343,17 +346,15 @@ input[type="checkbox"] {
  * Form control sizing
  */
 
-.Input--small {
-	@include InputSize(
-		$input-height-small,
-		$padding-small-vertical,
-		$padding-small-horizontal,
-		$font-size-small,
-		$line-height-small,
-		$border-radius-small,
-		".Input--small"
-	);
-}
+@include InputSize(
+	".Input--small"
+	$input-height-small,
+	$padding-small-vertical,
+	$padding-small-horizontal,
+	$font-size-small,
+	$line-height-small,
+	$border-radius-small
+);
 
 .Form-group--small {
 	.Form-control {
@@ -383,17 +384,16 @@ input[type="checkbox"] {
 	}
 }
 
-.Input--large {
-	@include InputSize(
-		$input-height-large,
-		$padding-large-vertical,
-		$padding-large-horizontal,
-		$font-size-large,
-		$line-height-large,
-		$border-radius-large,
-		".Input--large"
-	);
-}
+@include InputSize(
+	".Input--large",
+	$input-height-large,
+	$padding-large-vertical,
+	$padding-large-horizontal,
+	$font-size-large,
+	$line-height-large,
+	$border-radius-large
+);
+
 
 .Form-group--large {
 	.Form-control {
@@ -445,7 +445,7 @@ position: relative;
 	position: absolute;
 	top: 0;
 	right: 0;
-	z-index: 2; // Ensure icon is above input groups
+	z-index: 2; /* Ensure icon is above input groups */
 	display: block;
 	width: $input-height-base;
 	height: $input-height-base;
@@ -573,7 +573,7 @@ position: relative;
 			}
 		}
 
-		// Input groups need that 100% width though
+		/* Input groups need that 100% width though */
 		.InputGroup > .Form-control {
 			width: 100%;
 		}
@@ -631,7 +631,7 @@ position: relative;
 	.Checkbox--inline {
 		margin-top: 0;
 		margin-bottom: 0;
-		padding-top: ($padding-base-vertical + 1); // Default padding plus a border
+		padding-top: ($padding-base-vertical + 1); /* Default padding plus a border */
 	}
 
 	/**
@@ -656,7 +656,7 @@ position: relative;
 		.ControlLabel {
 			text-align: right;
 			margin-bottom: 0;
-			padding-top: ($padding-base-vertical + 1); // Default padding plus a border
+			padding-top: ($padding-base-vertical + 1); /* Default padding plus a border */
 		}
 	}
 

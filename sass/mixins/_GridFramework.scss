@@ -1,9 +1,12 @@
+// ==========================================================================
 // Framework grid generation
-//
+// ==========================================================================
+
 // Used only by Bootstrap to generate the correct number of grid classes given
 // any value of `$grid-columns`.
 
 @mixin MakeGridColumns() {
+
 	// Common styles for all sizes of grid columns, widths 1-12
 	$col-classes: "";
 	$delimiter: ", ";
@@ -32,7 +35,8 @@
 
 
 @mixin FloatGridColumns($class) {
-	// Common styles for all sizes of grid columns, widths 1-12
+
+	/* Common styles for all sizes of grid columns, widths 1-12 */
 	$col-classes: "";
 	$delimiter: ", ";
 
@@ -85,7 +89,6 @@
 		}
 	}
 }
-
 
 
 
