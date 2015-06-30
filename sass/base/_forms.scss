@@ -347,13 +347,13 @@ input[type="checkbox"] {
  */
 
 @include InputSize(
-	".Input--small"
+	".Input--small",
 	$input-height-small,
 	$padding-small-vertical,
 	$padding-small-horizontal,
 	$font-size-small,
 	$line-height-small,
-	$border-radius-small
+	$input-border-radius-small
 );
 
 .Form-group--small {
@@ -391,7 +391,7 @@ input[type="checkbox"] {
 	$padding-large-horizontal,
 	$font-size-large,
 	$line-height-large,
-	$border-radius-large
+	$input-border-radius-large
 );
 
 

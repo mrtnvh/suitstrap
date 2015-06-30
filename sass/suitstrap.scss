@@ -6,13 +6,11 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-
-/* Core variables and mixins
-   ========================================================================== */
+// Core variables and mixins
+// ==========================================================================
 @import "variables";
-@import "mixins/mixins";
 
-	/* Utilities */
+	// Utilities
 	@import "mixins/Hide-text";
 	@import "mixins/Image";
 	@import "mixins/Labels";
@@ -25,24 +23,23 @@
 	@import "mixins/TextEmphasis";
 	@import "mixins/TextOverflow";
 
-	/* Components */
+	// Components
 	@import "mixins/Alerts";
 	@import "mixins/Buttons";
 	@import "mixins/Panels";
 	@import "mixins/Pagination";
 	@import "mixins/ListGroup";
-	@import "mixins/Forms";
-	@import "mixins/Navs";
 	@import "mixins/NavDivider";
+	@import "mixins/Forms";
 	@import "mixins/ProgressBar";
 	@import "mixins/TableRow";
 
-	/* Skins */
+	// Skins
 	@import "mixins/BackgroundVariant";
 	@import "mixins/BorderRadius";
 	@import "mixins/Gradients";
 
-	/* Layout */
+	// Layout
 	@import "mixins/Clearfix";
 	@import "mixins/CenterBlock";
 	@import "mixins/NavVerticalAlign";
@@ -51,15 +48,15 @@
 
 
 
-/* Resets
-   ========================================================================== */
+// Resets
+// ==========================================================================
 @import "utilities/normalize";
 @import "utilities/print";
 
 
 
-/* Base styles
-   ========================================================================== */
+// Base styles
+// ==========================================================================
 @import "base/Scaffolding";
 @import "base/Links";
 @import "base/Images";
@@ -78,8 +75,8 @@
 
 
 
-/* Components
-   ========================================================================== */
+// Components
+// ==========================================================================
 @import "components/Grid";
 @import "components/ComponentAnimations";
 @import "components/Glyphicons";
@@ -110,8 +107,8 @@
 
 
 
-/* Components w/ JavaScript
-   ========================================================================== */
+// Components w/ JavaScript
+// ==========================================================================
 @import "components/Modals";
 @import "components/Tooltip";
 @import "components/Popovers";
@@ -119,7 +116,7 @@
 
 
 
-/* Utilities
-   ========================================================================== */
+// Utilities
+// ==========================================================================
 @import "utilities/Utilities";
 @import "utilities/ResponsiveUtilities";

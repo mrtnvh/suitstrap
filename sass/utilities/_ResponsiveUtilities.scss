@@ -49,10 +49,8 @@
 
 
 
-.u-visible--extraSmall {
-	@media (max-width: $screen-extra-small-max) {
-		@include ResponsiveVisibility(".u-visible--extraSmall");
-	}
+@media (max-width: $screen-extra-small-max) {
+	@include ResponsiveVisibility(".u-visible--extraSmall");
 }
 
 .u-visible--extrasmall--block {
@@ -75,10 +73,8 @@
 
 
 
-.u-visible--small {
-	@media (min-width: $screen-small-min) and (max-width: $screen-small-max) {
-		@include ResponsiveVisibility();
-	}
+@media (min-width: $screen-small-min) and (max-width: $screen-small-max) {
+	@include ResponsiveVisibility(".u-visible--small");
 }
 
 .u-visible--small--block {
@@ -101,10 +97,8 @@
 
 
 
-.u-visible--medium {
-	@media (min-width: $screen-medium-min) and (max-width: $screen-medium-max) {
-		@include ResponsiveVisibility();
-	}
+@media (min-width: $screen-medium-min) and (max-width: $screen-medium-max) {
+	@include ResponsiveVisibility("u-visible--medium");
 }
 
 .u-visible--medium--block {
@@ -127,10 +121,8 @@
 
 
 
-.u-visible--large {
-	@media (min-width: $screen-large-min) {
-		@include ResponsiveVisibility();
-	}
+@media (min-width: $screen-large-min) {
+	@include ResponsiveVisibility(".u-visible--large");
 }
 
 .u-visible--large--block {
@@ -207,8 +199,6 @@
 	}
 }
 
-.u-hidden-print {
-	@media print {
-		@include ResponsiveInvisibility();
-	}
+@media print {
+	@include ResponsiveInvisibility(".u-hidden-print");
 }

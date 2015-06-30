@@ -27,7 +27,7 @@
 		top: -1px;
 	}
 
-	.Button--extraSmall & {
+	.Button--extraSmall &,
 	.ButtonGroup--extraSmall > .Button & {
 		top: 0;
 		padding: 1px 5px;

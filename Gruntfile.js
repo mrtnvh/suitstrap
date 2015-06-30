@@ -195,9 +195,14 @@ module.exports = function(grunt) {
 		sass: {
 			compileCore: {
 				options: {
+					outputStyle: "expanded",
+					indentType: "tab",
+					indentWidth: 1,
 					sourceMap: true,
-					outputStyle: "expanded"
+					outputSourceFiles: true,
+					outFile: "dist/css/<%= pkg.name %>.css.map"
 				},
+
 				src: "sass/suitstrap.scss",
 				dest: "dist/css/<%= pkg.name %>.css"
 			},
@@ -476,9 +481,6 @@ module.exports = function(grunt) {
 				tasks: ["sass"]
 			}
 		},
-
-
-
 	});
 
 
