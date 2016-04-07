@@ -190,8 +190,6 @@ table {
  */
 
 @media (max-width: $screen-small-min) {
-	overflow-x: auto;
-	min-height: 0.01%; /* Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837) */
 
 	.Table--responsive {
 		width: 100%;
@@ -199,6 +197,8 @@ table {
 		overflow-y: hidden;
 		-ms-overflow-style: -ms-autohiding-scrollbar;
 		border: 1px solid $table-border-color;
+		overflow-x: auto;
+		min-height: 0.01%; /* Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837) */
 
 		/* Tighten up spacing */
 		> .Table {
