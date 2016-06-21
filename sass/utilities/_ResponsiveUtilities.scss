@@ -98,7 +98,7 @@
 
 
 @media (min-width: $screen-medium-min) and (max-width: $screen-medium-max) {
-	@include ResponsiveVisibility("u-visible--medium");
+	@include ResponsiveVisibility(".u-visible--medium");
 }
 
 .u-visible--medium--block {
